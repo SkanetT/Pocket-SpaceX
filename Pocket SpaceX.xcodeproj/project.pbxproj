@@ -3,27 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219C2505695400F8B0D6 /* AppDelegate.swift */; };
 		3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */; };
 		3A9C21A12505695400F8B0D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21A02505695400F8B0D6 /* ViewController.swift */; };
-		3A9C21A42505695400F8B0D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A22505695400F8B0D6 /* Main.storyboard */; };
 		3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A52505695800F8B0D6 /* Assets.xcassets */; };
 		3A9C21A92505695800F8B0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A72505695800F8B0D6 /* LaunchScreen.storyboard */; };
+		3A9C21B225056FD500F8B0D6 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21B125056FD500F8B0D6 /* MenuOptionCell.swift */; };
+		3A9C21B42505706C00F8B0D6 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21B32505706C00F8B0D6 /* MenuOption.swift */; };
+		3A9C21B62505738D00F8B0D6 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21B52505738D00F8B0D6 /* MenuDelegate.swift */; };
+		3A9C21B82505743300F8B0D6 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21B72505743300F8B0D6 /* MenuController.swift */; };
+		3A9C21BA2505761D00F8B0D6 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21B92505761D00F8B0D6 /* ContainerController.swift */; };
+		3A9C21BF25057A3E00F8B0D6 /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21BE25057A3E00F8B0D6 /* LaunchController.swift */; };
+		3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21C025057ACC00F8B0D6 /* LaunchAssembler.swift */; };
+		3A9C21C42505816200F8B0D6 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21C32505816200F8B0D6 /* LaunchPresenter.swift */; };
+		3A9C21C6250581E600F8B0D6 /* LaunchPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21C5250581E600F8B0D6 /* LaunchPresenterInput.swift */; };
+		3A9C21C82505821500F8B0D6 /* LaunchPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21C72505821500F8B0D6 /* LaunchPresenterOutput.swift */; };
+		3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21CA2505856800F8B0D6 /* LaunchRouter.swift */; };
+		3A9C21CD2505859D00F8B0D6 /* LaunchRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21CC2505859D00F8B0D6 /* LaunchRouting.swift */; };
+		BBC4393AC5A9BC0EE8381C1F /* Pods_Pocket_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347ED40A50A097C413AC4A04 /* Pods_Pocket_SpaceX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		347ED40A50A097C413AC4A04 /* Pods_Pocket_SpaceX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_SpaceX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9C21992505695400F8B0D6 /* Pocket SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket SpaceX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9C219C2505695400F8B0D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A9C21A02505695400F8B0D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3A9C21A32505695400F8B0D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A9C21A52505695800F8B0D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A9C21A82505695800F8B0D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A9C21AA2505695800F8B0D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9C21B125056FD500F8B0D6 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
+		3A9C21B32505706C00F8B0D6 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		3A9C21B52505738D00F8B0D6 /* MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
+		3A9C21B72505743300F8B0D6 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		3A9C21B92505761D00F8B0D6 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		3A9C21BE25057A3E00F8B0D6 /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
+		3A9C21C025057ACC00F8B0D6 /* LaunchAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAssembler.swift; sourceTree = "<group>"; };
+		3A9C21C32505816200F8B0D6 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
+		3A9C21C5250581E600F8B0D6 /* LaunchPresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenterInput.swift; sourceTree = "<group>"; };
+		3A9C21C72505821500F8B0D6 /* LaunchPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenterOutput.swift; sourceTree = "<group>"; };
+		3A9C21CA2505856800F8B0D6 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
+		3A9C21CC2505859D00F8B0D6 /* LaunchRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouting.swift; sourceTree = "<group>"; };
+		8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.release.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.release.xcconfig"; sourceTree = "<group>"; };
+		C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC4393AC5A9BC0EE8381C1F /* Pods_Pocket_SpaceX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +69,8 @@
 			children = (
 				3A9C219B2505695400F8B0D6 /* Pocket SpaceX */,
 				3A9C219A2505695400F8B0D6 /* Products */,
+				7A55157CB7514A1D9E5A40E7 /* Pods */,
+				81626AA6C8444FE97BE42F2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +85,91 @@
 		3A9C219B2505695400F8B0D6 /* Pocket SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				3A9C21B025056EF700F8B0D6 /* SideMenu */,
+				3A9C21BC250578F700F8B0D6 /* Modules */,
 				3A9C219C2505695400F8B0D6 /* AppDelegate.swift */,
 				3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */,
 				3A9C21A02505695400F8B0D6 /* ViewController.swift */,
-				3A9C21A22505695400F8B0D6 /* Main.storyboard */,
 				3A9C21A52505695800F8B0D6 /* Assets.xcassets */,
 				3A9C21A72505695800F8B0D6 /* LaunchScreen.storyboard */,
 				3A9C21AA2505695800F8B0D6 /* Info.plist */,
 			);
 			path = "Pocket SpaceX";
+			sourceTree = "<group>";
+		};
+		3A9C21B025056EF700F8B0D6 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21B125056FD500F8B0D6 /* MenuOptionCell.swift */,
+				3A9C21B32505706C00F8B0D6 /* MenuOption.swift */,
+				3A9C21B52505738D00F8B0D6 /* MenuDelegate.swift */,
+				3A9C21B72505743300F8B0D6 /* MenuController.swift */,
+				3A9C21B92505761D00F8B0D6 /* ContainerController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		3A9C21BB250578AF00F8B0D6 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21BD25057A0000F8B0D6 /* View */,
+				3A9C21C2250580D400F8B0D6 /* Presenter */,
+				3A9C21C92505854200F8B0D6 /* Router */,
+				3A9C21C025057ACC00F8B0D6 /* LaunchAssembler.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		3A9C21BC250578F700F8B0D6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21BB250578AF00F8B0D6 /* Launch */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3A9C21BD25057A0000F8B0D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21BE25057A3E00F8B0D6 /* LaunchController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A9C21C2250580D400F8B0D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21C32505816200F8B0D6 /* LaunchPresenter.swift */,
+				3A9C21C5250581E600F8B0D6 /* LaunchPresenterInput.swift */,
+				3A9C21C72505821500F8B0D6 /* LaunchPresenterOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3A9C21C92505854200F8B0D6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21CA2505856800F8B0D6 /* LaunchRouter.swift */,
+				3A9C21CC2505859D00F8B0D6 /* LaunchRouting.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7A55157CB7514A1D9E5A40E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */,
+				8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		81626AA6C8444FE97BE42F2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				347ED40A50A097C413AC4A04 /* Pods_Pocket_SpaceX.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A9C21AD2505695800F8B0D6 /* Build configuration list for PBXNativeTarget "Pocket SpaceX" */;
 			buildPhases = (
+				AADA7244245F073A7049EF95 /* [CP] Check Pods Manifest.lock */,
 				3A9C21952505695400F8B0D6 /* Sources */,
 				3A9C21962505695400F8B0D6 /* Frameworks */,
 				3A9C21972505695400F8B0D6 /* Resources */,
+				A9C8A2BD75B51F394E6D5B1E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,11 +234,52 @@
 			files = (
 				3A9C21A92505695800F8B0D6 /* LaunchScreen.storyboard in Resources */,
 				3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */,
-				3A9C21A42505695400F8B0D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9C8A2BD75B51F394E6D5B1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AADA7244245F073A7049EF95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pocket SpaceX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A9C21952505695400F8B0D6 /* Sources */ = {
@@ -139,7 +287,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9C21A12505695400F8B0D6 /* ViewController.swift in Sources */,
+				3A9C21B82505743300F8B0D6 /* MenuController.swift in Sources */,
+				3A9C21C42505816200F8B0D6 /* LaunchPresenter.swift in Sources */,
+				3A9C21CD2505859D00F8B0D6 /* LaunchRouting.swift in Sources */,
+				3A9C21B225056FD500F8B0D6 /* MenuOptionCell.swift in Sources */,
+				3A9C21C6250581E600F8B0D6 /* LaunchPresenterInput.swift in Sources */,
+				3A9C21C82505821500F8B0D6 /* LaunchPresenterOutput.swift in Sources */,
+				3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */,
+				3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */,
+				3A9C21BA2505761D00F8B0D6 /* ContainerController.swift in Sources */,
 				3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */,
+				3A9C21B42505706C00F8B0D6 /* MenuOption.swift in Sources */,
+				3A9C21B62505738D00F8B0D6 /* MenuDelegate.swift in Sources */,
+				3A9C21BF25057A3E00F8B0D6 /* LaunchController.swift in Sources */,
 				3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +307,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3A9C21A22505695400F8B0D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A9C21A32505695400F8B0D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3A9C21A72505695800F8B0D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,11 +434,13 @@
 		};
 		3A9C21AE2505695800F8B0D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SL47R2R53M;
 				INFOPLIST_FILE = "Pocket SpaceX/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,17 +448,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ant.Pocket-SpaceX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3A9C21AF2505695800F8B0D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SL47R2R53M;
 				INFOPLIST_FILE = "Pocket SpaceX/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +468,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ant.Pocket-SpaceX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
