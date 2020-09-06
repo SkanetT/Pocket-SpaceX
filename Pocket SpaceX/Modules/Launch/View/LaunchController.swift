@@ -21,6 +21,7 @@ class LaunchController: UIViewController {
     private func configureUi() {
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(handleMenu))
+        navigationItem.leftBarButtonItem?.tintColor = .black
     }
     
     @objc func handleMenu(){

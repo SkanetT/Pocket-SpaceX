@@ -22,9 +22,12 @@ class MenuController: UIViewController {
     
     func configureMenu(){
         tableView = UITableView()
+        tableView.register(MenuOptionCell.self, forCellReuseIdentifier: reuseIdentifer)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .gray
+        tableView.backgroundColor = .lightGray
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 80
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

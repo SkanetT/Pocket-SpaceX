@@ -14,7 +14,7 @@ class MenuOptionCell: UITableViewCell {
         
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.tintColor = .white
+        iv.tintColor = .black
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 5
         return iv
@@ -22,7 +22,7 @@ class MenuOptionCell: UITableViewCell {
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         
         return label
@@ -32,7 +32,7 @@ class MenuOptionCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .gray
+        backgroundColor = .lightGray
         addSubview(iconImageView)
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
