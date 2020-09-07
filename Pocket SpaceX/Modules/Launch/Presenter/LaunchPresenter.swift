@@ -21,6 +21,18 @@ class LaunchPresenter: LaunchPresenterInput {
         self.viewController = viewController
     }
     
+    func viewDidLoad() {
+        let request = RocketRequest()
+        NetworkApi.shared.dataTask(request: request) { result in
+            switch result {
+            case.success(let data):
+                print(data)
+            case.failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     func sideMenuTap() {
         router.showSideMenu()
     }

@@ -38,6 +38,7 @@ class ContainerController: UIViewController {
         
         centerContoller.view.frame = view.frame
         view.addSubview(centerContoller.view)
+        
         addChild(centerContoller)
         centerContoller.didMove(toParent: self)
     }
@@ -60,8 +61,8 @@ class ContainerController: UIViewController {
         if shouldExpand {
             
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.view.frame.size.height -= 80
-                self.view.frame.origin.y += 40
+            //    self.view.frame.size.height -= 80
+            //    self.view.frame.origin.y += 40
                 
                 self.centerContoller.view.frame.origin.x  = self.centerContoller.view.frame.width - 80
                 
@@ -71,8 +72,8 @@ class ContainerController: UIViewController {
             
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 
-                self.view.frame.size.height += 80
-                self.view.frame.origin.y -= 40
+             //   self.view.frame.size.height += 80
+           //     self.view.frame.origin.y -= 40
                 
                 self.centerContoller.view.frame.origin.x  = 0
                 
@@ -89,7 +90,10 @@ class ContainerController: UIViewController {
     private func didSelectMenuOption(menuOption: MenuOption) {
         switch menuOption {
         case .rockets:
-            print("rocket")
+            let vc = RocketAssembler.createModule()
+            let nc = UINavigationController(rootViewController: vc)
+            nc.modalPresentationStyle = .fullScreen
+            present(nc, animated: true)
         case .landpads:
             print("lands")
         }

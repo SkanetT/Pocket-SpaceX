@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A8506BF2506D08700923C18 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506BE2506D08700923C18 /* Errors.swift */; };
+		3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C12506D13900923C18 /* NetworkApi.swift */; };
+		3A8506C62506D70D00923C18 /* RocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C52506D70D00923C18 /* RocketController.swift */; };
+		3A8506C82506D74000923C18 /* RocketAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C72506D74000923C18 /* RocketAssembler.swift */; };
 		3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219C2505695400F8B0D6 /* AppDelegate.swift */; };
 		3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */; };
-		3A9C21A12505695400F8B0D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21A02505695400F8B0D6 /* ViewController.swift */; };
 		3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A52505695800F8B0D6 /* Assets.xcassets */; };
 		3A9C21A92505695800F8B0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A72505695800F8B0D6 /* LaunchScreen.storyboard */; };
 		3A9C21B225056FD500F8B0D6 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21B125056FD500F8B0D6 /* MenuOptionCell.swift */; };
@@ -24,15 +27,21 @@
 		3A9C21C82505821500F8B0D6 /* LaunchPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21C72505821500F8B0D6 /* LaunchPresenterOutput.swift */; };
 		3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21CA2505856800F8B0D6 /* LaunchRouter.swift */; };
 		3A9C21CD2505859D00F8B0D6 /* LaunchRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21CC2505859D00F8B0D6 /* LaunchRouting.swift */; };
+		3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D02506CA5400F8B0D6 /* Reachability.swift */; };
+		3A9C21D32506CC0900F8B0D6 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */; };
+		3A9C21D62506CE3A00F8B0D6 /* RocketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D52506CE3A00F8B0D6 /* RocketData.swift */; };
 		BBC4393AC5A9BC0EE8381C1F /* Pods_Pocket_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347ED40A50A097C413AC4A04 /* Pods_Pocket_SpaceX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		347ED40A50A097C413AC4A04 /* Pods_Pocket_SpaceX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_SpaceX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8506BE2506D08700923C18 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		3A8506C12506D13900923C18 /* NetworkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
+		3A8506C52506D70D00923C18 /* RocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketController.swift; sourceTree = "<group>"; };
+		3A8506C72506D74000923C18 /* RocketAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAssembler.swift; sourceTree = "<group>"; };
 		3A9C21992505695400F8B0D6 /* Pocket SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket SpaceX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9C219C2505695400F8B0D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A9C21A02505695400F8B0D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A9C21A52505695800F8B0D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A9C21A82505695800F8B0D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A9C21AA2505695800F8B0D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +57,9 @@
 		3A9C21C72505821500F8B0D6 /* LaunchPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenterOutput.swift; sourceTree = "<group>"; };
 		3A9C21CA2505856800F8B0D6 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
 		3A9C21CC2505859D00F8B0D6 /* LaunchRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouting.swift; sourceTree = "<group>"; };
+		3A9C21D02506CA5400F8B0D6 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		3A9C21D52506CE3A00F8B0D6 /* RocketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketData.swift; sourceTree = "<group>"; };
 		8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.release.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.release.xcconfig"; sourceTree = "<group>"; };
 		C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +76,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A8506C02506D10B00923C18 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3A8506C12506D13900923C18 /* NetworkApi.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3A8506C32506D69900923C18 /* Rocket */ = {
+			isa = PBXGroup;
+			children = (
+				3A8506C42506D6D800923C18 /* View */,
+				3A8506C72506D74000923C18 /* RocketAssembler.swift */,
+			);
+			path = Rocket;
+			sourceTree = "<group>";
+		};
+		3A8506C42506D6D800923C18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A8506C52506D70D00923C18 /* RocketController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3A9C21902505695400F8B0D6 = {
 			isa = PBXGroup;
 			children = (
@@ -87,11 +124,10 @@
 			children = (
 				3A9C21B025056EF700F8B0D6 /* SideMenu */,
 				3A9C21BC250578F700F8B0D6 /* Modules */,
-				3A9C219C2505695400F8B0D6 /* AppDelegate.swift */,
-				3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */,
-				3A9C21A02505695400F8B0D6 /* ViewController.swift */,
-				3A9C21A52505695800F8B0D6 /* Assets.xcassets */,
-				3A9C21A72505695800F8B0D6 /* LaunchScreen.storyboard */,
+				3A8506C02506D10B00923C18 /* Managers */,
+				3A9C21D42506CE1500F8B0D6 /* Models */,
+				3A9C21CE2506C95A00F8B0D6 /* Utilits */,
+				3A9C21CF2506C9B000F8B0D6 /* Supporting Files */,
 				3A9C21AA2505695800F8B0D6 /* Info.plist */,
 			);
 			path = "Pocket SpaceX";
@@ -123,6 +159,7 @@
 		3A9C21BC250578F700F8B0D6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3A8506C32506D69900923C18 /* Rocket */,
 				3A9C21BB250578AF00F8B0D6 /* Launch */,
 			);
 			path = Modules;
@@ -153,6 +190,35 @@
 				3A9C21CC2505859D00F8B0D6 /* LaunchRouting.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		3A9C21CE2506C95A00F8B0D6 /* Utilits */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21D02506CA5400F8B0D6 /* Reachability.swift */,
+				3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */,
+				3A8506BE2506D08700923C18 /* Errors.swift */,
+			);
+			path = Utilits;
+			sourceTree = "<group>";
+		};
+		3A9C21CF2506C9B000F8B0D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C219C2505695400F8B0D6 /* AppDelegate.swift */,
+				3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */,
+				3A9C21A72505695800F8B0D6 /* LaunchScreen.storyboard */,
+				3A9C21A52505695800F8B0D6 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A9C21D42506CE1500F8B0D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21D52506CE3A00F8B0D6 /* RocketData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7A55157CB7514A1D9E5A40E7 /* Pods */ = {
@@ -286,20 +352,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A9C21A12505695400F8B0D6 /* ViewController.swift in Sources */,
+				3A9C21D32506CC0900F8B0D6 /* BaseRequest.swift in Sources */,
 				3A9C21B82505743300F8B0D6 /* MenuController.swift in Sources */,
 				3A9C21C42505816200F8B0D6 /* LaunchPresenter.swift in Sources */,
 				3A9C21CD2505859D00F8B0D6 /* LaunchRouting.swift in Sources */,
 				3A9C21B225056FD500F8B0D6 /* MenuOptionCell.swift in Sources */,
 				3A9C21C6250581E600F8B0D6 /* LaunchPresenterInput.swift in Sources */,
 				3A9C21C82505821500F8B0D6 /* LaunchPresenterOutput.swift in Sources */,
+				3A8506C82506D74000923C18 /* RocketAssembler.swift in Sources */,
 				3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */,
 				3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */,
+				3A8506C62506D70D00923C18 /* RocketController.swift in Sources */,
+				3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */,
 				3A9C21BA2505761D00F8B0D6 /* ContainerController.swift in Sources */,
+				3A9C21D62506CE3A00F8B0D6 /* RocketData.swift in Sources */,
 				3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */,
 				3A9C21B42505706C00F8B0D6 /* MenuOption.swift in Sources */,
+				3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */,
 				3A9C21B62505738D00F8B0D6 /* MenuDelegate.swift in Sources */,
 				3A9C21BF25057A3E00F8B0D6 /* LaunchController.swift in Sources */,
+				3A8506BF2506D08700923C18 /* Errors.swift in Sources */,
 				3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

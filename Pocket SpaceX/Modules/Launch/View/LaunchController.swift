@@ -16,10 +16,12 @@ class LaunchController: UIViewController {
         super.viewDidLoad()
         configureUi()
         presenter?.attach(self)
+        presenter?.viewDidLoad()
     }
     
     private func configureUi() {
         view.backgroundColor = .white
+        title = "SpaceX"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(handleMenu))
         navigationItem.leftBarButtonItem?.tintColor = .black
     }
