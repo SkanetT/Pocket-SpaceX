@@ -9,10 +9,14 @@
 import UIKit
 
 class RocketController: UIViewController {
-
+    
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+    var presenter: RocketPresenterInput?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter?.attach(self)
         configureUI()
     }
     
@@ -20,12 +24,24 @@ class RocketController: UIViewController {
         title = "Rockets"
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
-
+        view.addSubview(collectionView)
+        
+        collectionView.backgroundColor = .white
+        collectionView.snp.makeConstraints() { make in
+            make.top.equalTo(view.snp.top)
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+            make.bottom.equalTo(view.snp.bottom)
+        }
     }
     
     @objc
-    func exitTap() {
-        
+    private func exitTap() {
+        presenter?.closeTap()
     }
+    
+}
 
+extension RocketController: RocketPresenterOutput {
+    
 }

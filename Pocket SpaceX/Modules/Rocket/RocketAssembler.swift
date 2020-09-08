@@ -12,7 +12,10 @@ class RocketAssembler {
     
     static func createModule() -> UIViewController {
         let viewController = RocketController()
-
+        let router = RocketRouter(viewController)
+        let presenter = RocketPresenter(router)
+        viewController.presenter = presenter
+        
         return viewController
     }
 }

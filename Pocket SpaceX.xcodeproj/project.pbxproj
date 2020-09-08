@@ -11,6 +11,11 @@
 		3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C12506D13900923C18 /* NetworkApi.swift */; };
 		3A8506C62506D70D00923C18 /* RocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C52506D70D00923C18 /* RocketController.swift */; };
 		3A8506C82506D74000923C18 /* RocketAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C72506D74000923C18 /* RocketAssembler.swift */; };
+		3A8506CB25081DDD00923C18 /* RocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506CA25081DDD00923C18 /* RocketPresenter.swift */; };
+		3A8506CD25081E0500923C18 /* RocketPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506CC25081E0500923C18 /* RocketPresenterInput.swift */; };
+		3A8506CF25081E3900923C18 /* RocketPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506CE25081E3900923C18 /* RocketPresenterOutput.swift */; };
+		3A8506D225081FCB00923C18 /* RocketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506D125081FCB00923C18 /* RocketRouter.swift */; };
+		3A8506D425081FF500923C18 /* RocketRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506D325081FF500923C18 /* RocketRouting.swift */; };
 		3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219C2505695400F8B0D6 /* AppDelegate.swift */; };
 		3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */; };
 		3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A52505695800F8B0D6 /* Assets.xcassets */; };
@@ -39,6 +44,11 @@
 		3A8506C12506D13900923C18 /* NetworkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
 		3A8506C52506D70D00923C18 /* RocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketController.swift; sourceTree = "<group>"; };
 		3A8506C72506D74000923C18 /* RocketAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketAssembler.swift; sourceTree = "<group>"; };
+		3A8506CA25081DDD00923C18 /* RocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketPresenter.swift; sourceTree = "<group>"; };
+		3A8506CC25081E0500923C18 /* RocketPresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketPresenterInput.swift; sourceTree = "<group>"; };
+		3A8506CE25081E3900923C18 /* RocketPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketPresenterOutput.swift; sourceTree = "<group>"; };
+		3A8506D125081FCB00923C18 /* RocketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketRouter.swift; sourceTree = "<group>"; };
+		3A8506D325081FF500923C18 /* RocketRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketRouting.swift; sourceTree = "<group>"; };
 		3A9C21992505695400F8B0D6 /* Pocket SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket SpaceX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9C219C2505695400F8B0D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				3A8506C42506D6D800923C18 /* View */,
+				3A8506C925081D9700923C18 /* Presenter */,
+				3A8506D025081F8300923C18 /* Router */,
 				3A8506C72506D74000923C18 /* RocketAssembler.swift */,
 			);
 			path = Rocket;
@@ -99,6 +111,25 @@
 				3A8506C52506D70D00923C18 /* RocketController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3A8506C925081D9700923C18 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3A8506CA25081DDD00923C18 /* RocketPresenter.swift */,
+				3A8506CC25081E0500923C18 /* RocketPresenterInput.swift */,
+				3A8506CE25081E3900923C18 /* RocketPresenterOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3A8506D025081F8300923C18 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3A8506D125081FCB00923C18 /* RocketRouter.swift */,
+				3A8506D325081FF500923C18 /* RocketRouting.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		3A9C21902505695400F8B0D6 = {
@@ -356,15 +387,18 @@
 				3A9C21B82505743300F8B0D6 /* MenuController.swift in Sources */,
 				3A9C21C42505816200F8B0D6 /* LaunchPresenter.swift in Sources */,
 				3A9C21CD2505859D00F8B0D6 /* LaunchRouting.swift in Sources */,
+				3A8506CB25081DDD00923C18 /* RocketPresenter.swift in Sources */,
 				3A9C21B225056FD500F8B0D6 /* MenuOptionCell.swift in Sources */,
 				3A9C21C6250581E600F8B0D6 /* LaunchPresenterInput.swift in Sources */,
 				3A9C21C82505821500F8B0D6 /* LaunchPresenterOutput.swift in Sources */,
 				3A8506C82506D74000923C18 /* RocketAssembler.swift in Sources */,
+				3A8506CD25081E0500923C18 /* RocketPresenterInput.swift in Sources */,
 				3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */,
 				3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */,
 				3A8506C62506D70D00923C18 /* RocketController.swift in Sources */,
 				3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */,
 				3A9C21BA2505761D00F8B0D6 /* ContainerController.swift in Sources */,
+				3A8506CF25081E3900923C18 /* RocketPresenterOutput.swift in Sources */,
 				3A9C21D62506CE3A00F8B0D6 /* RocketData.swift in Sources */,
 				3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */,
 				3A9C21B42505706C00F8B0D6 /* MenuOption.swift in Sources */,
@@ -373,6 +407,8 @@
 				3A9C21BF25057A3E00F8B0D6 /* LaunchController.swift in Sources */,
 				3A8506BF2506D08700923C18 /* Errors.swift in Sources */,
 				3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */,
+				3A8506D425081FF500923C18 /* RocketRouting.swift in Sources */,
+				3A8506D225081FCB00923C18 /* RocketRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

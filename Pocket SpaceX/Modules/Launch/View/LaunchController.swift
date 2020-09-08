@@ -10,7 +10,7 @@ import UIKit
 
 class LaunchController: UIViewController {
 
-     var presenter: LaunchPresenterInput?
+    var presenter: LaunchPresenterInput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
