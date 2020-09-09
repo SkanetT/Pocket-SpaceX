@@ -22,15 +22,15 @@ class LaunchPresenter: LaunchPresenterInput {
     }
     
     func viewDidLoad() {
-        let request = RocketRequest()
-        NetworkApi.shared.dataTask(request: request) { result in
-            switch result {
-            case.success(let data):
-                print(data)
-            case.failure(let error):
-                print(error)
-            }
-        }
+//        let request = RocketRequest()
+//        NetworkApi.shared.dataTask(request: request) { result in
+//            switch result {
+//            case.success(let data):
+//                print(data)
+//            case.failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     func sideMenuTap() {

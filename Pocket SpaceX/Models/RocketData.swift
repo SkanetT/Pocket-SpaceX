@@ -13,7 +13,6 @@ class RocketRequest: BaseRequest<RocketData> {
     override var path: String {
         return "/v4/rockets"
     }
-    
 }
 
 typealias RocketData = [RocketDatum]
