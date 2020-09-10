@@ -11,5 +11,6 @@ import Foundation
 protocol RocketPresenterInput: class {
     
     func attach(_ viewController: RocketPresenterOutput)
+    func viewDidLoad()
     func closeTap()
 }

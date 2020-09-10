@@ -15,14 +15,17 @@ class RocketCollectionHandler: NSObject, RocketCollectionHandlerProtocol {
     
     func attach(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
-        collectionView.register(UINib(nibName: "rocketCell", bundle: nil), forCellWithReuseIdentifier: "rocketCell")
+        collectionView.register(UINib(nibName: "RocketCell", bundle: nil), forCellWithReuseIdentifier: "rocketCell")
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.reloadData()
     }
     
     func setData(_ data: RocketData) {
         self.rocketData = data
-        collectionView?.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
 }
 
@@ -34,6 +37,7 @@ extension RocketCollectionHandler: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rocketCell", for: indexPath) as! RocketCell
+        cell.setData(rocketData[indexPath.row])
         return cell
     }
     
@@ -41,6 +45,6 @@ extension RocketCollectionHandler: UICollectionViewDelegate, UICollectionViewDat
         
         let screenSize = UIScreen.main.bounds
         let screenWidth = (screenSize.width / 2) - 18
-        return CGSize(width: screenWidth, height: screenWidth * 0.5)
+        return CGSize(width: screenWidth, height: screenWidth * 0.6)
     }
 }

@@ -11,17 +11,32 @@ import Foundation
 class RocketPresenter: RocketPresenterInput {
     
     private weak var viewController: RocketPresenterOutput?
+    let interactor: RocketInteractorInput
     let router: RocketRouting
     
-    init(_ router: RocketRouting) {
+    init(_ interactor: RocketInteractorInput, _ router: RocketRouting) {
+        self.interactor = interactor
         self.router = router
     }
     
     func attach(_ viewController: RocketPresenterOutput) {
         self.viewController = viewController
+        interactor.attach(self)
+    }
+    
+    func viewDidLoad() {
+        interactor.fecthData()
     }
     
     func closeTap() {
         router.dismiss()
     }
 }
+
+extension RocketPresenter: RocketInteractorOutput {
+    
+    func rocketDataSuccess(_ data: RocketData) {
+        viewController?.didReceiveRocketData(data)
+    }
+}
+

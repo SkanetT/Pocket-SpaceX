@@ -20,6 +20,9 @@
 		3A8506D92509764C00923C18 /* RocketCollectionHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506D82509764C00923C18 /* RocketCollectionHandlerProtocol.swift */; };
 		3A8506DD25097B9A00923C18 /* RocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506DB25097B9A00923C18 /* RocketCell.swift */; };
 		3A8506DE25097B9A00923C18 /* RocketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8506DC25097B9A00923C18 /* RocketCell.xib */; };
+		3A8506E1250ABCB700923C18 /* RocketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506E0250ABCB700923C18 /* RocketInteractor.swift */; };
+		3A8506E3250ABD2300923C18 /* RocketInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506E2250ABD2300923C18 /* RocketInteractorInput.swift */; };
+		3A8506E5250ABD7900923C18 /* RocketInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506E4250ABD7900923C18 /* RocketInteractorOutput.swift */; };
 		3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219C2505695400F8B0D6 /* AppDelegate.swift */; };
 		3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */; };
 		3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A52505695800F8B0D6 /* Assets.xcassets */; };
@@ -57,6 +60,9 @@
 		3A8506D82509764C00923C18 /* RocketCollectionHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionHandlerProtocol.swift; sourceTree = "<group>"; };
 		3A8506DB25097B9A00923C18 /* RocketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCell.swift; sourceTree = "<group>"; };
 		3A8506DC25097B9A00923C18 /* RocketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketCell.xib; sourceTree = "<group>"; };
+		3A8506E0250ABCB700923C18 /* RocketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInteractor.swift; sourceTree = "<group>"; };
+		3A8506E2250ABD2300923C18 /* RocketInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInteractorInput.swift; sourceTree = "<group>"; };
+		3A8506E4250ABD7900923C18 /* RocketInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInteractorOutput.swift; sourceTree = "<group>"; };
 		3A9C21992505695400F8B0D6 /* Pocket SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket SpaceX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9C219C2505695400F8B0D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 				3A8506DA25097B4C00923C18 /* Cells */,
 				3A8506D52509756A00923C18 /* CollectionHandler */,
 				3A8506C42506D6D800923C18 /* View */,
+				3A8506DF250ABC5800923C18 /* Interactor */,
 				3A8506C925081D9700923C18 /* Presenter */,
 				3A8506D025081F8300923C18 /* Router */,
 				3A8506C72506D74000923C18 /* RocketAssembler.swift */,
@@ -158,6 +165,16 @@
 				3A8506DC25097B9A00923C18 /* RocketCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3A8506DF250ABC5800923C18 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3A8506E0250ABCB700923C18 /* RocketInteractor.swift */,
+				3A8506E2250ABD2300923C18 /* RocketInteractorInput.swift */,
+				3A8506E4250ABD7900923C18 /* RocketInteractorOutput.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		3A9C21902505695400F8B0D6 = {
@@ -423,6 +440,7 @@
 				3A9C21C82505821500F8B0D6 /* LaunchPresenterOutput.swift in Sources */,
 				3A8506C82506D74000923C18 /* RocketAssembler.swift in Sources */,
 				3A8506CD25081E0500923C18 /* RocketPresenterInput.swift in Sources */,
+				3A8506E5250ABD7900923C18 /* RocketInteractorOutput.swift in Sources */,
 				3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */,
 				3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */,
 				3A8506C62506D70D00923C18 /* RocketController.swift in Sources */,
@@ -434,9 +452,11 @@
 				3A9C21B42505706C00F8B0D6 /* MenuOption.swift in Sources */,
 				3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */,
 				3A9C21B62505738D00F8B0D6 /* MenuDelegate.swift in Sources */,
+				3A8506E1250ABCB700923C18 /* RocketInteractor.swift in Sources */,
 				3A9C21BF25057A3E00F8B0D6 /* LaunchController.swift in Sources */,
 				3A8506BF2506D08700923C18 /* Errors.swift in Sources */,
 				3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */,
+				3A8506E3250ABD2300923C18 /* RocketInteractorInput.swift in Sources */,
 				3A8506D92509764C00923C18 /* RocketCollectionHandlerProtocol.swift in Sources */,
 				3A8506D72509760200923C18 /* RocketCollectionHandler.swift in Sources */,
 				3A8506D425081FF500923C18 /* RocketRouting.swift in Sources */,

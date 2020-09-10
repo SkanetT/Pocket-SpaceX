@@ -10,20 +10,27 @@ import UIKit
 
 class RocketController: UIViewController {
     
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+    var collectionView: UICollectionView!
     var presenter: RocketPresenterInput?
+    var collectionHandler: RocketCollectionHandlerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        presenter?.attach(self)
         configureUI()
+
+        presenter?.attach(self)
+        presenter?.viewDidLoad()
+        collectionHandler?.attach(collectionView)
     }
     
     private func configureUI() {
         title = "Rockets"
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .white
@@ -44,4 +51,8 @@ class RocketController: UIViewController {
 
 extension RocketController: RocketPresenterOutput {
     
+    func didReceiveRocketData(_ data: RocketData) {
+        collectionHandler?.setData(data)
+    }
 }
+

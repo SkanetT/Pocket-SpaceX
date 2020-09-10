@@ -12,8 +12,12 @@ class RocketAssembler {
     
     static func createModule() -> UIViewController {
         let viewController = RocketController()
+        let collectionHandler = RocketCollectionHandler()
+        viewController.collectionHandler = collectionHandler
+        
+        let interactor = RocketInteractor()
         let router = RocketRouter(viewController)
-        let presenter = RocketPresenter(router)
+        let presenter = RocketPresenter(interactor, router)
         viewController.presenter = presenter
         
         return viewController
