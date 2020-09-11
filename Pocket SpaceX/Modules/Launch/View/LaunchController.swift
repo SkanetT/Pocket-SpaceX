@@ -8,13 +8,14 @@
 
 import UIKit
 
-class LaunchController: UIViewController {
+class LaunchController: SpinnerController {
 
     var presenter: LaunchPresenterInput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUi()
+        showSpinner()
         presenter?.attach(self)
         presenter?.viewDidLoad()
     }

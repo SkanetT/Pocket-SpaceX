@@ -1,16 +1,15 @@
 //
-//  RocketRouting.swift
+//  RocketInfoRouting.swift
 //  Pocket SpaceX
 //
-//  Created by Антон on 08.09.2020.
+//  Created by Антон on 11.09.2020.
 //  Copyright © 2020 Home. All rights reserved.
 //
 
 import Foundation
 
-protocol RocketRouting {
+protocol RocketInfoRouting {
     func dismiss()
     func showError(_ error: ApiErrors)
-    func RocketInfoPresent(id: String)
     func needRefresh(refresh: (() -> ())?)
 }

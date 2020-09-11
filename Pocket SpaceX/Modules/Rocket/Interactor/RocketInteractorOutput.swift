@@ -10,4 +10,5 @@ import Foundation
 
 protocol RocketInteractorOutput: class {
     func rocketDataSuccess(_ data: RocketData)
+    func rocketDataFailure(_ error: ApiErrors)
 }

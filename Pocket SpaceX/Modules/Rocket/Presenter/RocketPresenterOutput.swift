@@ -10,4 +10,5 @@ import Foundation
 
 protocol RocketPresenterOutput: class {
     func didReceiveRocketData(_ data: RocketData)
+    func setActionForCell(_ userSelect: ((String) -> ())?)
 }

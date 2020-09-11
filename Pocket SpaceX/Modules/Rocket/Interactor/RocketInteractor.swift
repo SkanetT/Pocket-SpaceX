@@ -23,7 +23,7 @@ class RocketInteractor: RocketInteractorInput {
             case.success(let data):
                 self?.output?.rocketDataSuccess(data)
             case.failure(let error):
-                print(error)
+                self?.output?.rocketDataFailure(error)
             }
         }
     }

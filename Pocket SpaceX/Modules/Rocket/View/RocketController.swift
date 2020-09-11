@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RocketController: UIViewController {
+class RocketController: SpinnerController {
     
     var collectionView: UICollectionView!
     var presenter: RocketPresenterInput?
@@ -17,7 +17,7 @@ class RocketController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-
+        showSpinner()
         presenter?.attach(self)
         presenter?.viewDidLoad()
         collectionHandler?.attach(collectionView)
@@ -50,8 +50,13 @@ class RocketController: UIViewController {
 }
 
 extension RocketController: RocketPresenterOutput {
+    func setActionForCell(_ userSelect: ((String) -> ())?) {
+        collectionHandler?.setAction(userSelect: userSelect)
+    }
+    
     
     func didReceiveRocketData(_ data: RocketData) {
+        removeSpinner()
         collectionHandler?.setData(data)
     }
 }

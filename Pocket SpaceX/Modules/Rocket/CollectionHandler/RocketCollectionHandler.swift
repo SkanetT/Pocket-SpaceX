@@ -12,6 +12,8 @@ class RocketCollectionHandler: NSObject, RocketCollectionHandlerProtocol {
     
     private weak var collectionView: UICollectionView?
     var rocketData: RocketData = []
+    var userSelectCell: ((String) -> ())?
+
     
     func attach(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
@@ -26,6 +28,9 @@ class RocketCollectionHandler: NSObject, RocketCollectionHandlerProtocol {
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
         }
+    }
+    func setAction(userSelect: ((String) -> ())?) {
+        self.userSelectCell = userSelect
     }
 }
 
@@ -45,6 +50,10 @@ extension RocketCollectionHandler: UICollectionViewDelegate, UICollectionViewDat
         
         let screenSize = UIScreen.main.bounds
         let screenWidth = (screenSize.width / 2) - 18
-        return CGSize(width: screenWidth, height: screenWidth * 0.6)
+        return CGSize(width: screenWidth, height: screenWidth)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        userSelectCell?(rocketData[indexPath.row].id)
     }
 }

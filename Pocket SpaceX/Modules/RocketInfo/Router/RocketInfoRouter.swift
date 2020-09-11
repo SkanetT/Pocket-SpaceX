@@ -1,18 +1,17 @@
 //
-//  RocketRouter.swift
+//  RocketInfoRouter.swift
 //  Pocket SpaceX
 //
-//  Created by Антон on 08.09.2020.
+//  Created by Антон on 11.09.2020.
 //  Copyright © 2020 Home. All rights reserved.
 //
 
 import UIKit
 
-class RocketRouter: RocketRouting {
+class RocketInfoRouter: RocketInfoRouting {
     
     private weak var viewController: UIViewController?
     var refresh: (() -> ())?
-
     
     init(_ viewController: UIViewController) {
         self.viewController = viewController
@@ -27,16 +26,11 @@ class RocketRouter: RocketRouting {
         ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in
             self?.refresh?()
         }))
-       viewController?.present(ac, animated: true, completion: nil)
-    }
-    
-    func RocketInfoPresent(id: String) {
-        let vc = RocketInfoAssembler.createModule(rocketId: id)
-        vc.modalPresentationStyle = .fullScreen
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        viewController?.present(ac, animated: true, completion: nil)
     }
     
     func needRefresh(refresh: (() -> ())?) {
         self.refresh = refresh
     }
+    
 }

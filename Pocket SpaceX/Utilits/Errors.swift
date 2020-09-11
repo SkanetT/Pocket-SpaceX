@@ -15,4 +15,17 @@ enum ApiErrors: Error {
     case parsing
     case unknown
     case noInternet
+    
+    var description: String {
+        switch self {
+        case .noInternet:
+            return "No Internet connection"
+        case .unknown:
+            return "Unknown error (2)"
+        case .noData:
+            return "No data"
+        default:
+            return "Unknown error"
+        }
+    }
 }

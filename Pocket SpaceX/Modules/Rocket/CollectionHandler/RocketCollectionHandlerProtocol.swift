@@ -11,4 +11,5 @@ import UIKit
 protocol RocketCollectionHandlerProtocol {
     func attach(_ collectionView: UICollectionView)
     func setData(_ data: RocketData)
+    func setAction(userSelect: ((String) -> ())?)
 }

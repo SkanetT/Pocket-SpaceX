@@ -26,6 +26,13 @@ class RocketPresenter: RocketPresenterInput {
     
     func viewDidLoad() {
         interactor.fecthData()
+        viewController?.setActionForCell() {[weak self] id in
+            self?.router.RocketInfoPresent(id: id)
+        }
+        
+        router.needRefresh() { [weak self] () in
+            self?.interactor.fecthData()
+        }
     }
     
     func closeTap() {
@@ -37,6 +44,10 @@ extension RocketPresenter: RocketInteractorOutput {
     
     func rocketDataSuccess(_ data: RocketData) {
         viewController?.didReceiveRocketData(data)
+    }
+    
+    func rocketDataFailure(_ error: ApiErrors) {
+        router.showError(error)
     }
 }
 
