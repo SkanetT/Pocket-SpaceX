@@ -12,6 +12,7 @@ class RocketInfoController: SpinnerController {
     
     var presenter: RocketInfoPresenterInput?
     var tableView: UITableView!
+    var tableHandler: RocketInfoTableHandlerProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class RocketInfoController: SpinnerController {
         showSpinner()
         presenter?.attach(self)
         presenter?.viewDidLoad()
-        
+        tableHandler?.attach(tableView)
     }
     
     private func configureUI() {
@@ -46,6 +47,7 @@ extension RocketInfoController: RocketInfoPresenterOutput {
         DispatchQueue.main.async {
             self.title = data.name
         }
+        tableHandler?.setData(data)
         removeSpinner()
     }
     

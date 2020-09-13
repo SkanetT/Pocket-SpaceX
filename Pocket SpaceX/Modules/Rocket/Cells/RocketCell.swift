@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 
 class RocketCell: UICollectionViewCell {
@@ -36,9 +35,8 @@ class RocketCell: UICollectionViewCell {
             activeLabel.text = "Not active"
         }
         
-        if let urlStr = data.flickrImages.first, let url = URL(string: urlStr) {
-            rocketImage.kf.indicatorType = .activity
-            rocketImage.kf.setImage(with: url)
+        if let urlStr = data.flickrImages.first {
+            rocketImage.setKfImage(urlString: urlStr)
         }
     }
 
