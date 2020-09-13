@@ -27,6 +27,7 @@ class RocketInfoController: SpinnerController {
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
         tableView = UITableView(frame: view.frame, style: .grouped)
+        tableView.backgroundColor = .white
         view.addSubview(tableView)
         tableView.snp.makeConstraints() { make in
             make.top.equalTo(view.snp.top)
@@ -51,4 +52,7 @@ extension RocketInfoController: RocketInfoPresenterOutput {
         removeSpinner()
     }
     
+    func setActionForWiki(_ userSelectWiki: ((String) -> ())?) {
+        tableHandler?.setWikiAction(userTapWiki: userSelectWiki)
+    }
 }

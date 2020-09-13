@@ -29,6 +29,11 @@ class RocketInfoPresenter: RocketInfoPresenterInput {
         router.needRefresh() { [weak self] () in
             self?.interactor.fecthData()
         }
+        
+        viewController?.setActionForWiki() { [weak self] urlStr in
+            self?.router.presentWiki(urlStr)
+        }
+        
     }
     
     func closeTap() {

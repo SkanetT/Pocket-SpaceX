@@ -12,10 +12,15 @@ class LaunchAssembler {
     
     static func createModule(delegate: MenuDelegate) -> UIViewController {
         let viewController = LaunchController()
+        let interactor = LaunchInteractor()
         let router = LaunchRouter(viewController)
         router.delegate = delegate
-        let presenter = LaunchPresenter(router)
+        let presenter = LaunchPresenter(interactor, router)
+        let tableHandler = LaunchTableHandler()
+        let searchHandler = LaunchSearchHandler()
         viewController.presenter = presenter
+        viewController.tableHandler = tableHandler
+        viewController.searchHandler = searchHandler
         return viewController
     }
 }

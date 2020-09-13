@@ -10,4 +10,6 @@ import Foundation
 
 protocol LaunchRouting {
     func showSideMenu()
+    func showError(_ error: ApiErrors)
+    func needRefresh(refresh: (() -> ())?)
 }

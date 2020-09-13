@@ -24,6 +24,8 @@ enum ApiErrors: Error {
             return "Unknown error (2)"
         case .noData:
             return "No data"
+        case .parsing:
+            return "Parsing"
         default:
             return "Unknown error"
         }

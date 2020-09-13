@@ -10,5 +10,5 @@ import Foundation
 
 protocol LaunchPresenterOutput: class {
     
-    
+    func didReceiveLaunchData(_ data: LaunchData)
 }

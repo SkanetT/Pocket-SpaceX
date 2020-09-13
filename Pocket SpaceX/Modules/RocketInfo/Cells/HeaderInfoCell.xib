@@ -6,14 +6,70 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderInfoCell" customModule="Pocket_SpaceX" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderInfoCell" customModule="Pocket_SpaceX" customModuleProvider="target">
+            <connections>
+                <outlet property="activeLabel" destination="voa-cx-pBR" id="uIk-Md-mAG"/>
+                <outlet property="collectionView" destination="xmK-gl-0sQ" id="KwW-w6-s0Y"/>
+                <outlet property="descriptionLabel" destination="gmx-fb-B7u" id="ybM-AJ-eZM"/>
+                <outlet property="pageControl" destination="de9-9E-9Ge" id="7bm-Zb-KaS"/>
+                <outlet property="sizeToBot" destination="iiq-os-uA6" id="QYJ-bG-djj"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U3e-Vv-0YP">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="395"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="497"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xmK-gl-0sQ">
+                    <rect key="frame" x="0.0" y="48.5" width="414" height="348.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V3j-Zs-Hh3">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voa-cx-pBR">
+                    <rect key="frame" x="12" y="8" width="390" height="32.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-fb-B7u">
+                    <rect key="frame" x="8" y="427" width="398" height="62"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="de9-9E-9Ge">
+                    <rect key="frame" x="187.5" y="397" width="39" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="hAZ-TZ-MkA"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xmK-gl-0sQ" firstAttribute="top" secondItem="voa-cx-pBR" secondAttribute="bottom" constant="8" id="6O8-ho-RQ9"/>
+                <constraint firstItem="voa-cx-pBR" firstAttribute="leading" secondItem="U3e-Vv-0YP" secondAttribute="leading" constant="12" id="6w9-Xl-uQN"/>
+                <constraint firstAttribute="trailing" secondItem="xmK-gl-0sQ" secondAttribute="trailing" id="70Z-Oj-C8O"/>
+                <constraint firstItem="gmx-fb-B7u" firstAttribute="leading" secondItem="U3e-Vv-0YP" secondAttribute="leading" constant="8" id="7Cl-c1-duW"/>
+                <constraint firstAttribute="trailing" secondItem="gmx-fb-B7u" secondAttribute="trailing" constant="8" id="Dgc-9Q-1lT"/>
+                <constraint firstItem="de9-9E-9Ge" firstAttribute="centerX" secondItem="xmK-gl-0sQ" secondAttribute="centerX" id="G5t-CM-dnB"/>
+                <constraint firstAttribute="trailing" secondItem="voa-cx-pBR" secondAttribute="trailing" constant="12" id="Jls-cJ-74O"/>
+                <constraint firstItem="xmK-gl-0sQ" firstAttribute="leading" secondItem="U3e-Vv-0YP" secondAttribute="leading" id="QeZ-aJ-hm6"/>
+                <constraint firstItem="de9-9E-9Ge" firstAttribute="top" secondItem="xmK-gl-0sQ" secondAttribute="bottom" id="gT4-gG-unA"/>
+                <constraint firstItem="gmx-fb-B7u" firstAttribute="top" secondItem="de9-9E-9Ge" secondAttribute="bottom" id="h2X-Ff-PWy"/>
+                <constraint firstAttribute="bottom" secondItem="xmK-gl-0sQ" secondAttribute="bottom" constant="100" id="iiq-os-uA6"/>
+                <constraint firstItem="voa-cx-pBR" firstAttribute="top" secondItem="U3e-Vv-0YP" secondAttribute="top" constant="8" id="tht-dt-kTx"/>
+                <constraint firstAttribute="bottom" secondItem="gmx-fb-B7u" secondAttribute="bottom" constant="8" id="xm1-c1-b99"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-333.33333333333337" y="33.816964285714285"/>
+            <point key="canvasLocation" x="-333.33333333333337" y="67.96875"/>
         </view>
     </objects>
 </document>

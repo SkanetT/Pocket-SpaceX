@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SafariServices
+
 
 class RocketInfoRouter: RocketInfoRouting {
     
@@ -31,6 +33,14 @@ class RocketInfoRouter: RocketInfoRouting {
     
     func needRefresh(refresh: (() -> ())?) {
         self.refresh = refresh
+    }
+    
+    func presentWiki(_ url: String) {
+        if let url = URL(string: url) {
+            let vc = SFSafariViewController(url: url)
+            vc.modalPresentationStyle = .fullScreen
+            viewController?.present(vc, animated: true)
+        }
     }
     
 }

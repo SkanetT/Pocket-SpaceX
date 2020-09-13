@@ -10,5 +10,5 @@ import Foundation
 
 protocol RocketInfoPresenterOutput: class {
     func didReceiveRocketInfoData(_ data: RocketDatum)
-
+    func setActionForWiki(_ userSelectWiki: ((String) -> ())?)
 }

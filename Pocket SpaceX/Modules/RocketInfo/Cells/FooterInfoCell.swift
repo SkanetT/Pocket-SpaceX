@@ -17,7 +17,7 @@ class FooterInfoCell: UIView {
         super.init(frame: frame)
         
         addSubview(button)
-        button.setTitle("Wiki", for: .normal)
+        button.setTitle("Wikipedia", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .lightGray
         button.clipsToBounds = true

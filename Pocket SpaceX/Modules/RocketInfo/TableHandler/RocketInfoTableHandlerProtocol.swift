@@ -11,5 +11,6 @@ import UIKit
 protocol RocketInfoTableHandlerProtocol {
     func attach(_ tableView: UITableView)
     func setData(_ data: RocketDatum)
+    func setWikiAction(userTapWiki: ((String) -> ())?) 
 }
 

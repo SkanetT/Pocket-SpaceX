@@ -13,13 +13,14 @@ class RocketInfoTableHandler: NSObject, RocketInfoTableHandlerProtocol {
     private weak var tableView: UITableView?
     var rocketInfoData: RocketDatum?
     let size = UIScreen.main.bounds.height
-
+    var userTapWiki: ((String) -> ())?
     
     func attach(_ tableView: UITableView) {
         self.tableView = tableView
         tableView.register(UINib(nibName: "RocketInfoCell", bundle: nil), forCellReuseIdentifier: "rocketInfoCell")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.rowHeight = size / 20
     }
     
@@ -29,38 +30,51 @@ class RocketInfoTableHandler: NSObject, RocketInfoTableHandlerProtocol {
             self.tableView?.reloadData()
         }
     }
+    
+    func setWikiAction(userTapWiki: ((String) -> ())?) {
+        self.userTapWiki = userTapWiki
+    }
+    
 }
 
 extension RocketInfoTableHandler: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rocketInfoCell", for: indexPath) as! RocketInfoCell
-        if indexPath.row == 1 {
-        cell.nameOptionLabel.text = "Country"
-        cell.optionLabel.text = rocketInfoData?.country
-        } else {
-            cell.nameOptionLabel.text = "Mass"
-            cell.optionLabel.text = rocketInfoData?.mass.kg.description
+        
+        guard let data = rocketInfoData else { return cell }
+        guard let rocketInfoOption = RocketInfoOption(rawValue: indexPath.row) else { return cell }
+
+        
+        let dic = DataManager.shared.createDataForRockerInfo(data)
+        
+        cell.nameOptionLabel.text = rocketInfoOption.description
+        if let option = dic.first(where: { $0.key == rocketInfoOption.description})?.value {
+            cell.optionLabel.text = option
         }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HeaderInfoCell()
+        guard let data = rocketInfoData else { return nil }
+        header.setData(data)
         return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return size / 3.5
+        return size / 1.75
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard let data = rocketInfoData else { return nil }
         let footer = FooterInfoCell()
         footer.select = { 
-            print(self.rocketInfoData?.wikipedia)
+            self.userTapWiki?(data.wikipedia)
         }
         return footer
     }
