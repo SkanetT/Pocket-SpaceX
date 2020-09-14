@@ -26,16 +26,24 @@ class LaunchPresenter: LaunchPresenterInput {
     
     func viewDidLoad() {
         interactor.fecthData()
+        viewController?.setActionForCell() { data in
+            
+        }
     }
     
     func sideMenuTap() {
         router.showSideMenu()
     }
+    
+    func reverseTap() {
+        viewController?.needToReverse()
+    }
 }
 
 extension LaunchPresenter: LaunchInteractorOutput {
     func launchDataSuccess(_ data: LaunchData) {
-        viewController?.didReceiveLaunchData(data)
+        let sortedData = data.sorted(by: { $0.dateUnix > $1.dateUnix })
+        viewController?.didReceiveLaunchData(sortedData)
     }
     
     func launchDataFailure(_ error: ApiErrors) {

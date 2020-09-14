@@ -24,18 +24,18 @@ struct LaunchDatum: Codable {
     let staticFireDateUnix: Int?
     let tbd, net: Bool
     let window: Int?
-    let rocket: Rocket
+    let rocket: String
     let success: Bool?
-    let failures: [String]
+    let failures: [Failure]
     let details: String?
     let crew, ships, capsules, payloads: [String]
-    let launchpad: Launchpad
+    let launchpad: String
     let autoUpdate: Bool
     let flightNumber: Int
     let name, dateUTC: String
     let dateUnix: Int
-//    let dateLocal: Date
-    let datePrecision: DatePrecision
+    let dateLocal: String
+    let datePrecision: String
     let upcoming: Bool
     let cores: [Core]
     let id: String
@@ -50,7 +50,7 @@ struct LaunchDatum: Codable {
         case name
         case dateUTC = "date_utc"
         case dateUnix = "date_unix"
-//        case dateLocal = "date_local"
+        case dateLocal = "date_local"
         case datePrecision = "date_precision"
         case upcoming, cores, id
     }
@@ -62,7 +62,7 @@ struct Core: Codable {
     let gridfins, legs, reused, landingAttempt: Bool?
     let landingSuccess: Bool?
     let landingType: LandingType?
-    let landpad: Landpad?
+    let landpad: String?
 
     enum CodingKeys: String, CodingKey {
         case core, flight, gridfins, legs, reused
@@ -79,45 +79,21 @@ enum LandingType: String, Codable {
     case rtls = "RTLS"
 }
 
-enum Landpad: String, Codable {
-    case the5E9E3032383Ecb267A34E7C7 = "5e9e3032383ecb267a34e7c7"
-    case the5E9E3032383Ecb554034E7C9 = "5e9e3032383ecb554034e7c9"
-    case the5E9E3032383Ecb6Bb234E7CA = "5e9e3032383ecb6bb234e7ca"
-    case the5E9E3032383Ecb761634E7Cb = "5e9e3032383ecb761634e7cb"
-    case the5E9E3032383Ecb90A834E7C8 = "5e9e3032383ecb90a834e7c8"
-    case the5E9E3033383Ecbb9E534E7Cc = "5e9e3033383ecbb9e534e7cc"
-}
-
-enum DatePrecision: String, Codable {
-    case day = "day"
-    case hour = "hour"
-    case month = "month"
-    case quarter = "quarter"
+struct Failure: Codable {
+    let time: Int
+    let altitude: Int?
+    let reason: String
 }
 
 struct Fairings: Codable {
     let reused, recoveryAttempt, recovered: Bool?
-    let ships: [Ship]
+    let ships: [String]
 
     enum CodingKeys: String, CodingKey {
         case reused
         case recoveryAttempt = "recovery_attempt"
         case recovered, ships
     }
-}
-
-enum Ship: String, Codable {
-    case the5Ea6Ed2E080Df4000697C907 = "5ea6ed2e080df4000697c907"
-    case the5Ea6Ed2E080Df4000697C908 = "5ea6ed2e080df4000697c908"
-    case the5Ea6Ed2F080Df4000697C90C = "5ea6ed2f080df4000697c90c"
-    case the5Ea6Ed2F080Df4000697C90D = "5ea6ed2f080df4000697c90d"
-}
-
-enum Launchpad: String, Codable {
-    case the5E9E4501F509094Ba4566F84 = "5e9e4501f509094ba4566f84"
-    case the5E9E4502F509092B78566F87 = "5e9e4502f509092b78566f87"
-    case the5E9E4502F509094188566F88 = "5e9e4502f509094188566f88"
-    case the5E9E4502F5090995De566F86 = "5e9e4502f5090995de566f86"
 }
 
 struct Links: Codable {
@@ -150,11 +126,5 @@ struct Reddit: Codable {
     let campaign: String?
     let launch: String?
     let media, recovery: String?
-}
-
-enum Rocket: String, Codable {
-    case the5E9D0D95Eda69955F709D1Eb = "5e9d0d95eda69955f709d1eb"
-    case the5E9D0D95Eda69973A809D1Ec = "5e9d0d95eda69973a809d1ec"
-    case the5E9D0D95Eda69974Db09D1Ed = "5e9d0d95eda69974db09d1ed"
 }
 

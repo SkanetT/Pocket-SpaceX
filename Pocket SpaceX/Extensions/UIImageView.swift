@@ -13,14 +13,14 @@ extension UIImageView {
     
     func setKfImage(urlString: String) {
         guard let url = URL(string: urlString) else {
-            self.image = #imageLiteral(resourceName: "Rocket")
+            self.image = UIImage(systemName: "xmark.seal")
             return
         }
         self.kf.indicatorType = .activity
      //   self.kf.setImage(with: url)
     self.kf.setImage(
     with: url,
-    placeholder: UIImage(imageLiteralResourceName: "Rocket"),
+  //  placeholder: UIImage(imageLiteralResourceName: "Rocket"),
     options: [
         .scaleFactor(UIScreen.main.scale),
         .transition(.fade(1)),

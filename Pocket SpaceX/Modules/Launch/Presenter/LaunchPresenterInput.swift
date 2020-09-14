@@ -12,4 +12,5 @@ protocol LaunchPresenterInput: class {
     func attach(_ viewController: LaunchPresenterOutput)
     func viewDidLoad()
     func sideMenuTap()
+    func reverseTap()
 }
