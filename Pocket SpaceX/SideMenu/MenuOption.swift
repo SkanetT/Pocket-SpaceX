@@ -11,19 +11,22 @@ import UIKit
 enum MenuOption: Int {
     
     case rockets
-    case landpads
+    case starlink
+    case launchpads
     
     var description: String {
         switch self {
         case .rockets: return "Rockets"
-        case .landpads: return "Landpads"
+        case .starlink: return "Starlink"
+        case .launchpads: return "Launchpads"
         }
     }
     
     var image: UIImage {
         switch self {
         case .rockets: return #imageLiteral(resourceName: "Rocket")
-        case .landpads: return UIImage(systemName: "rectangle.grid.1x2") ?? UIImage()
+        case .starlink: return UIImage()
+        case .launchpads: return UIImage(systemName: "rectangle.grid.1x2") ?? UIImage()
         }
     }
     

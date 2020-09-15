@@ -56,6 +56,9 @@
 		3A850731250EBC3300923C18 /* LaunchSearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A850730250EBC3300923C18 /* LaunchSearchHandler.swift */; };
 		3A850733250EBC5E00923C18 /* LaunchSearchHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A850732250EBC5E00923C18 /* LaunchSearchHandlerProtocol.swift */; };
 		3A850735250EC2E100923C18 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A850734250EC2E100923C18 /* Int.swift */; };
+		3A85073A2511570800923C18 /* LaunchInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507382511570800923C18 /* LaunchInfoController.swift */; };
+		3A85073B2511570800923C18 /* LaunchInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8507392511570800923C18 /* LaunchInfoController.xib */; };
+		3A85073D251157A100923C18 /* LaunchInfoAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85073C251157A100923C18 /* LaunchInfoAssembler.swift */; };
 		3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219C2505695400F8B0D6 /* AppDelegate.swift */; };
 		3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */; };
 		3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A52505695800F8B0D6 /* Assets.xcassets */; };
@@ -129,6 +132,9 @@
 		3A850730250EBC3300923C18 /* LaunchSearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSearchHandler.swift; sourceTree = "<group>"; };
 		3A850732250EBC5E00923C18 /* LaunchSearchHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSearchHandlerProtocol.swift; sourceTree = "<group>"; };
 		3A850734250EC2E100923C18 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		3A8507382511570800923C18 /* LaunchInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoController.swift; sourceTree = "<group>"; };
+		3A8507392511570800923C18 /* LaunchInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchInfoController.xib; sourceTree = "<group>"; };
+		3A85073C251157A100923C18 /* LaunchInfoAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoAssembler.swift; sourceTree = "<group>"; };
 		3A9C21992505695400F8B0D6 /* Pocket SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket SpaceX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9C219C2505695400F8B0D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -363,6 +369,24 @@
 			path = SearchHandler;
 			sourceTree = "<group>";
 		};
+		3A8507362511552200923C18 /* LaunchInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3A850737251156DF00923C18 /* View */,
+				3A85073C251157A100923C18 /* LaunchInfoAssembler.swift */,
+			);
+			path = LaunchInfo;
+			sourceTree = "<group>";
+		};
+		3A850737251156DF00923C18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A8507382511570800923C18 /* LaunchInfoController.swift */,
+				3A8507392511570800923C18 /* LaunchInfoController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3A9C21902505695400F8B0D6 = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +450,7 @@
 		3A9C21BC250578F700F8B0D6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3A8507362511552200923C18 /* LaunchInfo */,
 				3A8506E8250B9E2200923C18 /* RocketInfo */,
 				3A8506C32506D69900923C18 /* Rocket */,
 				3A9C21BB250578AF00F8B0D6 /* Launch */,
@@ -572,6 +597,7 @@
 				3A9C21A92505695800F8B0D6 /* LaunchScreen.storyboard in Resources */,
 				3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */,
 				3A85072E250EB2D100923C18 /* LaunchCell.xib in Resources */,
+				3A85073B2511570800923C18 /* LaunchInfoController.xib in Resources */,
 				3A8506DE25097B9A00923C18 /* RocketCell.xib in Resources */,
 				3A850715250CE61300923C18 /* HeaderInfoCell.xib in Resources */,
 				3A850711250CDE1700923C18 /* RocketInfoCell.xib in Resources */,
@@ -651,6 +677,7 @@
 				3A8506E5250ABD7900923C18 /* RocketInteractorOutput.swift in Sources */,
 				3A8506EB250B9E6200923C18 /* RocketInfoController.swift in Sources */,
 				3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */,
+				3A85073A2511570800923C18 /* LaunchInfoController.swift in Sources */,
 				3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */,
 				3A8506C62506D70D00923C18 /* RocketController.swift in Sources */,
 				3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */,
@@ -683,6 +710,7 @@
 				3A850719250E237E00923C18 /* DataManager.swift in Sources */,
 				3A850722250E6F9600923C18 /* LaunchInteractorInput.swift in Sources */,
 				3A8506D92509764C00923C18 /* RocketCollectionHandlerProtocol.swift in Sources */,
+				3A85073D251157A100923C18 /* LaunchInfoAssembler.swift in Sources */,
 				3A850713250CE5A100923C18 /* HeaderInfoCell.swift in Sources */,
 				3A8506D72509760200923C18 /* RocketCollectionHandler.swift in Sources */,
 				3A85070A250CD9E500923C18 /* UIImageView.swift in Sources */,

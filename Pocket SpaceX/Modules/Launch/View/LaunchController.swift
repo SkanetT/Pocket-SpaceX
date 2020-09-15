@@ -38,7 +38,6 @@ class LaunchController: SpinnerController {
     private func configureUi() {
         title = "Launches"
         navigationController?.navigationBar.prefersLargeTitles = true
-      //  navigationItem.hidesSearchBarWhenScrolling = false
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(handleMenu))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up"), style: .plain, target: self, action: #selector(handleReverse))

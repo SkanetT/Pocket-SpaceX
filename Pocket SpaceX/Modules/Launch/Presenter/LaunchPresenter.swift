@@ -26,8 +26,8 @@ class LaunchPresenter: LaunchPresenterInput {
     
     func viewDidLoad() {
         interactor.fecthData()
-        viewController?.setActionForCell() { data in
-            
+        viewController?.setActionForCell() {[weak self] data in
+            self?.router.presentLaunchInfo(data)
         }
     }
     

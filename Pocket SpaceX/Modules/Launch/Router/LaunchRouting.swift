@@ -12,4 +12,5 @@ protocol LaunchRouting {
     func showSideMenu()
     func showError(_ error: ApiErrors)
     func needRefresh(refresh: (() -> ())?)
+    func presentLaunchInfo(_ data: LaunchDatum)
 }
