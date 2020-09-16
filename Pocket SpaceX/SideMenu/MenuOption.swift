@@ -25,7 +25,7 @@ enum MenuOption: Int {
     var image: UIImage {
         switch self {
         case .rockets: return #imageLiteral(resourceName: "Rocket")
-        case .starlink: return UIImage()
+        case .starlink: return UIImage(systemName: "antenna.radiowaves.left.and.right") ?? UIImage()
         case .launchpads: return UIImage(systemName: "rectangle.grid.1x2") ?? UIImage()
         }
     }

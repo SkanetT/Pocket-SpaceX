@@ -59,6 +59,17 @@
 		3A85073A2511570800923C18 /* LaunchInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507382511570800923C18 /* LaunchInfoController.swift */; };
 		3A85073B2511570800923C18 /* LaunchInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8507392511570800923C18 /* LaunchInfoController.xib */; };
 		3A85073D251157A100923C18 /* LaunchInfoAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85073C251157A100923C18 /* LaunchInfoAssembler.swift */; };
+		3A8507412512A97A00923C18 /* StarlinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507402512A97A00923C18 /* StarlinkController.swift */; };
+		3A8507432512A9B700923C18 /* StarlinkAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507422512A9B700923C18 /* StarlinkAssembler.swift */; };
+		3A8507452512AB4100923C18 /* StarlinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507442512AB4100923C18 /* StarlinkData.swift */; };
+		3A8507482512AD6500923C18 /* StarlinkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507472512AD6500923C18 /* StarlinkPresenter.swift */; };
+		3A85074A2512AD7B00923C18 /* StarlinkPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507492512AD7B00923C18 /* StarlinkPresenterInput.swift */; };
+		3A85074C2512ADD800923C18 /* StarlinkPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85074B2512ADD800923C18 /* StarlinkPresenterOutput.swift */; };
+		3A85074F2512B05B00923C18 /* StarlinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85074E2512B05B00923C18 /* StarlinkRouter.swift */; };
+		3A8507512512B07400923C18 /* StarlinkRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507502512B07400923C18 /* StarlinkRouting.swift */; };
+		3A8507542512B1FC00923C18 /* StarlinkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507532512B1FC00923C18 /* StarlinkInteractor.swift */; };
+		3A8507562512B22300923C18 /* StarlinkInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507552512B22300923C18 /* StarlinkInteractorInput.swift */; };
+		3A8507582512B24100923C18 /* StarlinkInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507572512B24100923C18 /* StarlinkInteractorOutput.swift */; };
 		3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219C2505695400F8B0D6 /* AppDelegate.swift */; };
 		3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */; };
 		3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C21A52505695800F8B0D6 /* Assets.xcassets */; };
@@ -135,6 +146,17 @@
 		3A8507382511570800923C18 /* LaunchInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoController.swift; sourceTree = "<group>"; };
 		3A8507392511570800923C18 /* LaunchInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchInfoController.xib; sourceTree = "<group>"; };
 		3A85073C251157A100923C18 /* LaunchInfoAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoAssembler.swift; sourceTree = "<group>"; };
+		3A8507402512A97A00923C18 /* StarlinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkController.swift; sourceTree = "<group>"; };
+		3A8507422512A9B700923C18 /* StarlinkAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkAssembler.swift; sourceTree = "<group>"; };
+		3A8507442512AB4100923C18 /* StarlinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkData.swift; sourceTree = "<group>"; };
+		3A8507472512AD6500923C18 /* StarlinkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkPresenter.swift; sourceTree = "<group>"; };
+		3A8507492512AD7B00923C18 /* StarlinkPresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkPresenterInput.swift; sourceTree = "<group>"; };
+		3A85074B2512ADD800923C18 /* StarlinkPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkPresenterOutput.swift; sourceTree = "<group>"; };
+		3A85074E2512B05B00923C18 /* StarlinkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkRouter.swift; sourceTree = "<group>"; };
+		3A8507502512B07400923C18 /* StarlinkRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkRouting.swift; sourceTree = "<group>"; };
+		3A8507532512B1FC00923C18 /* StarlinkInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkInteractor.swift; sourceTree = "<group>"; };
+		3A8507552512B22300923C18 /* StarlinkInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkInteractorInput.swift; sourceTree = "<group>"; };
+		3A8507572512B24100923C18 /* StarlinkInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkInteractorOutput.swift; sourceTree = "<group>"; };
 		3A9C21992505695400F8B0D6 /* Pocket SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket SpaceX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9C219C2505695400F8B0D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9C219E2505695400F8B0D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -387,6 +409,55 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3A85073E2512A59200923C18 /* Starlink */ = {
+			isa = PBXGroup;
+			children = (
+				3A85073F2512A95400923C18 /* View */,
+				3A8507522512B1D200923C18 /* Interactor */,
+				3A8507462512AD3E00923C18 /* Presenter */,
+				3A85074D2512AFEE00923C18 /* Router */,
+				3A8507422512A9B700923C18 /* StarlinkAssembler.swift */,
+			);
+			path = Starlink;
+			sourceTree = "<group>";
+		};
+		3A85073F2512A95400923C18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A8507402512A97A00923C18 /* StarlinkController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A8507462512AD3E00923C18 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3A8507472512AD6500923C18 /* StarlinkPresenter.swift */,
+				3A8507492512AD7B00923C18 /* StarlinkPresenterInput.swift */,
+				3A85074B2512ADD800923C18 /* StarlinkPresenterOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3A85074D2512AFEE00923C18 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3A85074E2512B05B00923C18 /* StarlinkRouter.swift */,
+				3A8507502512B07400923C18 /* StarlinkRouting.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3A8507522512B1D200923C18 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3A8507532512B1FC00923C18 /* StarlinkInteractor.swift */,
+				3A8507552512B22300923C18 /* StarlinkInteractorInput.swift */,
+				3A8507572512B24100923C18 /* StarlinkInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		3A9C21902505695400F8B0D6 = {
 			isa = PBXGroup;
 			children = (
@@ -450,9 +521,10 @@
 		3A9C21BC250578F700F8B0D6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				3A8507362511552200923C18 /* LaunchInfo */,
+				3A85073E2512A59200923C18 /* Starlink */,
 				3A8506E8250B9E2200923C18 /* RocketInfo */,
 				3A8506C32506D69900923C18 /* Rocket */,
+				3A8507362511552200923C18 /* LaunchInfo */,
 				3A9C21BB250578AF00F8B0D6 /* Launch */,
 			);
 			path = Modules;
@@ -513,6 +585,7 @@
 			children = (
 				3A9C21D52506CE3A00F8B0D6 /* RocketData.swift */,
 				3A85071C250E6CBC00923C18 /* LaunchData.swift */,
+				3A8507442512AB4100923C18 /* StarlinkData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -655,9 +728,13 @@
 			files = (
 				3A9C21D32506CC0900F8B0D6 /* BaseRequest.swift in Sources */,
 				3A850706250C224200923C18 /* RocketInfoTableHandler.swift in Sources */,
+				3A85074A2512AD7B00923C18 /* StarlinkPresenterInput.swift in Sources */,
+				3A8507482512AD6500923C18 /* StarlinkPresenter.swift in Sources */,
 				3A850708250C227500923C18 /* RocketInfoTableHandlerProtocol.swift in Sources */,
 				3A850720250E6F4700923C18 /* LaunchInteractor.swift in Sources */,
 				3A8506E7250B9BA900923C18 /* SpinnerController.swift in Sources */,
+				3A8507562512B22300923C18 /* StarlinkInteractorInput.swift in Sources */,
+				3A8507542512B1FC00923C18 /* StarlinkInteractor.swift in Sources */,
 				3A850735250EC2E100923C18 /* Int.swift in Sources */,
 				3A9C21B82505743300F8B0D6 /* MenuController.swift in Sources */,
 				3A85070C250CDBF400923C18 /* BaseXibView.swift in Sources */,
@@ -666,12 +743,14 @@
 				3A8506F3250BB09300923C18 /* RocketInfoPresenter.swift in Sources */,
 				3A850729250EB01600923C18 /* LaunchTableHandlerProtocol.swift in Sources */,
 				3A9C21CD2505859D00F8B0D6 /* LaunchRouting.swift in Sources */,
+				3A8507452512AB4100923C18 /* StarlinkData.swift in Sources */,
 				3A8506DD25097B9A00923C18 /* RocketCell.swift in Sources */,
 				3A8506CB25081DDD00923C18 /* RocketPresenter.swift in Sources */,
 				3A9C21B225056FD500F8B0D6 /* MenuOptionCell.swift in Sources */,
 				3A9C21C6250581E600F8B0D6 /* LaunchPresenterInput.swift in Sources */,
 				3A9C21C82505821500F8B0D6 /* LaunchPresenterOutput.swift in Sources */,
 				3A8506C82506D74000923C18 /* RocketAssembler.swift in Sources */,
+				3A85074F2512B05B00923C18 /* StarlinkRouter.swift in Sources */,
 				3A850703250BC18500923C18 /* RocketInfoRouting.swift in Sources */,
 				3A8506CD25081E0500923C18 /* RocketPresenterInput.swift in Sources */,
 				3A8506E5250ABD7900923C18 /* RocketInteractorOutput.swift in Sources */,
@@ -683,22 +762,27 @@
 				3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */,
 				3A850717250CEA5300923C18 /* FooterInfoCell.swift in Sources */,
 				3A85071B250E5E6500923C18 /* ImageCell.swift in Sources */,
+				3A8507432512A9B700923C18 /* StarlinkAssembler.swift in Sources */,
+				3A8507582512B24100923C18 /* StarlinkInteractorOutput.swift in Sources */,
 				3A8506FE250BB44D00923C18 /* RocketInfoInteractorOutput.swift in Sources */,
 				3A9C21BA2505761D00F8B0D6 /* ContainerController.swift in Sources */,
 				3A85071D250E6CBC00923C18 /* LaunchData.swift in Sources */,
 				3A850724250E6FC200923C18 /* LaunchInteractorOutput.swift in Sources */,
 				3A850733250EBC5E00923C18 /* LaunchSearchHandlerProtocol.swift in Sources */,
 				3A850727250EAF9700923C18 /* LaunchTableHandler.swift in Sources */,
+				3A8507412512A97A00923C18 /* StarlinkController.swift in Sources */,
 				3A8506CF25081E3900923C18 /* RocketPresenterOutput.swift in Sources */,
 				3A8506ED250B9E9500923C18 /* RocketInfoAssembler.swift in Sources */,
 				3A9C21D62506CE3A00F8B0D6 /* RocketData.swift in Sources */,
 				3A9C219D2505695400F8B0D6 /* AppDelegate.swift in Sources */,
 				3A8506FC250BB41500923C18 /* RocketInfoInteractorInput.swift in Sources */,
 				3A9C21B42505706C00F8B0D6 /* MenuOption.swift in Sources */,
+				3A8507512512B07400923C18 /* StarlinkRouting.swift in Sources */,
 				3A8506F5250BB0B700923C18 /* RocketInfoPresenterInput.swift in Sources */,
 				3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */,
 				3A9C21B62505738D00F8B0D6 /* MenuDelegate.swift in Sources */,
 				3A850710250CDE1700923C18 /* RocketInfoCell.swift in Sources */,
+				3A85074C2512ADD800923C18 /* StarlinkPresenterOutput.swift in Sources */,
 				3A8506E1250ABCB700923C18 /* RocketInteractor.swift in Sources */,
 				3A9C21BF25057A3E00F8B0D6 /* LaunchController.swift in Sources */,
 				3A85072D250EB2D100923C18 /* LaunchCell.swift in Sources */,

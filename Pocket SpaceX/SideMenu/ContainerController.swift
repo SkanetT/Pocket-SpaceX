@@ -95,7 +95,10 @@ class ContainerController: UIViewController {
             nc.modalPresentationStyle = .fullScreen
             present(nc, animated: true)
         case .starlink:
-            print("star")
+            let vc = StarlinkAssembler.createModule()
+            let nc = UINavigationController(rootViewController: vc)
+            nc.modalPresentationStyle = .fullScreen
+            present(nc, animated: true)
         case .launchpads:
             print("lands")
             
