@@ -71,7 +71,6 @@ extension HeaderInfoCell: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let size = collectionView.bounds.size
-        #warning("size shit!!!1111")
         return size
         
     }

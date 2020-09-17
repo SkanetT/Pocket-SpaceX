@@ -17,10 +17,10 @@ class LaunchSearchHandler: NSObject, LaunchSearchHandlerProtocol {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search launch"
-        searchController.searchBar.tintColor = .white
-        if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-            textfield.textColor = UIColor.white
-        }
+//        searchController.searchBar.tintColor = .white
+//        if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+//            textfield.textColor = UIColor.white
+//        }
         self.searchController = searchController
     }
     

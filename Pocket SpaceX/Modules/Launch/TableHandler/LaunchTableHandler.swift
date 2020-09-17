@@ -24,6 +24,7 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.rowHeight = 130
+        tableView.keyboardDismissMode = .onDrag
 //        tableView.rowHeight = size / 6
     }
     

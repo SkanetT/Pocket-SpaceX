@@ -24,7 +24,7 @@ class ImageCell: UICollectionViewCell {
         }
         
         image.contentMode = .scaleAspectFill
-
+        image.clipsToBounds = true
     }
     
     required public init?(coder aDecoder: NSCoder) {
