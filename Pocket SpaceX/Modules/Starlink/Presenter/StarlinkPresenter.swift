@@ -38,7 +38,7 @@ class StarlinkPresenter: StarlinkPresenterInput {
 
 extension StarlinkPresenter: StarlinkInteractorOutput {
     func starlinkDataSuccess(_ data: StarlinkData) {
-        
+        viewController?.didReceiveStarlinkData(data)
     }
     
     func starlinkDataFailure(_ error: ApiErrors) {

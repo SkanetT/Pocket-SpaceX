@@ -9,5 +9,5 @@
 import Foundation
 
 protocol StarlinkPresenterOutput: class {
-    
+    func didReceiveStarlinkData(_ data: StarlinkData)
 }

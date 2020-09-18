@@ -30,12 +30,9 @@ class FooterInfoCell: UIView {
             make.bottom.equalTo(snp.bottom).offset(-10)
 
         }
-        
         backgroundColor = .white
         
-        
         button.addTarget(self, action: #selector(tap), for: .touchUpInside)
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -46,6 +43,5 @@ class FooterInfoCell: UIView {
     func tap() {
         select?()
     }
-    
-    
 }
+ 

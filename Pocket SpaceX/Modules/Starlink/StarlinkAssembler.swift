@@ -15,8 +15,9 @@ class StarlinkAssembler {
         let router = StarlinkRouter(viewController)
         let interactor = StarlinkInteractor()
         let presenter = StarlinkPresenter(interactor, router)
-        
         viewController.presenter = presenter
+        let tableHandler = StarlinkTableHandler()
+        viewController.tableHandler = tableHandler
         return viewController
     }
     

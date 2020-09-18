@@ -29,7 +29,6 @@ class HeaderInfoCell: XibBasedView {
         
         
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "image")
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -71,6 +70,8 @@ extension HeaderInfoCell: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let size = collectionView.bounds.size
+       
+        
         return size
         
     }
@@ -82,6 +83,4 @@ extension HeaderInfoCell: UICollectionViewDelegate, UICollectionViewDataSource, 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
-    
-    
 }

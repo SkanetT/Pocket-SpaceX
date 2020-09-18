@@ -8,16 +8,19 @@
 
 import UIKit
 
-class StarlinkController: UIViewController {
+class StarlinkController: SpinnerController {
     
     var presenter: StarlinkPresenterInput?
     var tableView: UITableView!
+    var tableHandler: StarlinkTableHandlerProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.attach(self)
         presenter?.viewDidLoad()
         configureUI()
+        tableHandler?.attach(tableView)
+        showSpinner()
     }
     
     private func configureUI() {
@@ -42,5 +45,9 @@ class StarlinkController: UIViewController {
 }
 
 extension StarlinkController: StarlinkPresenterOutput {
+    func didReceiveStarlinkData(_ data: StarlinkData) {
+        tableHandler?.setData(data)
+        removeSpinner()
+    }
     
 }
