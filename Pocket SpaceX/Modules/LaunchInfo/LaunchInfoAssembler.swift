@@ -12,7 +12,12 @@ class LaunchInfoAssembler {
     
     static func createModule(data: LaunchDatum) -> UIViewController {
         let viewController = LaunchInfoController()
+        let interactor = LaunchInfoInteractor(data)
+        let presenter = LaunchInfoPresenter(interactor)
+        let youtubeHandler = LaunchInfoYoutubeHandler()
         
+        viewController.youtubeHandler = youtubeHandler
+        viewController.presenter = presenter
         return viewController
     }
 }

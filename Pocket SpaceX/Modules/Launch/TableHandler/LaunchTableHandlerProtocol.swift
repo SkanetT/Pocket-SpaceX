@@ -12,6 +12,7 @@ protocol LaunchTableHandlerProtocol {
     func attach(_ tableView: UITableView)
     func setData(_ data: LaunchData)
     func reverseData()
+    func changeData(_ type: LaunchType)
     func searchReload(_ search: String)
     func setTapAction(userTap: ((LaunchDatum) -> ())?)
 }

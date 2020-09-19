@@ -38,6 +38,10 @@ class LaunchPresenter: LaunchPresenterInput {
     func reverseTap() {
         viewController?.needToReverse()
     }
+    
+    func launchTypeChange(_ type: LaunchType) {
+        viewController?.typeChange(type)
+    }
 }
 
 extension LaunchPresenter: LaunchInteractorOutput {

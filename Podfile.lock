@@ -3,20 +3,24 @@ PODS:
     - Kingfisher/Core (= 5.15.0)
   - Kingfisher/Core (5.15.0)
   - SnapKit (5.0.1)
+  - youtube-ios-player-helper (1.0.2)
 
 DEPENDENCIES:
   - Kingfisher (~> 5.0)
   - SnapKit (~> 5.0.0)
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
     - Kingfisher
     - SnapKit
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Kingfisher: 1acb67597a520c2d0310677e66d6e0af455ef757
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  youtube-ios-player-helper: 40b96e52c22445f0fdc43731cefa32c67075ff81
 
-PODFILE CHECKSUM: 6c249d3528245d96dfdba94cecb88526c3157987
+PODFILE CHECKSUM: 780428b78700056394f4ff00c21dfe5429ae0509
 
 COCOAPODS: 1.8.4

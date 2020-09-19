@@ -16,10 +16,12 @@ class LaunchController: SpinnerController {
     var tableHandler: LaunchTableHandlerProtocol?
     var searchHandler: LaunchSearchHandlerProtocol?
     var isReverse = false
+    var segmentedContoll: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUi()
+        configureSegmentedContoll()
         showSpinner()
         presenter?.attach(self)
         presenter?.viewDidLoad()
@@ -55,6 +57,20 @@ class LaunchController: SpinnerController {
         }
     }
     
+    private func configureSegmentedContoll() {
+        let segmentItems = ["All", "Upcomming", "Past"]
+        segmentedContoll = UISegmentedControl(items: segmentItems)
+        segmentedContoll.selectedSegmentIndex = 0
+        view.addSubview(segmentedContoll)
+        segmentedContoll.snp.makeConstraints() { make in
+            make.bottom.equalTo(view.snp.bottom).offset(-30)
+            make.height.equalTo(30)
+            make.leading.equalTo(view.snp.leading).offset(16)
+            make.trailing.equalTo(view.snp.trailing).offset(-16)
+        }
+        segmentedContoll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
+    }
+    
     @objc
     private func handleMenu() {
         presenter?.sideMenuTap()
@@ -63,6 +79,20 @@ class LaunchController: SpinnerController {
     @objc
     private func handleReverse() {
         presenter?.reverseTap()
+    }
+    
+    @objc
+    private func segmentControl(_ segmentedControl: UISegmentedControl) {
+        switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            presenter?.launchTypeChange(.all)
+        case 1:
+            presenter?.launchTypeChange(.upcoming)
+        case 2:
+            presenter?.launchTypeChange(.past)
+        default:
+            break
+        }
     }
     
 }
@@ -86,6 +116,12 @@ extension LaunchController: LaunchPresenterOutput {
     
     func setActionForCell(_ userSelect: ((LaunchDatum) -> ())?) {
         tableHandler?.setTapAction(userTap: userSelect)
+    }
+    
+    func typeChange(_ type: LaunchType) {
+        searchController.searchBar.text = nil
+        
+        tableHandler?.changeData(type)
     }
     
 }

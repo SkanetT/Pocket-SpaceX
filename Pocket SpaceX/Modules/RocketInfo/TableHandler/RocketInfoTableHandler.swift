@@ -49,7 +49,7 @@ extension RocketInfoTableHandler: UITableViewDelegate, UITableViewDataSource {
         guard let rocketInfoOption = RocketInfoOption(rawValue: indexPath.row) else { return cell }
 
         
-        let dic = DataManager.shared.createDataForRockerInfo(data)
+        let dic = DataManager.createDataForRockerInfo(data)
         
         cell.nameOptionLabel.text = rocketInfoOption.description
         if let option = dic.first(where: { $0.key == rocketInfoOption.description})?.value {

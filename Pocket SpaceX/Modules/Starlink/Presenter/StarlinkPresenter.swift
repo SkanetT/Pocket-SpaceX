@@ -29,10 +29,17 @@ class StarlinkPresenter: StarlinkPresenterInput {
         router.needRefresh() { [weak self] () in
             self?.interactor.fecthData()
         }
+        viewController?.setActionForWiki() { [weak self] () in
+            self?.router.presentWiki()
+        }
     }
     
     func closeTap() {
         router.dismiss()
+    }
+    
+    func changeDataTap(_ type: Bool) {
+        viewController?.setDataChange(type)
     }
 }
 

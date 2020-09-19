@@ -25,7 +25,7 @@ class LaunchCell: UITableViewCell {
             patchImage.setKfImage(urlString: url)
         }
         nameLabel.text = data.name
-        dateLabel.text = data.dateUnix.makeDate()
+        dateLabel.text = DataManager.makeDateStringFromUnixTime(data.dateUnix)
         
         if data.upcoming == false {
             if data.failures.isEmpty {

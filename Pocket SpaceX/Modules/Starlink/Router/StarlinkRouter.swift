@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SafariServices
 
 class StarlinkRouter: StarlinkRouting {
     private weak var viewController: UIViewController?
     var refresh: (() -> ())?
+    private let url = "https://en.wikipedia.org/wiki/Starlink"
     
     init(_ viewController: UIViewController) {
         self.viewController = viewController
@@ -30,5 +32,13 @@ class StarlinkRouter: StarlinkRouting {
     
     func needRefresh(refresh: (() -> ())?) {
         self.refresh = refresh
+    }
+    
+    func presentWiki() {
+        if let url = URL(string: url) {
+            let vc = SFSafariViewController(url: url)
+            vc.modalPresentationStyle = .fullScreen
+            viewController?.present(vc, animated: true)
+        }
     }
 }

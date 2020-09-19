@@ -11,5 +11,6 @@ import Foundation
 protocol StarlinkPresenterInput: class {
     func attach(_ viewController: StarlinkPresenterOutput)
     func viewDidLoad()
+    func changeDataTap(_ type: Bool)
     func closeTap()
 }

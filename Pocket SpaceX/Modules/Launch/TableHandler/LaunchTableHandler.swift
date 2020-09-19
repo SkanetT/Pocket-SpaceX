@@ -12,6 +12,9 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
     
     private weak var tableView: UITableView?
     var launchData: LaunchData = []
+    var allLaunchData: LaunchData = []
+    var upcomingLaunchData: LaunchData = []
+    var pastLaunchData: LaunchData = []
     var filteredLaunchData: LaunchData = []
     let size = UIScreen.main.bounds.height
     var userTap: ((LaunchDatum) -> ())?
@@ -25,11 +28,13 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         tableView.separatorStyle = .none
         tableView.rowHeight = 130
         tableView.keyboardDismissMode = .onDrag
-//        tableView.rowHeight = size / 6
     }
     
     func setData(_ data: LaunchData) {
-        self.launchData = data
+        allLaunchData = data
+        upcomingLaunchData = data.filter( {$0.upcoming == true } )
+        pastLaunchData = data.filter( {$0.upcoming == false } )
+        self.launchData = allLaunchData
         DispatchQueue.main.async {
             self.tableView?.reloadData()
         }
@@ -48,6 +53,7 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
     
     func reverseData() {
         launchData.reverse()
+        tableView?.scrollToRow(at: [0, 0], at: .top, animated: true)
         tableView?.reloadData()
     }
     
@@ -55,6 +61,18 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         self.userTap = userTap
     }
     
+    func changeData(_ type: LaunchType) {
+        switch type {
+        case .all:
+            launchData = allLaunchData
+        case .upcoming:
+            launchData = upcomingLaunchData
+        case .past:
+            launchData = pastLaunchData
+        }
+        tableView?.reloadData()
+        tableView?.scrollToRow(at: [0, 0], at: .top, animated: true)
+    }
     
 }
 

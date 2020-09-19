@@ -7,6 +7,7 @@ target 'Pocket SpaceX' do
 
   pod 'SnapKit', '~> 5.0.0'
   pod 'Kingfisher', '~> 5.0'
+  pod "youtube-ios-player-helper"
 
   # Pods for Pocket SpaceX
 

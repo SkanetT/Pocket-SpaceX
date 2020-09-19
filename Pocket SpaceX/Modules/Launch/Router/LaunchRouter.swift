@@ -35,7 +35,6 @@ class LaunchRouter: LaunchRouting {
     
     func presentLaunchInfo(_ data: LaunchDatum) {
         let vc = LaunchInfoAssembler.createModule(data: data)
-        
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -12,4 +12,5 @@ protocol StarlinkRouting {
     func dismiss()
     func showError(_ error: ApiErrors)
     func needRefresh(refresh: (() -> ())?)
+    func presentWiki()
 }

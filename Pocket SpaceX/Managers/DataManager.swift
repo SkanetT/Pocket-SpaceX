@@ -9,10 +9,8 @@
 import Foundation
 
 class DataManager {
-    
-    static let shared = DataManager()
-    
-    func createDataForRockerInfo(_ data: RocketDatum) -> [String : String] {
+        
+    static func createDataForRockerInfo(_ data: RocketDatum) -> [String : String] {
         var result: [String : String] = [:]
         result["Name"] = data.name
         result["Country"] = data.country
@@ -26,34 +24,15 @@ class DataManager {
         result["Boosters"] = data.boosters.description
         return result
     }
+    
+    static func makeDateStringFromUnixTime(_ time: Int) -> String {
+        let date = Date(timeIntervalSince1970: Double(time))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "d MMMM yyyy HH:mm"
+        let strDate = dateFormatter.string(from: date)
+        return strDate
+    }
 }
 
-enum RocketInfoOption: Int {
-    
-    case name
-    case country
-    case company
-    case firstFlight
-    case cost
-    case mass
-    case height
-    case diameter
-    case stages
-    case boosters
-    
-    var description: String {
-        switch self {
-        case .name: return "Name"
-        case .country: return "Country"
-        case .company: return "Company"
-        case .firstFlight: return "First flight"
-        case .cost: return "Cost"
-        case .mass: return "Mass (kg)"
-        case .height: return "Height (meters)"
-        case .diameter: return "Diameter (meters)"
-        case .stages: return "Stages"
-        case .boosters: return "Boosters"
-        }
-    }
-    
-}

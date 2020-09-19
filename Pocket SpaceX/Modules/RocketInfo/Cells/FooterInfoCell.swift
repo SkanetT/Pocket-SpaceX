@@ -40,7 +40,7 @@ class FooterInfoCell: UIView {
     }
     
     @objc
-    func tap() {
+    private func tap() {
         select?()
     }
 }

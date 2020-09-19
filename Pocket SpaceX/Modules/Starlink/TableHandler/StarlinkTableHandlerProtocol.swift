@@ -11,4 +11,6 @@ import UIKit
 protocol StarlinkTableHandlerProtocol {
     func attach(_ tableView: UITableView)
     func setData(_ data: StarlinkData)
+    func changeData(_ isFull: Bool)
+    func setWikiAction(userTapWiki: (() -> ())?)
 }
