@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchInfoController" customModule="Pocket_SpaceX" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="youtubeView" destination="CBc-iH-u4C" id="m4f-Gy-cQr"/>
+                <outlet property="youtubeView" destination="CBc-iH-u4C" id="xHI-lt-IIZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

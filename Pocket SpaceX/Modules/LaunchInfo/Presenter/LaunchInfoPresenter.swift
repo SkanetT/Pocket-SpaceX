@@ -26,6 +26,10 @@ class LaunchInfoPresenter: LaunchInfoPresenterInput {
         interactor.fecthData()
     }
     
+    func addEventTap() {
+        
+    }
+    
 }
 
 extension LaunchInfoPresenter: LaunchInfoInteractorOutput {

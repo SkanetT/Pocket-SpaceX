@@ -19,9 +19,7 @@ class LaunchInfoYoutubeHandler: NSObject, LaunchInfoYoutubeHandlerProtocol {
     }
     
     func setData(_ id: String) {
-        
-        guard let youtubeView = youtubeView else { return }
-        youtubeView.load(withVideoId: id, playerVars: ["playsinline" : 1] )
+        youtubeView?.load(withVideoId: id, playerVars: ["playsinline" : 1] )
     }
     
 }

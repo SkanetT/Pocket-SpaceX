@@ -11,4 +11,5 @@ import Foundation
 protocol LaunchInfoPresenterInput: class {
     func attach(_ viewController: LaunchInfoPresenterOutput)
     func viewDidLoad()
+    func addEventTap()
 }

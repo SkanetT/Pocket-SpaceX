@@ -41,7 +41,7 @@ class LaunchController: SpinnerController {
         title = "Launches"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(handleMenu))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify"), style: .plain, target: self, action: #selector(handleMenu))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up"), style: .plain, target: self, action: #selector(handleReverse))
         navigationItem.searchController = searchController
         navigationItem.leftBarButtonItem?.tintColor = .black
