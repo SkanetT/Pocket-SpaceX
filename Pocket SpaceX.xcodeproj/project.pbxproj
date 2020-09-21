@@ -19,7 +19,8 @@
 		3A5F40FF2516A67D002460EA /* LaunchInfoYoutubeHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F40FE2516A67D002460EA /* LaunchInfoYoutubeHandlerProtocol.swift */; };
 		3A5F410F2517D54F002460EA /* Pods_Pocket_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347ED40A50A097C413AC4A04 /* Pods_Pocket_SpaceX.framework */; };
 		3A5F41102517D54F002460EA /* Pods_Pocket_SpaceX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 347ED40A50A097C413AC4A04 /* Pods_Pocket_SpaceX.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3A5F411A2517F9C2002460EA /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F41192517F9C2002460EA /* CalendarManager.swift */; };
+		3A5F411D251938F9002460EA /* LaunchInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F411C251938F9002460EA /* LaunchInfoRouter.swift */; };
+		3A5F411F25193978002460EA /* LaunchInfoRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F411E25193978002460EA /* LaunchInfoRouting.swift */; };
 		3A8506BF2506D08700923C18 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506BE2506D08700923C18 /* Errors.swift */; };
 		3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C12506D13900923C18 /* NetworkApi.swift */; };
 		3A8506C62506D70D00923C18 /* RocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C52506D70D00923C18 /* RocketController.swift */; };
@@ -133,7 +134,8 @@
 		3A5F40F125169593002460EA /* LaunchInfoInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoInteractorOutput.swift; sourceTree = "<group>"; };
 		3A5F40FA2516A612002460EA /* LaunchInfoYoutubeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoYoutubeHandler.swift; sourceTree = "<group>"; };
 		3A5F40FE2516A67D002460EA /* LaunchInfoYoutubeHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoYoutubeHandlerProtocol.swift; sourceTree = "<group>"; };
-		3A5F41192517F9C2002460EA /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		3A5F411C251938F9002460EA /* LaunchInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoRouter.swift; sourceTree = "<group>"; };
+		3A5F411E25193978002460EA /* LaunchInfoRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoRouting.swift; sourceTree = "<group>"; };
 		3A8506BE2506D08700923C18 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		3A8506C12506D13900923C18 /* NetworkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
 		3A8506C52506D70D00923C18 /* RocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketController.swift; sourceTree = "<group>"; };
@@ -266,12 +268,20 @@
 			path = YoutubeHandler;
 			sourceTree = "<group>";
 		};
+		3A5F411B2519389E002460EA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3A5F411C251938F9002460EA /* LaunchInfoRouter.swift */,
+				3A5F411E25193978002460EA /* LaunchInfoRouting.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		3A8506C02506D10B00923C18 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				3A8506C12506D13900923C18 /* NetworkApi.swift */,
 				3A850718250E237E00923C18 /* DataManager.swift */,
-				3A5F41192517F9C2002460EA /* CalendarManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -470,6 +480,7 @@
 				3A850737251156DF00923C18 /* View */,
 				3A5F40E9251694CD002460EA /* Interactor */,
 				3A5F40DE25169221002460EA /* Presenter */,
+				3A5F411B2519389E002460EA /* Router */,
 				3A85073C251157A100923C18 /* LaunchInfoAssembler.swift */,
 			);
 			path = LaunchInfo;
@@ -833,7 +844,6 @@
 				3A85074A2512AD7B00923C18 /* StarlinkPresenterInput.swift in Sources */,
 				3A5F40E02516925A002460EA /* LaunchInfoPresenter.swift in Sources */,
 				3A8507482512AD6500923C18 /* StarlinkPresenter.swift in Sources */,
-				3A5F411A2517F9C2002460EA /* CalendarManager.swift in Sources */,
 				3A850708250C227500923C18 /* RocketInfoTableHandlerProtocol.swift in Sources */,
 				3A850720250E6F4700923C18 /* LaunchInteractor.swift in Sources */,
 				3A8506E7250B9BA900923C18 /* SpinnerController.swift in Sources */,
@@ -844,6 +854,7 @@
 				3A85070C250CDBF400923C18 /* BaseXibView.swift in Sources */,
 				3A9C21C42505816200F8B0D6 /* LaunchPresenter.swift in Sources */,
 				3A8506FA250BB3F500923C18 /* RocketInfoInteractor.swift in Sources */,
+				3A5F411D251938F9002460EA /* LaunchInfoRouter.swift in Sources */,
 				3A8506F3250BB09300923C18 /* RocketInfoPresenter.swift in Sources */,
 				3A850729250EB01600923C18 /* LaunchTableHandlerProtocol.swift in Sources */,
 				3A9C21CD2505859D00F8B0D6 /* LaunchRouting.swift in Sources */,
@@ -882,6 +893,7 @@
 				3A850727250EAF9700923C18 /* LaunchTableHandler.swift in Sources */,
 				3A8507412512A97A00923C18 /* StarlinkController.swift in Sources */,
 				3A8D9372251555D2003E1C48 /* StarlinkTableHandlerProtocol.swift in Sources */,
+				3A5F411F25193978002460EA /* LaunchInfoRouting.swift in Sources */,
 				3A8506CF25081E3900923C18 /* RocketPresenterOutput.swift in Sources */,
 				3A8506ED250B9E9500923C18 /* RocketInfoAssembler.swift in Sources */,
 				3A5F40EF25169558002460EA /* LaunchInfoInteractorInput.swift in Sources */,

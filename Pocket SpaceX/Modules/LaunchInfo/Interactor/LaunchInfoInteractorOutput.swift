@@ -7,7 +7,11 @@
 //
 
 import Foundation
+import EventKit
+
 
 protocol LaunchInfoInteractorOutput: class {
     func launchInfoDataSuccess(_ data: LaunchDatum)
+    func addEventSuccess(eventStore: EKEventStore, event: EKEvent)
+    func addEventFailure(_ error: Error?)
 }

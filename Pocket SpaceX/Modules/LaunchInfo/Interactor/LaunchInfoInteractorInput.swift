@@ -11,4 +11,6 @@ import Foundation
 protocol LaunchInfoInteractorInput: class {
     func attach(_ output: LaunchInfoInteractorOutput)
     func fecthData()
+    func fetchRocketName()
+    func attemptAddEvent()
 }

@@ -22,9 +22,19 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBc-iH-u4C" customClass="YTPlayerView">
                     <rect key="frame" x="0.0" y="44" width="414" height="250"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Broadcast is not available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKM-9V-0Oj">
+                            <rect key="frame" x="110.5" y="114.5" width="193.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="X7R-ZZ-rcI"/>
+                        <constraint firstItem="GKM-9V-0Oj" firstAttribute="centerX" secondItem="CBc-iH-u4C" secondAttribute="centerX" id="g0q-79-2Pz"/>
+                        <constraint firstItem="GKM-9V-0Oj" firstAttribute="centerY" secondItem="CBc-iH-u4C" secondAttribute="centerY" id="xsw-fH-MXE"/>
                     </constraints>
                 </view>
             </subviews>
