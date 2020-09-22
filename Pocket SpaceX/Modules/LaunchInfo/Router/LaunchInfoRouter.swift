@@ -30,11 +30,27 @@ class LaunchInfoRouter: NSObject, LaunchInfoRouting {
     
     func showAddEventError(_ error: Error?) {
         DispatchQueue.main.async {
-            let ac = UIAlertController(title: "Need access", message: "Go to settings", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-            ac.addAction(ok)
-            self.viewController?.present(ac, animated: true, completion: nil)
+            self.openSettingAler()
         }
+    }
+    
+    private func openSettingAler() {
+        let alertController = UIAlertController (title: "No access to Calendar", message: "Go to Settings?", preferredStyle: .alert)
+        
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ -> () in
+            
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+            
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl) { success in
+                }
+            }
+        }
+        alertController.addAction(settingsAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        viewController?.present(alertController, animated: true, completion: nil)
     }
     
 }
