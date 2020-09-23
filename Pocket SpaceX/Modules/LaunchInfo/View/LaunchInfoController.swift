@@ -12,6 +12,7 @@ import youtube_ios_player_helper
 class LaunchInfoController: UIViewController {
     
     @IBOutlet weak var youtubeView: YTPlayerView!
+    @IBOutlet weak var statusTimerLabel: UILabel!
     
     var presenter: LaunchInfoPresenterInput?
     var youtubeHandler: LaunchInfoYoutubeHandlerProtocol?
@@ -30,18 +31,20 @@ class LaunchInfoController: UIViewController {
         presenter?.addEventTap()
     }
     
+    
+    
 }
 
 extension LaunchInfoController: LaunchInfoPresenterOutput {
     func didReceiveLaunchInfoData(_ data: LaunchDatum) {
         title = data.name
+        
         if let id = data.links.youtubeID {
             youtubeHandler?.setData(id)
         }
         if data.upcoming {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "calendar.badge.plus"), style: .plain, target: self, action: #selector(handleEvent))
             navigationItem.rightBarButtonItem?.tintColor = .black
-            
             
         }
         

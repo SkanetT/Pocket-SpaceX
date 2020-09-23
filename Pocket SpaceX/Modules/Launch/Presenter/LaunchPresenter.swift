@@ -42,6 +42,10 @@ class LaunchPresenter: LaunchPresenterInput {
     func launchTypeChange(_ type: LaunchType) {
         viewController?.typeChange(type)
     }
+    
+    func refreshData() {
+        interactor.fecthData()
+    }
 }
 
 extension LaunchPresenter: LaunchInteractorOutput {

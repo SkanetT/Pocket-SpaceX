@@ -34,5 +34,26 @@ class DataManager {
         let strDate = dateFormatter.string(from: date)
         return strDate
     }
+    
+    static func makeDateForTimer(_ time: Int) -> String {
+        let currentTime = Int(Date().timeIntervalSince1970)
+        let newTime = time - currentTime
+        let days = DataManager.plusZero(newTime / 86400)
+        let hours = DataManager.plusZero((newTime % 86400) / 3600)
+        let minutes = DataManager.plusZero((newTime % 3600) / 60)
+        let seconds = DataManager.plusZero((newTime % 3600) % 60)
+        let result = "\(days) : \(hours) : \(minutes) : \(seconds)"
+        return result
+    }
+    
+    static func plusZero(_ number: Int) -> String {
+        var result = ""
+        if number < 10 {
+            result = "0\(number)"
+        } else {
+            result = "\(number)"
+        }
+        return result
+    }
 }
 

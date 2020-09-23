@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.seal" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lCT-w2-Y7U">
-                        <rect key="frame" x="24" y="7.5" width="125" height="126.5"/>
+                        <rect key="frame" x="24" y="7" width="125" height="126.5"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="lCT-w2-Y7U" secondAttribute="height" multiplier="1:1" id="Xz0-6Z-FV4"/>
@@ -60,12 +59,12 @@
                 <outlet property="dateLabel" destination="tRX-OI-wMc" id="zpt-CJ-v3I"/>
                 <outlet property="nameLabel" destination="ZaL-5o-9Oy" id="xfH-s9-yNZ"/>
                 <outlet property="patchImage" destination="lCT-w2-Y7U" id="mNd-UP-xQg"/>
-                <outlet property="statusLabel" destination="VfC-UA-byf" id="Kxo-1u-kg8"/>
+                <outlet property="statusTimerLabel" destination="VfC-UA-byf" id="Kxo-1u-kg8"/>
             </connections>
             <point key="canvasLocation" x="200.00000000000003" y="196.54017857142856"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="xmark.seal" catalog="system" width="128" height="122"/>
+        <image name="xmark.seal" catalog="system" width="128" height="128"/>
     </resources>
 </document>

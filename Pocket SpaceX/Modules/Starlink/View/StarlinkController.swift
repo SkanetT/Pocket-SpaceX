@@ -45,7 +45,7 @@ class StarlinkController: SpinnerController {
         view.addSubview(segmentedContoll)
         segmentedContoll.snp.makeConstraints() { make in
             make.bottom.equalTo(view.snp.bottom).offset(-30)
-            make.height.equalTo(30)
+            make.height.equalTo(40)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }

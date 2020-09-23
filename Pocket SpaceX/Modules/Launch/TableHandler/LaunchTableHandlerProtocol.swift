@@ -15,4 +15,5 @@ protocol LaunchTableHandlerProtocol {
     func changeData(_ type: LaunchType)
     func searchReload(_ search: String)
     func setTapAction(userTap: ((LaunchDatum) -> ())?)
+    func setTapRefresh(refresh: (() -> ())?)
 }

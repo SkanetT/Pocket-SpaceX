@@ -30,6 +30,10 @@ class LaunchController: SpinnerController {
         searchHandler?.setSearch() { [weak self] text in
             self?.tableHandler?.searchReload(text)
         }
+        tableHandler?.setTapRefresh() { [weak self] () in
+            self?.presenter?.refreshData()
+            self?.showSpinner()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,7 +43,6 @@ class LaunchController: SpinnerController {
     
     private func configureUi() {
         title = "Launches"
-        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify"), style: .plain, target: self, action: #selector(handleMenu))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up"), style: .plain, target: self, action: #selector(handleReverse))
@@ -64,7 +67,7 @@ class LaunchController: SpinnerController {
         view.addSubview(segmentedContoll)
         segmentedContoll.snp.makeConstraints() { make in
             make.bottom.equalTo(view.snp.bottom).offset(-30)
-            make.height.equalTo(30)
+            make.height.equalTo(40)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
@@ -100,6 +103,10 @@ class LaunchController: SpinnerController {
 extension LaunchController: LaunchPresenterOutput {
     
     func didReceiveLaunchData(_ data: LaunchData) {
+        DispatchQueue.main.async {
+            self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "arrow.up")
+            self.segmentedContoll.selectedSegmentIndex = 0
+        }
         removeSpinner()
         tableHandler?.setData(data)
     }

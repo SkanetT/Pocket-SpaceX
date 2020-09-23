@@ -19,6 +19,8 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
     let size = UIScreen.main.bounds.height
     var userTap: ((LaunchDatum) -> ())?
     var isFilter = false
+    var refreshControl = UIRefreshControl()
+    var refresh: (() -> ())?
     
     func attach(_ tableView: UITableView) {
         self.tableView = tableView
@@ -28,6 +30,9 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         tableView.separatorStyle = .none
         tableView.rowHeight = 130
         tableView.keyboardDismissMode = .onDrag
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl) 
     }
     
     func setData(_ data: LaunchData) {
@@ -74,6 +79,15 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         tableView?.scrollToRow(at: [0, 0], at: .top, animated: true)
     }
     
+    func setTapRefresh(refresh: (() -> ())?) {
+        self.refresh = refresh
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        refresh?()
+        refreshControl.endRefreshing()
+    }
+    
 }
 
 extension LaunchTableHandler: UITableViewDelegate, UITableViewDataSource {
@@ -99,7 +113,7 @@ extension LaunchTableHandler: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !isFilter {
-           userTap?(launchData[indexPath.row])
+            userTap?(launchData[indexPath.row])
         } else {
             userTap?(filteredLaunchData[indexPath.row])
         }
