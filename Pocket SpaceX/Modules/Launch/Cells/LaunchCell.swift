@@ -15,12 +15,15 @@ class LaunchCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var statusTimerLabel: UILabel!
     var time = 0
-    var isTime = false
-    
+    weak var timer: Timer?
+    private let queue = DispatchQueue.init(label: "com.spacex.timer", qos: .background)
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        isTime = false
+    }
+    
+    override func prepareForReuse() {
+        timer?.invalidate()
     }
     
     func setData(_ data: LaunchDatum) {
@@ -41,21 +44,18 @@ class LaunchCell: UITableViewCell {
         } else {
             statusTimerLabel.textColor = .black
             time = data.dateUnix
-            isTime = true
             statusTimerLabel.text = DataManager.makeDateForTimer(time)
-            let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(upTimer), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.upTimer), userInfo: nil, repeats: true)
         }
     }
-    
+//
     @objc
     func upTimer() {
-        if isTime {
-            time -= 1
-            statusTimerLabel.text = DataManager.makeDateForTimer(time)
-//            DispatchQueue.main.async {
-//                self.statusTimerLabel.text = DataManager.makeDateForTimer(self.time)
-//            }
+        queue.async {
+            let text = DataManager.makeDateForTimer(self.time)
+            DispatchQueue.main.async {
+                self.statusTimerLabel.text = text
+            }
         }
     }
-    
 }

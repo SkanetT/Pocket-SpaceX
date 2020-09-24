@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum MenuOption: Int {
+enum MenuOption: Int, CaseIterable {
     
     case rockets
     case starlink

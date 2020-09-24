@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifer = "MenuOptionCell"
-
 class MenuController: UIViewController {
     
     var tableView: UITableView!
@@ -22,7 +20,7 @@ class MenuController: UIViewController {
     
     func configureMenu(){
         tableView = UITableView()
-        tableView.register(MenuOptionCell.self, forCellReuseIdentifier: reuseIdentifer)
+        tableView.register(MenuOptionCell.self, forCellReuseIdentifier: MenuOptionCell.name)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .lightGray
@@ -42,11 +40,11 @@ class MenuController: UIViewController {
 
 extension MenuController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return MenuOption.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifer, for: indexPath) as! MenuOptionCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MenuOptionCell.name, for: indexPath) as! MenuOptionCell
         
         let menuOption = MenuOption(rawValue: indexPath.row)
         
@@ -63,4 +61,10 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource {
         delegate?.handleMenuToggle(forMenuOption: menuOption)
     }
     
+}
+
+extension UITableViewCell {
+    static var name: String {
+        return String(describing: self)
+    }
 }

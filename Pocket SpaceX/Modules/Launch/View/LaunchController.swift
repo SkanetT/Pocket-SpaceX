@@ -86,6 +86,7 @@ class LaunchController: SpinnerController {
     
     @objc
     private func segmentControl(_ segmentedControl: UISegmentedControl) {
+        navigationItem.rightBarButtonItem?.image = UIImage(systemName: "arrow.up")
         switch (segmentedControl.selectedSegmentIndex) {
         case 0:
             presenter?.launchTypeChange(.all)
