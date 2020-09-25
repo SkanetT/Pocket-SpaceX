@@ -12,5 +12,7 @@ protocol LaunchInfoInteractorInput: class {
     func attach(_ output: LaunchInfoInteractorOutput)
     func fecthData()
     func fetchRocketName()
+    func fetchRocketId()
     func attemptAddEvent()
+    func fetchNewTime()
 }

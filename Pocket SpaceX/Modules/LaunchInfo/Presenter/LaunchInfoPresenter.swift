@@ -34,6 +34,14 @@ class LaunchInfoPresenter: LaunchInfoPresenterInput {
         interactor.attemptAddEvent()
     }
     
+    func timerTick() {
+        interactor.fetchNewTime()
+    }
+    
+    func rocketTap() {
+        interactor.fetchRocketId()
+    }
+    
 }
 
 extension LaunchInfoPresenter: LaunchInfoInteractorOutput {
@@ -48,5 +56,17 @@ extension LaunchInfoPresenter: LaunchInfoInteractorOutput {
     
     func addEventFailure(_ error: Error?) {
         router.showAddEventError(error)
+    }
+    
+    func newTimeSuccess(_ time: String) {
+        viewController?.didReceiveNewTime(time)
+    }
+    
+    func rocketNameSuccess(_ name: String) {
+        viewController?.didReceiveRocketName(name)
+    }
+    
+    func rocketIdSuccess(_ id: String) {
+        router.rocketInfoPresent(id)
     }
 }

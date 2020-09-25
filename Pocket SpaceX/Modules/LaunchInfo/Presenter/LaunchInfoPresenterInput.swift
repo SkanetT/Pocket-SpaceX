@@ -12,4 +12,6 @@ protocol LaunchInfoPresenterInput: class {
     func attach(_ viewController: LaunchInfoPresenterOutput)
     func viewDidLoad()
     func addEventTap()
+    func rocketTap()
+    func timerTick()
 }

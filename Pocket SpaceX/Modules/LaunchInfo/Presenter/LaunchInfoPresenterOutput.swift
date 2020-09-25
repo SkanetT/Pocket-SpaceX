@@ -10,4 +10,6 @@ import Foundation
 
 protocol LaunchInfoPresenterOutput: class {
     func didReceiveLaunchInfoData(_ data: LaunchDatum)
+    func didReceiveRocketName(_ name: String)
+    func didReceiveNewTime(_ time: String )
 }

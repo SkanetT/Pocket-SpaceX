@@ -34,6 +34,12 @@ class LaunchInfoRouter: NSObject, LaunchInfoRouting {
         }
     }
     
+    func rocketInfoPresent(_ id: String) {
+        let vk = RocketInfoAssembler.createModule(rocketId: id)
+        let nc = UINavigationController(rootViewController: vk)
+        viewController?.present(nc, animated: true, completion: nil)
+    }
+    
     private func openSettingAler() {
         let alertController = UIAlertController (title: "No access to Calendar", message: "Go to Settings?", preferredStyle: .alert)
         

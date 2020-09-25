@@ -29,15 +29,23 @@ class LaunchInfoInteractor: LaunchInfoInteractorInput {
     
     func fetchRocketName() {
         let request = RocketInfoRequest(id: data.rocket)
-        NetworkApi.shared.dataTask(request: request) { result in
+        NetworkApi.shared.dataTask(request: request) { [weak self] result in
             switch result {
             case .success(let rocketData):
-                print(rocketData.name)
+                self?.output?.rocketNameSuccess(rocketData.name)
             case .failure(let error):
                 print(error)
             }
-            
         }
+    }
+    
+     func fetchRocketId() {
+        output?.rocketIdSuccess(data.rocket)
+    }
+    
+    func fetchNewTime() {
+        let time = DataManager.makeDateForTimer(data.dateUnix)
+        output?.newTimeSuccess(time)
     }
     
     func attemptAddEvent() {
