@@ -13,6 +13,7 @@ import EventKit
 protocol LaunchInfoInteractorOutput: class {
     func launchInfoDataSuccess(_ data: LaunchDatum)
     func rocketNameSuccess(_ name: String)
+    func launchpadNameSuccess(_ name: String)
     func rocketIdSuccess(_ id: String)
     func newTimeSuccess(_ time: String)
     func addEventSuccess(eventStore: EKEventStore, event: EKEvent)

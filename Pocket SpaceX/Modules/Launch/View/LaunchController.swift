@@ -36,6 +36,8 @@ class LaunchController: SpinnerController {
         }
     }
     
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         searchController.searchBar.endEditing(true)
     }

@@ -20,6 +20,7 @@ class LaunchInfoController: UIViewController {
     @IBOutlet weak var rocketStack: UIStackView!
     @IBOutlet weak var rocketName: UILabel!
     @IBOutlet weak var launchpadStack: UIStackView!
+    @IBOutlet weak var launchpadName: UILabel!
 
     private let queue = DispatchQueue.init(label: "com.spacex.timer", qos: .background)
     weak var timer: Timer?
@@ -88,7 +89,6 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         
         if data.upcoming {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "calendar.badge.plus"), style: .plain, target: self, action: #selector(handleEvent))
-            navigationItem.rightBarButtonItem?.tintColor = .black
             statusTimerLabel.textColor = .black
             statusTimerLabel.text = DataManager.makeDateForTimer(data.dateUnix)
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.upTimer), userInfo: nil, repeats: true)
@@ -125,6 +125,12 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
     func didReceiveRocketName(_ name: String) {
         DispatchQueue.main.async {
             self.rocketName.text = name
+        }
+    }
+    
+    func didReceiveLaunchpadName(_ name: String) {
+        DispatchQueue.main.async {
+            self.launchpadName.text = name
         }
     }
     

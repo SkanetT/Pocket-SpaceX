@@ -23,11 +23,14 @@ class StarlinkRouter: StarlinkRouting {
     }
     
     func showError(_ error: ApiErrors) {
-        let ac = UIAlertController()
-        ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in
-            self?.refresh?()
-        }))
-        viewController?.present(ac, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let ac = UIAlertController()
+            ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in
+                self?.refresh?()
+            }))
+            self.viewController?.present(ac, animated: true, completion: nil)
+        }
+       
     }
     
     func needRefresh(refresh: (() -> ())?) {

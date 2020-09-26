@@ -39,23 +39,20 @@ class DataManager {
         let currentTime = Int(Date().timeIntervalSince1970)
         let newTime = time - currentTime
         guard newTime > 0 else { return "__ : __ : __  : __"}
-        let days = DataManager.plusZero(newTime / 86400)
-        let hours = DataManager.plusZero((newTime % 86400) / 3600)
-        let minutes = DataManager.plusZero((newTime % 3600) / 60)
-        let seconds = DataManager.plusZero((newTime % 3600) % 60)
-        let result = "\(days) : \(hours) : \(minutes) : \(seconds)"
-        return result
         
-//        let launchTime: Double = 1609459200
-//        let currentTime = Date()
-//        let diff = Date(timeIntervalSince1970: launchTime).timeIntervalSince(Date())
-//
-//
-//        let cc = Calendar.current.dateComponents([.year,.day,.hour,.minute,.second], from: Date(), to: Date(timeIntervalSince1970: launchTime))
-//        print(cc.year)
-//        print(cc.day)
-//        print(cc.minute)
-
+        let dateLaunch = Date(timeIntervalSince1970: Double(time))
+        let cc = Calendar.current.dateComponents( [.day, .hour, .minute, .second], from: Date(), to: dateLaunch)
+    
+        guard let day = cc.day, let hour = cc.hour, let minute = cc.minute, let second = cc.second else { return "__ : __ : __  : __" }
+        
+        let days = plusZero(day)
+        let hours = plusZero(hour)
+        let minutes = plusZero(minute)
+        let seconds = plusZero(second)
+        
+        let result = "\(days) : \(hours) : \(minutes) : \(seconds)"
+        
+        return result
     }
     
     private static func plusZero(_ number: Int) -> String {

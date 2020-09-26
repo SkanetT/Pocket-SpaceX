@@ -19,10 +19,6 @@ class ContainerController: UIViewController {
         configureLaunchController()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
@@ -100,9 +96,13 @@ class ContainerController: UIViewController {
             nc.modalPresentationStyle = .fullScreen
             present(nc, animated: true)
         case .launchpads:
-            print("lands")
-            
-            
+            let vc = LaunchpadAssembler.createModule()
+            let nc = UINavigationController(rootViewController: vc)
+            nc.modalPresentationStyle = .fullScreen
+            present(nc, animated: true)
+        case .settings:
+            print("settings")
+
         }
     }
 }

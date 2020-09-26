@@ -29,6 +29,9 @@ class LaunchPresenter: LaunchPresenterInput {
         viewController?.setActionForCell() {[weak self] data in
             self?.router.presentLaunchInfo(data)
         }
+        router.needRefresh() { [weak self] () in
+            self?.interactor.fecthData()
+        }
     }
     
     func sideMenuTap() {
@@ -57,6 +60,4 @@ extension LaunchPresenter: LaunchInteractorOutput {
     func launchDataFailure(_ error: ApiErrors) {
         router.showError(error)
     }
-    
-    
 }

@@ -30,7 +30,7 @@ class LaunchInfoRouter: NSObject, LaunchInfoRouting {
     
     func showAddEventError(_ error: Error?) {
         DispatchQueue.main.async {
-            self.openSettingAler()
+            self.openSettingAlert()
         }
     }
     
@@ -40,7 +40,7 @@ class LaunchInfoRouter: NSObject, LaunchInfoRouting {
         viewController?.present(nc, animated: true, completion: nil)
     }
     
-    private func openSettingAler() {
+    private func openSettingAlert() {
         let alertController = UIAlertController (title: "No access to Calendar", message: "Go to Settings?", preferredStyle: .alert)
         
         let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ -> () in

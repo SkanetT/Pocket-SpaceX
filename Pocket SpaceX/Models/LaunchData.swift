@@ -22,7 +22,7 @@ struct LaunchDatum: Codable {
     let links: Links
     let staticFireDateUTC: String?
     let staticFireDateUnix: Int?
-    let tbd, net: Bool
+    let tbd, net: Bool?
     let window: Int?
     let rocket: String
     let success: Bool?
@@ -30,7 +30,7 @@ struct LaunchDatum: Codable {
     let details: String?
     let crew, ships, capsules, payloads: [String]
     let launchpad: String
-    let autoUpdate: Bool
+    let autoUpdate: Bool?
     let flightNumber: Int
     let name, dateUTC: String
     let dateUnix: Int

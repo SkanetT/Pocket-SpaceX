@@ -39,6 +39,18 @@ class LaunchInfoInteractor: LaunchInfoInteractorInput {
         }
     }
     
+    func fetchLaunchpadName() {
+        let request = LaunchpadInfoRequest(id: data.launchpad)
+        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+            switch result {
+            case .success(let launchtData):
+                self?.output?.launchpadNameSuccess(launchtData.name)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
      func fetchRocketId() {
         output?.rocketIdSuccess(data.rocket)
     }
@@ -57,8 +69,8 @@ class LaunchInfoInteractor: LaunchInfoInteractorInput {
                 event.title = self.data.name
                 event.startDate = Date(timeIntervalSince1970: Double(self.data.dateUnix))
                 event.endDate = Date(timeIntervalSince1970: Double(self.data.dateUnix + 3600))
-                let al = EKAlarm(relativeOffset: -3600)
-                event.alarms = [al]
+                let alarm = EKAlarm(relativeOffset: -3600)
+                event.alarms = [alarm]
                 event.notes = self.data.details
                 if let urlWiki = self.data.links.wikipedia {
                     event.url = URL(string: urlWiki)

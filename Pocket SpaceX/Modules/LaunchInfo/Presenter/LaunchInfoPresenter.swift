@@ -28,6 +28,7 @@ class LaunchInfoPresenter: LaunchInfoPresenterInput {
     func viewDidLoad() {
         interactor.fecthData()
         interactor.fetchRocketName()
+        interactor.fetchLaunchpadName()
     }
     
     func addEventTap() {
@@ -68,5 +69,9 @@ extension LaunchInfoPresenter: LaunchInfoInteractorOutput {
     
     func rocketIdSuccess(_ id: String) {
         router.rocketInfoPresent(id)
+    }
+    
+    func launchpadNameSuccess(_ name: String) {
+        viewController?.didReceiveLaunchpadName(name)
     }
 }

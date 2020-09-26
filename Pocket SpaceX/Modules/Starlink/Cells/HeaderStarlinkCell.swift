@@ -11,6 +11,7 @@ import UIKit
 class HeaderStarlinkCell: UIView {
 
     var select: (() -> ())?
+    var starlinkIcon = UIImageView()
     var totalLabel = UILabel()
     var totalLabelCount = UILabel()
     var spaceLabel = UILabel()
@@ -23,13 +24,23 @@ class HeaderStarlinkCell: UIView {
         super.init(frame: frame)
         
         backgroundColor = .white
+        addSubview(starlinkIcon)
+        starlinkIcon.image = #imageLiteral(resourceName: "Starlink")
+        starlinkIcon.contentMode = .scaleAspectFit
+        starlinkIcon.snp.makeConstraints() { make in
+            make.top.equalTo(snp.top)
+            make.leading.equalTo(snp.leading)
+            make.trailing.equalTo(snp.trailing)
+            make.height.equalTo(100)
+        }
+        
         addSubview(totalLabel)
         totalLabel.font = totalLabel.font.withSize(22)
         totalLabel.adjustsFontSizeToFitWidth = true
         totalLabel.minimumScaleFactor = 0.5
         totalLabel.textAlignment = .center
         totalLabel.snp.makeConstraints() { make in
-            make.top.equalTo(snp.top).offset(8)
+            make.top.equalTo(starlinkIcon.snp.bottom).offset(8)
             make.leading.equalTo(snp.leading).offset(16)
             make.trailing.equalTo(snp.trailing).offset(-16)
         }
