@@ -9,6 +9,6 @@
 import Foundation
 
 protocol LaunchpadPresenterOutput: class {
-    
-    
+    func didReceiveLaucnhpadData(_ data: LaunchpadData)
+    func setActionForCell(_ userSelect: ((String) -> ())?)
 }

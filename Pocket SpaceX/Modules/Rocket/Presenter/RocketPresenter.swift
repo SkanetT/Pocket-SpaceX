@@ -27,7 +27,7 @@ class RocketPresenter: RocketPresenterInput {
     func viewDidLoad() {
         interactor.fecthData()
         viewController?.setActionForCell() {[weak self] id in
-            self?.router.RocketInfoPresent(id: id)
+            self?.router.rocketInfoPresent(id: id)
         }
         
         router.needRefresh() { [weak self] () in

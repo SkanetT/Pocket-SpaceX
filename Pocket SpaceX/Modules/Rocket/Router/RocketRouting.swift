@@ -11,6 +11,6 @@ import Foundation
 protocol RocketRouting {
     func dismiss()
     func showError(_ error: ApiErrors)
-    func RocketInfoPresent(id: String)
+    func rocketInfoPresent(id: String)
     func needRefresh(refresh: (() -> ())?)
 }

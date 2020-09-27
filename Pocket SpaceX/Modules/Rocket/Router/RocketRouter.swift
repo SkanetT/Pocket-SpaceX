@@ -30,7 +30,7 @@ class RocketRouter: RocketRouting {
        viewController?.present(ac, animated: true, completion: nil)
     }
     
-    func RocketInfoPresent(id: String) {
+    func rocketInfoPresent(id: String) {
         let vc = RocketInfoAssembler.createModule(rocketId: id)
         vc.modalPresentationStyle = .fullScreen
         viewController?.navigationController?.pushViewController(vc, animated: true)

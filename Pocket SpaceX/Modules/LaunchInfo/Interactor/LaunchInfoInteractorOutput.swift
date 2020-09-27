@@ -15,8 +15,9 @@ protocol LaunchInfoInteractorOutput: class {
     func rocketNameSuccess(_ name: String)
     func launchpadNameSuccess(_ name: String)
     func rocketIdSuccess(_ id: String)
+    func launchpadIdSuccess(_ id: String)
     func newTimeSuccess(_ time: String)
     func addEventSuccess(eventStore: EKEventStore, event: EKEvent)
     func addEventFailure(_ error: Error?)
-    
+    func shareDateSuccess(_ links: Links, isShare: Bool)
 }

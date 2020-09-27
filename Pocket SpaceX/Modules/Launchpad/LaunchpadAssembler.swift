@@ -13,9 +13,11 @@ class LaunchpadAssembler {
     static func createModule() -> UIViewController {
         let viewController = LaunchpadController()
         let router = LaunchpadRouter(viewController)
-        let presenter = LaunchpadPresenter(router)
+        let interactor = LaunchpadInteractor()
+        let presenter = LaunchpadPresenter(interactor, router)
         viewController.presenter = presenter
-        
+        let tableHandler = LaunchpadTableHandler()
+        viewController.tableHandler = tableHandler
         return viewController
     }
 }

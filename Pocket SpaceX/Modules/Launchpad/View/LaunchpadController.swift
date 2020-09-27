@@ -11,12 +11,15 @@ import UIKit
 class LaunchpadController: SpinnerController {
     
     var presenter: LaunchpadPresenterInput?
+    var tableHandler: LaunchpadTableHandlerProtocol?
     var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         presenter?.attach(self)
+        presenter?.viewDidLoad()
+        configureUI()
+        tableHandler?.attach(tableView)
         showSpinner()
     }
     
@@ -43,5 +46,13 @@ class LaunchpadController: SpinnerController {
 }
 
 extension LaunchpadController: LaunchpadPresenterOutput {
+    func didReceiveLaucnhpadData(_ data: LaunchpadData) {
+        tableHandler?.setData(data)
+        removeSpinner()
+    }
+    
+    func setActionForCell(_ userSelect: ((String) -> ())?) {
+        tableHandler?.setAction(userSelect: userSelect)
+    }
     
 }

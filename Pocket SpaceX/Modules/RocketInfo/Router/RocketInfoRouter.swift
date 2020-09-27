@@ -9,7 +9,6 @@
 import UIKit
 import SafariServices
 
-
 class RocketInfoRouter: RocketInfoRouting {
     
     private weak var viewController: UIViewController?

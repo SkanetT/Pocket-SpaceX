@@ -10,6 +10,7 @@ import UIKit
 
 protocol LaunchpadRouting {
     func dismiss()
+    func launchpadInfoPresent(id: String)
     func showError(_ error: ApiErrors)
     func needRefresh(refresh: (() -> ())?)
 }

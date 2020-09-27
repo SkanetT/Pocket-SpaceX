@@ -13,4 +13,6 @@ protocol LaunchInfoRouting {
     func showEventEditView(eventStore: EKEventStore, event: EKEvent)
     func showAddEventError(_ error: Error?)
     func rocketInfoPresent(_ id: String)
+    func launchpadInfoPresent(_ id: String)
+    func sharePresent(_ links: Links, isShare: Bool)
 }

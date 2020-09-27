@@ -21,7 +21,10 @@ class LaunchInfoController: UIViewController {
     @IBOutlet weak var rocketName: UILabel!
     @IBOutlet weak var launchpadStack: UIStackView!
     @IBOutlet weak var launchpadName: UILabel!
-
+    @IBOutlet weak var viewForButtons: UIView!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var linksButton: UIButton!
+    
     private let queue = DispatchQueue.init(label: "com.spacex.timer", qos: .background)
     weak var timer: Timer?
     
@@ -49,13 +52,31 @@ class LaunchInfoController: UIViewController {
         statusTimerLabel.layer.cornerRadius = 8
         statusTimerLabel.alpha = 0.95
         
+        dateLabel.clipsToBounds = true
+        dateLabel.layer.cornerRadius = 8
+        dateLabel.alpha = 0.95
+        
         detailsLabel.clipsToBounds = true
         detailsLabel.layer.cornerRadius = 8
         detailsLabel.alpha = 0.95
         
+        shareButton.clipsToBounds = true
+        shareButton.layer.cornerRadius = 8
+        shareButton.alpha = 0.95
+        shareButton.addTarget(self, action: #selector(shareTap), for: .touchUpInside)
+        
+        linksButton.clipsToBounds = true
+        linksButton.layer.cornerRadius = 8
+        linksButton.alpha = 0.95
+        linksButton.addTarget(self, action: #selector(linksTap), for: .touchUpInside)
+        
         let rocketGesture = UITapGestureRecognizer(target: self, action: #selector(rocketTap (_ :)))
         rocketStack.isUserInteractionEnabled = true
         rocketStack.addGestureRecognizer(rocketGesture)
+        
+        let launchpadGesture = UITapGestureRecognizer(target: self, action: #selector(launchpadTap (_ :)))
+        launchpadStack.isUserInteractionEnabled = true
+        launchpadStack.addGestureRecognizer(launchpadGesture)
     }
     
     @objc
@@ -72,6 +93,21 @@ class LaunchInfoController: UIViewController {
     @objc
     private func rocketTap(_ sender: UITapGestureRecognizer ) {
         presenter?.rocketTap()
+    }
+    
+    @objc
+    private func launchpadTap(_ sender: UITapGestureRecognizer ) {
+        presenter?.launchpadTap()
+    }
+    
+    @objc
+    private func shareTap() {
+        presenter?.shareTap()
+    }
+    
+    @objc
+    private func linksTap() {
+       presenter?.linksTap()
     }
     
 }
@@ -114,6 +150,9 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
             viewForPatch.isHidden = true
         }
         
+        if data.links.wikipedia == nil && data.links.reddit.campaign == nil && data.links.reddit.launch == nil && data.links.reddit.media == nil && data.links.reddit.recovery == nil {
+            viewForButtons.isHidden = true
+        }
     }
     
     func didReceiveNewTime(_ time: String) {

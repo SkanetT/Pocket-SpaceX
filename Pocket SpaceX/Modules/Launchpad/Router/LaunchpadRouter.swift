@@ -22,6 +22,12 @@ class LaunchpadRouter: LaunchpadRouting {
         viewController?.dismiss(animated: true, completion: nil)
     }
     
+    func launchpadInfoPresent(id: String) {
+        let vc = LaunchpadInfoAssembler.createModule(launchpadId: id)
+        vc.modalPresentationStyle = .fullScreen
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func showError(_ error: ApiErrors) {
         let ac = UIAlertController()
         ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in

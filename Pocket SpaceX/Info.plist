@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
 	<string>$(PRODUCT_NAME) user your calendar.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>$(PRODUCT_NAME) user your contacts.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

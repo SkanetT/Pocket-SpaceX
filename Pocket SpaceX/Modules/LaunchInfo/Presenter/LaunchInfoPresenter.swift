@@ -43,6 +43,17 @@ class LaunchInfoPresenter: LaunchInfoPresenterInput {
         interactor.fetchRocketId()
     }
     
+    func launchpadTap() {
+        interactor.fetchLaunchpadId()
+    }
+    
+    func shareTap() {
+        interactor.fetchDataForShare(isShare: true)
+    }
+    func linksTap() {
+        interactor.fetchDataForShare(isShare: false)
+    }
+    
 }
 
 extension LaunchInfoPresenter: LaunchInfoInteractorOutput {
@@ -71,7 +82,15 @@ extension LaunchInfoPresenter: LaunchInfoInteractorOutput {
         router.rocketInfoPresent(id)
     }
     
+    func launchpadIdSuccess(_ id: String) {
+        router.launchpadInfoPresent(id)
+    }
+    
     func launchpadNameSuccess(_ name: String) {
         viewController?.didReceiveLaunchpadName(name)
+    }
+    
+    func shareDateSuccess(_ links: Links, isShare: Bool) {
+        router.sharePresent(links, isShare: isShare)
     }
 }

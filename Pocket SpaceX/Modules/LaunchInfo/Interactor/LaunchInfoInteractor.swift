@@ -55,9 +55,17 @@ class LaunchInfoInteractor: LaunchInfoInteractorInput {
         output?.rocketIdSuccess(data.rocket)
     }
     
+    func fetchLaunchpadId() {
+        output?.launchpadIdSuccess(data.launchpad)
+    }
+    
     func fetchNewTime() {
         let time = DataManager.makeDateForTimer(data.dateUnix)
         output?.newTimeSuccess(time)
+    }
+    
+    func fetchDataForShare(isShare: Bool) {
+        output?.shareDateSuccess(data.links, isShare: isShare)
     }
     
     func attemptAddEvent() {

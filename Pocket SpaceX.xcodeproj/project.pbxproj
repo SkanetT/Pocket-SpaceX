@@ -15,6 +15,18 @@
 		3A5AE59B251FCAC0000E43C6 /* LaunchpadPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE59A251FCAC0000E43C6 /* LaunchpadPresenterOutput.swift */; };
 		3A5AE59F251FCD9E000E43C6 /* LaunchpadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE59E251FCD9E000E43C6 /* LaunchpadRouter.swift */; };
 		3A5AE5A2251FCDF2000E43C6 /* LaunchpadRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5A1251FCDF2000E43C6 /* LaunchpadRouting.swift */; };
+		3A5AE5A8252096ED000E43C6 /* LaunchpadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5A7252096ED000E43C6 /* LaunchpadInteractor.swift */; };
+		3A5AE5AB25209763000E43C6 /* LaunchpadInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5AA25209763000E43C6 /* LaunchpadInteractorInput.swift */; };
+		3A5AE5AE25209789000E43C6 /* LaunchpadInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5AD25209789000E43C6 /* LaunchpadInteractorOutput.swift */; };
+		3A5AE5B225209C59000E43C6 /* LaunchpadTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5B125209C59000E43C6 /* LaunchpadTableHandler.swift */; };
+		3A5AE5B525209C93000E43C6 /* LaunchpadTableHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5B425209C93000E43C6 /* LaunchpadTableHandlerProtocol.swift */; };
+		3A5AE5BA2520A047000E43C6 /* LaunchpadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5B82520A047000E43C6 /* LaunchpadCell.swift */; };
+		3A5AE5BB2520A047000E43C6 /* LaunchpadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AE5B92520A047000E43C6 /* LaunchpadCell.xib */; };
+		3A5AE5C325212284000E43C6 /* LaunchpadInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5C125212284000E43C6 /* LaunchpadInfoController.swift */; };
+		3A5AE5C425212284000E43C6 /* LaunchpadInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AE5C225212284000E43C6 /* LaunchpadInfoController.xib */; };
+		3A5AE5C825212394000E43C6 /* LaunchpadInfoAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5C725212394000E43C6 /* LaunchpadInfoAssembler.swift */; };
+		3A5AE5D225213297000E43C6 /* LaunchpadInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5D125213297000E43C6 /* LaunchpadInfoRouter.swift */; };
+		3A5AE5D525213334000E43C6 /* LaunchpadInfoRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5D425213334000E43C6 /* LaunchpadInfoRouting.swift */; };
 		3A5F40D825165074002460EA /* HeaderStarlinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F40D725165074002460EA /* HeaderStarlinkCell.swift */; };
 		3A5F40DB25166A1A002460EA /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F40DA25166A1A002460EA /* Enums.swift */; };
 		3A5F40E02516925A002460EA /* LaunchInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F40DF2516925A002460EA /* LaunchInfoPresenter.swift */; };
@@ -125,6 +137,18 @@
 		3A5AE59A251FCAC0000E43C6 /* LaunchpadPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadPresenterOutput.swift; sourceTree = "<group>"; };
 		3A5AE59E251FCD9E000E43C6 /* LaunchpadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadRouter.swift; sourceTree = "<group>"; };
 		3A5AE5A1251FCDF2000E43C6 /* LaunchpadRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadRouting.swift; sourceTree = "<group>"; };
+		3A5AE5A7252096ED000E43C6 /* LaunchpadInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInteractor.swift; sourceTree = "<group>"; };
+		3A5AE5AA25209763000E43C6 /* LaunchpadInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInteractorInput.swift; sourceTree = "<group>"; };
+		3A5AE5AD25209789000E43C6 /* LaunchpadInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInteractorOutput.swift; sourceTree = "<group>"; };
+		3A5AE5B125209C59000E43C6 /* LaunchpadTableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadTableHandler.swift; sourceTree = "<group>"; };
+		3A5AE5B425209C93000E43C6 /* LaunchpadTableHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadTableHandlerProtocol.swift; sourceTree = "<group>"; };
+		3A5AE5B82520A047000E43C6 /* LaunchpadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadCell.swift; sourceTree = "<group>"; };
+		3A5AE5B92520A047000E43C6 /* LaunchpadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchpadCell.xib; sourceTree = "<group>"; };
+		3A5AE5C125212284000E43C6 /* LaunchpadInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoController.swift; sourceTree = "<group>"; };
+		3A5AE5C225212284000E43C6 /* LaunchpadInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchpadInfoController.xib; sourceTree = "<group>"; };
+		3A5AE5C725212394000E43C6 /* LaunchpadInfoAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoAssembler.swift; sourceTree = "<group>"; };
+		3A5AE5D125213297000E43C6 /* LaunchpadInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoRouter.swift; sourceTree = "<group>"; };
+		3A5AE5D425213334000E43C6 /* LaunchpadInfoRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoRouting.swift; sourceTree = "<group>"; };
 		3A5F40D725165074002460EA /* HeaderStarlinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStarlinkCell.swift; sourceTree = "<group>"; };
 		3A5F40DA25166A1A002460EA /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		3A5F40DF2516925A002460EA /* LaunchInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoPresenter.swift; sourceTree = "<group>"; };
@@ -243,6 +267,8 @@
 		3A5AE58B251FC55B000E43C6 /* Launchpad */ = {
 			isa = PBXGroup;
 			children = (
+				3A5AE5B725209FBC000E43C6 /* Cells */,
+				3A5AE5B025209C1D000E43C6 /* TableHandler */,
 				3A5AE5A4251FE756000E43C6 /* Interactor */,
 				3A5AE58C251FC5FA000E43C6 /* View */,
 				3A5AE593251FC778000E43C6 /* Presenter */,
@@ -282,8 +308,65 @@
 		3A5AE5A4251FE756000E43C6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				3A5AE5A7252096ED000E43C6 /* LaunchpadInteractor.swift */,
+				3A5AE5AA25209763000E43C6 /* LaunchpadInteractorInput.swift */,
+				3A5AE5AD25209789000E43C6 /* LaunchpadInteractorOutput.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3A5AE5B025209C1D000E43C6 /* TableHandler */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AE5B125209C59000E43C6 /* LaunchpadTableHandler.swift */,
+				3A5AE5B425209C93000E43C6 /* LaunchpadTableHandlerProtocol.swift */,
+			);
+			path = TableHandler;
+			sourceTree = "<group>";
+		};
+		3A5AE5B725209FBC000E43C6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AE5B82520A047000E43C6 /* LaunchpadCell.swift */,
+				3A5AE5B92520A047000E43C6 /* LaunchpadCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3A5AE5BD252121B7000E43C6 /* LaunchpadInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AE5C02521224D000E43C6 /* View */,
+				3A5AE5CA25212F3F000E43C6 /* Presenter */,
+				3A5AE5CB2521320B000E43C6 /* Router */,
+				3A5AE5C725212394000E43C6 /* LaunchpadInfoAssembler.swift */,
+			);
+			path = LaunchpadInfo;
+			sourceTree = "<group>";
+		};
+		3A5AE5C02521224D000E43C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AE5C125212284000E43C6 /* LaunchpadInfoController.swift */,
+				3A5AE5C225212284000E43C6 /* LaunchpadInfoController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A5AE5CA25212F3F000E43C6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3A5AE5CB2521320B000E43C6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AE5D125213297000E43C6 /* LaunchpadInfoRouter.swift */,
+				3A5AE5D425213334000E43C6 /* LaunchpadInfoRouting.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		3A5F40DE25169221002460EA /* Presenter */ = {
@@ -675,12 +758,13 @@
 		3A9C21BC250578F700F8B0D6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				3A5AE58B251FC55B000E43C6 /* Launchpad */,
-				3A85073E2512A59200923C18 /* Starlink */,
-				3A8506E8250B9E2200923C18 /* RocketInfo */,
-				3A8506C32506D69900923C18 /* Rocket */,
-				3A8507362511552200923C18 /* LaunchInfo */,
 				3A9C21BB250578AF00F8B0D6 /* Launch */,
+				3A8507362511552200923C18 /* LaunchInfo */,
+				3A5AE58B251FC55B000E43C6 /* Launchpad */,
+				3A5AE5BD252121B7000E43C6 /* LaunchpadInfo */,
+				3A8506C32506D69900923C18 /* Rocket */,
+				3A8506E8250B9E2200923C18 /* RocketInfo */,
+				3A85073E2512A59200923C18 /* Starlink */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -829,11 +913,13 @@
 			files = (
 				3A9C21A92505695800F8B0D6 /* LaunchScreen.storyboard in Resources */,
 				3A8D937925161DF4003E1C48 /* StarlinkCell.xib in Resources */,
+				3A5AE5C425212284000E43C6 /* LaunchpadInfoController.xib in Resources */,
 				3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */,
 				3A85072E250EB2D100923C18 /* LaunchCell.xib in Resources */,
 				3A85073B2511570800923C18 /* LaunchInfoController.xib in Resources */,
 				3A8506DE25097B9A00923C18 /* RocketCell.xib in Resources */,
 				3A850715250CE61300923C18 /* HeaderInfoCell.xib in Resources */,
+				3A5AE5BB2520A047000E43C6 /* LaunchpadCell.xib in Resources */,
 				3A850711250CDE1700923C18 /* RocketInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,6 +974,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9C21D32506CC0900F8B0D6 /* BaseRequest.swift in Sources */,
+				3A5AE5D225213297000E43C6 /* LaunchpadInfoRouter.swift in Sources */,
 				3A5AE59F251FCD9E000E43C6 /* LaunchpadRouter.swift in Sources */,
 				3A850706250C224200923C18 /* RocketInfoTableHandler.swift in Sources */,
 				3A85074A2512AD7B00923C18 /* StarlinkPresenterInput.swift in Sources */,
@@ -904,6 +991,8 @@
 				3A85070C250CDBF400923C18 /* BaseXibView.swift in Sources */,
 				3A9C21C42505816200F8B0D6 /* LaunchPresenter.swift in Sources */,
 				3A8506FA250BB3F500923C18 /* RocketInfoInteractor.swift in Sources */,
+				3A5AE5AB25209763000E43C6 /* LaunchpadInteractorInput.swift in Sources */,
+				3A5AE5AE25209789000E43C6 /* LaunchpadInteractorOutput.swift in Sources */,
 				3A5F411D251938F9002460EA /* LaunchInfoRouter.swift in Sources */,
 				3A8506F3250BB09300923C18 /* RocketInfoPresenter.swift in Sources */,
 				3A850729250EB01600923C18 /* LaunchTableHandlerProtocol.swift in Sources */,
@@ -924,6 +1013,8 @@
 				3A8506E5250ABD7900923C18 /* RocketInteractorOutput.swift in Sources */,
 				3A8506EB250B9E6200923C18 /* RocketInfoController.swift in Sources */,
 				3A8D937825161DF4003E1C48 /* StarlinkCell.swift in Sources */,
+				3A5AE5A8252096ED000E43C6 /* LaunchpadInteractor.swift in Sources */,
+				3A5AE5C325212284000E43C6 /* LaunchpadInfoController.swift in Sources */,
 				3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */,
 				3A5AE595251FC8DD000E43C6 /* LaunchpadPresenter.swift in Sources */,
 				3A5AE591251FC65E000E43C6 /* LaunchpadAssembler.swift in Sources */,
@@ -936,6 +1027,8 @@
 				3A5AE59B251FCAC0000E43C6 /* LaunchpadPresenterOutput.swift in Sources */,
 				3A850717250CEA5300923C18 /* FooterInfoCell.swift in Sources */,
 				3A5AE598251FC92F000E43C6 /* LaunchpadPresenterInput.swift in Sources */,
+				3A5AE5B225209C59000E43C6 /* LaunchpadTableHandler.swift in Sources */,
+				3A5AE5D525213334000E43C6 /* LaunchpadInfoRouting.swift in Sources */,
 				3A5F40F225169593002460EA /* LaunchInfoInteractorOutput.swift in Sources */,
 				3A85071B250E5E6500923C18 /* ImageCell.swift in Sources */,
 				3A8507432512A9B700923C18 /* StarlinkAssembler.swift in Sources */,
@@ -959,6 +1052,7 @@
 				3A9C21B42505706C00F8B0D6 /* MenuOption.swift in Sources */,
 				3A8507512512B07400923C18 /* StarlinkRouting.swift in Sources */,
 				3A8506F5250BB0B700923C18 /* RocketInfoPresenterInput.swift in Sources */,
+				3A5AE5B525209C93000E43C6 /* LaunchpadTableHandlerProtocol.swift in Sources */,
 				3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */,
 				3A9C21B62505738D00F8B0D6 /* MenuDelegate.swift in Sources */,
 				3A850710250CDE1700923C18 /* RocketInfoCell.swift in Sources */,
@@ -966,6 +1060,7 @@
 				3A8506E1250ABCB700923C18 /* RocketInteractor.swift in Sources */,
 				3A5F40E42516929D002460EA /* LaunchInfoPresenterInput.swift in Sources */,
 				3A9C21BF25057A3E00F8B0D6 /* LaunchController.swift in Sources */,
+				3A5AE5BA2520A047000E43C6 /* LaunchpadCell.swift in Sources */,
 				3A5F40DB25166A1A002460EA /* Enums.swift in Sources */,
 				3A85072D250EB2D100923C18 /* LaunchCell.swift in Sources */,
 				3A8506BF2506D08700923C18 /* Errors.swift in Sources */,
@@ -983,6 +1078,7 @@
 				3A85070A250CD9E500923C18 /* UIImageView.swift in Sources */,
 				3A8506D425081FF500923C18 /* RocketRouting.swift in Sources */,
 				3A8506D225081FCB00923C18 /* RocketRouter.swift in Sources */,
+				3A5AE5C825212394000E43C6 /* LaunchpadInfoAssembler.swift in Sources */,
 				3A8506F7250BB10B00923C18 /* RocketInfoPresenterOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1123,7 +1219,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = SL47R2R53M;
 				INFOPLIST_FILE = "Pocket SpaceX/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1144,7 +1240,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = SL47R2R53M;
 				INFOPLIST_FILE = "Pocket SpaceX/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

@@ -13,5 +13,8 @@ protocol LaunchInfoPresenterInput: class {
     func viewDidLoad()
     func addEventTap()
     func rocketTap()
+    func launchpadTap()
+    func shareTap()
+    func linksTap()
     func timerTick()
 }

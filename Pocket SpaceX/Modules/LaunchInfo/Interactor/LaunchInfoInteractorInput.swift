@@ -13,7 +13,9 @@ protocol LaunchInfoInteractorInput: class {
     func fecthData()
     func fetchRocketName()
     func fetchLaunchpadName()
+    func fetchDataForShare(isShare: Bool)
     func fetchRocketId()
+    func fetchLaunchpadId()
     func attemptAddEvent()
     func fetchNewTime()
 }
