@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchpadInfoController" customModule="Pocket_SpaceX" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="jFo-st-dh2" id="K5f-N3-6rC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +18,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jFo-st-dh2">
+                    <rect key="frame" x="8" y="52" width="398" height="398"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jFo-st-dh2" secondAttribute="height" multiplier="1:1" id="S1u-Ko-qwp"/>
+                    </constraints>
+                </mapView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="jFo-st-dh2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="LB1-C2-sQN"/>
+                <constraint firstItem="jFo-st-dh2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="YjI-PR-Yip"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jFo-st-dh2" secondAttribute="trailing" constant="8" id="hIh-7J-NNK"/>
+            </constraints>
             <point key="canvasLocation" x="141" y="150"/>
         </view>
     </objects>

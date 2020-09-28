@@ -11,5 +11,4 @@ import Foundation
 protocol RocketInfoInteractorOutput: class {
     func rocketInfoDataSuccess(_ data: RocketDatum)
     func rocketInfoDataFailure(_ error: ApiErrors)
-
 }
