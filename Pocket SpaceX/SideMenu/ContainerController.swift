@@ -57,8 +57,6 @@ class ContainerController: UIViewController {
         if shouldExpand {
             
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                //    self.view.frame.size.height -= 80
-                //    self.view.frame.origin.y += 40
                 
                 self.centerContoller.view.frame.origin.x  = self.centerContoller.view.frame.width - 80
                 
@@ -67,9 +65,6 @@ class ContainerController: UIViewController {
         } else {
             
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                
-                //   self.view.frame.size.height += 80
-                //     self.view.frame.origin.y -= 40
                 
                 self.centerContoller.view.frame.origin.x  = 0
                 
@@ -101,7 +96,9 @@ class ContainerController: UIViewController {
             nc.modalPresentationStyle = .fullScreen
             present(nc, animated: true)
         case .settings:
-            print("settings")
+            let vc = SettingsAssembler.createModule()
+            vc.modalPresentationStyle = .custom
+            present(vc, animated: true)
 
         }
     }

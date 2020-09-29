@@ -16,6 +16,7 @@ class MenuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMenu()
+        view.backgroundColor = .lightGray
     }
     
     func configureMenu(){
@@ -25,15 +26,25 @@ class MenuController: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .lightGray
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
         tableView.rowHeight = 80
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints() { make in
-            make.top.equalTo(view.snp.top)
+            make.top.equalTo(view.snp.topMargin)
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
         }
+        
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeGesture.direction = .left
+        view.addGestureRecognizer(swipeGesture)
+    }
+    
+    @objc
+    private func swipe() {
+        delegate?.handleMenuToggle(forMenuOption: nil)
     }
     
 }

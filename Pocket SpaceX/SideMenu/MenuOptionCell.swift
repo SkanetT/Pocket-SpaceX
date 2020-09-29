@@ -23,7 +23,7 @@ class MenuOptionCell: UITableViewCell {
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 18)
         
         return label
         
@@ -38,7 +38,7 @@ class MenuOptionCell: UITableViewCell {
         iconImageView.snp.makeConstraints() { make in
             make.centerY.equalTo(snp.centerY)
             make.left.equalTo(snp.left).offset(12)
-            make.height.width.equalTo(28)
+            make.height.width.equalTo(30)
         }
         
         addSubview(descriptionLabel)

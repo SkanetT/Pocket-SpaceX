@@ -5,12 +5,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchpadInfoController" customModule="Pocket_SpaceX" customModuleProvider="target">
             <connections>
-                <outlet property="mapView" destination="jFo-st-dh2" id="K5f-N3-6rC"/>
+                <outlet property="fullNameLabel" destination="LMb-fg-gfU" id="LrW-m4-AXK"/>
+                <outlet property="mapView" destination="cdu-wz-gzQ" id="m7X-hN-yzK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,21 +21,86 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jFo-st-dh2">
-                    <rect key="frame" x="8" y="52" width="398" height="398"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ji5-7m-09E">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7u-PO-daf">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="464"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fqe-hv-jcI">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="464"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KD4-ZN-YHk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cdu-wz-gzQ">
+                                                    <rect key="frame" x="8" y="8" width="398" height="398"/>
+                                                </mapView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="cdu-wz-gzQ" secondAttribute="bottom" constant="8" id="LI3-sA-xgc"/>
+                                                <constraint firstItem="cdu-wz-gzQ" firstAttribute="top" secondItem="KD4-ZN-YHk" secondAttribute="top" constant="8" id="P29-bu-cOD"/>
+                                                <constraint firstAttribute="width" secondItem="KD4-ZN-YHk" secondAttribute="height" multiplier="1:1" id="aNI-At-m81"/>
+                                                <constraint firstItem="cdu-wz-gzQ" firstAttribute="leading" secondItem="KD4-ZN-YHk" secondAttribute="leading" constant="8" id="lTY-ng-M01"/>
+                                                <constraint firstAttribute="trailing" secondItem="cdu-wz-gzQ" secondAttribute="trailing" constant="8" id="th8-Am-Sgp"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4s-ZJ-dUf">
+                                            <rect key="frame" x="0.0" y="414" width="414" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="full name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LMb-fg-gfU">
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="50"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="LMb-fg-gfU" secondAttribute="trailing" constant="8" id="6Lj-cW-Tj2"/>
+                                                <constraint firstItem="LMb-fg-gfU" firstAttribute="top" secondItem="Q4s-ZJ-dUf" secondAttribute="top" id="6iy-7V-eed"/>
+                                                <constraint firstAttribute="bottom" secondItem="LMb-fg-gfU" secondAttribute="bottom" id="VdX-U4-mdp"/>
+                                                <constraint firstItem="LMb-fg-gfU" firstAttribute="leading" secondItem="Q4s-ZJ-dUf" secondAttribute="leading" constant="8" id="gc9-fB-blK"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="iwx-7v-aWZ"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Fqe-hv-jcI" secondAttribute="bottom" id="BdT-GI-nok"/>
+                                <constraint firstAttribute="trailing" secondItem="Fqe-hv-jcI" secondAttribute="trailing" id="ZhF-iJ-TGM"/>
+                                <constraint firstItem="Fqe-hv-jcI" firstAttribute="top" secondItem="I7u-PO-daf" secondAttribute="top" id="dnY-ML-ttd"/>
+                                <constraint firstItem="Fqe-hv-jcI" firstAttribute="leading" secondItem="I7u-PO-daf" secondAttribute="leading" id="sjB-t6-3Gu"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="jFo-st-dh2" secondAttribute="height" multiplier="1:1" id="S1u-Ko-qwp"/>
+                        <constraint firstAttribute="trailing" secondItem="I7u-PO-daf" secondAttribute="trailing" id="38X-qx-dKf"/>
+                        <constraint firstItem="I7u-PO-daf" firstAttribute="top" secondItem="ji5-7m-09E" secondAttribute="top" id="5fl-gh-uKq"/>
+                        <constraint firstItem="I7u-PO-daf" firstAttribute="leading" secondItem="ji5-7m-09E" secondAttribute="leading" id="h2G-9X-IKv"/>
+                        <constraint firstAttribute="bottom" secondItem="I7u-PO-daf" secondAttribute="bottom" id="y9s-Hm-cd7"/>
                     </constraints>
-                </mapView>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="jFo-st-dh2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="LB1-C2-sQN"/>
-                <constraint firstItem="jFo-st-dh2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="YjI-PR-Yip"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jFo-st-dh2" secondAttribute="trailing" constant="8" id="hIh-7J-NNK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ji5-7m-09E" secondAttribute="trailing" id="77D-Pm-62Z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ji5-7m-09E" secondAttribute="bottom" id="Gbb-NH-7Zb"/>
+                <constraint firstItem="I7u-PO-daf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="H8F-FI-fyC"/>
+                <constraint firstItem="ji5-7m-09E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IXg-I1-v67"/>
+                <constraint firstItem="ji5-7m-09E" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qn7-7f-WFk"/>
             </constraints>
-            <point key="canvasLocation" x="141" y="150"/>
+            <point key="canvasLocation" x="140.57971014492756" y="150"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

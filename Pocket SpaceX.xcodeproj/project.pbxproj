@@ -35,6 +35,8 @@
 		3A5AE5EA25227AE4000E43C6 /* LaunchpadInfoInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5E925227AE4000E43C6 /* LaunchpadInfoInteractorOutput.swift */; };
 		3A5AE5EF25228A86000E43C6 /* LaunchpadInfoMapHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5EE25228A86000E43C6 /* LaunchpadInfoMapHandler.swift */; };
 		3A5AE5F225228AF2000E43C6 /* LaunchpadInfoMapHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5F125228AF2000E43C6 /* LaunchpadInfoMapHandlerProtocol.swift */; };
+		3A5AE5F62523BE7C000E43C6 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5F52523BE7C000E43C6 /* SettingsController.swift */; };
+		3A5AE5FB2523BF48000E43C6 /* SettingsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE5FA2523BF48000E43C6 /* SettingsAssembler.swift */; };
 		3A5F40D825165074002460EA /* HeaderStarlinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F40D725165074002460EA /* HeaderStarlinkCell.swift */; };
 		3A5F40DB25166A1A002460EA /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F40DA25166A1A002460EA /* Enums.swift */; };
 		3A5F40E02516925A002460EA /* LaunchInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F40DF2516925A002460EA /* LaunchInfoPresenter.swift */; };
@@ -165,6 +167,8 @@
 		3A5AE5E925227AE4000E43C6 /* LaunchpadInfoInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoInteractorOutput.swift; sourceTree = "<group>"; };
 		3A5AE5EE25228A86000E43C6 /* LaunchpadInfoMapHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoMapHandler.swift; sourceTree = "<group>"; };
 		3A5AE5F125228AF2000E43C6 /* LaunchpadInfoMapHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoMapHandlerProtocol.swift; sourceTree = "<group>"; };
+		3A5AE5F52523BE7C000E43C6 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		3A5AE5FA2523BF48000E43C6 /* SettingsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssembler.swift; sourceTree = "<group>"; };
 		3A5F40D725165074002460EA /* HeaderStarlinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStarlinkCell.swift; sourceTree = "<group>"; };
 		3A5F40DA25166A1A002460EA /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		3A5F40DF2516925A002460EA /* LaunchInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoPresenter.swift; sourceTree = "<group>"; };
@@ -407,6 +411,23 @@
 				3A5AE5F125228AF2000E43C6 /* LaunchpadInfoMapHandlerProtocol.swift */,
 			);
 			path = MapHandler;
+			sourceTree = "<group>";
+		};
+		3A5AE5F42523BE59000E43C6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AE5F82523BE80000E43C6 /* View */,
+				3A5AE5FA2523BF48000E43C6 /* SettingsAssembler.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3A5AE5F82523BE80000E43C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AE5F52523BE7C000E43C6 /* SettingsController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3A5F40DE25169221002460EA /* Presenter */ = {
@@ -798,6 +819,7 @@
 		3A9C21BC250578F700F8B0D6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3A5AE5F42523BE59000E43C6 /* Settings */,
 				3A9C21BB250578AF00F8B0D6 /* Launch */,
 				3A8507362511552200923C18 /* LaunchInfo */,
 				3A5AE58B251FC55B000E43C6 /* Launchpad */,
@@ -1085,6 +1107,8 @@
 				3A850733250EBC5E00923C18 /* LaunchSearchHandlerProtocol.swift in Sources */,
 				3A850727250EAF9700923C18 /* LaunchTableHandler.swift in Sources */,
 				3A5AE5DE25226F09000E43C6 /* LaunchpadInfoPresenterInput.swift in Sources */,
+				3A5AE5F62523BE7C000E43C6 /* SettingsController.swift in Sources */,
+				3A5AE5FB2523BF48000E43C6 /* SettingsAssembler.swift in Sources */,
 				3A8507412512A97A00923C18 /* StarlinkController.swift in Sources */,
 				3A8D9372251555D2003E1C48 /* StarlinkTableHandlerProtocol.swift in Sources */,
 				3A5F411F25193978002460EA /* LaunchInfoRouting.swift in Sources */,

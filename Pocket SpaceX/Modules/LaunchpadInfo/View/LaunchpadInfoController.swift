@@ -14,6 +14,7 @@ class LaunchpadInfoController: SpinnerController {
     var presenter: LaunchpadInfoPresenterInput?
     var mapHandler: LaunchpadInfoMapHandlerProtocol?
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var fullNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,10 @@ class LaunchpadInfoController: SpinnerController {
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
         mapView.clipsToBounds = true
         mapView.layer.cornerRadius = 8
+        
+        fullNameLabel.clipsToBounds = true
+        fullNameLabel.layer.cornerRadius = 8
+        fullNameLabel.alpha = 0.95
     }
     
     @objc
@@ -42,6 +47,7 @@ extension LaunchpadInfoController: LaunchpadInfoPresenterOutput {
         mapHandler?.setData(data)
         DispatchQueue.main.async {
             self.title = data.name
+            self.fullNameLabel.text = data.fullName
         }
         removeSpinner()
     }
