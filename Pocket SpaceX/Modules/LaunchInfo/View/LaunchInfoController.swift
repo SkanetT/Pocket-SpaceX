@@ -12,6 +12,7 @@ import youtube_ios_player_helper
 class LaunchInfoController: UIViewController {
     
     @IBOutlet weak var youtubeView: YTPlayerView!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var statusTimerLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
@@ -24,6 +25,7 @@ class LaunchInfoController: UIViewController {
     @IBOutlet weak var viewForButtons: UIView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var linksButton: UIButton!
+    @IBOutlet weak var viewForFlickr: UIView! 
     
     private let queue = DispatchQueue.init(label: "com.spacex.timer", qos: .background)
     weak var timer: Timer?
@@ -40,6 +42,9 @@ class LaunchInfoController: UIViewController {
     }
     
     private func configureUI() {
+        
+        viewForFlickr.isHidden = true
+        
         rocketStack.clipsToBounds = true
         rocketStack.layer.cornerRadius = 8
         rocketStack.alpha = 0.95
@@ -107,7 +112,7 @@ class LaunchInfoController: UIViewController {
     
     @objc
     private func linksTap() {
-       presenter?.linksTap()
+        presenter?.linksTap()
     }
     
 }
@@ -123,7 +128,10 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         
         dateLabel.text = DataManager.makeDateStringFromUnixTime(data.dateUnix)
         
+        
+        
         if data.upcoming {
+            
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "calendar.badge.plus"), style: .plain, target: self, action: #selector(handleEvent))
             statusTimerLabel.textColor = .black
             statusTimerLabel.text = DataManager.makeDateForTimer(data.dateUnix)
@@ -152,6 +160,21 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         
         if data.links.wikipedia == nil && data.links.reddit.campaign == nil && data.links.reddit.launch == nil && data.links.reddit.media == nil && data.links.reddit.recovery == nil {
             viewForButtons.isHidden = true
+        }
+        
+        if data.links.flickr.original.count > 0 {
+            DispatchQueue.main.async {
+                self.viewForFlickr.isHidden = false
+                let flickrView = FlickrView()
+                self.viewForFlickr.addSubview(flickrView)
+                flickrView.snp.makeConstraints() { make in
+                    make.top.equalTo(self.viewForFlickr.snp.top)
+                    make.leading.equalTo(self.viewForFlickr.snp.leading)
+                    make.trailing.equalTo(self.viewForFlickr.snp.trailing)
+                    make.bottom.equalTo(self.viewForFlickr.snp.bottom)
+                }
+                flickrView.setData(data.links.flickr.original)
+            }
         }
     }
     

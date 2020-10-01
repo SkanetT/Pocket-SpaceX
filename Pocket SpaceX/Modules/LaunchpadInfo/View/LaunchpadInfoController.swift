@@ -18,6 +18,8 @@ class LaunchpadInfoController: SpinnerController {
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var attemptedView: UIView!
     @IBOutlet weak var attemptedLabel: UILabel!
+    @IBOutlet weak var successView: UIView!
+    @IBOutlet weak var successLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     
     override func viewDidLoad() {
@@ -41,6 +43,10 @@ class LaunchpadInfoController: SpinnerController {
         attemptedView.clipsToBounds = true
         attemptedView.layer.cornerRadius = 8
         attemptedView.alpha = 0.95
+        
+        successView.clipsToBounds = true
+        successView.layer.cornerRadius = 8
+        successView.alpha = 0.95
         
         fullNameLabel.alpha = 0.95
         
@@ -66,6 +72,7 @@ extension LaunchpadInfoController: LaunchpadInfoPresenterOutput {
             self.fullNameLabel.text = data.fullName
             self.detailsLabel.text = data.details
             self.attemptedLabel.text = data.launchAttempts.description
+            self.successLabel.text = data.launchSuccesses.description
         }
         removeSpinner()
     }

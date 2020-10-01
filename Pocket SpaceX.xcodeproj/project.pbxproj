@@ -50,6 +50,8 @@
 		3A5F410F2517D54F002460EA /* Pods_Pocket_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347ED40A50A097C413AC4A04 /* Pods_Pocket_SpaceX.framework */; };
 		3A5F411D251938F9002460EA /* LaunchInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F411C251938F9002460EA /* LaunchInfoRouter.swift */; };
 		3A5F411F25193978002460EA /* LaunchInfoRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F411E25193978002460EA /* LaunchInfoRouting.swift */; };
+		3A72BC6925266C5700A3DE08 /* FlickrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC6825266C5700A3DE08 /* FlickrView.swift */; };
+		3A72BC6D25266C8700A3DE08 /* FlickrView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72BC6C25266C8700A3DE08 /* FlickrView.xib */; };
 		3A8506BF2506D08700923C18 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506BE2506D08700923C18 /* Errors.swift */; };
 		3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C12506D13900923C18 /* NetworkApi.swift */; };
 		3A8506C62506D70D00923C18 /* RocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C52506D70D00923C18 /* RocketController.swift */; };
@@ -181,6 +183,8 @@
 		3A5F40FE2516A67D002460EA /* LaunchInfoYoutubeHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoYoutubeHandlerProtocol.swift; sourceTree = "<group>"; };
 		3A5F411C251938F9002460EA /* LaunchInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoRouter.swift; sourceTree = "<group>"; };
 		3A5F411E25193978002460EA /* LaunchInfoRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoRouting.swift; sourceTree = "<group>"; };
+		3A72BC6825266C5700A3DE08 /* FlickrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrView.swift; sourceTree = "<group>"; };
+		3A72BC6C25266C8700A3DE08 /* FlickrView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrView.xib; sourceTree = "<group>"; };
 		3A8506BE2506D08700923C18 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		3A8506C12506D13900923C18 /* NetworkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
 		3A8506C52506D70D00923C18 /* RocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketController.swift; sourceTree = "<group>"; };
@@ -468,6 +472,15 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		3A72BC6625266A9100A3DE08 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				3A72BC6825266C5700A3DE08 /* FlickrView.swift */,
+				3A72BC6C25266C8700A3DE08 /* FlickrView.xib */,
+			);
+			path = Flickr;
+			sourceTree = "<group>";
+		};
 		3A8506C02506D10B00923C18 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,7 +635,6 @@
 				3A850712250CE5A100923C18 /* HeaderInfoCell.swift */,
 				3A850714250CE61300923C18 /* HeaderInfoCell.xib */,
 				3A850716250CEA5300923C18 /* FooterInfoCell.swift */,
-				3A85071A250E5E6500923C18 /* ImageCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -667,6 +679,7 @@
 		3A8507362511552200923C18 /* LaunchInfo */ = {
 			isa = PBXGroup;
 			children = (
+				3A72BC6625266A9100A3DE08 /* Flickr */,
 				3A5F40F92516A5B1002460EA /* YoutubeHandler */,
 				3A850737251156DF00923C18 /* View */,
 				3A5F40E9251694CD002460EA /* Interactor */,
@@ -861,6 +874,7 @@
 		3A9C21CE2506C95A00F8B0D6 /* Utilits */ = {
 			isa = PBXGroup;
 			children = (
+				3A85071A250E5E6500923C18 /* ImageCell.swift */,
 				3A9C21D02506CA5400F8B0D6 /* Reachability.swift */,
 				3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */,
 				3A8506BE2506D08700923C18 /* Errors.swift */,
@@ -978,6 +992,7 @@
 				3A5AE5C425212284000E43C6 /* LaunchpadInfoController.xib in Resources */,
 				3A9C21A62505695800F8B0D6 /* Assets.xcassets in Resources */,
 				3A85072E250EB2D100923C18 /* LaunchCell.xib in Resources */,
+				3A72BC6D25266C8700A3DE08 /* FlickrView.xib in Resources */,
 				3A85073B2511570800923C18 /* LaunchInfoController.xib in Resources */,
 				3A8506DE25097B9A00923C18 /* RocketCell.xib in Resources */,
 				3A850715250CE61300923C18 /* HeaderInfoCell.xib in Resources */,
@@ -1108,6 +1123,7 @@
 				3A850727250EAF9700923C18 /* LaunchTableHandler.swift in Sources */,
 				3A5AE5DE25226F09000E43C6 /* LaunchpadInfoPresenterInput.swift in Sources */,
 				3A5AE5F62523BE7C000E43C6 /* SettingsController.swift in Sources */,
+				3A72BC6925266C5700A3DE08 /* FlickrView.swift in Sources */,
 				3A5AE5FB2523BF48000E43C6 /* SettingsAssembler.swift in Sources */,
 				3A8507412512A97A00923C18 /* StarlinkController.swift in Sources */,
 				3A8D9372251555D2003E1C48 /* StarlinkTableHandlerProtocol.swift in Sources */,

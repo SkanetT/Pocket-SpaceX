@@ -20,9 +20,11 @@
                 <outlet property="rocketName" destination="4VM-zA-73s" id="klP-qI-Qij"/>
                 <outlet property="rocketStack" destination="Tih-FU-yzB" id="E7Q-BP-pPU"/>
                 <outlet property="shareButton" destination="n7J-o8-vl8" id="qWk-1P-ykg"/>
+                <outlet property="stackView" destination="9RH-lz-0Dk" id="AgV-V4-3cb"/>
                 <outlet property="statusTimerLabel" destination="NHY-6O-aqx" id="fcz-Zd-6cS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewForButtons" destination="vHB-va-tww" id="gBM-aX-rIT"/>
+                <outlet property="viewForFlickr" destination="TIf-LU-PTN" id="qvJ-go-XU7"/>
                 <outlet property="viewForPatch" destination="FVO-bo-Okf" id="NBd-Ma-Vt3"/>
                 <outlet property="youtubeView" destination="CBc-iH-u4C" id="xHI-lt-IIZ"/>
             </connections>
@@ -36,10 +38,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qe5-sJ-aF2" userLabel="View1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1121"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-lz-0Dk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1121"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBc-iH-u4C" customClass="YTPlayerView">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
@@ -219,6 +221,13 @@
                                                 <constraint firstItem="eWK-jo-1fc" firstAttribute="leading" secondItem="vHB-va-tww" secondAttribute="leading" constant="8" id="GVJ-Z5-xTk"/>
                                                 <constraint firstItem="eWK-jo-1fc" firstAttribute="top" secondItem="vHB-va-tww" secondAttribute="top" id="ZAF-uL-HbT"/>
                                                 <constraint firstAttribute="bottom" secondItem="eWK-jo-1fc" secondAttribute="bottom" constant="8" id="iBt-dB-P04"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIf-LU-PTN">
+                                            <rect key="frame" x="0.0" y="707" width="414" height="414"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="TIf-LU-PTN" secondAttribute="height" multiplier="1:1" id="cgy-8T-QSz"/>
                                             </constraints>
                                         </view>
                                     </subviews>

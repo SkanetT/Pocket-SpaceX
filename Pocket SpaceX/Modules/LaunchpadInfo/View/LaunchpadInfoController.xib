@@ -17,6 +17,8 @@
                 <outlet property="fullNameLabel" destination="LMb-fg-gfU" id="LrW-m4-AXK"/>
                 <outlet property="mapView" destination="cdu-wz-gzQ" id="m7X-hN-yzK"/>
                 <outlet property="statusLabel" destination="Yng-lr-jMp" id="Ams-FP-v4Y"/>
+                <outlet property="successLabel" destination="Mf0-Me-0K6" id="bUi-Ud-YKf"/>
+                <outlet property="successView" destination="EwD-Ei-rB0" id="EEK-PV-Sal"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -128,7 +130,33 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EwD-Ei-rB0">
                                                             <rect key="frame" x="203" y="0.0" width="195" height="79"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-0I-1rc">
+                                                                    <rect key="frame" x="8" y="8" width="179" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="25" id="VvW-QP-vyM"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-Me-0K6">
+                                                                    <rect key="frame" x="8" y="41" width="179" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="xzn-0I-1rc" firstAttribute="leading" secondItem="EwD-Ei-rB0" secondAttribute="leading" constant="8" id="0E9-Aa-Jts"/>
+                                                                <constraint firstItem="Mf0-Me-0K6" firstAttribute="top" secondItem="xzn-0I-1rc" secondAttribute="bottom" constant="8" id="3yF-Jg-nbk"/>
+                                                                <constraint firstItem="Mf0-Me-0K6" firstAttribute="leading" secondItem="EwD-Ei-rB0" secondAttribute="leading" constant="8" id="Zzj-Hm-6WP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="xzn-0I-1rc" secondAttribute="trailing" constant="8" id="euG-M6-9eV"/>
+                                                                <constraint firstItem="xzn-0I-1rc" firstAttribute="top" secondItem="EwD-Ei-rB0" secondAttribute="top" constant="8" id="fCy-PY-J2F"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Mf0-Me-0K6" secondAttribute="bottom" constant="8" id="s9h-rT-azR"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Mf0-Me-0K6" secondAttribute="trailing" constant="8" id="sSH-bU-kWa"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                 </stackView>
