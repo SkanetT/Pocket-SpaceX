@@ -26,4 +26,11 @@ class LaunchInfoYoutubeHandler: NSObject, LaunchInfoYoutubeHandlerProtocol {
 
 extension LaunchInfoYoutubeHandler: YTPlayerViewDelegate {
     
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        let status = UserDefaultsManager.shared.fetchVideoStatus()
+        if status == true {
+            playerView.playVideo()
+        }
+    }
+    
 }

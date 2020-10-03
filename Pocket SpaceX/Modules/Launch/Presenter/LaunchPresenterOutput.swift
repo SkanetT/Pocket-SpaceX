@@ -9,7 +9,6 @@
 import Foundation
 
 protocol LaunchPresenterOutput: class {
-    
     func didReceiveLaunchData(_ data: LaunchData)
     func needToReverse()
     func typeChange(_ type: LaunchType)

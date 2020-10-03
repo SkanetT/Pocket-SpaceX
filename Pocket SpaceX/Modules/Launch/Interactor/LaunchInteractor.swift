@@ -26,6 +26,10 @@ class LaunchInteractor: LaunchInteractorInput {
                 self?.output?.launchDataFailure(error)
             }
         }
-        
     }
+    
+    func isFirstStart() {
+        UserDefaultsManager.shared.isFirstStartCheck()
+    }
+    
 }

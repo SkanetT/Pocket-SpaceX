@@ -9,7 +9,7 @@
 import Foundation
 
 class DataManager {
-        
+    
     static func createDataForRockerInfo(_ data: RocketDatum) -> [String : String] {
         var result: [String : String] = [:]
         result["Name"] = data.name
@@ -42,7 +42,7 @@ class DataManager {
         
         let dateLaunch = Date(timeIntervalSince1970: Double(time))
         let cc = Calendar.current.dateComponents( [.day, .hour, .minute, .second], from: Date(), to: dateLaunch)
-    
+        
         guard let day = cc.day, let hour = cc.hour, let minute = cc.minute, let second = cc.second else { return " 00 : 00 : 00  : 00 "}
         
         let days = plusZero(day)
@@ -64,5 +64,16 @@ class DataManager {
         }
         return result
     }
+    
+    static func getVersion() -> String {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        return version
+    }
+    
+    static func getBuild() -> String {
+        let dictionary = Bundle.main.infoDictionary!
+        let build = dictionary["CFBundleVersion"] as! String
+        return build
+    }
 }
-

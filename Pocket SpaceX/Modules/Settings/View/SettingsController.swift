@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsController: UIViewController {
     
+    var presenter: SettingsPresenterInput?
+    
     lazy var backdropView: UIView = {
         let bdView = UIView(frame: self.view.bounds)
         bdView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
@@ -19,6 +21,12 @@ class SettingsController: UIViewController {
     let menuView = UIView()
     let menuHeight = (UIScreen.main.bounds.height / 2.1)
     let okButton = UIButton()
+    let cacheButton = UIButton()
+    let infoLabel = UILabel()
+    let viewForVideoSwitch = UIView()
+    let videoLabel = UILabel()
+    let videoSwitch = UISwitch()
+    
     var isPresenting = false
     
     init() {
@@ -34,6 +42,8 @@ class SettingsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        presenter?.attach(self)
+        presenter?.viewDidLoad()
     }
     
     private func configureUI() {
@@ -43,7 +53,7 @@ class SettingsController: UIViewController {
         
         menuView.clipsToBounds = true
         menuView.layer.cornerRadius = 8
-        
+
         menuView.backgroundColor = .white
         menuView.snp.makeConstraints() { make in
             make.height.equalTo(menuHeight)
@@ -51,20 +61,70 @@ class SettingsController: UIViewController {
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
         }
-        
-        okButton.backgroundColor = .lightGray
+        menuView.addSubview(okButton)
+        okButton.backgroundColor = .darkGray
         okButton.setTitle("Ok", for: .normal)
         okButton.clipsToBounds = true
         okButton.layer.cornerRadius = 8
-        
-        menuView.addSubview(okButton)
-        
+    
         okButton.snp.makeConstraints() { make in
             make.bottom.equalTo(menuView.snp.bottom).offset(-16)
             make.height.equalTo(menuHeight / 8)
             make.leading.equalTo(menuView.snp.leading).offset(8)
             make.trailing.equalTo(menuView.snp.trailing).offset(-8)
         }
+        
+        menuView.addSubview(cacheButton)
+        cacheButton.backgroundColor = .darkGray
+        cacheButton.setTitle("Clear cache", for: .normal)
+        cacheButton.clipsToBounds = true
+        cacheButton.layer.cornerRadius = 8
+        
+        cacheButton.snp.makeConstraints() { make in
+            make.bottom.equalTo(okButton.snp.top).offset(-16)
+            make.height.equalTo(menuHeight / 8)
+            make.leading.equalTo(menuView.snp.leading).offset(8)
+            make.trailing.equalTo(menuView.snp.trailing).offset(-8)
+        }
+        
+        menuView.addSubview(infoLabel)
+        infoLabel.adjustsFontSizeToFitWidth = true
+        infoLabel.minimumScaleFactor = 0.7
+        infoLabel.textAlignment = .center
+        infoLabel.snp.makeConstraints() { make in
+            make.bottom.equalTo(cacheButton.snp.top).offset(-(menuHeight / 40))
+            make.trailing.equalTo(menuView.snp.trailing)
+            make.leading.equalTo(menuView.snp.leading)
+            make.height.equalTo(menuHeight / 10)
+        }
+        
+        menuView.addSubview(viewForVideoSwitch)
+        viewForVideoSwitch.backgroundColor = .lightGray
+        viewForVideoSwitch.snp.makeConstraints() { make in
+            make.bottom.equalTo(infoLabel.snp.top).offset(-(menuHeight / 40))
+            make.trailing.equalTo(menuView.snp.trailing)
+            make.leading.equalTo(menuView.snp.leading)
+            make.height.equalTo(menuHeight / 8)
+        }
+        
+        viewForVideoSwitch.addSubview(videoSwitch)
+        videoSwitch.snp.makeConstraints() { make in
+            make.centerY.equalTo(viewForVideoSwitch.snp.centerY)
+            make.right.equalTo(viewForVideoSwitch.snp.right).offset(-8)
+        }
+        
+        
+        viewForVideoSwitch.addSubview(videoLabel)
+        videoLabel.text = "Start playback instantly"
+        videoLabel.adjustsFontSizeToFitWidth = true
+        videoLabel.minimumScaleFactor = 0.7
+        videoLabel.textAlignment = .left
+        videoLabel.snp.makeConstraints() { make in
+            make.centerY.equalTo(viewForVideoSwitch.snp.centerY)
+            make.left.equalTo(viewForVideoSwitch.snp.left).offset(8)
+            make.right.equalTo(videoSwitch.snp.left).offset(-8)
+        }
+        
         let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         let swipeGetsure = UISwipeGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -73,18 +133,37 @@ class SettingsController: UIViewController {
         okButton.addGestureRecognizer(tapGesture2)
         view.addGestureRecognizer(swipeGetsure)
         
-        if let text = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            print(text)
-        }
+        videoSwitch.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)
+        
     }
-    
-    
     
     @objc
     private func handleTap(_ sender: UITapGestureRecognizer) {
-        dismiss(animated: true, completion: nil)
+        presenter?.dismissRequest()
     }
     
+    @objc
+    private func switchValueDidChange(_ sender: UISwitch) {
+        if sender.isOn {
+            presenter?.videoSettingsChange(true)
+        } else {
+            presenter?.videoSettingsChange(false)
+        }
+    }
+}
+
+extension SettingsController: SettingsPresenterOutput {
+    func didReceiveVideoStatus(_ status: Bool) {
+        DispatchQueue.main.async {
+            self.videoSwitch.isOn = status
+        }
+    }
+    
+    func didReceiveInfoText(_ info: String) {
+        DispatchQueue.main.async {
+            self.infoLabel.text = info
+        }
+    }
 }
 
 extension SettingsController: UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
@@ -115,14 +194,14 @@ extension SettingsController: UIViewControllerTransitioningDelegate, UIViewContr
             UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
                 self.menuView.frame.origin.y -= self.menuHeight
                 self.backdropView.alpha = 1
-            }, completion: { (_) in
+            }, completion: { _ in
                 transitionContext.completeTransition(true)
             })
         } else {
             UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
                 self.menuView.frame.origin.y += self.menuHeight
                 self.backdropView.alpha = 0
-            }, completion: { (_) in
+            }, completion: { _ in
                 transitionContext.completeTransition(true)
             })
         }

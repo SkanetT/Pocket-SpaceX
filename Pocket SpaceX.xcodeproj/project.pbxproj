@@ -52,6 +52,15 @@
 		3A5F411F25193978002460EA /* LaunchInfoRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F411E25193978002460EA /* LaunchInfoRouting.swift */; };
 		3A72BC6925266C5700A3DE08 /* FlickrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC6825266C5700A3DE08 /* FlickrView.swift */; };
 		3A72BC6D25266C8700A3DE08 /* FlickrView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72BC6C25266C8700A3DE08 /* FlickrView.xib */; };
+		3A72BC71252724ED00A3DE08 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC70252724ED00A3DE08 /* SettingsPresenter.swift */; };
+		3A72BC742527250600A3DE08 /* SettingsPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC732527250600A3DE08 /* SettingsPresenterInput.swift */; };
+		3A72BC772527253E00A3DE08 /* SettingsPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC762527253E00A3DE08 /* SettingsPresenterOutput.swift */; };
+		3A72BC7B252727D200A3DE08 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC7A252727D200A3DE08 /* SettingsInteractor.swift */; };
+		3A72BC7F252727F000A3DE08 /* SettingsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC7E252727F000A3DE08 /* SettingsInteractorInput.swift */; };
+		3A72BC822527280B00A3DE08 /* SettingsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC812527280B00A3DE08 /* SettingsInteractorOutput.swift */; };
+		3A72BC862527298900A3DE08 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC852527298900A3DE08 /* SettingsRouter.swift */; };
+		3A72BC89252729D700A3DE08 /* SettingsRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC88252729D700A3DE08 /* SettingsRouting.swift */; };
+		3A72BC8C25276A7E00A3DE08 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72BC8B25276A7E00A3DE08 /* UserDefaultsManager.swift */; };
 		3A8506BF2506D08700923C18 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506BE2506D08700923C18 /* Errors.swift */; };
 		3A8506C22506D13900923C18 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C12506D13900923C18 /* NetworkApi.swift */; };
 		3A8506C62506D70D00923C18 /* RocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C52506D70D00923C18 /* RocketController.swift */; };
@@ -185,6 +194,15 @@
 		3A5F411E25193978002460EA /* LaunchInfoRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInfoRouting.swift; sourceTree = "<group>"; };
 		3A72BC6825266C5700A3DE08 /* FlickrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrView.swift; sourceTree = "<group>"; };
 		3A72BC6C25266C8700A3DE08 /* FlickrView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrView.xib; sourceTree = "<group>"; };
+		3A72BC70252724ED00A3DE08 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		3A72BC732527250600A3DE08 /* SettingsPresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterInput.swift; sourceTree = "<group>"; };
+		3A72BC762527253E00A3DE08 /* SettingsPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterOutput.swift; sourceTree = "<group>"; };
+		3A72BC7A252727D200A3DE08 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		3A72BC7E252727F000A3DE08 /* SettingsInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInput.swift; sourceTree = "<group>"; };
+		3A72BC812527280B00A3DE08 /* SettingsInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutput.swift; sourceTree = "<group>"; };
+		3A72BC852527298900A3DE08 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		3A72BC88252729D700A3DE08 /* SettingsRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouting.swift; sourceTree = "<group>"; };
+		3A72BC8B25276A7E00A3DE08 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		3A8506BE2506D08700923C18 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		3A8506C12506D13900923C18 /* NetworkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
 		3A8506C52506D70D00923C18 /* RocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketController.swift; sourceTree = "<group>"; };
@@ -421,6 +439,9 @@
 			isa = PBXGroup;
 			children = (
 				3A5AE5F82523BE80000E43C6 /* View */,
+				3A72BC792527279D00A3DE08 /* Interactor */,
+				3A72BC6F252724D300A3DE08 /* Presenter */,
+				3A72BC84252728ED00A3DE08 /* Router */,
 				3A5AE5FA2523BF48000E43C6 /* SettingsAssembler.swift */,
 			);
 			path = Settings;
@@ -481,11 +502,41 @@
 			path = Flickr;
 			sourceTree = "<group>";
 		};
+		3A72BC6F252724D300A3DE08 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3A72BC70252724ED00A3DE08 /* SettingsPresenter.swift */,
+				3A72BC732527250600A3DE08 /* SettingsPresenterInput.swift */,
+				3A72BC762527253E00A3DE08 /* SettingsPresenterOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3A72BC792527279D00A3DE08 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3A72BC7A252727D200A3DE08 /* SettingsInteractor.swift */,
+				3A72BC7E252727F000A3DE08 /* SettingsInteractorInput.swift */,
+				3A72BC812527280B00A3DE08 /* SettingsInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3A72BC84252728ED00A3DE08 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3A72BC852527298900A3DE08 /* SettingsRouter.swift */,
+				3A72BC88252729D700A3DE08 /* SettingsRouting.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		3A8506C02506D10B00923C18 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				3A8506C12506D13900923C18 /* NetworkApi.swift */,
 				3A850718250E237E00923C18 /* DataManager.swift */,
+				3A72BC8B25276A7E00A3DE08 /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1069,7 +1120,9 @@
 				3A9C21C42505816200F8B0D6 /* LaunchPresenter.swift in Sources */,
 				3A8506FA250BB3F500923C18 /* RocketInfoInteractor.swift in Sources */,
 				3A5AE5AB25209763000E43C6 /* LaunchpadInteractorInput.swift in Sources */,
+				3A72BC7F252727F000A3DE08 /* SettingsInteractorInput.swift in Sources */,
 				3A5AE5AE25209789000E43C6 /* LaunchpadInteractorOutput.swift in Sources */,
+				3A72BC71252724ED00A3DE08 /* SettingsPresenter.swift in Sources */,
 				3A5F411D251938F9002460EA /* LaunchInfoRouter.swift in Sources */,
 				3A8506F3250BB09300923C18 /* RocketInfoPresenter.swift in Sources */,
 				3A850729250EB01600923C18 /* LaunchTableHandlerProtocol.swift in Sources */,
@@ -1082,6 +1135,7 @@
 				3A9C21B225056FD500F8B0D6 /* MenuOptionCell.swift in Sources */,
 				3A9C21C6250581E600F8B0D6 /* LaunchPresenterInput.swift in Sources */,
 				3A9C21C82505821500F8B0D6 /* LaunchPresenterOutput.swift in Sources */,
+				3A72BC822527280B00A3DE08 /* SettingsInteractorOutput.swift in Sources */,
 				3A5AE5F225228AF2000E43C6 /* LaunchpadInfoMapHandlerProtocol.swift in Sources */,
 				3A8506C82506D74000923C18 /* RocketAssembler.swift in Sources */,
 				3A5F40E7251692BD002460EA /* LaunchInfoPresenterOutput.swift in Sources */,
@@ -1097,9 +1151,12 @@
 				3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */,
 				3A5AE595251FC8DD000E43C6 /* LaunchpadPresenter.swift in Sources */,
 				3A5AE591251FC65E000E43C6 /* LaunchpadAssembler.swift in Sources */,
+				3A72BC772527253E00A3DE08 /* SettingsPresenterOutput.swift in Sources */,
+				3A72BC742527250600A3DE08 /* SettingsPresenterInput.swift in Sources */,
 				3A5AE588251FBD94000E43C6 /* LaunchpadData.swift in Sources */,
 				3A85073A2511570800923C18 /* LaunchInfoController.swift in Sources */,
 				3A5F40D825165074002460EA /* HeaderStarlinkCell.swift in Sources */,
+				3A72BC89252729D700A3DE08 /* SettingsRouting.swift in Sources */,
 				3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */,
 				3A8506C62506D70D00923C18 /* RocketController.swift in Sources */,
 				3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */,
@@ -1114,6 +1171,7 @@
 				3A8507432512A9B700923C18 /* StarlinkAssembler.swift in Sources */,
 				3A8507582512B24100923C18 /* StarlinkInteractorOutput.swift in Sources */,
 				3A8506FE250BB44D00923C18 /* RocketInfoInteractorOutput.swift in Sources */,
+				3A72BC862527298900A3DE08 /* SettingsRouter.swift in Sources */,
 				3A9C21BA2505761D00F8B0D6 /* ContainerController.swift in Sources */,
 				3A5AE5A2251FCDF2000E43C6 /* LaunchpadRouting.swift in Sources */,
 				3A85071D250E6CBC00923C18 /* LaunchData.swift in Sources */,
@@ -1128,6 +1186,7 @@
 				3A8507412512A97A00923C18 /* StarlinkController.swift in Sources */,
 				3A8D9372251555D2003E1C48 /* StarlinkTableHandlerProtocol.swift in Sources */,
 				3A5F411F25193978002460EA /* LaunchInfoRouting.swift in Sources */,
+				3A72BC8C25276A7E00A3DE08 /* UserDefaultsManager.swift in Sources */,
 				3A8506CF25081E3900923C18 /* RocketPresenterOutput.swift in Sources */,
 				3A8506ED250B9E9500923C18 /* RocketInfoAssembler.swift in Sources */,
 				3A5F40EF25169558002460EA /* LaunchInfoInteractorInput.swift in Sources */,
@@ -1152,6 +1211,7 @@
 				3A85072D250EB2D100923C18 /* LaunchCell.swift in Sources */,
 				3A8506BF2506D08700923C18 /* Errors.swift in Sources */,
 				3A850731250EBC3300923C18 /* LaunchSearchHandler.swift in Sources */,
+				3A72BC7B252727D200A3DE08 /* SettingsInteractor.swift in Sources */,
 				3A9C219F2505695400F8B0D6 /* SceneDelegate.swift in Sources */,
 				3A8506E3250ABD2300923C18 /* RocketInteractorInput.swift in Sources */,
 				3A850701250BC13C00923C18 /* RocketInfoRouter.swift in Sources */,

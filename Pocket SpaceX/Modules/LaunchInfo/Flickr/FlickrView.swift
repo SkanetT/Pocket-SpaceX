@@ -45,15 +45,12 @@ extension FlickrView: UICollectionViewDelegate, UICollectionViewDataSource,  UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! ImageCell
-        //  cell.imageView.image = nil
         cell.imageView.setKfImage(urlString: urlArray[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let size = collectionView.bounds.size
-        return size
+        return  collectionView.bounds.size
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

@@ -12,6 +12,11 @@ class SettingsAssembler {
     
     static func createModule() -> UIViewController {
         let viewController = SettingsController()
+        let router = SettingsRouter(viewController)
+        let interactor = SettingsInteractor()
+        let presenter = SettingsPresenter(interactor, router)
+        
+        viewController.presenter = presenter
         
         return viewController
     }
