@@ -32,7 +32,8 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         tableView.keyboardDismissMode = .onDrag
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-        tableView.addSubview(refreshControl) 
+        tableView.addSubview(refreshControl)
+        
     }
     
     func setData(_ data: LaunchData) {
@@ -58,6 +59,9 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
     
     func reverseData() {
         launchData.reverse()
+        allLaunchData.reverse()
+        upcomingLaunchData.reverse()
+        pastLaunchData.reverse()
         tableView?.scrollToRow(at: [0, 0], at: .top, animated: true)
         tableView?.reloadData()
     }
@@ -82,6 +86,14 @@ class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
     func setTapRefresh(refresh: (() -> ())?) {
         self.refresh = refresh
     }
+    
+    func scrollToNextLaucnh(id: String) {
+        launchData = allLaunchData
+        guard  let index = launchData.firstIndex(where: {$0.id == id}) else { return }
+        tableView?.reloadData()
+        tableView?.selectRow(at: [0, index], animated: true, scrollPosition: .middle)
+    }
+    
     
     @objc func refresh(_ sender: AnyObject) {
         refresh?()
@@ -108,6 +120,8 @@ extension LaunchTableHandler: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.setData(filteredLaunchData[indexPath.row])
         }
+        
+        
         return cell
     }
     

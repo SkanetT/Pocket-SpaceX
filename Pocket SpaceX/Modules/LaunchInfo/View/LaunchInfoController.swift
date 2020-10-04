@@ -65,14 +65,10 @@ class LaunchInfoController: UIViewController {
         detailsLabel.layer.cornerRadius = 8
         detailsLabel.alpha = 0.95
         
-        shareButton.clipsToBounds = true
-        shareButton.layer.cornerRadius = 8
-        shareButton.alpha = 0.95
+        shareButton.configureButton(title: "Share")
         shareButton.addTarget(self, action: #selector(shareTap), for: .touchUpInside)
         
-        linksButton.clipsToBounds = true
-        linksButton.layer.cornerRadius = 8
-        linksButton.alpha = 0.95
+        linksButton.configureButton(title: "Links")
         linksButton.addTarget(self, action: #selector(linksTap), for: .touchUpInside)
         
         let rocketGesture = UITapGestureRecognizer(target: self, action: #selector(rocketTap (_ :)))

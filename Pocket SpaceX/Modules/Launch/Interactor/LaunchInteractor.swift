@@ -11,7 +11,7 @@ import Foundation
 class LaunchInteractor: LaunchInteractorInput {
     
     private weak var output: LaunchInteractorOutput?
-
+    
     func attach(_ output: LaunchInteractorOutput) {
         self.output = output
     }
@@ -32,4 +32,16 @@ class LaunchInteractor: LaunchInteractorInput {
         UserDefaultsManager.shared.isFirstStartCheck()
     }
     
+    func fecthNextLaunchId() {
+        let request = NextLaunchRequest()
+        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.output?.nextLaunchIdSuccess(data.id)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
 }

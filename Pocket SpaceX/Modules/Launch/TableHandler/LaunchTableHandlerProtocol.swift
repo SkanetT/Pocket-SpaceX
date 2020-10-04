@@ -16,4 +16,5 @@ protocol LaunchTableHandlerProtocol {
     func searchReload(_ search: String)
     func setTapAction(userTap: ((LaunchDatum) -> ())?)
     func setTapRefresh(refresh: (() -> ())?)
+    func scrollToNextLaucnh(id: String)
 }

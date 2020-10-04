@@ -17,11 +17,13 @@ class LaunchController: SpinnerController {
     var searchHandler: LaunchSearchHandlerProtocol?
     var isReverse = false
     var segmentedContoll: UISegmentedControl!
+    var nextButton: LoadingButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUi()
         configureSegmentedContoll()
+        configureNextButton()
         showSpinner()
         presenter?.attach(self)
         presenter?.viewDidLoad()
@@ -60,6 +62,8 @@ class LaunchController: SpinnerController {
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
         }
+        
+        
     }
     
     private func configureSegmentedContoll() {
@@ -68,12 +72,31 @@ class LaunchController: SpinnerController {
         segmentedContoll.selectedSegmentIndex = 0
         view.addSubview(segmentedContoll)
         segmentedContoll.snp.makeConstraints() { make in
-            make.bottom.equalTo(view.snp.bottom).offset(-30)
-            make.height.equalTo(40)
+            make.bottom.equalTo(view.snp.bottomMargin).offset(-8)
+            make.height.equalTo(UIScreen.main.bounds.height / 22)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
         segmentedContoll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
+        segmentedContoll.layer.masksToBounds = false
+        segmentedContoll.layer.shadowColor = UIColor.black.cgColor
+        segmentedContoll.layer.shadowOpacity = 0.35
+        segmentedContoll.layer.shadowOffset = .init(width: 5, height: 7)
+        segmentedContoll.layer.shadowRadius = 10
+    }
+    
+    private func configureNextButton() {
+        nextButton = LoadingButton()
+        nextButton.configureButton(title: "Next launch")
+        view.addSubview(nextButton)
+        nextButton.snp.makeConstraints() { make in
+            make.bottom.equalTo(segmentedContoll.snp.top).offset(-4)
+            make.height.equalTo(UIScreen.main.bounds.height / 22)
+            make.leading.equalTo(view.snp.leading).offset(16)
+            make.trailing.equalTo(view.snp.trailing).offset(-16)
+        }
+        
+        nextButton.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
     }
     
     @objc
@@ -88,7 +111,6 @@ class LaunchController: SpinnerController {
     
     @objc
     private func segmentControl(_ segmentedControl: UISegmentedControl) {
-        navigationItem.rightBarButtonItem?.image = UIImage(systemName: "arrow.up")
         switch (segmentedControl.selectedSegmentIndex) {
         case 0:
             presenter?.launchTypeChange(.all)
@@ -101,17 +123,33 @@ class LaunchController: SpinnerController {
         }
     }
     
+    @objc
+    private func handleNext() {
+        nextButton.isLoading = true
+        searchController.searchBar.text = nil
+        presenter?.nextLaunchTap()
+    }
+    
 }
 
 extension LaunchController: LaunchPresenterOutput {
     
     func didReceiveLaunchData(_ data: LaunchData) {
+        isReverse = false
         DispatchQueue.main.async {
             self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "arrow.up")
             self.segmentedContoll.selectedSegmentIndex = 0
         }
         removeSpinner()
         tableHandler?.setData(data)
+    }
+    
+    func didReceiveNextLaunchId(_ id: String) {
+        DispatchQueue.main.async {
+            self.segmentedContoll.selectedSegmentIndex = 0
+            self.nextButton.isLoading = false
+            self.tableHandler?.scrollToNextLaucnh(id: id)
+        }
     }
     
     func needToReverse() {

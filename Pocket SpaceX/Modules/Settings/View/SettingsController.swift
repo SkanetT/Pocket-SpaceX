@@ -21,7 +21,7 @@ class SettingsController: UIViewController {
     let menuView = UIView()
     let menuHeight = (UIScreen.main.bounds.height / 2.1)
     let okButton = UIButton()
-    let cacheButton = DefaultButton()
+    let cacheButton = LoadingButton()
     let infoLabel = UILabel()
     let infoView = UIView()
     let infoStack = UIStackView()
@@ -67,11 +67,8 @@ class SettingsController: UIViewController {
             make.trailing.equalTo(view.snp.trailing)
         }
         menuView.addSubview(okButton)
-        okButton.backgroundColor = .darkGray
-        okButton.setTitle("Ok", for: .normal)
-        okButton.clipsToBounds = true
-        okButton.layer.cornerRadius = 8
-    
+        okButton.configureButton(title: "Ok")
+
         okButton.snp.makeConstraints() { make in
             make.bottom.equalTo(menuView.snp.bottom).offset(-16)
             make.height.equalTo(menuHeight / 8)
@@ -85,7 +82,7 @@ class SettingsController: UIViewController {
         cacheButton.layer.cornerRadius = 8
         
         cacheButton.snp.makeConstraints() { make in
-            make.bottom.equalTo(okButton.snp.top).offset(-16)
+            make.bottom.equalTo(okButton.snp.top).offset(-(menuHeight / 40))
             make.height.equalTo(menuHeight / 8)
             make.leading.equalTo(menuView.snp.leading).offset(8)
             make.trailing.equalTo(menuView.snp.trailing).offset(-8)
@@ -193,7 +190,7 @@ class SettingsController: UIViewController {
     }
     
     @objc
-    private func clearCacheHandle(_ sender: DefaultButton) {
+    private func clearCacheHandle(_ sender: LoadingButton) {
         cacheButton.isLoading = true
         presenter?.clearTap()
     }

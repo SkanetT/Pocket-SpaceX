@@ -45,10 +45,17 @@ class StarlinkController: SpinnerController {
         view.addSubview(segmentedContoll)
         segmentedContoll.snp.makeConstraints() { make in
             make.bottom.equalTo(view.snp.bottom).offset(-30)
-            make.height.equalTo(40)
+            make.height.equalTo(UIScreen.main.bounds.height / 22)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
+        
+        segmentedContoll.layer.masksToBounds = false
+        segmentedContoll.layer.shadowColor = UIColor.black.cgColor
+        segmentedContoll.layer.shadowOpacity = 0.35
+        segmentedContoll.layer.shadowOffset = .init(width: 5, height: 7)
+        segmentedContoll.layer.shadowRadius = 10
+    
     }
     
     @objc

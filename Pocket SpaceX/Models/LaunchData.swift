@@ -15,6 +15,15 @@ class LaunchRequest: BaseRequest<LaunchData> {
     }
 }
 
+class NextLaunchRequest: BaseRequest<LaunchDatum> {
+    
+    override var path: String {
+        return "/v4/launches/next"
+    }
+}
+
+
+
 typealias LaunchData = [LaunchDatum]
 
 struct LaunchDatum: Codable {

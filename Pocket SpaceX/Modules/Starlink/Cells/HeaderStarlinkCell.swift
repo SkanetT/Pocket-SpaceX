@@ -91,11 +91,7 @@ class HeaderStarlinkCell: UIView {
             make.trailing.equalTo(totalLabel.snp.trailing)
         }
         addSubview(button)
-        button.setTitle("Wikipedia", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .lightGray
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 8
+        button.configureButton(title: "Wikipedia")
         
         button.snp.makeConstraints() { make in
             make.top.equalTo(deorbitedLabelCount.snp.bottom).offset(8)

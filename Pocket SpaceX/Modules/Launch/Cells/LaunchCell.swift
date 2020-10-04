@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LaunchCell: UITableViewCell {
     
     @IBOutlet weak var patchImage: UIImageView!
@@ -24,6 +25,7 @@ class LaunchCell: UITableViewCell {
     
     override func prepareForReuse() {
         timer?.invalidate()
+        patchImage.cancelDownload()
     }
     
     func setData(_ data: LaunchDatum) {

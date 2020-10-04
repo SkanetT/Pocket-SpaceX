@@ -13,6 +13,7 @@ protocol LaunchPresenterInput: class {
     func viewDidLoad()
     func sideMenuTap()
     func reverseTap()
+    func nextLaunchTap()
     func launchTypeChange(_ type: LaunchType)
     func refreshData()
 }

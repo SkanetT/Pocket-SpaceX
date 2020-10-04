@@ -50,15 +50,24 @@ class LaunchPresenter: LaunchPresenterInput {
     func refreshData() {
         interactor.fecthData()
     }
+    
+    func nextLaunchTap() {
+        interactor.fecthNextLaunchId()
+    }
+    
 }
 
 extension LaunchPresenter: LaunchInteractorOutput {
     func launchDataSuccess(_ data: LaunchData) {
-        let sortedData = data.sorted(by: { $0.dateUnix > $1.dateUnix })
+        let sortedData = data.sorted(by: { $0.dateUnix < $1.dateUnix })
         viewController?.didReceiveLaunchData(sortedData)
     }
     
     func launchDataFailure(_ error: ApiErrors) {
         router.showError(error)
+    }
+    
+    func nextLaunchIdSuccess(_ id: String) {
+        viewController?.didReceiveNextLaunchId(id)
     }
 }

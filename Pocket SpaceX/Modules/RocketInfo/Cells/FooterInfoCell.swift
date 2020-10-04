@@ -17,11 +17,7 @@ class FooterInfoCell: UIView {
         super.init(frame: frame)
         
         addSubview(button)
-        button.setTitle("Wikipedia", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .lightGray
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 8
+        button.configureButton(title: "Wikipedia")
         
         button.snp.makeConstraints() { make in
             make.top.equalTo(snp.top).offset(10)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DefaultButton: UIButton {
+class LoadingButton: UIButton {
     private var shadowLayer: CAShapeLayer!
     lazy private var loadingView = ButtonLoadingView()
     
@@ -40,7 +40,7 @@ class DefaultButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 11
+        layer.cornerRadius = 8
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.35

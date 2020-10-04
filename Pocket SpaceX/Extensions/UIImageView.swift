@@ -17,14 +17,17 @@ extension UIImageView {
             return
         }
         self.kf.indicatorType = .activity
-     //   self.kf.setImage(with: url)
     self.kf.setImage(
     with: url,
-  //  placeholder: UIImage(imageLiteralResourceName: "Rocket"),
     options: [
         .scaleFactor(UIScreen.main.scale),
         .transition(.fade(1)),
         .cacheOriginalImage
     ])
+    }
+    
+    func cancelDownload() {
+        self.image = nil
+        self.kf.cancelDownloadTask()
     }
 }
