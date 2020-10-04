@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Kingfisher
 
 class SettingsInteractor: SettingsInteractorInput {
     
@@ -25,8 +26,14 @@ class SettingsInteractor: SettingsInteractorInput {
     }
     
     func fetchInfoText() {
-        output?.infoTextSuccess("Pocket SpaceX version: \(DataManager.getVersion()) build: \(DataManager.getBuild())")
-        
+        output?.infoTextSuccess(version: DataManager.getVersion(), build: DataManager.getBuild())
+    }
+    
+    func deleteKFCache() {
+        let cache = ImageCache.default
+        cache.clearMemoryCache()
+        cache.clearDiskCache(completion: nil)
+        output?.deleteCacheSuccess()
     }
 
 }

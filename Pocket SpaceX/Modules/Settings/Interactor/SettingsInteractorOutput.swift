@@ -10,5 +10,6 @@ import Foundation
 
 protocol SettingsInteractorOutput: class {
     func videoStatusSuccess(_ status: Bool)
-    func infoTextSuccess(_ status: String)
+    func infoTextSuccess(version: String, build: String)
+    func deleteCacheSuccess()
 }

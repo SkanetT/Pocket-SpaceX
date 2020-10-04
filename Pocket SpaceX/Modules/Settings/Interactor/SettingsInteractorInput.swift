@@ -13,4 +13,5 @@ protocol SettingsInteractorInput: class {
     func fetchVideoStatus()
     func changeVideoStatus(_ status: Bool)
     func fetchInfoText()
+    func deleteKFCache()
 }

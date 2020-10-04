@@ -37,6 +37,10 @@ class SettingsPresenter: SettingsPresenterInput {
         interactor.changeVideoStatus(status)
     }
     
+    func clearTap() {
+        interactor.deleteKFCache()
+    }
+    
 }
 
 extension SettingsPresenter: SettingsInteractorOutput {
@@ -44,8 +48,12 @@ extension SettingsPresenter: SettingsInteractorOutput {
         viewController?.didReceiveVideoStatus(status)
     }
     
-    func infoTextSuccess(_ status: String) {
-        viewController?.didReceiveInfoText(status)
+    func infoTextSuccess(version: String, build: String) {
+        viewController?.didReceiveInfoText(version: version, build: build)
+    }
+    
+    func deleteCacheSuccess() {
+        viewController?.didDeleteCache()
     }
     
 }

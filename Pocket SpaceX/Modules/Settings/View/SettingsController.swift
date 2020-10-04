@@ -13,7 +13,7 @@ class SettingsController: UIViewController {
     var presenter: SettingsPresenterInput?
     
     lazy var backdropView: UIView = {
-        let bdView = UIView(frame: self.view.bounds)
+        let bdView = UIView(frame: view.bounds)
         bdView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
         return bdView
     } ()
@@ -21,8 +21,13 @@ class SettingsController: UIViewController {
     let menuView = UIView()
     let menuHeight = (UIScreen.main.bounds.height / 2.1)
     let okButton = UIButton()
-    let cacheButton = UIButton()
+    let cacheButton = DefaultButton()
     let infoLabel = UILabel()
+    let infoView = UIView()
+    let infoStack = UIStackView()
+    let projectLabel = UILabel()
+    let versionLabel = UILabel()
+    let buildLabel = UILabel()
     let viewForVideoSwitch = UIView()
     let videoLabel = UILabel()
     let videoSwitch = UISwitch()
@@ -75,7 +80,6 @@ class SettingsController: UIViewController {
         }
         
         menuView.addSubview(cacheButton)
-        cacheButton.backgroundColor = .darkGray
         cacheButton.setTitle("Clear cache", for: .normal)
         cacheButton.clipsToBounds = true
         cacheButton.layer.cornerRadius = 8
@@ -87,21 +91,12 @@ class SettingsController: UIViewController {
             make.trailing.equalTo(menuView.snp.trailing).offset(-8)
         }
         
-        menuView.addSubview(infoLabel)
-        infoLabel.adjustsFontSizeToFitWidth = true
-        infoLabel.minimumScaleFactor = 0.7
-        infoLabel.textAlignment = .center
-        infoLabel.snp.makeConstraints() { make in
-            make.bottom.equalTo(cacheButton.snp.top).offset(-(menuHeight / 40))
-            make.trailing.equalTo(menuView.snp.trailing)
-            make.leading.equalTo(menuView.snp.leading)
-            make.height.equalTo(menuHeight / 10)
-        }
+        cacheButton.addTarget(self, action: #selector(clearCacheHandle(_ :)), for: .touchUpInside)
         
         menuView.addSubview(viewForVideoSwitch)
         viewForVideoSwitch.backgroundColor = .lightGray
         viewForVideoSwitch.snp.makeConstraints() { make in
-            make.bottom.equalTo(infoLabel.snp.top).offset(-(menuHeight / 40))
+            make.bottom.equalTo(cacheButton.snp.top).offset(-(menuHeight / 40))
             make.trailing.equalTo(menuView.snp.trailing)
             make.leading.equalTo(menuView.snp.leading)
             make.height.equalTo(menuHeight / 8)
@@ -112,7 +107,6 @@ class SettingsController: UIViewController {
             make.centerY.equalTo(viewForVideoSwitch.snp.centerY)
             make.right.equalTo(viewForVideoSwitch.snp.right).offset(-8)
         }
-        
         
         viewForVideoSwitch.addSubview(videoLabel)
         videoLabel.text = "Start playback instantly"
@@ -125,6 +119,54 @@ class SettingsController: UIViewController {
             make.right.equalTo(videoSwitch.snp.left).offset(-8)
         }
         
+        menuView.addSubview(infoView)
+        infoView.backgroundColor = .lightGray
+        infoView.clipsToBounds = true
+        infoView.layer.cornerRadius = 8
+        infoView.snp.makeConstraints() { make in
+            make.top.equalTo(menuView.snp.top).offset(8)
+            make.left.equalTo(menuView.snp.left).offset(8)
+            make.right.equalTo(menuView.snp.right).offset(-8)
+            make.bottom.equalTo(viewForVideoSwitch.snp.top).offset(-8)
+        }
+        
+        
+        infoView.addSubview(infoStack)
+        infoStack.axis = .vertical
+        infoStack.distribution = .fillEqually
+        infoStack.snp.makeConstraints() { make in
+            make.top.equalTo(infoView.snp.top)
+            make.trailing.equalTo(infoView.snp.trailing)
+            make.leading.equalTo(infoView.snp.leading)
+            make.bottom.equalTo(infoView.snp.bottom)
+        }
+        
+        infoStack.addArrangedSubview(projectLabel)
+        projectLabel.textAlignment = .center
+        projectLabel.text = "Pocket SpaceX"
+        projectLabel.snp.makeConstraints() { make in
+            make.left.equalTo(infoStack.snp.left)
+            make.right.equalTo(infoStack.snp.right)
+
+        }
+        
+        infoStack.addArrangedSubview(versionLabel)
+        versionLabel.textAlignment = .center
+        versionLabel.text = "Version"
+        versionLabel.snp.makeConstraints() { make in
+            make.left.equalTo(infoStack.snp.left)
+            make.right.equalTo(infoStack.snp.right)
+
+        }
+        infoStack.addArrangedSubview(buildLabel)
+        buildLabel.textAlignment = .center
+        buildLabel.text = "Build"
+        buildLabel.snp.makeConstraints() { make in
+            make.left.equalTo(infoStack.snp.left)
+            make.right.equalTo(infoStack.snp.right)
+
+        }
+        
         let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         let swipeGetsure = UISwipeGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -134,7 +176,6 @@ class SettingsController: UIViewController {
         view.addGestureRecognizer(swipeGetsure)
         
         videoSwitch.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)
-        
     }
     
     @objc
@@ -150,6 +191,13 @@ class SettingsController: UIViewController {
             presenter?.videoSettingsChange(false)
         }
     }
+    
+    @objc
+    private func clearCacheHandle(_ sender: DefaultButton) {
+        cacheButton.isLoading = true
+        presenter?.clearTap()
+    }
+    
 }
 
 extension SettingsController: SettingsPresenterOutput {
@@ -159,10 +207,15 @@ extension SettingsController: SettingsPresenterOutput {
         }
     }
     
-    func didReceiveInfoText(_ info: String) {
+    func didReceiveInfoText(version: String, build: String) {
         DispatchQueue.main.async {
-            self.infoLabel.text = info
+            self.versionLabel.text = "Version \(version)"
+            self.buildLabel.text = "Build \(build)"
         }
+    }
+    
+    func didDeleteCache() {
+        cacheButton.doneAction(title: "Clear cache")
     }
 }
 

@@ -12,5 +12,6 @@ protocol SettingsPresenterInput: class {
     func attach(_ viewController: SettingsPresenterOutput)
     func viewDidLoad()
     func dismissRequest()
+    func clearTap()
     func videoSettingsChange(_ status: Bool)
 }
