@@ -148,6 +148,7 @@
 		3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D02506CA5400F8B0D6 /* Reachability.swift */; };
 		3A9C21D32506CC0900F8B0D6 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */; };
 		3A9C21D62506CE3A00F8B0D6 /* RocketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D52506CE3A00F8B0D6 /* RocketData.swift */; };
+		3ADAE0D5252BA07E00F7525B /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAE0D4252BA07E00F7525B /* ErrorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +295,7 @@
 		3A9C21D02506CA5400F8B0D6 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		3A9C21D52506CE3A00F8B0D6 /* RocketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketData.swift; sourceTree = "<group>"; };
+		3ADAE0D4252BA07E00F7525B /* ErrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
 		8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.release.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.release.xcconfig"; sourceTree = "<group>"; };
 		C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -935,6 +937,7 @@
 				3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */,
 				3A8506BE2506D08700923C18 /* Errors.swift */,
 				3A8506E6250B9BA900923C18 /* SpinnerController.swift */,
+				3ADAE0D4252BA07E00F7525B /* ErrorController.swift */,
 				3A85070B250CDBF400923C18 /* BaseXibView.swift */,
 				3A72BC8F25293F2E00A3DE08 /* LoadingButton.swift */,
 			);
@@ -1167,6 +1170,7 @@
 				3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */,
 				3A8506C62506D70D00923C18 /* RocketController.swift in Sources */,
 				3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */,
+				3ADAE0D5252BA07E00F7525B /* ErrorController.swift in Sources */,
 				3A5AE5EA25227AE4000E43C6 /* LaunchpadInfoInteractorOutput.swift in Sources */,
 				3A5AE59B251FCAC0000E43C6 /* LaunchpadPresenterOutput.swift in Sources */,
 				3A850717250CEA5300923C18 /* FooterInfoCell.swift in Sources */,

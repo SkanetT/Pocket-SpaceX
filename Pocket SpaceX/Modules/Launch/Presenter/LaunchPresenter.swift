@@ -61,6 +61,7 @@ extension LaunchPresenter: LaunchInteractorOutput {
     func launchDataSuccess(_ data: LaunchData) {
         let sortedData = data.sorted(by: { $0.dateUnix < $1.dateUnix })
         viewController?.didReceiveLaunchData(sortedData)
+        router.removeError()
     }
     
     func launchDataFailure(_ error: ApiErrors) {

@@ -12,6 +12,9 @@ class SpinnerController: UIViewController {
     
     let aView = UIView()
     let smallView = UIView()
+    
+    var retryErrorHandle: (() -> ())?
+    var errorController: ErrorController?
     override func viewDidLoad() {
         super.viewDidLoad()
         aView.backgroundColor = .white
@@ -27,7 +30,7 @@ class SpinnerController: UIViewController {
         aView.isHidden = true
         
         let size = UIScreen.main.bounds.height / 8.5
-
+        
         smallView.backgroundColor = .lightGray
         smallView.clipsToBounds = true
         smallView.layer.cornerRadius = size / 4
@@ -38,7 +41,7 @@ class SpinnerController: UIViewController {
             make.centerX.equalTo(aView.snp.centerX)
             make.height.width.equalTo(size)
         }
-
+        
         
         let ai = UIActivityIndicatorView(style: .medium)
         smallView.addSubview(ai)
@@ -63,5 +66,24 @@ class SpinnerController: UIViewController {
         DispatchQueue.main.async {
             self.aView.isHidden = true
         }
+    }
+    
+    func showError(_ error: ApiErrors) {
+        removeSpinner()
+        let vc = ErrorController(error)
+        errorController = vc
+        vc.modalPresentationStyle = .custom
+        vc.tapHandle() {[weak self] () in
+            self?.retryErrorHandle?()
+        }
+        self.present(vc, animated: true)
+    }
+    
+    func removeError() {
+        errorController?.dismiss()
+    }
+    
+    func tapErrorHandle(_ retryErrorHandle: (() -> ())?) {
+        self.retryErrorHandle = retryErrorHandle
     }
 }

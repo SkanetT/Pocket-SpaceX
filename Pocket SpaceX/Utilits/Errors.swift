@@ -19,7 +19,7 @@ enum ApiErrors: Error {
     var description: String {
         switch self {
         case .noInternet:
-            return "No Internet connection"
+            return "No connection"
         case .unknown:
             return "Unknown error (2)"
         case .noData:

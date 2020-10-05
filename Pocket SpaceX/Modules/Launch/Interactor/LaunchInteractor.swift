@@ -23,6 +23,7 @@ class LaunchInteractor: LaunchInteractorInput {
             case .success(let data):
                 self?.output?.launchDataSuccess(data)
             case .failure(let error):
+                print(error)
                 self?.output?.launchDataFailure(error)
             }
         }

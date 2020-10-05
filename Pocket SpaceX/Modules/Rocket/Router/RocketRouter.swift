@@ -10,11 +10,11 @@ import UIKit
 
 class RocketRouter: RocketRouting {
     
-    private weak var viewController: UIViewController?
+    private weak var viewController: SpinnerController?
     var refresh: (() -> ())?
 
     
-    init(_ viewController: UIViewController) {
+    init(_ viewController: SpinnerController) {
         self.viewController = viewController
     }
     
@@ -23,6 +23,8 @@ class RocketRouter: RocketRouting {
     }
     
     func showError(_ error: ApiErrors) {
+        
+//        viewController?.showError(error)
         let ac = UIAlertController()
         ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in
             self?.refresh?()

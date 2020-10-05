@@ -10,12 +10,12 @@ import UIKit
 
 class LaunchRouter: LaunchRouting {
     
-    private weak var viewController: UIViewController?
+    private weak var viewController: SpinnerController?
     var refresh: (() -> ())?
     weak var delegate: MenuDelegate?
+    var isError = false
     
-    
-    init(_ viewController: UIViewController) {
+    init(_ viewController: SpinnerController) {
         self.viewController = viewController
     }
     
@@ -24,13 +24,18 @@ class LaunchRouter: LaunchRouting {
     }
     
     func showError(_ error: ApiErrors) {
-        DispatchQueue.main.async {
-            let ac = UIAlertController()
-            ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in
+        if isError == false {
+            viewController?.showError(error)
+            viewController?.tapErrorHandle() {[weak self] () in
                 self?.refresh?()
-            }))
-            self.viewController?.present(ac, animated: true, completion: nil)
+            }
         }
+        isError = true
+    }
+    
+    func removeError() {
+        viewController?.removeError()
+        isError = false
     }
     
     func presentLaunchInfo(_ data: LaunchDatum) {
