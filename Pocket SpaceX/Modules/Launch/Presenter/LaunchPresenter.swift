@@ -13,7 +13,7 @@ class LaunchPresenter: LaunchPresenterInput {
     private weak var viewController: LaunchPresenterOutput?
     let interactor: LaunchInteractorInput
     let router: LaunchRouting
-
+    
     init(_ interactor: LaunchInteractorInput, _ router: LaunchRouting) {
         self.interactor = interactor
         self.router = router
@@ -31,7 +31,7 @@ class LaunchPresenter: LaunchPresenterInput {
             self?.router.presentLaunchInfo(data)
         }
         router.needRefresh() { [weak self] () in
-            self?.interactor.fecthData()
+            self?.interactor.repeatFecthData()
         }
     }
     
@@ -64,11 +64,19 @@ extension LaunchPresenter: LaunchInteractorOutput {
         router.removeError()
     }
     
-    func launchDataFailure(_ error: ApiErrors) {
-        router.showError(error)
+    func launchDataFailure(error: ApiErrors, isFirstError: Bool) {
+        if isFirstError {
+            router.showError(error)
+        } else {
+            router.repeatError()
+        }
     }
     
     func nextLaunchIdSuccess(_ id: String) {
         viewController?.didReceiveNextLaunchId(id)
+    }
+    
+    func nextLaunchIdFailure() {
+        viewController?.didReceiveNextLaunchError()
     }
 }

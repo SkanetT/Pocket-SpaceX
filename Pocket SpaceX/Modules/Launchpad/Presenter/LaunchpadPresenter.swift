@@ -27,7 +27,7 @@ class LaunchpadPresenter: LaunchpadPresenterInput {
     func viewDidLoad() {
         interactor.fecthData()
         router.needRefresh() { [weak self] () in
-            self?.interactor.fecthData()
+            self?.interactor.repeatFecthData()
         }
         viewController?.setActionForCell() {[weak self] id in
             self?.router.launchpadInfoPresent(id: id)
@@ -44,10 +44,15 @@ extension LaunchpadPresenter: LaunchpadInteractorOutput {
     func launchpadDataSuccess(_ data: LaunchpadData) {
         let sortedData = data.sorted(by: { $0.status < $1.status })
         viewController?.didReceiveLaucnhpadData(sortedData)
+        router.removeError()
     }
     
-    func launchpadDataFailure(_ error: ApiErrors) {
-        router.showError(error)
+    func launchpadDataFailure(_ error: ApiErrors, isFirstError: Bool) {
+        if isFirstError {
+            router.showError(error)
+        } else {
+            router.repeatError()
+        }
     }
-        
+    
 }

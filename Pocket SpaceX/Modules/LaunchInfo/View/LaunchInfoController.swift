@@ -47,10 +47,14 @@ class LaunchInfoController: UIViewController {
         
         rocketStack.clipsToBounds = true
         rocketStack.layer.cornerRadius = 8
+        rocketStack.layer.borderWidth = 2.2
+        rocketStack.layer.borderColor = #colorLiteral(red: 0.262745098, green: 0.3607843137, blue: 0.8784313725, alpha: 1)
         rocketStack.alpha = 0.95
         
         launchpadStack.clipsToBounds = true
         launchpadStack.layer.cornerRadius = 8
+        launchpadStack.layer.borderWidth = 2.2
+        launchpadStack.layer.borderColor = #colorLiteral(red: 0.262745098, green: 0.3607843137, blue: 0.8784313725, alpha: 1)
         launchpadStack.alpha = 0.95
         
         statusTimerLabel.clipsToBounds = true
@@ -59,6 +63,8 @@ class LaunchInfoController: UIViewController {
         
         dateLabel.clipsToBounds = true
         dateLabel.layer.cornerRadius = 8
+        dateLabel.layer.borderWidth = 2.2
+        dateLabel.layer.borderColor = UIColor.lightGray.cgColor
         dateLabel.alpha = 0.95
         
         detailsLabel.clipsToBounds = true

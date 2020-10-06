@@ -10,5 +10,5 @@ import Foundation
 
 protocol LaunchpadInfoInteractorOutput: class {
     func launchpadInfoDataSuccess(_ data: LaunchpadDatum)
-    func launchpadInfoDataFailure(_ error: ApiErrors)
+    func launchpadInfoDataFailure(_ error: ApiErrors, isFirstError: Bool)
 }

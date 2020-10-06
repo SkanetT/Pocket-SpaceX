@@ -120,8 +120,6 @@ extension LaunchTableHandler: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.setData(filteredLaunchData[indexPath.row])
         }
-        
-        
         return cell
     }
     

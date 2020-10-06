@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol RocketInfoInteractorInput: class {
-    
+protocol RocketInfoInteractorInput: class {    
     func attach(_ output: RocketInfoInteractorOutput)
     func fecthData()
+    func repeatFecthData()
 }

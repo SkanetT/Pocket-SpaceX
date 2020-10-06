@@ -11,5 +11,7 @@ import Foundation
 protocol LaunchpadInfoRouting {
     func dismiss()
     func showError(_ error: ApiErrors)
+    func repeatError()
+    func removeError() 
     func needRefresh(refresh: (() -> ())?)
 }

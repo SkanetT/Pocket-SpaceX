@@ -10,10 +10,10 @@ import UIKit
 
 class LaunchpadInfoRouter: LaunchpadInfoRouting {
     
-    private weak var viewController: UIViewController?
+    private weak var viewController: SpinnerController?
     var refresh: (() -> ())?
     
-    init(_ viewController: UIViewController) {
+    init(_ viewController: SpinnerController) {
         self.viewController = viewController
     }
     
@@ -22,11 +22,18 @@ class LaunchpadInfoRouter: LaunchpadInfoRouting {
     }
     
     func showError(_ error: ApiErrors) {
-        let ac = UIAlertController()
-        ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in
+        viewController?.showError(error)
+        viewController?.tapErrorHandle() { [weak self] () in
             self?.refresh?()
-        }))
-        viewController?.present(ac, animated: true, completion: nil)
+        }
+    }
+    
+    func repeatError() {
+        viewController?.repeatError()
+    }
+    
+    func removeError() {
+        viewController?.removeError()
     }
     
     func needRefresh(refresh: (() -> ())?) {

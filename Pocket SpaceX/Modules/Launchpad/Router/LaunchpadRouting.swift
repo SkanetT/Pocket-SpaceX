@@ -12,5 +12,7 @@ protocol LaunchpadRouting {
     func dismiss()
     func launchpadInfoPresent(id: String)
     func showError(_ error: ApiErrors)
+    func repeatError()
+    func removeError()
     func needRefresh(refresh: (() -> ())?)
 }

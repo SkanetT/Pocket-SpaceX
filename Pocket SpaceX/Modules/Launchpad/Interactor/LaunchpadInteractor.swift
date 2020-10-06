@@ -12,7 +12,6 @@ class LaunchpadInteractor: LaunchpadInteractorInput {
     
     private weak var output: LaunchpadInteractorOutput?
     
-    
     func attach(_ output: LaunchpadInteractorOutput) {
         self.output = output
     }
@@ -24,7 +23,19 @@ class LaunchpadInteractor: LaunchpadInteractorInput {
             case .success(let data):
                 self?.output?.launchpadDataSuccess(data)
             case .failure(let error):
-                self?.output?.launchpadDataFailure(error)
+                self?.output?.launchpadDataFailure(error, isFirstError: true)
+            }
+        }
+    }
+    
+    func repeatFecthData() {
+        let request = LaunchpadRequest()
+        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.output?.launchpadDataSuccess(data)
+            case .failure(let error):
+                self?.output?.launchpadDataFailure(error, isFirstError: false)
             }
         }
     }

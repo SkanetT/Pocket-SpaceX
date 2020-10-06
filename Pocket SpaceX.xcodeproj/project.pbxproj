@@ -935,7 +935,6 @@
 				3A85071A250E5E6500923C18 /* ImageCell.swift */,
 				3A9C21D02506CA5400F8B0D6 /* Reachability.swift */,
 				3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */,
-				3A8506BE2506D08700923C18 /* Errors.swift */,
 				3A8506E6250B9BA900923C18 /* SpinnerController.swift */,
 				3ADAE0D4252BA07E00F7525B /* ErrorController.swift */,
 				3A85070B250CDBF400923C18 /* BaseXibView.swift */,
@@ -963,6 +962,7 @@
 				3A85071C250E6CBC00923C18 /* LaunchData.swift */,
 				3A8507442512AB4100923C18 /* StarlinkData.swift */,
 				3A5F40DA25166A1A002460EA /* Enums.swift */,
+				3A8506BE2506D08700923C18 /* Errors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1379,7 +1379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = SL47R2R53M;
 				INFOPLIST_FILE = "Pocket SpaceX/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1400,7 +1400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = SL47R2R53M;
 				INFOPLIST_FILE = "Pocket SpaceX/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

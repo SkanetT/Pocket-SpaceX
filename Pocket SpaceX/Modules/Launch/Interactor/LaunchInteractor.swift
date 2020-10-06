@@ -11,7 +11,7 @@ import Foundation
 class LaunchInteractor: LaunchInteractorInput {
     
     private weak var output: LaunchInteractorOutput?
-    
+
     func attach(_ output: LaunchInteractorOutput) {
         self.output = output
     }
@@ -23,8 +23,19 @@ class LaunchInteractor: LaunchInteractorInput {
             case .success(let data):
                 self?.output?.launchDataSuccess(data)
             case .failure(let error):
-                print(error)
-                self?.output?.launchDataFailure(error)
+                self?.output?.launchDataFailure(error: error, isFirstError: true)
+            }
+        }
+    }
+    
+    func repeatFecthData() {
+        let request = LaunchRequest()
+        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.output?.launchDataSuccess(data)
+            case .failure(let error):
+                self?.output?.launchDataFailure(error: error, isFirstError: false)
             }
         }
     }
@@ -39,8 +50,8 @@ class LaunchInteractor: LaunchInteractorInput {
             switch result {
             case .success(let data):
                 self?.output?.nextLaunchIdSuccess(data.id)
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self?.output?.nextLaunchIdFailure()
             }
         }
         

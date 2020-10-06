@@ -10,6 +10,7 @@ import Foundation
 
 protocol LaunchInteractorOutput: class {
     func launchDataSuccess(_ data: LaunchData)
-    func launchDataFailure(_ error: ApiErrors)
+    func launchDataFailure(error: ApiErrors, isFirstError: Bool)
     func nextLaunchIdSuccess(_ id: String)
+    func nextLaunchIdFailure()
 }

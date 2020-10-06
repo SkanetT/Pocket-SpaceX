@@ -25,10 +25,10 @@ class LaunchpadInfoController: SpinnerController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        showSpinner()
         presenter?.attach(self)
         mapHandler?.attach(mapView)
         presenter?.viewDidLoad()
+        showSpinner()
     }
     
     private func configureUI() {

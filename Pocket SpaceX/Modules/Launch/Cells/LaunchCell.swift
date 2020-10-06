@@ -20,7 +20,7 @@ class LaunchCell: UITableViewCell {
     private let queue = DispatchQueue.init(label: "com.spacex.timer", qos: .background)
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .gray
+        selectionStyle = .blue
     }
     
     override func prepareForReuse() {

@@ -23,13 +23,18 @@ class RocketRouter: RocketRouting {
     }
     
     func showError(_ error: ApiErrors) {
-        
-//        viewController?.showError(error)
-        let ac = UIAlertController()
-        ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in
+        viewController?.showError(error)
+        viewController?.tapErrorHandle() {[weak self] () in
             self?.refresh?()
-        }))
-       viewController?.present(ac, animated: true, completion: nil)
+        }
+    }
+    
+    func repeatError() {
+        viewController?.repeatError()
+    }
+    
+    func removeError() {
+        viewController?.removeError()
     }
     
     func rocketInfoPresent(id: String) {

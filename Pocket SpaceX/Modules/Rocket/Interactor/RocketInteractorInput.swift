@@ -12,4 +12,5 @@ protocol RocketInteractorInput: class {
     
     func attach(_ output: RocketInteractorOutput)
     func fecthData()
+    func repeatFecthData()
 }

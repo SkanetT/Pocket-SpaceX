@@ -37,8 +37,6 @@ class ErrorController: UIViewController {
         transitioningDelegate = self
     }
     
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -62,22 +60,22 @@ class ErrorController: UIViewController {
         
         menuView.addSubview(errorLabel)
         errorLabel.textAlignment = .center
-        errorLabel.text = "Error"
+        errorLabel.text = "We have a problem"
         errorLabel.font = UIFont(name: "TimesNewRomanPS-BoldItalicMT", size: menuHeight / 8)
-
+        
         errorLabel.snp.makeConstraints() { make in
             make.top.equalTo(menuView.snp.top).offset(menuHeight / 40)
             make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
         }
         
-        menuView.addSubview(errorImage)
-        errorImage.tintColor = .black
-        errorImage.image = UIImage(systemName: "nosign")
-        errorImage.snp.makeConstraints() { make in
-            make.top.equalTo(errorLabel.snp.bottom).offset(menuHeight / 40)
-            make.height.width.equalTo(menuHeight / 2.6)
-            make.centerX.equalTo(menuView.snp.centerX)
+        menuView.addSubview(button)
+        button.configureButton(title: "Retry")
+        button.snp.makeConstraints() { make in
+            make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
+            make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
+            make.bottom.equalTo(menuView.snp.bottomMargin).offset(-(menuHeight / 40))
+            
         }
         
         menuView.addSubview(descriptionLabel)
@@ -85,23 +83,24 @@ class ErrorController: UIViewController {
         descriptionLabel.text = error.description
         descriptionLabel.font = descriptionLabel.font.withSize(menuHeight / 16)
         descriptionLabel.snp.makeConstraints() { make in
-            make.top.equalTo(errorImage.snp.bottom).offset(menuHeight / 40)
+            //            make.top.equalTo(errorImage.snp.bottom).offset(menuHeight / 40)
+            make.bottom.equalTo(button.snp.top).offset(-(menuHeight / 40))
             make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
         }
         
-        
-        menuView.addSubview(button)
-        button.configureButton(title: "Retry")
-        button.snp.makeConstraints() { make in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(menuHeight / 40)
+        menuView.addSubview(errorImage)
+        errorImage.contentMode = .scaleAspectFit
+        errorImage.tintColor = .black
+        errorImage.image = UIImage(systemName: "nosign")
+        errorImage.snp.makeConstraints() { make in
+            make.centerX.equalTo(menuView.snp.centerX)
+            make.top.equalTo(errorLabel.snp.bottom).offset(menuHeight / 40)
+            make.bottom.equalTo(descriptionLabel.snp.top).offset(-(menuHeight / 40))
             make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
-            make.bottom.equalTo(menuView.snp.bottomMargin).offset(-(menuHeight / 40))
         }
-        
         button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
-        
     }
     
     @ objc
@@ -110,9 +109,6 @@ class ErrorController: UIViewController {
         button.isUserInteractionEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.retryHandle?()
-            self.button.isLoading = false
-            self.button.isUserInteractionEnabled = true
-            self.button.shake()
         }
     }
     
@@ -120,12 +116,17 @@ class ErrorController: UIViewController {
         self.retryHandle = retryHandle
     }
     
+    func repeatError() {
+        button.isLoading = false
+        button.isUserInteractionEnabled = true
+        button.shake()
+    }
+    
     func dismiss() {
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
     }
-
 }
 
 extension ErrorController: UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {

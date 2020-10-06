@@ -23,7 +23,19 @@ class RocketInteractor: RocketInteractorInput {
             case.success(let data):
                 self?.output?.rocketDataSuccess(data)
             case.failure(let error):
-                self?.output?.rocketDataFailure(error)
+                self?.output?.rocketDataFailure(error, isFirstError: true)
+            }
+        }
+    }
+    
+    func repeatFecthData() {
+        let request = RocketRequest()
+        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+            switch result {
+            case.success(let data):
+                self?.output?.rocketDataSuccess(data)
+            case.failure(let error):
+                self?.output?.rocketDataFailure(error, isFirstError: false)
             }
         }
     }

@@ -27,7 +27,7 @@ class StarlinkPresenter: StarlinkPresenterInput {
     func viewDidLoad() {
         interactor.fecthData()
         router.needRefresh() { [weak self] () in
-            self?.interactor.fecthData()
+            self?.interactor.repeatFecthData()
         }
         viewController?.setActionForWiki() { [weak self] () in
             self?.router.presentWiki()
@@ -46,9 +46,14 @@ class StarlinkPresenter: StarlinkPresenterInput {
 extension StarlinkPresenter: StarlinkInteractorOutput {
     func starlinkDataSuccess(_ data: StarlinkData) {
         viewController?.didReceiveStarlinkData(data)
+        router.removeError()
     }
     
-    func starlinkDataFailure(_ error: ApiErrors) {
-        router.showError(error)
+    func starlinkDataFailure(_ error: ApiErrors, isFirstError: Bool) {
+        if isFirstError {
+            router.showError(error)
+        } else {
+            router.repeatError()
+        }
     }
 }

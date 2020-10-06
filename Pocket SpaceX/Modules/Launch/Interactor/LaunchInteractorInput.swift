@@ -12,5 +12,6 @@ protocol LaunchInteractorInput: class {
     func attach(_ output: LaunchInteractorOutput)
     func isFirstStart()
     func fecthData()
+    func repeatFecthData()
     func fecthNextLaunchId()
 }

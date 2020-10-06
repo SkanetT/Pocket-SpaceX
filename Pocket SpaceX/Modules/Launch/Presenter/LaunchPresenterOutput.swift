@@ -11,6 +11,7 @@ import Foundation
 protocol LaunchPresenterOutput: class {
     func didReceiveLaunchData(_ data: LaunchData)
     func didReceiveNextLaunchId(_ id: String)
+    func didReceiveNextLaunchError()
     func needToReverse()
     func typeChange(_ type: LaunchType)
     func setActionForCell(_ userSelect: ((LaunchDatum) -> ())?)

@@ -11,10 +11,10 @@ import SafariServices
 
 class RocketInfoRouter: RocketInfoRouting {
     
-    private weak var viewController: UIViewController?
+    private weak var viewController: SpinnerController?
     var refresh: (() -> ())?
     
-    init(_ viewController: UIViewController) {
+    init(_ viewController: SpinnerController) {
         self.viewController = viewController
     }
     
@@ -23,13 +23,18 @@ class RocketInfoRouter: RocketInfoRouting {
     }
     
     func showError(_ error: ApiErrors) {
-        DispatchQueue.main.async {
-            let ac = UIAlertController()
-            ac.addAction(.init(title: error.description, style: .default, handler: { [weak self] action in
-                self?.refresh?()
-            }))
-            self.viewController?.present(ac, animated: true, completion: nil)
+        viewController?.showError(error)
+        viewController?.tapErrorHandle() {[weak self] () in
+            self?.refresh?()
         }
+    }
+    
+    func repeatError() {
+        viewController?.repeatError()
+    }
+    
+    func removeError() {
+        viewController?.removeError()
     }
     
     func needRefresh(refresh: (() -> ())?) {

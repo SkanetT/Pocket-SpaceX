@@ -13,7 +13,7 @@ class RocketInfoPresenter: RocketInfoPresenterInput {
     private weak var viewController: RocketInfoPresenterOutput?
     let interactor: RocketInfoInteractorInput
     let router: RocketInfoRouting
-
+    
     init(_ interactor: RocketInfoInteractorInput, _ router: RocketInfoRouting) {
         self.interactor = interactor
         self.router = router
@@ -27,7 +27,7 @@ class RocketInfoPresenter: RocketInfoPresenterInput {
     func viewDidLoad() {
         interactor.fecthData()
         router.needRefresh() { [weak self] () in
-            self?.interactor.fecthData()
+            self?.interactor.repeatFecthData()
         }
         
         viewController?.setActionForWiki() { [weak self] urlStr in
@@ -45,9 +45,14 @@ extension RocketInfoPresenter: RocketInfoInteractorOutput {
     
     func rocketInfoDataSuccess(_ data: RocketDatum) {
         viewController?.didReceiveRocketInfoData(data)
+        router.removeError()
     }
     
-    func rocketInfoDataFailure(_ error: ApiErrors) {
-        router.showError(error)
+    func rocketInfoDataFailure(_ error: ApiErrors, isFirstError: Bool) {
+        if isFirstError {
+            router.showError(error)
+        } else {
+            router.repeatError()
+        }
     }
 }

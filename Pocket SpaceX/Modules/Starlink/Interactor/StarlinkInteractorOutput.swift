@@ -10,5 +10,5 @@ import Foundation
 
 protocol StarlinkInteractorOutput: class {
     func starlinkDataSuccess(_ data: StarlinkData)
-    func starlinkDataFailure(_ error: ApiErrors)
+    func starlinkDataFailure(_ error: ApiErrors, isFirstError: Bool)
 }

@@ -14,7 +14,7 @@ class SpinnerController: UIViewController {
     let smallView = UIView()
     
     var retryErrorHandle: (() -> ())?
-    var errorController: ErrorController?
+    weak var errorController: ErrorController?
     override func viewDidLoad() {
         super.viewDidLoad()
         aView.backgroundColor = .white
@@ -77,6 +77,10 @@ class SpinnerController: UIViewController {
             self?.retryErrorHandle?()
         }
         self.present(vc, animated: true)
+    }
+    
+    func repeatError() {
+        errorController?.repeatError()
     }
     
     func removeError() {

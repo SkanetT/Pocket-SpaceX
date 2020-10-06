@@ -126,6 +126,7 @@ class LaunchController: SpinnerController {
     @objc
     private func handleNext() {
         nextButton.isLoading = true
+        nextButton.isUserInteractionEnabled = false
         searchController.searchBar.text = nil
         presenter?.nextLaunchTap()
     }
@@ -149,6 +150,14 @@ extension LaunchController: LaunchPresenterOutput {
             self.segmentedContoll.selectedSegmentIndex = 0
             self.nextButton.isLoading = false
             self.tableHandler?.scrollToNextLaucnh(id: id)
+        }
+    }
+    
+    func didReceiveNextLaunchError() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+         //   self.nextButton.isLoading = false
+            self.nextButton.isUserInteractionEnabled = true
+            self.nextButton.failureAction(title: "Next launch")
         }
     }
     

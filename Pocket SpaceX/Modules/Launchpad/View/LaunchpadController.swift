@@ -12,14 +12,13 @@ class LaunchpadController: SpinnerController {
     
     var presenter: LaunchpadPresenterInput?
     var tableHandler: LaunchpadTableHandlerProtocol?
-    var tableView: UITableView!
-
+    lazy var tableView = UITableView(frame: view.frame, style: .grouped)
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.attach(self)
-        presenter?.viewDidLoad()
         configureUI()
         tableHandler?.attach(tableView)
+        presenter?.viewDidLoad()
         showSpinner()
     }
     
@@ -27,7 +26,6 @@ class LaunchpadController: SpinnerController {
         view.backgroundColor = .white
         title = "Launchpads"
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
-        tableView = UITableView(frame: view.frame, style: .grouped)
         tableView.backgroundColor = .white
         view.addSubview(tableView)
         tableView.snp.makeConstraints() { make in

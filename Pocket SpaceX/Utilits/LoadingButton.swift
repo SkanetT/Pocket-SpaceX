@@ -79,6 +79,16 @@ class LoadingButton: UIButton {
         }
     }
     
+    func failureAction(title: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.isLoading = false
+            self.setTitle("Failure!", for: .normal)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.setTitle(title, for: .normal)
+            }
+        }
+    }
+    
     func shake() {
         
         let shake = CABasicAnimation(keyPath: "position")

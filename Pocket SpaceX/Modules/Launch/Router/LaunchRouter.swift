@@ -13,7 +13,6 @@ class LaunchRouter: LaunchRouting {
     private weak var viewController: SpinnerController?
     var refresh: (() -> ())?
     weak var delegate: MenuDelegate?
-    var isError = false
     
     init(_ viewController: SpinnerController) {
         self.viewController = viewController
@@ -24,18 +23,18 @@ class LaunchRouter: LaunchRouting {
     }
     
     func showError(_ error: ApiErrors) {
-        if isError == false {
-            viewController?.showError(error)
-            viewController?.tapErrorHandle() {[weak self] () in
-                self?.refresh?()
-            }
+        viewController?.showError(error)
+        viewController?.tapErrorHandle() { [weak self] () in
+            self?.refresh?()
         }
-        isError = true
+    }
+    
+    func repeatError() {
+        viewController?.repeatError()
     }
     
     func removeError() {
         viewController?.removeError()
-        isError = false
     }
     
     func presentLaunchInfo(_ data: LaunchDatum) {

@@ -27,7 +27,7 @@ class LaunchpadInfoPresenter: LaunchpadInfoPresenterInput {
     func viewDidLoad() {
         interactor.fecthData()
         router.needRefresh() { [weak self] () in
-            self?.interactor.fecthData()
+            self?.interactor.repeatFecthData()
         }
     }
     
@@ -40,10 +40,15 @@ class LaunchpadInfoPresenter: LaunchpadInfoPresenterInput {
 extension LaunchpadInfoPresenter: LaunchpadInfoInteractorOutput {
     func launchpadInfoDataSuccess(_ data: LaunchpadDatum) {
         viewController?.didReceiveLaunchpadInfoData(data)
+        router.removeError()
     }
     
-    func launchpadInfoDataFailure(_ error: ApiErrors) {
-        router.showError(error)
+    func launchpadInfoDataFailure(_ error: ApiErrors, isFirstError: Bool) {
+        if isFirstError {
+            router.showError(error)
+        } else {
+            router.repeatError()
+        }
     }
     
 }

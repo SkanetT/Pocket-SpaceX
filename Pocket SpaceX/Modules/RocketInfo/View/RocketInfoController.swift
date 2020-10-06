@@ -17,10 +17,11 @@ class RocketInfoController: SpinnerController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        showSpinner()
         presenter?.attach(self)
         presenter?.viewDidLoad()
         tableHandler?.attach(tableView)
+        showSpinner()
+
     }
     
     private func configureUI() {

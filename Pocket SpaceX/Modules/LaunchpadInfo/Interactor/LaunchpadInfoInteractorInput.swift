@@ -11,4 +11,5 @@ import Foundation
 protocol LaunchpadInfoInteractorInput: class {
     func attach(_ output: LaunchpadInfoInteractorOutput)
     func fecthData()
+    func repeatFecthData()
 }

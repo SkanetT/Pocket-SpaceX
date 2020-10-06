@@ -31,7 +31,7 @@ class RocketPresenter: RocketPresenterInput {
         }
         
         router.needRefresh() { [weak self] () in
-            self?.interactor.fecthData()
+            self?.interactor.repeatFecthData()
         }
     }
     
@@ -44,10 +44,15 @@ extension RocketPresenter: RocketInteractorOutput {
     
     func rocketDataSuccess(_ data: RocketData) {
         viewController?.didReceiveRocketData(data)
+        router.removeError()
     }
     
-    func rocketDataFailure(_ error: ApiErrors) {
-        router.showError(error)
+    func rocketDataFailure(_ error: ApiErrors, isFirstError: Bool) {
+        if isFirstError {
+            router.showError(error)
+        } else {
+            router.repeatError()
+        } 
     }
 }
 
