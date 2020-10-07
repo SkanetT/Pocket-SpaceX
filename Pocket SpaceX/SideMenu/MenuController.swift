@@ -24,7 +24,7 @@ class MenuController: UIViewController {
         tableView.register(MenuOptionCell.self, forCellReuseIdentifier: MenuOptionCell.name)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .lightGray
+        tableView.backgroundColor = .none
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
         tableView.rowHeight = 80

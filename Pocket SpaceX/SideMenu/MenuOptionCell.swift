@@ -33,7 +33,7 @@ class MenuOptionCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .lightGray
-        
+    
         addSubview(iconImageView)
         iconImageView.snp.makeConstraints() { make in
             make.centerY.equalTo(snp.centerY)

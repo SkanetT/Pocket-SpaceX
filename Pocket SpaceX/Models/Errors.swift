@@ -15,6 +15,7 @@ enum ApiErrors: Error {
     case parsing
     case unknown
     case noInternet
+    case timeOut
     
     var description: String {
         switch self {
@@ -26,6 +27,8 @@ enum ApiErrors: Error {
             return "No data"
         case .parsing:
             return "Parsing"
+        case .timeOut:
+            return "Time Out"
         default:
             return "Unknown error"
         }

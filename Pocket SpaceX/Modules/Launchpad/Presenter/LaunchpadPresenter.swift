@@ -43,7 +43,9 @@ class LaunchpadPresenter: LaunchpadPresenterInput {
 extension LaunchpadPresenter: LaunchpadInteractorOutput {
     func launchpadDataSuccess(_ data: LaunchpadData) {
         let sortedData = data.sorted(by: { $0.status < $1.status })
-        viewController?.didReceiveLaucnhpadData(sortedData)
+        DispatchQueue.main.async {
+            self.viewController?.didReceiveLaucnhpadData(sortedData)
+        }
         router.removeError()
     }
     

@@ -18,6 +18,7 @@ class LaunchController: SpinnerController {
     var isReverse = false
     var segmentedContoll: UISegmentedControl!
     var nextButton: LoadingButton!
+    var swipeView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,23 @@ class LaunchController: SpinnerController {
             make.bottom.equalTo(view.snp.bottom)
         }
         
+        swipeView = UIView()
+        view.addSubview(swipeView)
+        view.bringSubviewToFront(swipeView)
+        swipeView.backgroundColor = .none
+        swipeView.snp.makeConstraints() { make in
+            make.top.equalTo(view.snp.top)
+            make.left.equalTo(view.snp.left)
+            make.width.equalTo(UIScreen.main.bounds.width / 20)
+            make.bottom.equalTo(view.snp.bottom)
+        }
         
+        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeGestureRight.direction = .right
+        swipeView.addGestureRecognizer(swipeGestureRight)
+        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeGestureLeft.direction = .left
+        swipeView.addGestureRecognizer(swipeGestureLeft)
     }
     
     private func configureSegmentedContoll() {
@@ -101,6 +118,11 @@ class LaunchController: SpinnerController {
     
     @objc
     private func handleMenu() {
+        presenter?.sideMenuTap()
+    }
+    
+    @objc
+    private func swipe() {
         presenter?.sideMenuTap()
     }
     
@@ -149,13 +171,13 @@ extension LaunchController: LaunchPresenterOutput {
         DispatchQueue.main.async {
             self.segmentedContoll.selectedSegmentIndex = 0
             self.nextButton.isLoading = false
+            self.nextButton.isUserInteractionEnabled = true
             self.tableHandler?.scrollToNextLaucnh(id: id)
         }
     }
     
     func didReceiveNextLaunchError() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-         //   self.nextButton.isLoading = false
             self.nextButton.isUserInteractionEnabled = true
             self.nextButton.failureAction(title: "Next launch")
         }

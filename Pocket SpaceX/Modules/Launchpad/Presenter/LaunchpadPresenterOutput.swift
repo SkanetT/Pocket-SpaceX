@@ -12,3 +12,8 @@ protocol LaunchpadPresenterOutput: class {
     func didReceiveLaucnhpadData(_ data: LaunchpadData)
     func setActionForCell(_ userSelect: ((String) -> ())?)
 }
+
+//protocol LoaderViewControllerL where Self: SpinnerController {
+//    func showSpinner()
+//    func removeSpinner()
+//}

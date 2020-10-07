@@ -15,20 +15,21 @@ class LaunchpadTableHandler: NSObject, LaunchpadTableHandlerProtocol {
     var userSelectCell: ((String) -> ())?
     
     func attach(_ tableView: UITableView) {
+        print(#function)
+        self.tableView = tableView
         tableView.register(UINib(nibName: "LaunchpadCell", bundle: nil), forCellReuseIdentifier: "launchpadCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine
         tableView.rowHeight = 65
-        tableView.reloadData()
     }
     
     func setData(_ data: LaunchpadData) {
+        print(#function)
         self.data = data
-        DispatchQueue.main.async {
-            self.tableView?.reloadData()
-        }
+        self.tableView?.reloadData()
     }
+    
     func setAction(userSelect: ((String) -> ())?) {
         self.userSelectCell = userSelect
     }
@@ -43,7 +44,7 @@ extension LaunchpadTableHandler: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "launchpadCell", for: indexPath) as! LaunchpadCell
         cell.setData(data[indexPath.row])
-        
+        print(indexPath.row)
         return cell
     }
     

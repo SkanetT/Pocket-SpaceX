@@ -17,6 +17,7 @@ class LaunchpadInteractor: LaunchpadInteractorInput {
     }
     
     func fecthData() {
+        print(#function)
         let request = LaunchpadRequest()
         NetworkApi.shared.dataTask(request: request) { [weak self] result in
             switch result {

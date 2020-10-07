@@ -117,8 +117,10 @@ class SettingsController: UIViewController {
         }
         
         menuView.addSubview(infoView)
-        infoView.backgroundColor = .lightGray
+        infoView.backgroundColor = .white
         infoView.clipsToBounds = true
+        infoView.layer.borderColor = UIColor.black.cgColor
+        infoView.layer.borderWidth = 2
         infoView.layer.cornerRadius = 8
         infoView.snp.makeConstraints() { make in
             make.top.equalTo(menuView.snp.top).offset(8)
@@ -141,6 +143,7 @@ class SettingsController: UIViewController {
         infoStack.addArrangedSubview(projectLabel)
         projectLabel.textAlignment = .center
         projectLabel.text = "Pocket SpaceX"
+        projectLabel.font = UIFont(name: "TimesNewRomanPS-BoldItalicMT", size: view.bounds.height / 20)
         projectLabel.snp.makeConstraints() { make in
             make.left.equalTo(infoStack.snp.left)
             make.right.equalTo(infoStack.snp.right)
@@ -150,6 +153,7 @@ class SettingsController: UIViewController {
         infoStack.addArrangedSubview(versionLabel)
         versionLabel.textAlignment = .center
         versionLabel.text = "Version"
+        versionLabel.font = UIFont(name: "TimesNewRomanPSMT", size: view.bounds.height / 32)
         versionLabel.snp.makeConstraints() { make in
             make.left.equalTo(infoStack.snp.left)
             make.right.equalTo(infoStack.snp.right)
@@ -158,6 +162,7 @@ class SettingsController: UIViewController {
         infoStack.addArrangedSubview(buildLabel)
         buildLabel.textAlignment = .center
         buildLabel.text = "Build"
+        buildLabel.font = UIFont(name: "TimesNewRomanPSMT", size: view.bounds.height / 32)
         buildLabel.snp.makeConstraints() { make in
             make.left.equalTo(infoStack.snp.left)
             make.right.equalTo(infoStack.snp.right)
