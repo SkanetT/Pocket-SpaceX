@@ -31,7 +31,7 @@ class SpinnerController: UIViewController {
         
         let size = UIScreen.main.bounds.height / 8.5
         
-        smallView.backgroundColor = .lightGray
+        smallView.backgroundColor = Colors.lowBlue
         smallView.clipsToBounds = true
         smallView.layer.cornerRadius = size / 4
         aView.addSubview(smallView)

@@ -26,14 +26,14 @@ class StarlinkCell: UITableViewCell {
         verLabel.text = data.version
         dateLabel.text = data.spaceTrack.launchDate
         if let height = data.heightKM {
-            statusLabel.textColor = .green
+            statusLabel.textColor = Colors.green
             statusLabel.text = "Active"
             heightLabel.textColor = .black
             heightLabel.text = (round(100 * height) / 100).description
         } else {
-            statusLabel.textColor = .red
+            statusLabel.textColor = Colors.red
             statusLabel.text = "Not active"
-            heightLabel.textColor = .red
+            heightLabel.textColor = Colors.red
             heightLabel.text = "None"
         }
     }

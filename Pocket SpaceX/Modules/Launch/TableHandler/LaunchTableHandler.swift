@@ -114,7 +114,6 @@ extension LaunchTableHandler: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "launchCell", for: indexPath) as! LaunchCell
-        cell.patchImage.image = UIImage(systemName: "xmark.seal")
         if !isFilter {
             cell.setData(launchData[indexPath.row])
         } else {
@@ -130,6 +129,14 @@ extension LaunchTableHandler: UITableViewDelegate, UITableViewDataSource {
         } else {
             userTap?(filteredLaunchData[indexPath.row])
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 65
     }
     
 }

@@ -16,7 +16,6 @@ class MenuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMenu()
-        view.backgroundColor = .lightGray
     }
     
     func configureMenu(){
@@ -40,6 +39,7 @@ class MenuController: UIViewController {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
         swipeGesture.direction = .left
         view.addGestureRecognizer(swipeGesture)
+        view.setGradientBackground(colorOne: .white, colorTwo: Colors.lowBlue)
     }
     
     @objc

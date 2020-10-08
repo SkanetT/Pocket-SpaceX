@@ -20,8 +20,13 @@ class LaunchCell: UITableViewCell {
     private let queue = DispatchQueue.init(label: "com.spacex.timer", qos: .background)
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .blue
+        selectionStyle = .default
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Colors.lowBlue
+        selectedBackgroundView = backgroundView
     }
+    
+   
     
     override func prepareForReuse() {
         timer?.invalidate()
@@ -31,19 +36,23 @@ class LaunchCell: UITableViewCell {
     func setData(_ data: LaunchDatum) {
         if let url = data.links.patch.small {
             patchImage.setKfImage(urlString: url)
+        } else {
+            patchImage.setKfImage(urlString: "")
         }
         nameLabel.text = data.name
         dateLabel.text = DataManager.makeDateStringFromUnixTime(data.dateUnix)
         
         if data.upcoming == false {
+            statusTimerLabel.font = statusTimerLabel.font.withSize(22)
             if data.failures.isEmpty {
-                statusTimerLabel.textColor = .green
+                statusTimerLabel.textColor = Colors.green
                 statusTimerLabel.text = "Success"
             } else {
-                statusTimerLabel.textColor = .red
+                statusTimerLabel.textColor = Colors.red
                 statusTimerLabel.text = "Failure"
             }
         } else {
+            statusTimerLabel.font = statusTimerLabel.font.withSize(18)
             statusTimerLabel.textColor = .black
             time = data.dateUnix
             statusTimerLabel.text = DataManager.makeDateForTimer(time)

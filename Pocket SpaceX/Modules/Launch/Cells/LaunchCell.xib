@@ -16,45 +16,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="406" height="173"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.seal" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lCT-w2-Y7U">
-                        <rect key="frame" x="24" y="7" width="125" height="126.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nosign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lCT-w2-Y7U">
+                        <rect key="frame" x="18" y="25.5" width="123" height="122"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="lCT-w2-Y7U" secondAttribute="height" multiplier="1:1" id="Xz0-6Z-FV4"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="ZaL-5o-9Oy">
-                        <rect key="frame" x="157" y="8" width="241" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRX-OI-wMc">
-                        <rect key="frame" x="157" y="37" width="241" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfC-UA-byf">
-                        <rect key="frame" x="157" y="64.5" width="241" height="23"/>
-                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="FYl-3m-bPS">
+                        <rect key="frame" x="159" y="25" width="229" height="123"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="ZaL-5o-9Oy">
+                                <rect key="frame" x="0.0" y="0.0" width="229" height="36.5"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="tRX-OI-wMc">
+                                <rect key="frame" x="0.0" y="43.5" width="229" height="36"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="VfC-UA-byf">
+                                <rect key="frame" x="0.0" y="86.5" width="229" height="36.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lCT-w2-Y7U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7IT-bh-uM6"/>
-                    <constraint firstItem="lCT-w2-Y7U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="7K2-s9-wyU"/>
-                    <constraint firstItem="tRX-OI-wMc" firstAttribute="top" secondItem="ZaL-5o-9Oy" secondAttribute="bottom" constant="8" id="dpl-Sd-KVC"/>
-                    <constraint firstAttribute="trailing" secondItem="VfC-UA-byf" secondAttribute="trailing" constant="8" id="exo-D4-3Ra"/>
-                    <constraint firstItem="VfC-UA-byf" firstAttribute="leading" secondItem="lCT-w2-Y7U" secondAttribute="trailing" constant="8" id="f5G-7S-CCC"/>
-                    <constraint firstItem="ZaL-5o-9Oy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fHO-59-v2r"/>
-                    <constraint firstAttribute="trailing" secondItem="ZaL-5o-9Oy" secondAttribute="trailing" constant="8" id="frW-yP-29z"/>
-                    <constraint firstAttribute="trailing" secondItem="tRX-OI-wMc" secondAttribute="trailing" constant="8" id="i9G-bn-nWb"/>
-                    <constraint firstItem="VfC-UA-byf" firstAttribute="top" secondItem="tRX-OI-wMc" secondAttribute="bottom" constant="8" id="ke2-pd-9Gc"/>
-                    <constraint firstItem="ZaL-5o-9Oy" firstAttribute="leading" secondItem="lCT-w2-Y7U" secondAttribute="trailing" constant="8" id="rIH-wt-0V3"/>
-                    <constraint firstAttribute="bottom" secondItem="lCT-w2-Y7U" secondAttribute="bottom" constant="40" id="sxt-Oi-QYW"/>
-                    <constraint firstItem="tRX-OI-wMc" firstAttribute="leading" secondItem="lCT-w2-Y7U" secondAttribute="trailing" constant="8" id="tyR-N7-6Hj"/>
+                    <constraint firstAttribute="bottom" secondItem="FYl-3m-bPS" secondAttribute="bottom" constant="25" id="0Sp-Et-O5a"/>
+                    <constraint firstItem="FYl-3m-bPS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="7FH-px-1nD"/>
+                    <constraint firstItem="lCT-w2-Y7U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="7IT-bh-uM6"/>
+                    <constraint firstItem="lCT-w2-Y7U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="7K2-s9-wyU"/>
+                    <constraint firstItem="FYl-3m-bPS" firstAttribute="leading" secondItem="lCT-w2-Y7U" secondAttribute="trailing" constant="18" id="WYe-hs-A31"/>
+                    <constraint firstAttribute="bottom" secondItem="lCT-w2-Y7U" secondAttribute="bottom" constant="25" id="sxt-Oi-QYW"/>
+                    <constraint firstAttribute="trailing" secondItem="FYl-3m-bPS" secondAttribute="trailing" constant="18" id="zrz-2J-qKk"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -67,6 +67,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="xmark.seal" catalog="system" width="128" height="128"/>
+        <image name="nosign" catalog="system" width="128" height="121"/>
     </resources>
 </document>

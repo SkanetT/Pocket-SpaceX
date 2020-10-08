@@ -91,7 +91,7 @@ class SettingsController: UIViewController {
         cacheButton.addTarget(self, action: #selector(clearCacheHandle(_ :)), for: .touchUpInside)
         
         menuView.addSubview(viewForVideoSwitch)
-        viewForVideoSwitch.backgroundColor = .lightGray
+        viewForVideoSwitch.backgroundColor = Colors.lowBlue
         viewForVideoSwitch.snp.makeConstraints() { make in
             make.bottom.equalTo(cacheButton.snp.top).offset(-(menuHeight / 40))
             make.trailing.equalTo(menuView.snp.trailing)
@@ -117,7 +117,7 @@ class SettingsController: UIViewController {
         }
         
         menuView.addSubview(infoView)
-        infoView.backgroundColor = .white
+        
         infoView.clipsToBounds = true
         infoView.layer.borderColor = UIColor.black.cgColor
         infoView.layer.borderWidth = 2

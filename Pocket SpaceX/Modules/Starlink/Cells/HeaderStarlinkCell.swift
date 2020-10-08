@@ -65,7 +65,7 @@ class HeaderStarlinkCell: UIView {
         addSubview(spaceLabelCount)
         spaceLabelCount.font = spaceLabelCount.font.withSize(22)
         spaceLabelCount.textAlignment = .center
-        spaceLabelCount.textColor = .green
+        spaceLabelCount.textColor = Colors.green
         spaceLabelCount.snp.makeConstraints() { make in
             make.top.equalTo(spaceLabel.snp.bottom).offset(8)
             make.leading.equalTo(totalLabel.snp.leading)
@@ -84,7 +84,7 @@ class HeaderStarlinkCell: UIView {
         addSubview(deorbitedLabelCount)
         deorbitedLabelCount.font = deorbitedLabelCount.font.withSize(22)
         deorbitedLabelCount.textAlignment = .center
-        deorbitedLabelCount.textColor = .red
+        deorbitedLabelCount.textColor = Colors.red
         deorbitedLabelCount.snp.makeConstraints() { make in
             make.top.equalTo(deorbitedLabel.snp.bottom).offset(8)
             make.leading.equalTo(totalLabel.snp.leading)

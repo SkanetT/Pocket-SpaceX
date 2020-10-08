@@ -44,7 +44,6 @@ extension LaunchpadTableHandler: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "launchpadCell", for: indexPath) as! LaunchpadCell
         cell.setData(data[indexPath.row])
-        print(indexPath.row)
         return cell
     }
     

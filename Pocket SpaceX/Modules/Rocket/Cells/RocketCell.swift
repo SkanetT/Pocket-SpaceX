@@ -19,19 +19,22 @@ class RocketCell: UICollectionViewCell {
         super.awakeFromNib()
         
         rocketImage.clipsToBounds = true
-        rocketImage.layer.cornerRadius = 8
+        rocketImage.layer.cornerRadius = 12
         rocketImage.layer.borderColor = UIColor.black.cgColor
-        rocketImage.layer.borderWidth = 0.4
+        rocketImage.layer.borderWidth = 0.1
+        
+        nameLabel.font = UIFont(name: "TimesNewRomanPSMT", size: UIScreen.main.bounds.width / 20)
+        activeLabel.font = UIFont(name: "TimesNewRomanPSMT", size: UIScreen.main.bounds.width / 22)
         
     }
     
     func setData(_ data: RocketDatum) {
         nameLabel.text = data.name
         if data.active {
-            activeLabel.textColor = .green
+            activeLabel.textColor = Colors.green
             activeLabel.text = "Active"
         } else {
-            activeLabel.textColor = .red
+            activeLabel.textColor = Colors.red
             activeLabel.text = "Not active"
         }
         

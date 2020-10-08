@@ -103,7 +103,7 @@ class ErrorController: UIViewController {
         button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
     }
     
-    @ objc
+    @objc
     private func buttonTap() {
         button.isLoading = true
         button.isUserInteractionEnabled = false
@@ -119,7 +119,7 @@ class ErrorController: UIViewController {
     func repeatError() {
         button.isLoading = false
         button.isUserInteractionEnabled = true
-        button.shake()
+        menuView.shake()
     }
     
     func dismiss() {

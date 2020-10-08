@@ -26,6 +26,7 @@ class HeaderInfoCell: XibBasedView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "image")
+        pageControl.tintColor = Colors.lowBlue
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -41,10 +42,10 @@ class HeaderInfoCell: XibBasedView {
             self.collectionView.reloadData()
             if data.active {
                 self.activeLabel.text = "Active"
-                self.activeLabel.textColor = .green
+                self.activeLabel.textColor = Colors.green
             } else {
                 self.activeLabel.text = "Not active"
-                self.activeLabel.textColor = .red
+                self.activeLabel.textColor = Colors.red
             }
         }
     }

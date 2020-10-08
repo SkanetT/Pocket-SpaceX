@@ -48,13 +48,13 @@ class LaunchInfoController: UIViewController {
         rocketStack.clipsToBounds = true
         rocketStack.layer.cornerRadius = 8
         rocketStack.layer.borderWidth = 2.2
-        rocketStack.layer.borderColor = #colorLiteral(red: 0.262745098, green: 0.3607843137, blue: 0.8784313725, alpha: 1)
+        rocketStack.layer.borderColor = Colors.blue.cgColor
         rocketStack.alpha = 0.95
         
         launchpadStack.clipsToBounds = true
         launchpadStack.layer.cornerRadius = 8
         launchpadStack.layer.borderWidth = 2.2
-        launchpadStack.layer.borderColor = #colorLiteral(red: 0.262745098, green: 0.3607843137, blue: 0.8784313725, alpha: 1)
+        launchpadStack.layer.borderColor = Colors.blue.cgColor
         launchpadStack.alpha = 0.95
         
         statusTimerLabel.clipsToBounds = true
@@ -69,6 +69,7 @@ class LaunchInfoController: UIViewController {
         
         detailsLabel.clipsToBounds = true
         detailsLabel.layer.cornerRadius = 8
+        detailsLabel.backgroundColor = Colors.lowBlue
         detailsLabel.alpha = 0.95
         
         shareButton.configureButton(title: "Share")
@@ -140,10 +141,10 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.upTimer), userInfo: nil, repeats: true)
         } else {
             if data.failures.isEmpty {
-                statusTimerLabel.textColor = .green
+                statusTimerLabel.textColor = Colors.green
                 statusTimerLabel.text = "Success"
             } else {
-                statusTimerLabel.textColor = .red
+                statusTimerLabel.textColor = Colors.red
                 statusTimerLabel.text = "Failure"
             }
         }

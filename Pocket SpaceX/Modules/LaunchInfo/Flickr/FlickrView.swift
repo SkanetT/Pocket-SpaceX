@@ -18,9 +18,9 @@ class FlickrView: XibBasedView {
         super.init(frame: frame)
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "image")
+        
+
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -31,6 +31,7 @@ class FlickrView: XibBasedView {
     func setData(_ data: [String]) {
         self.urlArray = data
         DispatchQueue.main.async {
+            self.pageControl.tintColor = Colors.lowBlue
             self.pageControl.numberOfPages = self.urlArray.count
             self.collectionView.reloadData()
         }

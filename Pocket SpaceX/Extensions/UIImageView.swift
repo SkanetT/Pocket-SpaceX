@@ -13,7 +13,7 @@ extension UIImageView {
     
     func setKfImage(urlString: String) {
         guard let url = URL(string: urlString) else {
-            self.image = UIImage(systemName: "xmark.seal")
+            self.image = UIImage(systemName: "nosign")
             return
         }
         self.kf.indicatorType = .activity

@@ -52,6 +52,7 @@ class LaunchpadInfoController: SpinnerController {
         
         detailsLabel.clipsToBounds = true
         detailsLabel.layer.cornerRadius = 8
+        detailsLabel.backgroundColor = Colors.lowBlue
         detailsLabel.alpha = 0.95
     }
     

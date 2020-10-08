@@ -15,7 +15,9 @@ class LaunchpadCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Colors.lowBlue
+        selectedBackgroundView = backgroundView
     }
     
     func setData(_ data: LaunchpadDatum) {
