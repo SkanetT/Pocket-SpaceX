@@ -9,6 +9,7 @@
 import Foundation
 
 protocol RocketInfoPresenterOutput: class {
+    func configureUI()
     func didReceiveRocketInfoData(_ data: RocketDatum)
     func setActionForWiki(_ userSelectWiki: ((String) -> ())?)
 }

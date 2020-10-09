@@ -27,6 +27,7 @@ class SettingsPresenter: SettingsPresenterInput {
     func viewDidLoad() {
         interactor.fetchVideoStatus()
         interactor.fetchInfoText()
+        viewController?.configureUI()
     }
     
     func dismissRequest() {

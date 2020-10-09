@@ -9,6 +9,9 @@
 import Foundation
 
 protocol LaunchPresenterOutput: class {
+    func configureUI()
+    func configureSegmentedContoll()
+    func configureNextButton()
     func didReceiveLaunchData(_ data: LaunchData)
     func didReceiveNextLaunchId(_ id: String)
     func didReceiveNextLaunchError()

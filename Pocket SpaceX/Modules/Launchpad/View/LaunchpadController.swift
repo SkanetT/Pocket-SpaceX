@@ -13,16 +13,22 @@ class LaunchpadController: SpinnerController {
     var presenter: LaunchpadPresenterInput?
     var tableHandler: LaunchpadTableHandlerProtocol?
     lazy var tableView = UITableView(frame: view.frame, style: .grouped)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.attach(self)
-        configureUI()
         tableHandler?.attach(tableView)
         presenter?.viewDidLoad()
-        showSpinner()
     }
     
-    private func configureUI() {
+    @objc
+    private func exitTap() {
+        presenter?.closeTap()
+    }
+}
+
+extension LaunchpadController: LaunchpadPresenterOutput {
+    func configureUI() {
         view.backgroundColor = .white
         title = "Launchpads"
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
@@ -34,16 +40,9 @@ class LaunchpadController: SpinnerController {
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
         }
+        showSpinner()
     }
     
-    @objc
-    private func exitTap() {
-        presenter?.closeTap()
-    }
-    
-}
-
-extension LaunchpadController: LaunchpadPresenterOutput {
     func didReceiveLaucnhpadData(_ data: LaunchpadData) {
         tableHandler?.setData(data)
         removeSpinner()
@@ -52,5 +51,4 @@ extension LaunchpadController: LaunchpadPresenterOutput {
     func setActionForCell(_ userSelect: ((String) -> ())?) {
         tableHandler?.setAction(userSelect: userSelect)
     }
-    
 }

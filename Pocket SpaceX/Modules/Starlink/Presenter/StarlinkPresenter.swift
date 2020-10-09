@@ -25,13 +25,14 @@ class StarlinkPresenter: StarlinkPresenterInput {
     }
     
     func viewDidLoad() {
-        interactor.fecthData()
+        interactor.fecthData(isFirstError: true)
         router.needRefresh() { [weak self] () in
-            self?.interactor.repeatFecthData()
+            self?.interactor.fecthData(isFirstError: false)
         }
         viewController?.setActionForWiki() { [weak self] () in
             self?.router.presentWiki()
         }
+        viewController?.configureUI()
     }
     
     func closeTap() {

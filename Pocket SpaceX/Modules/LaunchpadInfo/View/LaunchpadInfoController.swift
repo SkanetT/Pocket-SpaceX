@@ -24,14 +24,20 @@ class LaunchpadInfoController: SpinnerController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         presenter?.attach(self)
         mapHandler?.attach(mapView)
         presenter?.viewDidLoad()
-        showSpinner()
     }
     
-    private func configureUI() {
+    @objc
+    private func exitTap() {
+        presenter?.closeTap()
+    }
+}
+
+extension LaunchpadInfoController: LaunchpadInfoPresenterOutput {
+    func configureUI() {
+        
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
         mapView.clipsToBounds = true
         mapView.layer.cornerRadius = 8
@@ -54,16 +60,10 @@ class LaunchpadInfoController: SpinnerController {
         detailsLabel.layer.cornerRadius = 8
         detailsLabel.backgroundColor = Colors.lowBlue
         detailsLabel.alpha = 0.95
+       
+        showSpinner()
     }
     
-    @objc
-    private func exitTap() {
-        presenter?.closeTap()
-    }
-    
-}
-
-extension LaunchpadInfoController: LaunchpadInfoPresenterOutput {
     func didReceiveLaunchpadInfoData(_ data: LaunchpadDatum) {
         mapHandler?.setData(data)
         

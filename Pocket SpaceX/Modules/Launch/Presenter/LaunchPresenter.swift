@@ -25,14 +25,18 @@ class LaunchPresenter: LaunchPresenterInput {
     }
     
     func viewDidLoad() {
-        interactor.fecthData()
+        interactor.fecthData(isFirstError: true)
         interactor.isFirstStart()
         viewController?.setActionForCell() {[weak self] data in
             self?.router.presentLaunchInfo(data)
         }
         router.needRefresh() { [weak self] () in
-            self?.interactor.repeatFecthData()
+            self?.interactor.fecthData(isFirstError: false)
         }
+        
+        viewController?.configureUI()
+        viewController?.configureSegmentedContoll()
+        viewController?.configureNextButton()
     }
     
     func sideMenuTap() {
@@ -48,7 +52,7 @@ class LaunchPresenter: LaunchPresenterInput {
     }
     
     func refreshData() {
-        interactor.fecthData()
+        interactor.fecthData(isFirstError: false)
     }
     
     func nextLaunchTap() {

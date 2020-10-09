@@ -13,18 +13,22 @@ class RocketInfoController: SpinnerController {
     var presenter: RocketInfoPresenterInput?
     var tableView: UITableView!
     var tableHandler: RocketInfoTableHandlerProtocol?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         presenter?.attach(self)
         presenter?.viewDidLoad()
         tableHandler?.attach(tableView)
-        showSpinner()
-
     }
     
-    private func configureUI() {
+    @objc
+    private func exitTap() {
+        presenter?.closeTap()
+    }
+}
+
+extension RocketInfoController: RocketInfoPresenterOutput {
+    func configureUI() {
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
         tableView = UITableView(frame: view.frame, style: .grouped)
@@ -36,15 +40,10 @@ class RocketInfoController: SpinnerController {
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
         }
+        
+        showSpinner()
     }
     
-    @objc
-    private func exitTap() {
-        presenter?.closeTap()
-    }
-}
-
-extension RocketInfoController: RocketInfoPresenterOutput {
     func didReceiveRocketInfoData(_ data: RocketDatum) {
         DispatchQueue.main.async {
             self.title = data.name

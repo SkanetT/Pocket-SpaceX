@@ -19,13 +19,29 @@ class StarlinkController: SpinnerController {
         super.viewDidLoad()
         presenter?.attach(self)
         presenter?.viewDidLoad()
-        configureUI()
-        segmentedContoll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
         tableHandler?.attach(tableView)
-        showSpinner()
     }
     
-    private func configureUI() {
+    @objc
+    private func exitTap() {
+        presenter?.closeTap()
+    }
+    
+    @objc
+    private func segmentControl(_ segmentedControl: UISegmentedControl) {
+        switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            presenter?.changeDataTap(true)
+        case 1:
+            presenter?.changeDataTap(false)
+        default:
+            break
+        }
+    }
+}
+
+extension StarlinkController: StarlinkPresenterOutput {
+    func configureUI() {
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
         title = "Starlink"
@@ -55,28 +71,11 @@ class StarlinkController: SpinnerController {
         segmentedContoll.layer.shadowOpacity = 0.35
         segmentedContoll.layer.shadowOffset = .init(width: 5, height: 7)
         segmentedContoll.layer.shadowRadius = 10
-    
+        segmentedContoll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
+        
+        showSpinner()
     }
     
-    @objc
-    private func exitTap() {
-        presenter?.closeTap()
-    }
-    
-    @objc
-    private func segmentControl(_ segmentedControl: UISegmentedControl) {
-        switch (segmentedControl.selectedSegmentIndex) {
-        case 0:
-            presenter?.changeDataTap(true)
-        case 1:
-            presenter?.changeDataTap(false)
-        default:
-            break
-        }
-    }
-}
-
-extension StarlinkController: StarlinkPresenterOutput {
     func didReceiveStarlinkData(_ data: StarlinkData) {
         tableHandler?.setData(data)
         removeSpinner()

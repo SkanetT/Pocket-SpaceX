@@ -16,26 +16,14 @@ class RocketInteractor: RocketInteractorInput {
         self.output = output
     }
     
-    func fecthData() {
+    func fecthData(isFirstError: Bool) {
         let request = RocketRequest()
         NetworkApi.shared.dataTask(request: request) { [weak self] result in
             switch result {
             case.success(let data):
                 self?.output?.rocketDataSuccess(data)
             case.failure(let error):
-                self?.output?.rocketDataFailure(error, isFirstError: true)
-            }
-        }
-    }
-    
-    func repeatFecthData() {
-        let request = RocketRequest()
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
-            switch result {
-            case.success(let data):
-                self?.output?.rocketDataSuccess(data)
-            case.failure(let error):
-                self?.output?.rocketDataFailure(error, isFirstError: false)
+                self?.output?.rocketDataFailure(error, isFirstError: isFirstError)
             }
         }
     }

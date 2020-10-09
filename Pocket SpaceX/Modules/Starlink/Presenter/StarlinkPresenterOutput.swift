@@ -9,6 +9,7 @@
 import Foundation
 
 protocol StarlinkPresenterOutput: class {
+    func configureUI()
     func didReceiveStarlinkData(_ data: StarlinkData)
     func setActionForWiki(_ userSelectWiki: (() -> ())?)
     func setDataChange(_ type: Bool)

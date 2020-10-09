@@ -10,6 +10,5 @@ import Foundation
 
 protocol StarlinkInteractorInput: class {
     func attach(_ output: StarlinkInteractorOutput)
-    func repeatFecthData()
-    func fecthData()
+    func fecthData(isFirstError: Bool)
 }

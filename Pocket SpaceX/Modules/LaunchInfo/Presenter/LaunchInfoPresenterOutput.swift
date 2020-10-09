@@ -9,6 +9,7 @@
 import Foundation
 
 protocol LaunchInfoPresenterOutput: class {
+    func configureUI()
     func didReceiveLaunchInfoData(_ data: LaunchDatum)
     func didReceiveRocketName(_ name: String)
     func didReceiveLaunchpadName(_ name: String)

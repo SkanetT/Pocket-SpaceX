@@ -16,14 +16,21 @@ class RocketController: SpinnerController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
-        showSpinner()
         presenter?.attach(self)
         presenter?.viewDidLoad()
         collectionHandler?.attach(collectionView)
     }
     
-    private func configureUI() {
+    @objc
+    private func exitTap() {
+        presenter?.closeTap()
+    }
+    
+}
+
+extension RocketController: RocketPresenterOutput {
+    func configureUI() {
+        
         title = "Rockets"
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
@@ -40,24 +47,17 @@ class RocketController: SpinnerController {
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
         }
+        
+        showSpinner()
     }
     
-    @objc
-    private func exitTap() {
-        presenter?.closeTap()
-    }
-    
-}
-
-extension RocketController: RocketPresenterOutput {
     func setActionForCell(_ userSelect: ((String) -> ())?) {
         collectionHandler?.setAction(userSelect: userSelect)
     }
     
-    
     func didReceiveRocketData(_ data: RocketData) {
-        removeSpinner()
         collectionHandler?.setData(data)
+        removeSpinner()
     }
 }
 

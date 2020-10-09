@@ -15,7 +15,6 @@ class LaunchpadTableHandler: NSObject, LaunchpadTableHandlerProtocol {
     var userSelectCell: ((String) -> ())?
     
     func attach(_ tableView: UITableView) {
-        print(#function)
         self.tableView = tableView
         tableView.register(UINib(nibName: "LaunchpadCell", bundle: nil), forCellReuseIdentifier: "launchpadCell")
         tableView.delegate = self
@@ -25,7 +24,6 @@ class LaunchpadTableHandler: NSObject, LaunchpadTableHandlerProtocol {
     }
     
     func setData(_ data: LaunchpadData) {
-        print(#function)
         self.data = data
         self.tableView?.reloadData()
     }

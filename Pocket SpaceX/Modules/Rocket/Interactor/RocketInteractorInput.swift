@@ -11,6 +11,5 @@ import Foundation
 protocol RocketInteractorInput: class {
     
     func attach(_ output: RocketInteractorOutput)
-    func fecthData()
-    func repeatFecthData()
+    func fecthData(isFirstError: Bool)
 }

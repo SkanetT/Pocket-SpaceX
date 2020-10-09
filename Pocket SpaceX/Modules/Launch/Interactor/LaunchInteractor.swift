@@ -16,26 +16,14 @@ class LaunchInteractor: LaunchInteractorInput {
         self.output = output
     }
     
-    func fecthData() {
+    func fecthData(isFirstError: Bool) {
         let request = LaunchRequest()
         NetworkApi.shared.dataTask(request: request) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.launchDataSuccess(data)
             case .failure(let error):
-                self?.output?.launchDataFailure(error: error, isFirstError: true)
-            }
-        }
-    }
-    
-    func repeatFecthData() {
-        let request = LaunchRequest()
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.output?.launchDataSuccess(data)
-            case .failure(let error):
-                self?.output?.launchDataFailure(error: error, isFirstError: false)
+                self?.output?.launchDataFailure(error: error, isFirstError: isFirstError)
             }
         }
     }

@@ -16,26 +16,14 @@ class StarlinkInteractor: StarlinkInteractorInput {
         self.output = output
     }
     
-    func fecthData() {
+    func fecthData(isFirstError: Bool) {
         let request = StarlinkRequest()
         NetworkApi.shared.dataTask(request: request) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.starlinkDataSuccess(data)
             case .failure(let error):
-                self?.output?.starlinkDataFailure(error, isFirstError: true)
-            }
-        }
-    }
-    
-    func repeatFecthData() {
-        let request = StarlinkRequest()
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.output?.starlinkDataSuccess(data)
-            case .failure(let error):
-                self?.output?.starlinkDataFailure(error, isFirstError: false)
+                self?.output?.starlinkDataFailure(error, isFirstError: isFirstError)
             }
         }
     }

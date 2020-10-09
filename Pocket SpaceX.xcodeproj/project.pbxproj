@@ -321,8 +321,8 @@
 			children = (
 				3A5AE5B725209FBC000E43C6 /* Cells */,
 				3A5AE5B025209C1D000E43C6 /* TableHandler */,
-				3A5AE5A4251FE756000E43C6 /* Interactor */,
 				3A5AE58C251FC5FA000E43C6 /* View */,
+				3A5AE5A4251FE756000E43C6 /* Interactor */,
 				3A5AE593251FC778000E43C6 /* Presenter */,
 				3A5AE59D251FCD75000E43C6 /* Router */,
 				3A5AE590251FC65E000E43C6 /* LaunchpadAssembler.swift */,

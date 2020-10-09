@@ -38,10 +38,43 @@ class LaunchInfoController: UIViewController {
         presenter?.attach(self)
         youtubeHandler?.attach(youtubeView)
         presenter?.viewDidLoad()
-        configureUI()
     }
     
-    private func configureUI() {
+    @objc
+    private func handleEvent() {
+        presenter?.addEventTap()
+    }
+    @objc
+    private func upTimer() {
+        queue.async {
+            self.presenter?.timerTick()
+        }
+    }
+    
+    @objc
+    private func rocketTap(_ sender: UITapGestureRecognizer ) {
+        presenter?.rocketTap()
+    }
+    
+    @objc
+    private func launchpadTap(_ sender: UITapGestureRecognizer ) {
+        presenter?.launchpadTap()
+    }
+    
+    @objc
+    private func shareTap() {
+        presenter?.shareTap()
+    }
+    
+    @objc
+    private func linksTap() {
+        presenter?.linksTap()
+    }
+    
+}
+
+extension LaunchInfoController: LaunchInfoPresenterOutput {
+    func configureUI() {
         
         viewForFlickr.isHidden = true
         
@@ -85,53 +118,17 @@ class LaunchInfoController: UIViewController {
         let launchpadGesture = UITapGestureRecognizer(target: self, action: #selector(launchpadTap (_ :)))
         launchpadStack.isUserInteractionEnabled = true
         launchpadStack.addGestureRecognizer(launchpadGesture)
+        
     }
     
-    @objc
-    private func handleEvent() {
-        presenter?.addEventTap()
-    }
-    @objc
-    private func upTimer() {
-        queue.async {
-            self.presenter?.timerTick()
-        }
-    }
-    
-    @objc
-    private func rocketTap(_ sender: UITapGestureRecognizer ) {
-        presenter?.rocketTap()
-    }
-    
-    @objc
-    private func launchpadTap(_ sender: UITapGestureRecognizer ) {
-        presenter?.launchpadTap()
-    }
-    
-    @objc
-    private func shareTap() {
-        presenter?.shareTap()
-    }
-    
-    @objc
-    private func linksTap() {
-        presenter?.linksTap()
-    }
-    
-}
-
-extension LaunchInfoController: LaunchInfoPresenterOutput {
     func didReceiveLaunchInfoData(_ data: LaunchDatum) {
         title = data.name
-        
         
         if let id = data.links.youtubeID {
             youtubeHandler?.setData(id)
         }
         
         dateLabel.text = DataManager.makeDateStringFromUnixTime(data.dateUnix)
-        
-        
         
         if data.upcoming {
             
@@ -198,5 +195,4 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
             self.launchpadName.text = name
         }
     }
-    
 }

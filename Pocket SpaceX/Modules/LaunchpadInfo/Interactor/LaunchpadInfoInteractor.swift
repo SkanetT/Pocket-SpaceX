@@ -21,26 +21,14 @@ class LaunchpadInfoInteractor: LaunchpadInfoInteractorInput {
         self.output = output
     }
     
-    func fecthData() {
+    func fecthData(isFirstError: Bool) {
         let request = LaunchpadInfoRequest(id: id)
         NetworkApi.shared.dataTask(request: request) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.launchpadInfoDataSuccess(data)
             case .failure(let error):
-                self?.output?.launchpadInfoDataFailure(error, isFirstError: true)
-            }
-        }
-    }
-    
-    func repeatFecthData() {
-        let request = LaunchpadInfoRequest(id: id)
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.output?.launchpadInfoDataSuccess(data)
-            case .failure(let error):
-                self?.output?.launchpadInfoDataFailure(error, isFirstError: false)
+                self?.output?.launchpadInfoDataFailure(error, isFirstError: isFirstError)
             }
         }
     }

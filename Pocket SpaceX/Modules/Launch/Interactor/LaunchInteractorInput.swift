@@ -11,7 +11,6 @@ import Foundation
 protocol LaunchInteractorInput: class {
     func attach(_ output: LaunchInteractorOutput)
     func isFirstStart()
-    func fecthData()
-    func repeatFecthData()
+    func fecthData(isFirstError: Bool)
     func fecthNextLaunchId()
 }

@@ -22,10 +22,6 @@ class LaunchController: SpinnerController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUi()
-        configureSegmentedContoll()
-        configureNextButton()
-        showSpinner()
         presenter?.attach(self)
         presenter?.viewDidLoad()
         tableHandler?.attach(tableView)
@@ -39,81 +35,8 @@ class LaunchController: SpinnerController {
         }
     }
     
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         searchController.searchBar.endEditing(true)
-    }
-    
-    
-    private func configureUi() {
-        title = "Launches"
-        view.backgroundColor = .white
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify"), style: .plain, target: self, action: #selector(handleMenu))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up"), style: .plain, target: self, action: #selector(handleReverse))
-        navigationItem.searchController = searchController
-        navigationItem.leftBarButtonItem?.tintColor = .black
-        navigationItem.rightBarButtonItem?.tintColor = .black
-        tableView = UITableView(frame: view.frame, style: .grouped)
-        tableView.backgroundColor = .white
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints() { make in
-            make.top.equalTo(view.snp.top)
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
-            make.bottom.equalTo(view.snp.bottom)
-        }
-        
-        swipeView = UIView()
-        view.addSubview(swipeView)
-        view.bringSubviewToFront(swipeView)
-        swipeView.backgroundColor = .none
-        swipeView.snp.makeConstraints() { make in
-            make.top.equalTo(view.snp.top)
-            make.left.equalTo(view.snp.left)
-            make.width.equalTo(UIScreen.main.bounds.width / 20)
-            make.bottom.equalTo(view.snp.bottom)
-        }
-        
-        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        swipeGestureRight.direction = .right
-        swipeView.addGestureRecognizer(swipeGestureRight)
-        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        swipeGestureLeft.direction = .left
-        swipeView.addGestureRecognizer(swipeGestureLeft)
-    }
-    
-    private func configureSegmentedContoll() {
-        let segmentItems = ["All", "Upcomming", "Past"]
-        segmentedContoll = UISegmentedControl(items: segmentItems)
-        segmentedContoll.selectedSegmentIndex = 0
-        view.addSubview(segmentedContoll)
-        segmentedContoll.snp.makeConstraints() { make in
-            make.bottom.equalTo(view.snp.bottomMargin).offset(-8)
-            make.height.equalTo(UIScreen.main.bounds.height / 22)
-            make.leading.equalTo(view.snp.leading).offset(16)
-            make.trailing.equalTo(view.snp.trailing).offset(-16)
-        }
-        segmentedContoll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
-        segmentedContoll.layer.masksToBounds = false
-        segmentedContoll.layer.shadowColor = UIColor.black.cgColor
-        segmentedContoll.layer.shadowOpacity = 0.35
-        segmentedContoll.layer.shadowOffset = .init(width: 5, height: 7)
-        segmentedContoll.layer.shadowRadius = 10
-    }
-    
-    private func configureNextButton() {
-        nextButton = LoadingButton()
-        nextButton.configureButton(title: "Next launch")
-        view.addSubview(nextButton)
-        nextButton.snp.makeConstraints() { make in
-            make.bottom.equalTo(segmentedContoll.snp.top).offset(-4)
-            make.height.equalTo(UIScreen.main.bounds.height / 22)
-            make.leading.equalTo(view.snp.leading).offset(16)
-            make.trailing.equalTo(view.snp.trailing).offset(-16)
-        }
-        
-        nextButton.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
     }
     
     @objc
@@ -156,6 +79,83 @@ class LaunchController: SpinnerController {
 }
 
 extension LaunchController: LaunchPresenterOutput {
+    
+    func configureUI() {
+        
+        title = "Launches"
+        view.backgroundColor = .white
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify"), style: .plain, target: self, action: #selector(handleMenu))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up"), style: .plain, target: self, action: #selector(handleReverse))
+        navigationItem.searchController = searchController
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        tableView = UITableView(frame: view.frame, style: .grouped)
+        tableView.backgroundColor = .white
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints() { make in
+            make.top.equalTo(view.snp.top)
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+            make.bottom.equalTo(view.snp.bottom)
+        }
+        
+        swipeView = UIView()
+        view.addSubview(swipeView)
+        view.bringSubviewToFront(swipeView)
+        swipeView.backgroundColor = .none
+        swipeView.snp.makeConstraints() { make in
+            make.top.equalTo(view.snp.top)
+            make.left.equalTo(view.snp.left)
+            make.width.equalTo(UIScreen.main.bounds.width / 20)
+            make.bottom.equalTo(view.snp.bottom)
+        }
+        
+        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeGestureRight.direction = .right
+        swipeView.addGestureRecognizer(swipeGestureRight)
+        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeGestureLeft.direction = .left
+        swipeView.addGestureRecognizer(swipeGestureLeft)
+        
+        showSpinner()
+    }
+    
+    func configureSegmentedContoll() {
+        
+        let segmentItems = ["All", "Upcomming", "Past"]
+        segmentedContoll = UISegmentedControl(items: segmentItems)
+        segmentedContoll.selectedSegmentIndex = 0
+        view.addSubview(segmentedContoll)
+        segmentedContoll.snp.makeConstraints() { make in
+            make.bottom.equalTo(view.snp.bottomMargin).offset(-8)
+            make.height.equalTo(UIScreen.main.bounds.height / 22)
+            make.leading.equalTo(view.snp.leading).offset(16)
+            make.trailing.equalTo(view.snp.trailing).offset(-16)
+        }
+        segmentedContoll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
+        segmentedContoll.layer.masksToBounds = false
+        segmentedContoll.layer.shadowColor = UIColor.black.cgColor
+        segmentedContoll.layer.shadowOpacity = 0.35
+        segmentedContoll.layer.shadowOffset = .init(width: 5, height: 7)
+        segmentedContoll.layer.shadowRadius = 10
+        
+    }
+    
+    func configureNextButton() {
+        
+        nextButton = LoadingButton()
+        nextButton.configureButton(title: "Next launch")
+        view.addSubview(nextButton)
+        nextButton.snp.makeConstraints() { make in
+            make.bottom.equalTo(segmentedContoll.snp.top).offset(-4)
+            make.height.equalTo(UIScreen.main.bounds.height / 22)
+            make.leading.equalTo(view.snp.leading).offset(16)
+            make.trailing.equalTo(view.snp.trailing).offset(-16)
+        }
+        
+        nextButton.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
+        
+    }
     
     func didReceiveLaunchData(_ data: LaunchData) {
         isReverse = false

@@ -46,19 +46,42 @@ class SettingsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         presenter?.attach(self)
         presenter?.viewDidLoad()
     }
     
-    private func configureUI() {
+    @objc
+    private func handleTap(_ sender: UITapGestureRecognizer) {
+        presenter?.dismissRequest()
+    }
+    
+    @objc
+    private func switchValueDidChange(_ sender: UISwitch) {
+        if sender.isOn {
+            presenter?.videoSettingsChange(true)
+        } else {
+            presenter?.videoSettingsChange(false)
+        }
+    }
+    
+    @objc
+    private func clearCacheHandle(_ sender: LoadingButton) {
+        cacheButton.isLoading = true
+        presenter?.clearTap()
+    }
+    
+}
+
+extension SettingsController: SettingsPresenterOutput {
+    func configureUI() {
+        
         view.backgroundColor = .clear
         view.addSubview(backdropView)
         view.addSubview(menuView)
         
         menuView.clipsToBounds = true
         menuView.layer.cornerRadius = 8
-
+        
         menuView.backgroundColor = .white
         menuView.snp.makeConstraints() { make in
             make.height.equalTo(menuHeight)
@@ -68,7 +91,7 @@ class SettingsController: UIViewController {
         }
         menuView.addSubview(okButton)
         okButton.configureButton(title: "Ok")
-
+        
         okButton.snp.makeConstraints() { make in
             make.bottom.equalTo(menuView.snp.bottom).offset(-16)
             make.height.equalTo(menuHeight / 8)
@@ -147,7 +170,7 @@ class SettingsController: UIViewController {
         projectLabel.snp.makeConstraints() { make in
             make.left.equalTo(infoStack.snp.left)
             make.right.equalTo(infoStack.snp.right)
-
+            
         }
         
         infoStack.addArrangedSubview(versionLabel)
@@ -157,7 +180,7 @@ class SettingsController: UIViewController {
         versionLabel.snp.makeConstraints() { make in
             make.left.equalTo(infoStack.snp.left)
             make.right.equalTo(infoStack.snp.right)
-
+            
         }
         infoStack.addArrangedSubview(buildLabel)
         buildLabel.textAlignment = .center
@@ -166,7 +189,7 @@ class SettingsController: UIViewController {
         buildLabel.snp.makeConstraints() { make in
             make.left.equalTo(infoStack.snp.left)
             make.right.equalTo(infoStack.snp.right)
-
+            
         }
         
         let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -180,29 +203,7 @@ class SettingsController: UIViewController {
         videoSwitch.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)
     }
     
-    @objc
-    private func handleTap(_ sender: UITapGestureRecognizer) {
-        presenter?.dismissRequest()
-    }
     
-    @objc
-    private func switchValueDidChange(_ sender: UISwitch) {
-        if sender.isOn {
-            presenter?.videoSettingsChange(true)
-        } else {
-            presenter?.videoSettingsChange(false)
-        }
-    }
-    
-    @objc
-    private func clearCacheHandle(_ sender: LoadingButton) {
-        cacheButton.isLoading = true
-        presenter?.clearTap()
-    }
-    
-}
-
-extension SettingsController: SettingsPresenterOutput {
     func didReceiveVideoStatus(_ status: Bool) {
         DispatchQueue.main.async {
             self.videoSwitch.isOn = status

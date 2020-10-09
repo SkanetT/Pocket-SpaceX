@@ -9,6 +9,7 @@
 import Foundation
 
 protocol SettingsPresenterOutput: class {
+    func configureUI()
     func didReceiveVideoStatus(_ status: Bool)
     func didReceiveInfoText(version: String, build: String)
     func didDeleteCache()

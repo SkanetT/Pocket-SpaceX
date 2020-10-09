@@ -9,5 +9,6 @@
 import Foundation
 
 protocol LaunchpadInfoPresenterOutput: class {
+    func configureUI()
     func didReceiveLaunchpadInfoData(_ data: LaunchpadDatum)
 }

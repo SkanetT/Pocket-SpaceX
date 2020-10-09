@@ -25,14 +25,14 @@ class RocketPresenter: RocketPresenterInput {
     }
     
     func viewDidLoad() {
-        interactor.fecthData()
+        interactor.fecthData(isFirstError: true)
         viewController?.setActionForCell() {[weak self] id in
             self?.router.rocketInfoPresent(id: id)
         }
-        
         router.needRefresh() { [weak self] () in
-            self?.interactor.repeatFecthData()
+            self?.interactor.fecthData(isFirstError: false)
         }
+        viewController?.configureUI()
     }
     
     func closeTap() {

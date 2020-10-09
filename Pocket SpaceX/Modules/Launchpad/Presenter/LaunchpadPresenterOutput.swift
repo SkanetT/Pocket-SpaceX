@@ -9,11 +9,7 @@
 import Foundation
 
 protocol LaunchpadPresenterOutput: class {
+    func configureUI()
     func didReceiveLaucnhpadData(_ data: LaunchpadData)
     func setActionForCell(_ userSelect: ((String) -> ())?)
 }
-
-//protocol LoaderViewControllerL where Self: SpinnerController {
-//    func showSpinner()
-//    func removeSpinner()
-//}
