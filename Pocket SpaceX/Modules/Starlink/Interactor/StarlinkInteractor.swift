@@ -12,13 +12,18 @@ class StarlinkInteractor: StarlinkInteractorInput {
     
     private weak var output: StarlinkInteractorOutput?
     
+    private let netService: SpaceXServiceProtocol
+    
+    init(netService: SpaceXServiceProtocol = SpaceXService() ) {
+        self.netService = netService
+    }
+    
     func attach(_ output: StarlinkInteractorOutput) {
         self.output = output
     }
     
-    func fecthData(isFirstError: Bool) {
-        let request = StarlinkRequest()
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+    func fetchData(isFirstError: Bool) {
+        netService.fetchStarlink() { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.starlinkDataSuccess(data)

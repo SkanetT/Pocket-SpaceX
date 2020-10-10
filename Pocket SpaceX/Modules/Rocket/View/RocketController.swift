@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RocketController: SpinnerController {
+final class RocketController: SpinnerController {
     
     var collectionView: UICollectionView!
     var presenter: RocketPresenterInput?

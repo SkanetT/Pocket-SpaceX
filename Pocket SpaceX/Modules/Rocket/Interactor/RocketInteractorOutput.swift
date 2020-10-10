@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RocketInteractorOutput: class {
+protocol RocketInteractorOutput: InteractorOutput {
     func rocketDataSuccess(_ data: RocketData)
     func rocketDataFailure(_ error: ApiErrors, isFirstError: Bool)
 }

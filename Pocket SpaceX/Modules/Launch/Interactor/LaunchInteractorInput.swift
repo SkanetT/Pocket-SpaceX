@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol LaunchInteractorInput: class {
+protocol LaunchInteractorInput: InteractorInputNetwork {
     func attach(_ output: LaunchInteractorOutput)
     func isFirstStart()
-    func fecthData(isFirstError: Bool)
     func fecthNextLaunchId()
 }

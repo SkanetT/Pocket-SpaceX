@@ -8,13 +8,6 @@
 
 import Foundation
 
-class StarlinkRequest: BaseRequest<StarlinkData> {
-    
-    override var path: String {
-        return "/v4/starlink"
-    }
-}
-
 typealias StarlinkData = [StarlinkDatum]
 
 struct StarlinkDatum: Codable {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
+final class SettingsController: UIViewController {
     
     var presenter: SettingsPresenterInput?
     

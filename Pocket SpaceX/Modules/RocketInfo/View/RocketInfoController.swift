@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RocketInfoController: SpinnerController {
+final class RocketInfoController: SpinnerController {
     
     var presenter: RocketInfoPresenterInput?
     var tableView: UITableView!

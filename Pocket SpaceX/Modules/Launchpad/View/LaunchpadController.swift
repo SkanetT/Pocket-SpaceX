@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchpadController: SpinnerController {
+final class LaunchpadController: SpinnerController {
     
     var presenter: LaunchpadPresenterInput?
     var tableHandler: LaunchpadTableHandlerProtocol?

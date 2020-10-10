@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol LaunchPresenterInput: class {
+protocol LaunchPresenterInput: PresenterInput {
     func attach(_ viewController: LaunchPresenterOutput)
-    func viewDidLoad()
     func sideMenuTap()
     func reverseTap()
     func nextLaunchTap()

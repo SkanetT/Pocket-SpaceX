@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol StarlinkInteractorInput: class {
+protocol StarlinkInteractorInput: InteractorInputNetwork {
     func attach(_ output: StarlinkInteractorOutput)
-    func fecthData(isFirstError: Bool)
 }

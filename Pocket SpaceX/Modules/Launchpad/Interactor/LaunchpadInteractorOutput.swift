@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol  LaunchpadInteractorOutput: class {
+protocol  LaunchpadInteractorOutput: InteractorOutput {
     func launchpadDataSuccess(_ data: LaunchpadData)
     func launchpadDataFailure(_ error: ApiErrors, isFirstError: Bool)
 }

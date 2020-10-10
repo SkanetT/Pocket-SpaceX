@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol RocketPresenterInput: class {
-    
+protocol RocketPresenterInput: PresenterInput {
     func attach(_ viewController: RocketPresenterOutput)
-    func viewDidLoad()
     func closeTap()
 }

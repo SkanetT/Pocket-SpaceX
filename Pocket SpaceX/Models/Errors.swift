@@ -22,15 +22,17 @@ enum ApiErrors: Error {
         case .noInternet:
             return "No connection"
         case .unknown:
-            return "Unknown error (2)"
+            return "Unknown error"
         case .noData:
             return "No data"
         case .parsing:
             return "Parsing"
         case .timeOut:
             return "Time Out"
+        case .statusCode(let id):
+            return "Error \(id)"
         default:
-            return "Unknown error"
+            return "Unknown error (2)"
         }
     }
 }

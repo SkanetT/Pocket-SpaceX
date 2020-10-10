@@ -9,12 +9,14 @@
 import UIKit
 import youtube_ios_player_helper
 
-class LaunchInfoController: UIViewController {
+final class LaunchInfoController: UIViewController {
     
     @IBOutlet weak var youtubeView: YTPlayerView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var statusTimerLabel: UILabel!
+    @IBOutlet weak var viewForFailures: UIView!
+    @IBOutlet weak var failuresLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var viewForPatch: UIView!
     @IBOutlet weak var patchImage: UIImageView!
@@ -77,12 +79,18 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
     func configureUI() {
         
         viewForFlickr.isHidden = true
+        viewForFailures.isHidden = true
         
         rocketStack.clipsToBounds = true
         rocketStack.layer.cornerRadius = 8
         rocketStack.layer.borderWidth = 2.2
         rocketStack.layer.borderColor = Colors.blue.cgColor
         rocketStack.alpha = 0.95
+        
+        failuresLabel.clipsToBounds = true
+        failuresLabel.layer.cornerRadius = 8
+        failuresLabel.backgroundColor = Colors.lowRed
+        failuresLabel.alpha = 0.98
         
         launchpadStack.clipsToBounds = true
         launchpadStack.layer.cornerRadius = 8
@@ -96,8 +104,6 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         
         dateLabel.clipsToBounds = true
         dateLabel.layer.cornerRadius = 8
-        dateLabel.layer.borderWidth = 2.2
-        dateLabel.layer.borderColor = UIColor.lightGray.cgColor
         dateLabel.alpha = 0.95
         
         detailsLabel.clipsToBounds = true
@@ -141,8 +147,14 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
                 statusTimerLabel.textColor = Colors.green
                 statusTimerLabel.text = "Success"
             } else {
+                viewForFailures.isHidden = false
                 statusTimerLabel.textColor = Colors.red
                 statusTimerLabel.text = "Failure"
+                var failuresText = ""
+                for fail in data.failures {
+                    failuresText += "[T+\(fail.time.description)]: \(fail.reason)"
+                }
+                failuresLabel.text = failuresText
             }
         }
         

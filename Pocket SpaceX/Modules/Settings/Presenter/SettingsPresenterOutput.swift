@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SettingsPresenterOutput: class {
+protocol SettingsPresenterOutput: PresenterOutput {
     func configureUI()
     func didReceiveVideoStatus(_ status: Bool)
     func didReceiveInfoText(version: String, build: String)

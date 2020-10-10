@@ -29,24 +29,28 @@ class LaunchInfoInteractor: LaunchInfoInteractorInput {
     
     func fetchRocketName() {
         let request = RocketInfoRequest(id: data.rocket)
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+        NetworkApi.shared.sendRequest(request: request) { [weak self] result in
             switch result {
             case .success(let rocketData):
                 self?.output?.rocketNameSuccess(rocketData.name)
-            case .failure(let error):
-                print(error)
+            case .failure:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    self?.fetchRocketName()
+                }
             }
         }
     }
     
     func fetchLaunchpadName() {
         let request = LaunchpadInfoRequest(id: data.launchpad)
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+        NetworkApi.shared.sendRequest(request: request) { [weak self] result in
             switch result {
             case .success(let launchtData):
                 self?.output?.launchpadNameSuccess(launchtData.name)
-            case .failure(let error):
-                print(error)
+            case .failure:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    self?.fetchLaunchpadName()
+                }
             }
         }
     }

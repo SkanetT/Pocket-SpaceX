@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol LaunchpadInfoInteractorInput: class {
+protocol LaunchpadInfoInteractorInput: InteractorInputNetwork {
     func attach(_ output: LaunchpadInfoInteractorOutput)
-    func fecthData(isFirstError: Bool)
 }

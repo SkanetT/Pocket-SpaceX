@@ -69,22 +69,28 @@ class SpinnerController: UIViewController {
     }
     
     func showError(_ error: ApiErrors) {
-        removeSpinner()
-        let vc = ErrorController(error)
-        errorController = vc
-        vc.modalPresentationStyle = .custom
-        vc.tapHandle() {[weak self] () in
-            self?.retryErrorHandle?()
+     //   removeSpinner()
+        DispatchQueue.main.async {
+            let vc = ErrorController(error)
+            self.errorController = vc
+            vc.modalPresentationStyle = .custom
+            vc.tapHandle() {[weak self] () in
+                self?.retryErrorHandle?()
+            }
+            self.present(vc, animated: true)
         }
-        self.present(vc, animated: true)
     }
     
     func repeatError() {
-        errorController?.repeatError()
+        DispatchQueue.main.async {
+            self.errorController?.repeatError()
+        }
     }
     
     func removeError() {
-        errorController?.dismiss()
+        DispatchQueue.main.async {
+            self.errorController?.dismiss()
+        }
     }
     
     func tapErrorHandle(_ retryErrorHandle: (() -> ())?) {

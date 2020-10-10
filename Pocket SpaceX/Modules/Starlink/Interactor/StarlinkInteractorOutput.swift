@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol StarlinkInteractorOutput: class {
+protocol StarlinkInteractorOutput: InteractorOutput {
     func starlinkDataSuccess(_ data: StarlinkData)
     func starlinkDataFailure(_ error: ApiErrors, isFirstError: Bool)
 }

@@ -11,14 +11,18 @@ import Foundation
 class LaunchInteractor: LaunchInteractorInput {
     
     private weak var output: LaunchInteractorOutput?
-
+    private let netService: SpaceXServiceProtocol
+    
+    init(netService: SpaceXServiceProtocol = SpaceXService() ) {
+        self.netService = netService
+    }
+    
     func attach(_ output: LaunchInteractorOutput) {
         self.output = output
     }
     
-    func fecthData(isFirstError: Bool) {
-        let request = LaunchRequest()
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+    func fetchData(isFirstError: Bool) {
+        netService.fetchLaunchs() { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.launchDataSuccess(data)
@@ -33,8 +37,7 @@ class LaunchInteractor: LaunchInteractorInput {
     }
     
     func fecthNextLaunchId() {
-        let request = NextLaunchRequest()
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+        netService.fetchNextLaunch() { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.nextLaunchIdSuccess(data.id)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchController: SpinnerController {
+final class LaunchController: SpinnerController {
     
     var presenter: LaunchPresenterInput?
     let searchController = UISearchController(searchResultsController: nil)

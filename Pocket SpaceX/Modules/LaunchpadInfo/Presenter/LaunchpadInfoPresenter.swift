@@ -25,11 +25,11 @@ class LaunchpadInfoPresenter: LaunchpadInfoPresenterInput {
     }
     
     func viewDidLoad() {
-        interactor.fecthData(isFirstError: true)
-        router.needRefresh() { [weak self] () in
-            self?.interactor.fecthData(isFirstError: false)
-        }
         viewController?.configureUI()
+        interactor.fetchData(isFirstError: true)
+        router.needRefresh() { [weak self] () in
+            self?.interactor.fetchData(isFirstError: false)
+        }
     }
     
     func closeTap() {

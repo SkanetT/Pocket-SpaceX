@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol StarlinkPresenterInput: class {
+protocol StarlinkPresenterInput: PresenterInput {
     func attach(_ viewController: StarlinkPresenterOutput)
-    func viewDidLoad()
     func changeDataTap(_ type: Bool)
     func closeTap()
 }

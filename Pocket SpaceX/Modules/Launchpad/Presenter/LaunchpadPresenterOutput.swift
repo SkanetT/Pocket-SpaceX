@@ -8,8 +8,7 @@
 
 import Foundation
 
-protocol LaunchpadPresenterOutput: class {
-    func configureUI()
+protocol LaunchpadPresenterOutput: PresenterOutput {
     func didReceiveLaucnhpadData(_ data: LaunchpadData)
     func setActionForCell(_ userSelect: ((String) -> ())?)
 }

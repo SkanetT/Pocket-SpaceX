@@ -25,14 +25,14 @@ class LaunchpadPresenter: LaunchpadPresenterInput {
     }
     
     func viewDidLoad() {
-        interactor.fecthData(isFirstLaunch: true)
+        viewController?.configureUI()
+        interactor.fetchData(isFirstError: true)
         router.needRefresh() { [weak self] () in
-            self?.interactor.fecthData(isFirstLaunch: false)
+            self?.interactor.fetchData(isFirstError: false)
         }
         viewController?.setActionForCell() {[weak self] id in
             self?.router.launchpadInfoPresent(id: id)
         }
-        viewController?.configureUI()
     }
     
     func closeTap() {

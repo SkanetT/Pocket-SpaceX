@@ -151,6 +151,12 @@
 		3ADAE0D5252BA07E00F7525B /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAE0D4252BA07E00F7525B /* ErrorController.swift */; };
 		3AE57B51252F9350003EAE92 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B50252F9350003EAE92 /* Colors.swift */; };
 		3AE57B54252FA2FE003EAE92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B53252FA2FE003EAE92 /* UIView.swift */; };
+		3AE57B5D2531BFCC003EAE92 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B5C2531BFCC003EAE92 /* Protocols.swift */; };
+		3AE57B612532598E003EAE92 /* SpaceXService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B602532598E003EAE92 /* SpaceXService.swift */; };
+		3AE57B64253259C6003EAE92 /* SpaceXServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B63253259C6003EAE92 /* SpaceXServiceProtocol.swift */; };
+		3AE57B6925325DE4003EAE92 /* LaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B6825325DE4003EAE92 /* LaunchRequest.swift */; };
+		3AE57B6C25325E6B003EAE92 /* NextLaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B6B25325E6B003EAE92 /* NextLaunchRequest.swift */; };
+		3AE57B6F25326124003EAE92 /* StarlinkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B6E25326124003EAE92 /* StarlinkRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -300,6 +306,12 @@
 		3ADAE0D4252BA07E00F7525B /* ErrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
 		3AE57B50252F9350003EAE92 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3AE57B53252FA2FE003EAE92 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		3AE57B5C2531BFCC003EAE92 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		3AE57B602532598E003EAE92 /* SpaceXService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXService.swift; sourceTree = "<group>"; };
+		3AE57B63253259C6003EAE92 /* SpaceXServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXServiceProtocol.swift; sourceTree = "<group>"; };
+		3AE57B6825325DE4003EAE92 /* LaunchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRequest.swift; sourceTree = "<group>"; };
+		3AE57B6B25325E6B003EAE92 /* NextLaunchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchRequest.swift; sourceTree = "<group>"; };
+		3AE57B6E25326124003EAE92 /* StarlinkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlinkRequest.swift; sourceTree = "<group>"; };
 		8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.release.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.release.xcconfig"; sourceTree = "<group>"; };
 		C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -544,7 +556,7 @@
 		3A8506C02506D10B00923C18 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				3A8506C12506D13900923C18 /* NetworkApi.swift */,
+				3AE57B5F253258BA003EAE92 /* Network */,
 				3A850718250E237E00923C18 /* DataManager.swift */,
 				3A72BC8B25276A7E00A3DE08 /* UserDefaultsManager.swift */,
 			);
@@ -939,11 +951,11 @@
 			children = (
 				3A85071A250E5E6500923C18 /* ImageCell.swift */,
 				3A9C21D02506CA5400F8B0D6 /* Reachability.swift */,
-				3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */,
 				3A8506E6250B9BA900923C18 /* SpinnerController.swift */,
 				3ADAE0D4252BA07E00F7525B /* ErrorController.swift */,
 				3A85070B250CDBF400923C18 /* BaseXibView.swift */,
 				3A72BC8F25293F2E00A3DE08 /* LoadingButton.swift */,
+				3AE57B5C2531BFCC003EAE92 /* Protocols.swift */,
 			);
 			path = Utilits;
 			sourceTree = "<group>";
@@ -971,6 +983,28 @@
 				3AE57B50252F9350003EAE92 /* Colors.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3AE57B5F253258BA003EAE92 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3AE57B6625325DA5003EAE92 /* Requests */,
+				3A8506C12506D13900923C18 /* NetworkApi.swift */,
+				3AE57B602532598E003EAE92 /* SpaceXService.swift */,
+				3AE57B63253259C6003EAE92 /* SpaceXServiceProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3AE57B6625325DA5003EAE92 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */,
+				3AE57B6825325DE4003EAE92 /* LaunchRequest.swift */,
+				3AE57B6B25325E6B003EAE92 /* NextLaunchRequest.swift */,
+				3AE57B6E25326124003EAE92 /* StarlinkRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		7A55157CB7514A1D9E5A40E7 /* Pods */ = {
@@ -1125,6 +1159,7 @@
 				3A8507482512AD6500923C18 /* StarlinkPresenter.swift in Sources */,
 				3A850708250C227500923C18 /* RocketInfoTableHandlerProtocol.swift in Sources */,
 				3A5AE58E251FC639000E43C6 /* LaunchpadController.swift in Sources */,
+				3AE57B5D2531BFCC003EAE92 /* Protocols.swift in Sources */,
 				3A850720250E6F4700923C18 /* LaunchInteractor.swift in Sources */,
 				3A8506E7250B9BA900923C18 /* SpinnerController.swift in Sources */,
 				3A8507562512B22300923C18 /* StarlinkInteractorInput.swift in Sources */,
@@ -1139,6 +1174,7 @@
 				3A5AE5AE25209789000E43C6 /* LaunchpadInteractorOutput.swift in Sources */,
 				3A72BC71252724ED00A3DE08 /* SettingsPresenter.swift in Sources */,
 				3A5F411D251938F9002460EA /* LaunchInfoRouter.swift in Sources */,
+				3AE57B6C25325E6B003EAE92 /* NextLaunchRequest.swift in Sources */,
 				3A8506F3250BB09300923C18 /* RocketInfoPresenter.swift in Sources */,
 				3A850729250EB01600923C18 /* LaunchTableHandlerProtocol.swift in Sources */,
 				3A9C21CD2505859D00F8B0D6 /* LaunchRouting.swift in Sources */,
@@ -1157,13 +1193,16 @@
 				3A5F40E7251692BD002460EA /* LaunchInfoPresenterOutput.swift in Sources */,
 				3A85074F2512B05B00923C18 /* StarlinkRouter.swift in Sources */,
 				3A850703250BC18500923C18 /* RocketInfoRouting.swift in Sources */,
+				3AE57B6F25326124003EAE92 /* StarlinkRequest.swift in Sources */,
 				3A5AE5E725227A4A000E43C6 /* LaunchpadInfoInteractorInput.swift in Sources */,
 				3A8506CD25081E0500923C18 /* RocketPresenterInput.swift in Sources */,
 				3A8506E5250ABD7900923C18 /* RocketInteractorOutput.swift in Sources */,
 				3A8506EB250B9E6200923C18 /* RocketInfoController.swift in Sources */,
 				3A8D937825161DF4003E1C48 /* StarlinkCell.swift in Sources */,
+				3AE57B612532598E003EAE92 /* SpaceXService.swift in Sources */,
 				3A5AE5A8252096ED000E43C6 /* LaunchpadInteractor.swift in Sources */,
 				3A5AE5C325212284000E43C6 /* LaunchpadInfoController.swift in Sources */,
+				3AE57B6925325DE4003EAE92 /* LaunchRequest.swift in Sources */,
 				3A9C21C125057ACC00F8B0D6 /* LaunchAssembler.swift in Sources */,
 				3A5AE595251FC8DD000E43C6 /* LaunchpadPresenter.swift in Sources */,
 				3A5AE591251FC65E000E43C6 /* LaunchpadAssembler.swift in Sources */,
@@ -1173,6 +1212,7 @@
 				3A85073A2511570800923C18 /* LaunchInfoController.swift in Sources */,
 				3A5F40D825165074002460EA /* HeaderStarlinkCell.swift in Sources */,
 				3A72BC89252729D700A3DE08 /* SettingsRouting.swift in Sources */,
+				3AE57B64253259C6003EAE92 /* SpaceXServiceProtocol.swift in Sources */,
 				3A9C21CB2505856800F8B0D6 /* LaunchRouter.swift in Sources */,
 				3A8506C62506D70D00923C18 /* RocketController.swift in Sources */,
 				3A9C21D12506CA5400F8B0D6 /* Reachability.swift in Sources */,

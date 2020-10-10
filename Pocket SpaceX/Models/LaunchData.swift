@@ -8,22 +8,6 @@
 
 import Foundation
 
-class LaunchRequest: BaseRequest<LaunchData> {
-    
-    override var path: String {
-        return "/v4/launches"
-    }
-}
-
-class NextLaunchRequest: BaseRequest<LaunchDatum> {
-    
-    override var path: String {
-        return "/v4/launches/next"
-    }
-}
-
-
-
 typealias LaunchData = [LaunchDatum]
 
 struct LaunchDatum: Codable {

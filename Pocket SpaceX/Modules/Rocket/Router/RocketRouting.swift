@@ -8,11 +8,7 @@
 
 import Foundation
 
-protocol RocketRouting {
+protocol RocketRouting: RoutingError {
     func dismiss()
-    func showError(_ error: ApiErrors)
-    func repeatError()
-    func removeError()
     func rocketInfoPresent(id: String)
-    func needRefresh(refresh: (() -> ())?)
 }

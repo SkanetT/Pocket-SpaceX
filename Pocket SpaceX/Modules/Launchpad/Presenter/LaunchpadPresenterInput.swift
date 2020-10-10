@@ -8,8 +8,7 @@
 
 import Foundation
 
-protocol LaunchpadPresenterInput: class {
+protocol LaunchpadPresenterInput: PresenterInput {
     func attach(_ viewController: LaunchpadPresenterOutput)
-    func viewDidLoad()
     func closeTap()
 }

@@ -140,7 +140,7 @@ class LaunchInfoRouter: NSObject, LaunchInfoRouting {
             }
         }
         alertController.addAction(settingsAction)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
         viewController?.present(alertController, animated: true, completion: nil)

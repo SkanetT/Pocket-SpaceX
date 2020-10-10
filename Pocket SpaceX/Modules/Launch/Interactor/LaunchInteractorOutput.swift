@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LaunchInteractorOutput: class {
+protocol LaunchInteractorOutput: InteractorOutput {
     func launchDataSuccess(_ data: LaunchData)
     func launchDataFailure(error: ApiErrors, isFirstError: Bool)
     func nextLaunchIdSuccess(_ id: String)

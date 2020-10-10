@@ -10,7 +10,7 @@ import Foundation
 import EventKit
 
 
-protocol LaunchInfoInteractorOutput: class {
+protocol LaunchInfoInteractorOutput: InteractorOutput {
     func launchInfoDataSuccess(_ data: LaunchDatum)
     func rocketNameSuccess(_ name: String)
     func launchpadNameSuccess(_ name: String)

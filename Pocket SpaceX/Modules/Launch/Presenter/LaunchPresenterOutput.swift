@@ -8,8 +8,7 @@
 
 import Foundation
 
-protocol LaunchPresenterOutput: class {
-    func configureUI()
+protocol LaunchPresenterOutput: PresenterOutput {
     func configureSegmentedContoll()
     func configureNextButton()
     func didReceiveLaunchData(_ data: LaunchData)

@@ -16,9 +16,9 @@ class RocketInteractor: RocketInteractorInput {
         self.output = output
     }
     
-    func fecthData(isFirstError: Bool) {
+    func fetchData(isFirstError: Bool) {
         let request = RocketRequest()
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+        NetworkApi.shared.sendRequest(request: request) { [weak self] result in
             switch result {
             case.success(let data):
                 self?.output?.rocketDataSuccess(data)

@@ -8,8 +8,7 @@
 
 import Foundation
 
-protocol RocketPresenterOutput: class {
-    func configureUI()
+protocol RocketPresenterOutput: PresenterOutput {
     func didReceiveRocketData(_ data: RocketData)
     func setActionForCell(_ userSelect: ((String) -> ())?)
 }

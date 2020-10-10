@@ -8,8 +8,7 @@
 
 import Foundation
 
-protocol RocketInfoPresenterOutput: class {
-    func configureUI()
+protocol RocketInfoPresenterOutput: PresenterOutput {
     func didReceiveRocketInfoData(_ data: RocketDatum)
     func setActionForWiki(_ userSelectWiki: ((String) -> ())?)
 }

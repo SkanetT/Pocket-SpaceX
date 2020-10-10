@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class LaunchpadInfoController: SpinnerController {
+final class LaunchpadInfoController: SpinnerController {
     
     var presenter: LaunchpadInfoPresenterInput?
     var mapHandler: LaunchpadInfoMapHandlerProtocol?

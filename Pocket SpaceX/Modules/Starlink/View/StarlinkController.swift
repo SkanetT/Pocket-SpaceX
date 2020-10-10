@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StarlinkController: SpinnerController {
+final class StarlinkController: SpinnerController {
     
     var presenter: StarlinkPresenterInput?
     var tableView: UITableView!

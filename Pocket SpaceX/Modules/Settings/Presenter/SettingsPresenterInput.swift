@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol SettingsPresenterInput: class {
+protocol SettingsPresenterInput: PresenterInput {
     func attach(_ viewController: SettingsPresenterOutput)
-    func viewDidLoad()
     func dismissRequest()
     func clearTap()
     func videoSettingsChange(_ status: Bool)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SettingsInteractorOutput: class {
+protocol SettingsInteractorOutput: InteractorOutput {
     func videoStatusSuccess(_ status: Bool)
     func infoTextSuccess(version: String, build: String)
     func deleteCacheSuccess()

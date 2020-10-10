@@ -8,8 +8,6 @@
 
 import Foundation
 
-protocol RocketInteractorInput: class {
-    
+protocol RocketInteractorInput: InteractorInputNetwork {
     func attach(_ output: RocketInteractorOutput)
-    func fecthData(isFirstError: Bool)
 }

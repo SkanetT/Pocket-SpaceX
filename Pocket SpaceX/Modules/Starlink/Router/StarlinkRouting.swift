@@ -8,11 +8,7 @@
 
 import Foundation
 
-protocol StarlinkRouting {
+protocol StarlinkRouting: RoutingError  {
     func dismiss()
-    func showError(_ error: ApiErrors)
-    func repeatError()
-    func removeError()
-    func needRefresh(refresh: (() -> ())?)
     func presentWiki()
 }

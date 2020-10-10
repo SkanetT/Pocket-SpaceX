@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol LaunchInfoPresenterInput: class {
+protocol LaunchInfoPresenterInput: PresenterInput {
     func attach(_ viewController: LaunchInfoPresenterOutput)
-    func viewDidLoad()
     func addEventTap()
     func rocketTap()
     func launchpadTap()

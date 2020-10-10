@@ -26,10 +26,10 @@ class LaunchInfoPresenter: LaunchInfoPresenterInput {
     }
     
     func viewDidLoad() {
+        viewController?.configureUI()
         interactor.fecthData()
         interactor.fetchRocketName()
         interactor.fetchLaunchpadName()
-        viewController?.configureUI()
     }
     
     func addEventTap() {

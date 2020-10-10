@@ -21,9 +21,9 @@ class LaunchpadInfoInteractor: LaunchpadInfoInteractorInput {
         self.output = output
     }
     
-    func fecthData(isFirstError: Bool) {
+    func fetchData(isFirstError: Bool) {
         let request = LaunchpadInfoRequest(id: id)
-        NetworkApi.shared.dataTask(request: request) { [weak self] result in
+        NetworkApi.shared.sendRequest(request: request) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.launchpadInfoDataSuccess(data)

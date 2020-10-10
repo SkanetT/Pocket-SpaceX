@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SettingsInteractorInput: class {
+protocol SettingsInteractorInput: InteractorInput {
     func attach(_ output: SettingsInteractorOutput)
     func fetchVideoStatus()
     func changeVideoStatus(_ status: Bool)
