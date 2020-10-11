@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsRouter: SettingsRouting {
+final class SettingsRouter: SettingsRouting {
     private weak var viewController: UIViewController?
     
     init(_ viewController: UIViewController) {

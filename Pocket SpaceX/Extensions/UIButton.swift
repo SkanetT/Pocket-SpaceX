@@ -11,7 +11,7 @@ import UIKit
 extension UIButton {
     
     func configureButton(title: String) {
-        self.backgroundColor = #colorLiteral(red: 0.262745098, green: 0.3607843137, blue: 0.8784313725, alpha: 1)
+        self.backgroundColor = Colors.blue
         self.setTitleColor(.white, for: .normal)
         self.setTitle(title, for: .normal)
         self.clipsToBounds = true

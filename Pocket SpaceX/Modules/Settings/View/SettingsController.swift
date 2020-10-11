@@ -130,8 +130,9 @@ extension SettingsController: SettingsPresenterOutput {
         
         viewForVideoSwitch.addSubview(videoLabel)
         videoLabel.text = "Start playback instantly"
+        videoLabel.font = UIFont(name: "TimesNewRomanPSMT", size: menuHeight / 16)
         videoLabel.adjustsFontSizeToFitWidth = true
-        videoLabel.minimumScaleFactor = 0.7
+        videoLabel.minimumScaleFactor = 0.6
         videoLabel.textAlignment = .left
         videoLabel.snp.makeConstraints() { make in
             make.centerY.equalTo(viewForVideoSwitch.snp.centerY)
@@ -167,6 +168,7 @@ extension SettingsController: SettingsPresenterOutput {
         projectLabel.textAlignment = .center
         projectLabel.text = "Pocket SpaceX"
         projectLabel.font = UIFont(name: "TimesNewRomanPS-BoldItalicMT", size: view.bounds.height / 20)
+        projectLabel.textColor = Colors.blue
         projectLabel.snp.makeConstraints() { make in
             make.left.equalTo(infoStack.snp.left)
             make.right.equalTo(infoStack.snp.right)

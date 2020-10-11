@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchSearchHandler: NSObject, LaunchSearchHandlerProtocol {
+final class LaunchSearchHandler: NSObject, LaunchSearchHandlerProtocol {
     
     private weak var searchController: UISearchController?
     var search: ((String) -> ())?
@@ -17,10 +17,6 @@ class LaunchSearchHandler: NSObject, LaunchSearchHandlerProtocol {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search launch"
-//        searchController.searchBar.tintColor = .white
-//        if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-//            textfield.textColor = UIColor.white
-//        }
         self.searchController = searchController
     }
     

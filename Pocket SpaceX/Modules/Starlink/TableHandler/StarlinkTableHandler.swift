@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StarlinkTableHandler: NSObject, StarlinkTableHandlerProtocol {
+final class StarlinkTableHandler: NSObject, StarlinkTableHandlerProtocol {
     
     private weak var tableView: UITableView?
     var fullData: StarlinkData = []

@@ -11,7 +11,7 @@ import EventKit
 import EventKitUI
 import SafariServices
 
-class LaunchInfoRouter: NSObject, LaunchInfoRouting {
+final class LaunchInfoRouter: NSObject, LaunchInfoRouting {
     
     private weak var viewController: UIViewController?
     
@@ -145,8 +145,6 @@ class LaunchInfoRouter: NSObject, LaunchInfoRouting {
         
         viewController?.present(alertController, animated: true, completion: nil)
     }
-    
-    
 }
 
 extension LaunchInfoRouter: EKEventEditViewDelegate {

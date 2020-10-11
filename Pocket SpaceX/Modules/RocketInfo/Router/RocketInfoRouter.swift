@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class RocketInfoRouter: RocketInfoRouting {
+final class RocketInfoRouter: RocketInfoRouting {
     
     private weak var viewController: SpinnerController?
     var refresh: (() -> ())?
@@ -48,5 +48,4 @@ class RocketInfoRouter: RocketInfoRouting {
             viewController?.present(vc, animated: true)
         }
     }
-    
 }

@@ -8,12 +8,11 @@
 
 import UIKit
 
-class RocketCollectionHandler: NSObject, RocketCollectionHandlerProtocol {
+final class RocketCollectionHandler: NSObject, RocketCollectionHandlerProtocol {
     
     private weak var collectionView: UICollectionView?
     var rocketData: RocketData = []
     var userSelectCell: ((String) -> ())?
-
     
     func attach(_ collectionView: UICollectionView) {
         self.collectionView = collectionView

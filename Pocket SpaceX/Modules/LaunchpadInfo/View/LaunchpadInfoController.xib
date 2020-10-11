@@ -15,6 +15,8 @@
                 <outlet property="attemptedView" destination="C8p-1z-uxi" id="meD-e3-lIa"/>
                 <outlet property="detailsLabel" destination="8jz-g1-yhZ" id="Bdk-kJ-KNj"/>
                 <outlet property="fullNameLabel" destination="LMb-fg-gfU" id="LrW-m4-AXK"/>
+                <outlet property="launchesLabel" destination="YpO-ih-A1S" id="EgV-f9-EmM"/>
+                <outlet property="launchesStack" destination="WcA-FQ-ZqU" id="JVW-Mc-UIz"/>
                 <outlet property="mapView" destination="cdu-wz-gzQ" id="m7X-hN-yzK"/>
                 <outlet property="statusLabel" destination="Yng-lr-jMp" id="Ams-FP-v4Y"/>
                 <outlet property="successLabel" destination="Mf0-Me-0K6" id="bUi-Ud-YKf"/>
@@ -42,7 +44,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="full name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMb-fg-gfU">
                                                     <rect key="frame" x="8" y="4" width="398" height="46"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -78,7 +80,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yng-lr-jMp">
                                                     <rect key="frame" x="8" y="4" width="398" height="26"/>
                                                     <color key="backgroundColor" red="0.99725109869520012" green="0.87946675262194729" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -97,10 +99,11 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launches" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpO-ih-A1S">
                                                     <rect key="frame" x="8" y="4" width="398" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="3Yu-Jq-RoJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="27"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -115,18 +118,17 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="1Dh-Hx-c5F"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDm-Bp-n19">
                                                                     <rect key="frame" x="8" y="41" width="179" height="30"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="32"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="pDm-Bp-n19" firstAttribute="leading" secondItem="C8p-1z-uxi" secondAttribute="leading" constant="8" id="2Ne-Nx-LGX"/>
                                                                 <constraint firstItem="bvS-eq-CJQ" firstAttribute="leading" secondItem="C8p-1z-uxi" secondAttribute="leading" constant="8" id="8Vg-Cf-gpJ"/>
@@ -145,18 +147,17 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="VvW-QP-vyM"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-Me-0K6">
                                                                     <rect key="frame" x="8" y="41" width="179" height="30"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="32"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="xzn-0I-1rc" firstAttribute="leading" secondItem="EwD-Ei-rB0" secondAttribute="leading" constant="8" id="0E9-Aa-Jts"/>
                                                                 <constraint firstItem="Mf0-Me-0K6" firstAttribute="top" secondItem="xzn-0I-1rc" secondAttribute="bottom" constant="8" id="3yF-Jg-nbk"/>
@@ -168,9 +169,10 @@
                                                             </constraints>
                                                         </view>
                                                     </subviews>
+                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="WcA-FQ-ZqU" firstAttribute="top" secondItem="YpO-ih-A1S" secondAttribute="bottom" constant="8" id="0av-aK-nxd"/>
                                                 <constraint firstItem="YpO-ih-A1S" firstAttribute="top" secondItem="EPq-kD-j8o" secondAttribute="top" constant="4" id="CsR-Lc-EUB"/>
@@ -237,6 +239,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

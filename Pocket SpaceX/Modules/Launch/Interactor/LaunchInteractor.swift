@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LaunchInteractor: LaunchInteractorInput {
+final class LaunchInteractor: LaunchInteractorInput {
     
     private weak var output: LaunchInteractorOutput?
     private let netService: SpaceXServiceProtocol

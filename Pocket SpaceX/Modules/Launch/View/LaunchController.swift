@@ -92,6 +92,8 @@ extension LaunchController: LaunchPresenterOutput {
         tableView = UITableView(frame: view.frame, style: .grouped)
         tableView.backgroundColor = .white
         view.addSubview(tableView)
+        
+
         tableView.snp.makeConstraints() { make in
             make.top.equalTo(view.snp.top)
             make.leading.equalTo(view.snp.leading)

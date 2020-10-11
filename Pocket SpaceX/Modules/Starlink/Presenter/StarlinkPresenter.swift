@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StarlinkPresenter: StarlinkPresenterInput {
+final class StarlinkPresenter: StarlinkPresenterInput {
     
     private weak var viewController: StarlinkPresenterOutput?
     let interactor: StarlinkInteractorInput

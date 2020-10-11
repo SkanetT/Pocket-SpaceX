@@ -9,7 +9,7 @@
 import UIKit
 import youtube_ios_player_helper
 
-class LaunchInfoYoutubeHandler: NSObject, LaunchInfoYoutubeHandlerProtocol {
+final class LaunchInfoYoutubeHandler: NSObject, LaunchInfoYoutubeHandlerProtocol {
     
     private weak var youtubeView: YTPlayerView?
     
@@ -21,7 +21,6 @@ class LaunchInfoYoutubeHandler: NSObject, LaunchInfoYoutubeHandlerProtocol {
     func setData(_ id: String) {
         youtubeView?.load(withVideoId: id, playerVars: ["playsinline" : 1] )
     }
-    
 }
 
 extension LaunchInfoYoutubeHandler: YTPlayerViewDelegate {
@@ -32,5 +31,4 @@ extension LaunchInfoYoutubeHandler: YTPlayerViewDelegate {
             playerView.playVideo()
         }
     }
-    
 }

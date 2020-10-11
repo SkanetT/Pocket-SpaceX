@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class StarlinkRouter: StarlinkRouting {
+final class StarlinkRouter: StarlinkRouting {
     private weak var viewController: SpinnerController?
     var refresh: (() -> ())?
     private let url = "https://en.wikipedia.org/wiki/Starlink"

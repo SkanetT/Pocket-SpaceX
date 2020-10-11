@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchpadTableHandler: NSObject, LaunchpadTableHandlerProtocol {
+final class LaunchpadTableHandler: NSObject, LaunchpadTableHandlerProtocol {
     
     private weak var tableView: UITableView?
     var data: LaunchpadData = []

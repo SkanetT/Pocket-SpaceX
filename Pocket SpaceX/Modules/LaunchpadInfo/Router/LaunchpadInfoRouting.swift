@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol LaunchpadInfoRouting: RoutingError {
-    func dismiss()
+protocol LaunchpadInfoRouting: RoutingError, RoutingDismiss {
+  
 }

@@ -8,13 +8,15 @@
 
 import Foundation
 
-class RocketInfoInteractor: RocketInfoInteractorInput {
+final class RocketInfoInteractor: RocketInfoInteractorInput {
     
-    let id: String
+    private let id: String
+    private let netService: SpaceXServiceProtocol
     private weak var output: RocketInfoInteractorOutput?
     
-    init (id: String) {
+    init (id: String, netService: SpaceXServiceProtocol = SpaceXService() ) {
         self.id = id
+        self.netService = netService
     }
     
     func attach(_ output: RocketInfoInteractorOutput) {
@@ -22,8 +24,7 @@ class RocketInfoInteractor: RocketInfoInteractorInput {
     }
     
     func fetchData(isFirstError: Bool) {
-        let request = RocketInfoRequest(id: id)
-        NetworkApi.shared.sendRequest(request: request) { [weak self] result in
+        netService.fetchRocketInfo(id) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.rocketInfoDataSuccess(data)

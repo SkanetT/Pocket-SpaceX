@@ -8,17 +8,23 @@
 
 import Foundation
 
-class RocketInteractor: RocketInteractorInput {
+final class RocketInteractor: RocketInteractorInput {
     
     private weak var output: RocketInteractorOutput?
+    
+    private let netService: SpaceXServiceProtocol
+    
+    init(netService: SpaceXServiceProtocol = SpaceXService() ) {
+        self.netService = netService
+    }
     
     func attach(_ output: RocketInteractorOutput) {
         self.output = output
     }
     
     func fetchData(isFirstError: Bool) {
-        let request = RocketRequest()
-        NetworkApi.shared.sendRequest(request: request) { [weak self] result in
+       
+        netService.fetchRockets() { [weak self] result in
             switch result {
             case.success(let data):
                 self?.output?.rocketDataSuccess(data)

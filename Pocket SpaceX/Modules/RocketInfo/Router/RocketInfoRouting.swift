@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol RocketInfoRouting: RoutingError {
-    func dismiss()
+protocol RocketInfoRouting: RoutingError, RoutingDismiss {
     func presentWiki(_ url: String)
 }

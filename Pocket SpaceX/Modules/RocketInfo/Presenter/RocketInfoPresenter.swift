@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RocketInfoPresenter: RocketInfoPresenterInput {
+final class RocketInfoPresenter: RocketInfoPresenterInput {
     
     private weak var viewController: RocketInfoPresenterOutput?
     let interactor: RocketInfoInteractorInput

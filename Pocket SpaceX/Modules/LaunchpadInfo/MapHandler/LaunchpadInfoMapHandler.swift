@@ -8,7 +8,7 @@
 
 import MapKit
 
-class LaunchpadInfoMapHandler: NSObject, LaunchpadInfoMapHandlerProtocol {
+final class LaunchpadInfoMapHandler: NSObject, LaunchpadInfoMapHandlerProtocol {
     
     private weak var mapView: MKMapView?
     
@@ -18,9 +18,9 @@ class LaunchpadInfoMapHandler: NSObject, LaunchpadInfoMapHandlerProtocol {
     }
     
     func setData(_ data: LaunchpadDatum) {
+        
         guard let mapView = self.mapView else { return }
         DispatchQueue.main.async {
-            
             let annotation = MKPointAnnotation()
             let coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
             annotation.coordinate = coordinate
@@ -31,8 +31,4 @@ class LaunchpadInfoMapHandler: NSObject, LaunchpadInfoMapHandlerProtocol {
             mapView.isUserInteractionEnabled = false
         }
     }
-    
-    
-    
-    
 }

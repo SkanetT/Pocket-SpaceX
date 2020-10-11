@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchpadInfoRouter: LaunchpadInfoRouting {
+final class LaunchpadInfoRouter: LaunchpadInfoRouting {
     
     private weak var viewController: SpinnerController?
     var refresh: (() -> ())?
@@ -39,5 +39,4 @@ class LaunchpadInfoRouter: LaunchpadInfoRouting {
     func needRefresh(refresh: (() -> ())?) {
         self.refresh = refresh
     }
-    
 }

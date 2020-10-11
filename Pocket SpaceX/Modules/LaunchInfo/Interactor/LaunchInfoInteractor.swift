@@ -9,7 +9,7 @@
 import Foundation
 import EventKit
 
-class LaunchInfoInteractor: LaunchInfoInteractorInput {
+final class LaunchInfoInteractor: LaunchInfoInteractorInput {
     
     private weak var output: LaunchInfoInteractorOutput?
     

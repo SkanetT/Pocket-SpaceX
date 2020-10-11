@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,32 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceXPocket" translatesAutoresizingMaskIntoConstraints="NO" id="Swx-mZ-Q3u">
-                                <rect key="frame" x="8" y="370" width="398" height="156"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pocket Icon Image" translatesAutoresizingMaskIntoConstraints="NO" id="Swx-mZ-Q3u">
+                                <rect key="frame" x="8" y="249" width="398" height="398"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Swx-mZ-Q3u" secondAttribute="height" multiplier="664:260" id="1Ve-2f-Tdt"/>
+                                    <constraint firstAttribute="width" secondItem="Swx-mZ-Q3u" secondAttribute="height" multiplier="1:1" id="eKN-dg-aL4"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.58187929162209029" green="0.66909350573523718" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Swx-mZ-Q3u" secondAttribute="trailing" constant="8" id="Vyg-rN-nAf"/>
-                            <constraint firstItem="Swx-mZ-Q3u" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="aYh-QW-tKY"/>
-                            <constraint firstItem="Swx-mZ-Q3u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="rLv-uk-YfL"/>
-                            <constraint firstItem="Swx-mZ-Q3u" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yCH-r8-eaT"/>
+                            <constraint firstAttribute="trailing" secondItem="Swx-mZ-Q3u" secondAttribute="trailing" constant="8" id="8RF-sa-8Gr"/>
+                            <constraint firstItem="Swx-mZ-Q3u" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="a6Z-qO-8Ja"/>
+                            <constraint firstItem="Swx-mZ-Q3u" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="dmd-D2-jCg"/>
+                            <constraint firstItem="Swx-mZ-Q3u" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nKy-N0-P0L"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="SpaceXPocket" width="664" height="260"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="Pocket Icon Image" width="1024" height="1024"/>
     </resources>
 </document>

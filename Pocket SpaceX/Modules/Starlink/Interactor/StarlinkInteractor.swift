@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StarlinkInteractor: StarlinkInteractorInput {
+final class StarlinkInteractor: StarlinkInteractorInput {
     
     private weak var output: StarlinkInteractorOutput?
     

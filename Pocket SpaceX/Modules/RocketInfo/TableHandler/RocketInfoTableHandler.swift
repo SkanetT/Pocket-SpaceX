@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RocketInfoTableHandler: NSObject, RocketInfoTableHandlerProtocol {
+final class RocketInfoTableHandler: NSObject, RocketInfoTableHandlerProtocol {
     
     private weak var tableView: UITableView?
     var rocketInfoData: RocketDatum?
@@ -34,7 +34,6 @@ class RocketInfoTableHandler: NSObject, RocketInfoTableHandlerProtocol {
     func setWikiAction(userTapWiki: ((String) -> ())?) {
         self.userTapWiki = userTapWiki
     }
-    
 }
 
 extension RocketInfoTableHandler: UITableViewDelegate, UITableViewDataSource {
@@ -48,7 +47,6 @@ extension RocketInfoTableHandler: UITableViewDelegate, UITableViewDataSource {
         guard let data = rocketInfoData else { return cell }
         guard let rocketInfoOption = RocketInfoOption(rawValue: indexPath.row) else { return cell }
 
-        
         let dic = DataManager.createDataForRockerInfo(data)
         
         cell.nameOptionLabel.text = rocketInfoOption.description
@@ -83,5 +81,4 @@ extension RocketInfoTableHandler: UITableViewDelegate, UITableViewDataSource {
         return size / 10
         
     }
-    
 }

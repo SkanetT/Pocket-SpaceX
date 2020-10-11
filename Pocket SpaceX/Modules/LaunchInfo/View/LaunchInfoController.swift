@@ -77,43 +77,24 @@ final class LaunchInfoController: UIViewController {
 
 extension LaunchInfoController: LaunchInfoPresenterOutput {
     func configureUI() {
-        
         viewForFlickr.isHidden = true
         viewForFailures.isHidden = true
-        
-        rocketStack.clipsToBounds = true
-        rocketStack.layer.cornerRadius = 8
+        rocketStack.setRounding()
         rocketStack.layer.borderWidth = 2.2
         rocketStack.layer.borderColor = Colors.blue.cgColor
-        rocketStack.alpha = 0.95
-        
-        failuresLabel.clipsToBounds = true
-        failuresLabel.layer.cornerRadius = 8
+        failuresLabel.setRounding()
         failuresLabel.backgroundColor = Colors.lowRed
-        failuresLabel.alpha = 0.98
-        
-        launchpadStack.clipsToBounds = true
-        launchpadStack.layer.cornerRadius = 8
+        viewForFailures.setShadow(color: Colors.lowRed)
+        launchpadStack.setRounding()
         launchpadStack.layer.borderWidth = 2.2
         launchpadStack.layer.borderColor = Colors.blue.cgColor
-        launchpadStack.alpha = 0.95
-        
-        statusTimerLabel.clipsToBounds = true
-        statusTimerLabel.layer.cornerRadius = 8
-        statusTimerLabel.alpha = 0.95
-        
-        dateLabel.clipsToBounds = true
-        dateLabel.layer.cornerRadius = 8
-        dateLabel.alpha = 0.95
-        
-        detailsLabel.clipsToBounds = true
-        detailsLabel.layer.cornerRadius = 8
+        statusTimerLabel.setRounding()
+        dateLabel.setRounding()
+        detailsLabel.setRounding()
         detailsLabel.backgroundColor = Colors.lowBlue
-        detailsLabel.alpha = 0.95
         
         shareButton.configureButton(title: "Share")
         shareButton.addTarget(self, action: #selector(shareTap), for: .touchUpInside)
-        
         linksButton.configureButton(title: "Links")
         linksButton.addTarget(self, action: #selector(linksTap), for: .touchUpInside)
         

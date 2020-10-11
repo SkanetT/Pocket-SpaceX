@@ -8,7 +8,6 @@
 
 import UIKit
 
-protocol LaunchpadRouting: RoutingError {
-    func dismiss()
+protocol LaunchpadRouting: RoutingError, RoutingDismiss {
     func launchpadInfoPresent(id: String)
 }

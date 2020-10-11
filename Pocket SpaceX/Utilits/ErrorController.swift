@@ -64,6 +64,7 @@ class ErrorController: UIViewController {
         errorLabel.font = UIFont(name: "TimesNewRomanPS-BoldItalicMT", size: menuHeight / 8)
         
         errorLabel.snp.makeConstraints() { make in
+            make.height.equalTo(menuHeight / 8)
             make.top.equalTo(menuView.snp.top).offset(menuHeight / 40)
             make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
@@ -75,15 +76,15 @@ class ErrorController: UIViewController {
             make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
             make.bottom.equalTo(menuView.snp.bottomMargin).offset(-(menuHeight / 40))
-            
+            make.height.equalTo(34)
         }
         
         menuView.addSubview(descriptionLabel)
         descriptionLabel.textAlignment = .center
         descriptionLabel.text = error.description
-        descriptionLabel.font = descriptionLabel.font.withSize(menuHeight / 16)
+        descriptionLabel.font = UIFont(name: "TimesNewRomanPSMT", size: menuHeight / 14)
         descriptionLabel.snp.makeConstraints() { make in
-            //            make.top.equalTo(errorImage.snp.bottom).offset(menuHeight / 40)
+            make.height.equalTo(menuHeight / 14)
             make.bottom.equalTo(button.snp.top).offset(-(menuHeight / 40))
             make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
@@ -92,14 +93,14 @@ class ErrorController: UIViewController {
         menuView.addSubview(errorImage)
         errorImage.contentMode = .scaleAspectFit
         errorImage.tintColor = .black
-        errorImage.image = UIImage(systemName: "nosign")
+        errorImage.image = #imageLiteral(resourceName: "RocketFail")
         errorImage.snp.makeConstraints() { make in
             make.centerX.equalTo(menuView.snp.centerX)
             make.top.equalTo(errorLabel.snp.bottom).offset(menuHeight / 40)
             make.bottom.equalTo(descriptionLabel.snp.top).offset(-(menuHeight / 40))
-            make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
-            make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
+            make.width.equalTo(errorImage.snp.height).multipliedBy(1 / 1)
         }
+        
         button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
     }
     

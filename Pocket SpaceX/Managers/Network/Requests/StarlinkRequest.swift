@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StarlinkRequest: BaseRequest<StarlinkData> {
+final class StarlinkRequest: BaseRequest<StarlinkData> {
     
     override var path: String {
         return "/v4/starlink"

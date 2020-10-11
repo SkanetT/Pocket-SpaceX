@@ -21,6 +21,8 @@ final class LaunchpadInfoController: SpinnerController {
     @IBOutlet weak var successView: UIView!
     @IBOutlet weak var successLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var launchesLabel: UILabel!
+    @IBOutlet weak var launchesStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,29 +39,16 @@ final class LaunchpadInfoController: SpinnerController {
 
 extension LaunchpadInfoController: LaunchpadInfoPresenterOutput {
     func configureUI() {
-        
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
-        mapView.clipsToBounds = true
-        mapView.layer.cornerRadius = 8
-        
-        statusLabel.clipsToBounds = true
-        statusLabel.layer.cornerRadius = 8
-        statusLabel.alpha = 0.95
-        
-        attemptedView.clipsToBounds = true
-        attemptedView.layer.cornerRadius = 8
-        attemptedView.alpha = 0.95
-        
-        successView.clipsToBounds = true
-        successView.layer.cornerRadius = 8
-        successView.alpha = 0.95
-        
-        fullNameLabel.alpha = 0.95
-        
-        detailsLabel.clipsToBounds = true
-        detailsLabel.layer.cornerRadius = 8
+        mapView.setRounding()
+        statusLabel.setRounding()
+        statusLabel.backgroundColor = Colors.lowBlue
+        attemptedView.setRounding()
+        successView.setRounding()
+        launchesLabel.setRounding()
+        launchesStack.setRounding()
+        detailsLabel.setRounding()
         detailsLabel.backgroundColor = Colors.lowBlue
-        detailsLabel.alpha = 0.95
        
         showSpinner()
     }

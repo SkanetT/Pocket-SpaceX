@@ -8,26 +8,6 @@
 
 import Foundation
 
-class RocketRequest: BaseRequest<RocketData> {
-    
-    override var path: String {
-        return "/v4/rockets"
-    }
-}
-
-class RocketInfoRequest: BaseRequest<RocketDatum> {
-    
-    let id: String
-    
-    init(id: String) {
-        self.id = id
-    }
-    
-    override var path: String {
-        return "/v4/rockets/\(id)"
-    }
-}
-
 typealias RocketData = [RocketDatum]
 
 struct RocketDatum: Codable {

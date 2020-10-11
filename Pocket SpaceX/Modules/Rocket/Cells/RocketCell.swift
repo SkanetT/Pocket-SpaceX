@@ -9,7 +9,7 @@
 import UIKit
 
 
-class RocketCell: UICollectionViewCell {
+final class RocketCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var activeLabel: UILabel!

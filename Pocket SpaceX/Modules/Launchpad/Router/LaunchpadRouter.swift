@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchpadRouter: LaunchpadRouting {
+final class LaunchpadRouter: LaunchpadRouting {
     
     private weak var viewController: SpinnerController?
     var refresh: (() -> ())?

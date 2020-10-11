@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
+final class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
     
     private weak var tableView: UITableView?
     var launchData: LaunchData = []

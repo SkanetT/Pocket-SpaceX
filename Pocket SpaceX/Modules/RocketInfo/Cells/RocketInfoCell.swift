@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RocketInfoCell: UITableViewCell {
+final class RocketInfoCell: UITableViewCell {
     
     @IBOutlet weak var nameOptionLabel: UILabel!
     @IBOutlet weak var optionLabel: UILabel!
@@ -17,7 +17,4 @@ class RocketInfoCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
     }
-
-   
-    
 }

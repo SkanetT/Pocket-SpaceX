@@ -9,7 +9,7 @@
 import Foundation
 import Kingfisher
 
-class SettingsInteractor: SettingsInteractorInput {
+final class SettingsInteractor: SettingsInteractorInput {
     
     private weak var output: SettingsInteractorOutput?
     

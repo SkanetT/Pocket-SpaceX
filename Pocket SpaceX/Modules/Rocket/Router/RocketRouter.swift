@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RocketRouter: RocketRouting {
+final class RocketRouter: RocketRouting {
     
     private weak var viewController: SpinnerController?
     var refresh: (() -> ())?

@@ -9,7 +9,7 @@
 import Foundation
 import EventKit
 
-class LaunchInfoPresenter: LaunchInfoPresenterInput {
+final class LaunchInfoPresenter: LaunchInfoPresenterInput {
     
     private weak var viewController: LaunchInfoPresenterOutput?
     let interactor: LaunchInfoInteractorInput

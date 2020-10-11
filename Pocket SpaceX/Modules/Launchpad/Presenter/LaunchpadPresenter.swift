@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LaunchpadPresenter: LaunchpadPresenterInput {
+final class LaunchpadPresenter: LaunchpadPresenterInput {
     
     private weak var viewController: LaunchpadPresenterOutput?
     let interactor: LaunchpadInteractorInput
@@ -38,7 +38,6 @@ class LaunchpadPresenter: LaunchpadPresenterInput {
     func closeTap() {
         router.dismiss()
     }
-    
 }
 
 extension LaunchpadPresenter: LaunchpadInteractorOutput {
@@ -57,5 +56,4 @@ extension LaunchpadPresenter: LaunchpadInteractorOutput {
             router.repeatError()
         }
     }
-    
 }

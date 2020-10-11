@@ -8,13 +8,15 @@
 
 import Foundation
 
-class LaunchpadInfoInteractor: LaunchpadInfoInteractorInput {
+final class LaunchpadInfoInteractor: LaunchpadInfoInteractorInput {
     
-    let id: String
+    private let id: String
+    private let netService: SpaceXServiceProtocol
     private weak var output: LaunchpadInfoInteractorOutput?
 
-    init (id: String) {
+    init (id: String, netService: SpaceXServiceProtocol = SpaceXService() ) {
         self.id = id
+        self.netService = netService
     }
     
     func attach(_ output: LaunchpadInfoInteractorOutput) {
@@ -22,8 +24,8 @@ class LaunchpadInfoInteractor: LaunchpadInfoInteractorInput {
     }
     
     func fetchData(isFirstError: Bool) {
-        let request = LaunchpadInfoRequest(id: id)
-        NetworkApi.shared.sendRequest(request: request) { [weak self] result in
+      
+        netService.fetchLauchpadInfo(id) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.output?.launchpadInfoDataSuccess(data)

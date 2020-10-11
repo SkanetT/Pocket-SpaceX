@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FooterInfoCell: UIView {
+final class FooterInfoCell: UIView {
     
     var button = UIButton(type: .system)
     var select: (() -> ())?

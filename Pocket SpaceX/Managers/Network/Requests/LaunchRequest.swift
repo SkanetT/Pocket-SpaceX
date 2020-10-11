@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LaunchRequest: BaseRequest<LaunchData> {
+final class LaunchRequest: BaseRequest<LaunchData> {
     
     override var path: String {
         return "/v4/launches"

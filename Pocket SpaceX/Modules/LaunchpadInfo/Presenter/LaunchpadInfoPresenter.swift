@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LaunchpadInfoPresenter: LaunchpadInfoPresenterInput {
+final class LaunchpadInfoPresenter: LaunchpadInfoPresenterInput {
     
     private weak var viewController: LaunchpadInfoPresenterOutput?
     let interactor: LaunchpadInfoInteractorInput
@@ -51,5 +51,4 @@ extension LaunchpadInfoPresenter: LaunchpadInfoInteractorOutput {
             router.repeatError()
         }
     }
-    
 }

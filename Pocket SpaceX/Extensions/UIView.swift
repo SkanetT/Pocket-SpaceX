@@ -12,7 +12,6 @@ import UIKit
 extension UIView {
     
     func setGradientBackground(colorOne: UIColor, colorTwo: UIColor) {
-        
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
@@ -24,7 +23,6 @@ extension UIView {
     }
     
     func shake() {
-        
         let shake = CABasicAnimation(keyPath: "position")
         shake.duration = 0.1
         shake.repeatCount = 2
@@ -40,5 +38,18 @@ extension UIView {
         shake.toValue = toValue
         
         layer.add(shake, forKey: "position")
+    }
+    
+    func setShadow(color: UIColor) {
+        layer.masksToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = 0.35
+        layer.shadowOffset = .init(width: 5, height: 7)
+        layer.shadowRadius = 10
+    }
+    
+    func setRounding() {
+        clipsToBounds = true
+        layer.cornerRadius = 10
     }
 }

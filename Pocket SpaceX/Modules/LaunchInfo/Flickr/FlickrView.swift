@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlickrView: XibBasedView {
+final class FlickrView: XibBasedView {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -19,14 +19,11 @@ class FlickrView: XibBasedView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "image")
-        
-
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     func setData(_ data: [String]) {
         self.urlArray = data

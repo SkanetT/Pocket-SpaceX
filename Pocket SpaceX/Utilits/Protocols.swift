@@ -34,3 +34,8 @@ protocol RoutingError {
     func repeatError()
     func removeError()
 }
+
+protocol RoutingDismiss {
+    func dismiss()
+}
+

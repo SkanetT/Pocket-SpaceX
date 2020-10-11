@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol RocketRouting: RoutingError {
-    func dismiss()
+protocol RocketRouting: RoutingError, RoutingDismiss {
     func rocketInfoPresent(id: String)
 }

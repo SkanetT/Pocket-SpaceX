@@ -41,11 +41,7 @@ class LoadingButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 8
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.35
-        layer.shadowOffset = .init(width: 5, height: 7)
-        layer.shadowRadius = 10
+        setShadow(color: UIColor.black)
     }
     
     private func commonInit() {

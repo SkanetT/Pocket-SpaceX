@@ -8,28 +8,6 @@
 
 import Foundation
 
-class LaunchpadRequest: BaseRequest<LaunchpadData> {
-    
-    override var path: String {
-        return "/v4/launchpads"
-    }
-}
-
-class LaunchpadInfoRequest: BaseRequest<LaunchpadDatum> {
-    
-    let id: String
-    
-    init(id: String) {
-        self.id = id
-    }
-    
-    override var path: String {
-        return "/v4/launchpads/\(id)"
-    }
-}
-
-
-
 typealias LaunchpadData = [LaunchpadDatum]
 
 struct LaunchpadDatum: Codable {

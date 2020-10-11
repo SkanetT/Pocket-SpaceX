@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LaunchPresenter: LaunchPresenterInput {
+final class LaunchPresenter: LaunchPresenterInput {
     
     private weak var viewController: LaunchPresenterOutput?
     let interactor: LaunchInteractorInput

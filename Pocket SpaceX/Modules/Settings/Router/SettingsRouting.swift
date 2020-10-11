@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol SettingsRouting {
-    func dismiss()
+protocol SettingsRouting: RoutingDismiss  {
+    
 }

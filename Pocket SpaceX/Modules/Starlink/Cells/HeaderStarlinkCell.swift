@@ -35,7 +35,7 @@ class HeaderStarlinkCell: UIView {
         }
         
         addSubview(totalLabel)
-        totalLabel.font = totalLabel.font.withSize(22)
+        totalLabel.font = UIFont(name: "TimesNewRomanPSMT", size: 22)
         totalLabel.adjustsFontSizeToFitWidth = true
         totalLabel.minimumScaleFactor = 0.5
         totalLabel.textAlignment = .center
@@ -45,7 +45,7 @@ class HeaderStarlinkCell: UIView {
             make.trailing.equalTo(snp.trailing).offset(-16)
         }
         addSubview(totalLabelCount)
-        totalLabelCount.font = totalLabelCount.font.withSize(22)
+        totalLabelCount.font = UIFont(name: "TimesNewRomanPS-BoldMT", size: 22)
         totalLabelCount.textAlignment = .center
         totalLabelCount.snp.makeConstraints() { make in
             make.top.equalTo(totalLabel.snp.bottom).offset(8)
@@ -53,7 +53,7 @@ class HeaderStarlinkCell: UIView {
             make.trailing.equalTo(totalLabel.snp.trailing)
         }
         addSubview(spaceLabel)
-        spaceLabel.font = spaceLabel.font.withSize(22)
+        spaceLabel.font = UIFont(name: "TimesNewRomanPSMT", size: 22)
         spaceLabel.adjustsFontSizeToFitWidth = true
         spaceLabel.minimumScaleFactor = 0.5
         spaceLabel.textAlignment = .center
@@ -63,7 +63,7 @@ class HeaderStarlinkCell: UIView {
             make.trailing.equalTo(totalLabel.snp.trailing)
         }
         addSubview(spaceLabelCount)
-        spaceLabelCount.font = spaceLabelCount.font.withSize(22)
+        spaceLabelCount.font = UIFont(name: "TimesNewRomanPS-BoldMT", size: 22)
         spaceLabelCount.textAlignment = .center
         spaceLabelCount.textColor = Colors.green
         spaceLabelCount.snp.makeConstraints() { make in
@@ -72,7 +72,7 @@ class HeaderStarlinkCell: UIView {
             make.trailing.equalTo(totalLabel.snp.trailing)
         }
         addSubview(deorbitedLabel)
-        deorbitedLabel.font = deorbitedLabel.font.withSize(22)
+        deorbitedLabel.font = UIFont(name: "TimesNewRomanPSMT", size: 22)
         deorbitedLabel.adjustsFontSizeToFitWidth = true
         deorbitedLabel.minimumScaleFactor = 0.5
         deorbitedLabel.textAlignment = .center
@@ -82,7 +82,7 @@ class HeaderStarlinkCell: UIView {
             make.trailing.equalTo(totalLabel.snp.trailing)
         }
         addSubview(deorbitedLabelCount)
-        deorbitedLabelCount.font = deorbitedLabelCount.font.withSize(22)
+        deorbitedLabelCount.font = UIFont(name: "TimesNewRomanPS-BoldMT", size: 22)
         deorbitedLabelCount.textAlignment = .center
         deorbitedLabelCount.textColor = Colors.red
         deorbitedLabelCount.snp.makeConstraints() { make in

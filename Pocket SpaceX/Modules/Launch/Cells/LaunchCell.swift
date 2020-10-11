@@ -9,7 +9,7 @@
 import UIKit
 
 
-class LaunchCell: UITableViewCell {
+final class LaunchCell: UITableViewCell {
     
     @IBOutlet weak var patchImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -24,9 +24,8 @@ class LaunchCell: UITableViewCell {
         let backgroundView = UIView()
         backgroundView.backgroundColor = Colors.lowBlue
         selectedBackgroundView = backgroundView
+        setShadow(color: Colors.lowBlue)
     }
-    
-   
     
     override func prepareForReuse() {
         timer?.invalidate()
@@ -34,6 +33,7 @@ class LaunchCell: UITableViewCell {
     }
     
     func setData(_ data: LaunchDatum) {
+        
         if let url = data.links.patch.small {
             patchImage.setKfImage(urlString: url)
         } else {
@@ -59,7 +59,7 @@ class LaunchCell: UITableViewCell {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.upTimer), userInfo: nil, repeats: true)
         }
     }
-//
+    
     @objc
     func upTimer() {
         queue.async {

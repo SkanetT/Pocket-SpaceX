@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderInfoCell: XibBasedView {
+final class HeaderInfoCell: XibBasedView {
     
     @IBOutlet weak var activeLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!

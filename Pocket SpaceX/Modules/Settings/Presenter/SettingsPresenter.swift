@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SettingsPresenter: SettingsPresenterInput {
+final class SettingsPresenter: SettingsPresenterInput {
     
     private weak var viewController: SettingsPresenterOutput?
     let interactor: SettingsInteractorInput

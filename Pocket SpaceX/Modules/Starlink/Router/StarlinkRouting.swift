@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol StarlinkRouting: RoutingError  {
-    func dismiss()
+protocol StarlinkRouting: RoutingError, RoutingDismiss {
     func presentWiki()
 }
