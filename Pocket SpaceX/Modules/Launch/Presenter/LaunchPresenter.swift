@@ -55,6 +55,7 @@ final class LaunchPresenter: LaunchPresenterInput {
     }
     
     func nextLaunchTap() {
+        viewController?.nextLaunchSearchStart()
         interactor.fecthNextLaunchId()
     }
     

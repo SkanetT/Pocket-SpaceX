@@ -98,6 +98,7 @@
                     <constraint firstItem="O6S-hn-HGB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="yEx-D2-rKr"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="dateLabel" destination="Ywh-eA-Fkb" id="fVD-q2-fAD"/>
                 <outlet property="heightLabel" destination="IZN-Rj-wwf" id="HGs-hi-dRM"/>

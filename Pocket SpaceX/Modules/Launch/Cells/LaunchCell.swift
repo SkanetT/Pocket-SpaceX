@@ -15,6 +15,7 @@ final class LaunchCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var statusTimerLabel: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
     var time = 0
     weak var timer: Timer?
     private let queue = DispatchQueue.init(label: "com.spacex.timer", qos: .background)
@@ -24,7 +25,8 @@ final class LaunchCell: UITableViewCell {
         let backgroundView = UIView()
         backgroundView.backgroundColor = Colors.lowBlue
         selectedBackgroundView = backgroundView
-        setShadow(color: Colors.lowBlue)
+        backgroundImage.contentMode = .scaleAspectFill
+        backgroundImage.image = #imageLiteral(resourceName: "CellBack")
     }
     
     override func prepareForReuse() {

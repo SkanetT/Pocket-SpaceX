@@ -12,6 +12,7 @@ protocol LaunchPresenterOutput: PresenterOutput {
     func configureSegmentedContoll()
     func configureNextButton()
     func didReceiveLaunchData(_ data: LaunchData)
+    func nextLaunchSearchStart()
     func didReceiveNextLaunchId(_ id: String)
     func didReceiveNextLaunchError()
     func needToReverse()

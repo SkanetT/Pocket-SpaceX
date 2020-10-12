@@ -52,4 +52,18 @@ extension UIView {
         clipsToBounds = true
         layer.cornerRadius = 10
     }
+    
+    func setDefautBackgroundImage() {
+        let backImageView = UIImageView()
+        backImageView.contentMode = .scaleAspectFill
+        addSubview(backImageView)
+        insertSubview(backImageView, at: 0)
+        backImageView.image = #imageLiteral(resourceName: "back")
+        backImageView.snp.makeConstraints() { make in
+            make.top.equalTo(snp.top)
+            make.leading.equalTo(snp.leading)
+            make.trailing.equalTo(snp.trailing)
+            make.bottom.equalTo(snp.bottom)
+        }
+    }
 }

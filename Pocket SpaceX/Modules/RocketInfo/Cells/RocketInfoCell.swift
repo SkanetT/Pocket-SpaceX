@@ -16,5 +16,8 @@ final class RocketInfoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        backgroundColor = .none
+        contentView.backgroundColor = .clear
+        
     }
 }

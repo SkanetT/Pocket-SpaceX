@@ -45,7 +45,6 @@
                 </label>
                 <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="de9-9E-9Ge">
                     <rect key="frame" x="146" y="397" width="122.5" height="30"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="hAZ-TZ-MkA"/>
                     </constraints>
@@ -53,7 +52,6 @@
                     <color key="currentPageIndicatorTintColor" systemColor="viewFlipsideBackgroundColor"/>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="xmK-gl-0sQ" firstAttribute="top" secondItem="voa-cx-pBR" secondAttribute="bottom" constant="8" id="6O8-ho-RQ9"/>
                 <constraint firstItem="voa-cx-pBR" firstAttribute="leading" secondItem="U3e-Vv-0YP" secondAttribute="leading" constant="12" id="6w9-Xl-uQN"/>

@@ -70,12 +70,8 @@ final class LaunchController: SpinnerController {
     
     @objc
     private func handleNext() {
-        nextButton.isLoading = true
-        nextButton.isUserInteractionEnabled = false
-        searchController.searchBar.text = nil
         presenter?.nextLaunchTap()
     }
-    
 }
 
 extension LaunchController: LaunchPresenterOutput {
@@ -167,6 +163,12 @@ extension LaunchController: LaunchPresenterOutput {
         }
         removeSpinner()
         tableHandler?.setData(data)
+    }
+    
+    func nextLaunchSearchStart() {
+        nextButton.isLoading = true
+        nextButton.isUserInteractionEnabled = false
+        searchController.searchBar.text = nil
     }
     
     func didReceiveNextLaunchId(_ id: String) {

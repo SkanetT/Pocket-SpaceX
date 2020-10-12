@@ -23,7 +23,7 @@ class HeaderStarlinkCell: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .white
+        backgroundColor = .clear
         addSubview(starlinkIcon)
         starlinkIcon.image = #imageLiteral(resourceName: "Starlink")
         starlinkIcon.contentMode = .scaleAspectFit

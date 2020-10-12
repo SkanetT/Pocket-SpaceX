@@ -77,6 +77,7 @@ final class LaunchInfoController: UIViewController {
 
 extension LaunchInfoController: LaunchInfoPresenterOutput {
     func configureUI() {
+        
         viewForFlickr.isHidden = true
         viewForFailures.isHidden = true
         rocketStack.setRounding()
@@ -125,11 +126,11 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.upTimer), userInfo: nil, repeats: true)
         } else {
             if data.failures.isEmpty {
-                statusTimerLabel.textColor = Colors.green
+                statusTimerLabel.backgroundColor = Colors.green
                 statusTimerLabel.text = "Success"
             } else {
                 viewForFailures.isHidden = false
-                statusTimerLabel.textColor = Colors.red
+                statusTimerLabel.backgroundColor = Colors.red
                 statusTimerLabel.text = "Failure"
                 var failuresText = ""
                 for fail in data.failures {

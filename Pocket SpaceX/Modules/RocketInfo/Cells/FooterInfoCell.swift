@@ -26,7 +26,7 @@ final class FooterInfoCell: UIView {
             make.bottom.equalTo(snp.bottom).offset(-10)
 
         }
-        backgroundColor = .white
+        backgroundColor = .none
         
         button.addTarget(self, action: #selector(tap), for: .touchUpInside)
     }

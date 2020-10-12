@@ -17,6 +17,7 @@ final class RocketInfoTableHandler: NSObject, RocketInfoTableHandlerProtocol {
     
     func attach(_ tableView: UITableView) {
         self.tableView = tableView
+        tableView.backgroundColor = .clear
         tableView.register(UINib(nibName: "RocketInfoCell", bundle: nil), forCellReuseIdentifier: "rocketInfoCell")
         tableView.delegate = self
         tableView.dataSource = self
