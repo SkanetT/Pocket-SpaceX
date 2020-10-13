@@ -22,7 +22,7 @@ final class HeaderInfoCell: XibBasedView {
         super.init(frame: frame)
         
         let height = UIScreen.main.bounds.height
-        sizeToBot.constant = height / 6        
+        sizeToBot.constant = height / 4
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "image")

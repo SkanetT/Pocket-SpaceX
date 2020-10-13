@@ -22,7 +22,7 @@ final class StarlinkTableHandler: NSObject, StarlinkTableHandlerProtocol {
         tableView.register(UINib(nibName: "StarlinkCell", bundle: nil), forCellReuseIdentifier: "starlink")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.rowHeight = 165
     }
     

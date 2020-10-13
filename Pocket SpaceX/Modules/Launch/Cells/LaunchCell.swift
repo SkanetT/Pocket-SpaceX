@@ -25,8 +25,6 @@ final class LaunchCell: UITableViewCell {
         let backgroundView = UIView()
         backgroundView.backgroundColor = Colors.lowBlue
         selectedBackgroundView = backgroundView
-        backgroundImage.contentMode = .scaleAspectFill
-        backgroundImage.image = #imageLiteral(resourceName: "CellBack")
     }
     
     override func prepareForReuse() {

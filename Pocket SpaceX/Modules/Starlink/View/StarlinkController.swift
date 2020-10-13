@@ -43,7 +43,7 @@ final class StarlinkController: SpinnerController {
 extension StarlinkController: StarlinkPresenterOutput {
     func configureUI() {
         view.backgroundColor = .white
-        view.setDefautBackgroundImage()
+     //   view.setDefautBackgroundImage()
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
         title = "Starlink"
         tableView = UITableView(frame: view.frame, style: .grouped)

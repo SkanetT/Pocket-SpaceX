@@ -81,14 +81,10 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         viewForFlickr.isHidden = true
         viewForFailures.isHidden = true
         rocketStack.setRounding()
-        rocketStack.layer.borderWidth = 2.2
-        rocketStack.layer.borderColor = Colors.blue.cgColor
         failuresLabel.setRounding()
         failuresLabel.backgroundColor = Colors.lowRed
         viewForFailures.setShadow(color: Colors.lowRed)
         launchpadStack.setRounding()
-        launchpadStack.layer.borderWidth = 2.2
-        launchpadStack.layer.borderColor = Colors.blue.cgColor
         statusTimerLabel.setRounding()
         dateLabel.setRounding()
         detailsLabel.setRounding()

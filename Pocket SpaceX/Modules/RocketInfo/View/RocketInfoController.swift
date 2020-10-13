@@ -30,7 +30,7 @@ final class RocketInfoController: SpinnerController {
 extension RocketInfoController: RocketInfoPresenterOutput {
     func configureUI() {
         view.backgroundColor = .white
-        view.setDefautBackgroundImage()
+     //   view.setDefautBackgroundImage()
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
         tableView = UITableView(frame: view.frame, style: .grouped)
         tableView.backgroundColor = .none

@@ -34,7 +34,7 @@ extension RocketController: RocketPresenterOutput {
         title = "Rockets"
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
-        view.setDefautBackgroundImage()
+      //  view.setDefautBackgroundImage()
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
