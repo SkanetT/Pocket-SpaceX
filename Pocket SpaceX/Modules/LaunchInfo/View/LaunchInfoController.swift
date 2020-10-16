@@ -81,14 +81,18 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         viewForFlickr.isHidden = true
         viewForFailures.isHidden = true
         rocketStack.setRounding()
+        rocketStack.setShadow(color: .black)
+        launchpadStack.setRounding()
+        launchpadStack.setShadow(color: .black)
         failuresLabel.setRounding()
         failuresLabel.backgroundColor = Colors.lowRed
         viewForFailures.setShadow(color: Colors.lowRed)
-        launchpadStack.setRounding()
         statusTimerLabel.setRounding()
         dateLabel.setRounding()
         detailsLabel.setRounding()
         detailsLabel.backgroundColor = Colors.lowBlue
+        
+        patchImage.setShadow(color: .black)
         
         shareButton.configureButton(title: "Share")
         shareButton.addTarget(self, action: #selector(shareTap), for: .touchUpInside)

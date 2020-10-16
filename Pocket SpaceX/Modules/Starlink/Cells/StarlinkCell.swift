@@ -15,10 +15,14 @@ final class StarlinkCell: UITableViewCell {
     @IBOutlet weak var verLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        backView.backgroundColor = Colors.lowGray
+        backView.setRounding()
+        backView.setShadow(color: .black)
     }
 
     func setData(_ data: StarlinkDatum) {

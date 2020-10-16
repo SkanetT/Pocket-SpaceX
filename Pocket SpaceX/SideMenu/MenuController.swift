@@ -28,17 +28,7 @@ class MenuController: UIViewController {
         tableView.isScrollEnabled = false
         tableView.rowHeight = 80
         
-        view.backgroundColor = #colorLiteral(red: 0.7956110636, green: 0.8178530971, blue: 0.8333883509, alpha: 1)
-//        let fireImage = UIImageView()
-//        view.addSubview(fireImage)
-//        fireImage.contentMode = .scaleAspectFill
-//        fireImage.image = #imageLiteral(resourceName: "white")
-//        fireImage.snp.makeConstraints() { make in
-//            make.top.equalTo(view.snp.top)
-//            make.left.equalTo(view.snp.left)
-//            make.bottom.equalTo(view.snp.bottom)
-//            make.right.equalTo(view.snp.right).offset(-80)
-//        }
+        view.setGradientBackground(colorOne: .white, colorTwo: #colorLiteral(red: 0.7956110636, green: 0.8178530971, blue: 0.8333883509, alpha: 1))
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints() { make in

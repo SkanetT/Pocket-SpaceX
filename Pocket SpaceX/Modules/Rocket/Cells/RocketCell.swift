@@ -17,12 +17,8 @@ final class RocketCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        rocketImage.clipsToBounds = true
-        rocketImage.layer.cornerRadius = 12
-        rocketImage.layer.borderColor = UIColor.black.cgColor
-        rocketImage.layer.borderWidth = 0.1
-        
+        setShadow(color: .black)
+        rocketImage.setRounding()
         nameLabel.font = UIFont(name: "TimesNewRomanPSMT", size: UIScreen.main.bounds.width / 20)
         activeLabel.font = UIFont(name: "TimesNewRomanPSMT", size: UIScreen.main.bounds.width / 22)
         

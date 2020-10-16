@@ -89,7 +89,7 @@ extension LaunchController: LaunchPresenterOutput {
         tableView.backgroundColor = .white
         view.addSubview(tableView)
         
-
+        
         tableView.snp.makeConstraints() { make in
             make.top.equalTo(view.snp.top)
             make.leading.equalTo(view.snp.leading)
@@ -123,6 +123,9 @@ extension LaunchController: LaunchPresenterOutput {
         let segmentItems = ["All", "Upcomming", "Past"]
         segmentedContoll = UISegmentedControl(items: segmentItems)
         segmentedContoll.selectedSegmentIndex = 0
+        segmentedContoll.backgroundColor = UIColor.white
+        segmentedContoll.selectedSegmentTintColor = UIColor.white
+        
         view.addSubview(segmentedContoll)
         segmentedContoll.snp.makeConstraints() { make in
             make.bottom.equalTo(view.snp.bottomMargin).offset(-8)

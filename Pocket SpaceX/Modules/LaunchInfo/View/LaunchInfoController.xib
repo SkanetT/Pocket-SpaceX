@@ -187,7 +187,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="oUp-P8-jW8" secondAttribute="bottom" id="0Q9-Cc-13C"/>
                                                 <constraint firstItem="oUp-P8-jW8" firstAttribute="centerX" secondItem="FVO-bo-Okf" secondAttribute="centerX" id="P1A-nw-rI9"/>
@@ -235,7 +235,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="B3x-tk-aMl"/>
                                                 <constraint firstAttribute="trailing" secondItem="eWK-jo-1fc" secondAttribute="trailing" constant="8" id="FzQ-KD-QZQ"/>

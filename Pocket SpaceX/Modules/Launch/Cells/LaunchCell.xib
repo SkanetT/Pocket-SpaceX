@@ -17,47 +17,60 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nosign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lCT-w2-Y7U">
-                        <rect key="frame" x="18" y="25.5" width="123" height="122"/>
+                        <rect key="frame" x="16" y="25.5" width="123" height="122"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="lCT-w2-Y7U" secondAttribute="height" multiplier="1:1" id="Xz0-6Z-FV4"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FYl-3m-bPS">
-                        <rect key="frame" x="159" y="25" width="229" height="123"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yp6-BB-eOa">
+                        <rect key="frame" x="155" y="22.5" width="235" height="128"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="ZaL-5o-9Oy">
-                                <rect key="frame" x="0.0" y="0.0" width="229" height="41"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="tRX-OI-wMc">
-                                <rect key="frame" x="0.0" y="41" width="229" height="41"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="VfC-UA-byf">
-                                <rect key="frame" x="0.0" y="82" width="229" height="41"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FYl-3m-bPS">
+                                <rect key="frame" x="8" y="8" width="219" height="112"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="ZaL-5o-9Oy">
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="37.5"/>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="tRX-OI-wMc">
+                                        <rect key="frame" x="0.0" y="37.5" width="219" height="37"/>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="VfC-UA-byf">
+                                        <rect key="frame" x="0.0" y="74.5" width="219" height="37.5"/>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FYl-3m-bPS" firstAttribute="leading" secondItem="yp6-BB-eOa" secondAttribute="leading" constant="8" id="HP1-ug-pQZ"/>
+                            <constraint firstAttribute="trailing" secondItem="FYl-3m-bPS" secondAttribute="trailing" constant="8" id="IDH-iq-smV"/>
+                            <constraint firstItem="FYl-3m-bPS" firstAttribute="top" secondItem="yp6-BB-eOa" secondAttribute="top" constant="8" id="Kbb-Wq-Fcd"/>
+                            <constraint firstAttribute="bottom" secondItem="FYl-3m-bPS" secondAttribute="bottom" constant="8" id="Wfn-QG-Qii"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="FYl-3m-bPS" secondAttribute="bottom" constant="25" id="0Sp-Et-O5a"/>
-                    <constraint firstItem="FYl-3m-bPS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="7FH-px-1nD"/>
+                    <constraint firstItem="yp6-BB-eOa" firstAttribute="centerY" secondItem="lCT-w2-Y7U" secondAttribute="centerY" id="2oc-Y6-slc"/>
                     <constraint firstItem="lCT-w2-Y7U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="7IT-bh-uM6"/>
-                    <constraint firstItem="lCT-w2-Y7U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="7K2-s9-wyU"/>
-                    <constraint firstItem="FYl-3m-bPS" firstAttribute="leading" secondItem="lCT-w2-Y7U" secondAttribute="trailing" constant="18" id="WYe-hs-A31"/>
+                    <constraint firstItem="lCT-w2-Y7U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7K2-s9-wyU"/>
+                    <constraint firstItem="yp6-BB-eOa" firstAttribute="leading" secondItem="lCT-w2-Y7U" secondAttribute="trailing" constant="16" id="Tay-b0-4VY"/>
+                    <constraint firstAttribute="trailing" secondItem="yp6-BB-eOa" secondAttribute="trailing" constant="16" id="h5C-1a-MoR"/>
                     <constraint firstAttribute="bottom" secondItem="lCT-w2-Y7U" secondAttribute="bottom" constant="25" id="sxt-Oi-QYW"/>
-                    <constraint firstAttribute="trailing" secondItem="FYl-3m-bPS" secondAttribute="trailing" constant="18" id="zrz-2J-qKk"/>
+                    <constraint firstItem="yp6-BB-eOa" firstAttribute="height" secondItem="lCT-w2-Y7U" secondAttribute="height" multiplier="1.04065" id="zU5-If-aUJ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="backView" destination="yp6-BB-eOa" id="JDc-Ho-EtZ"/>
                 <outlet property="dateLabel" destination="tRX-OI-wMc" id="zpt-CJ-v3I"/>
                 <outlet property="nameLabel" destination="ZaL-5o-9Oy" id="xfH-s9-yNZ"/>
                 <outlet property="patchImage" destination="lCT-w2-Y7U" id="mNd-UP-xQg"/>

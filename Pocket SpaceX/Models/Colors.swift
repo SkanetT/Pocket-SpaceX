@@ -14,7 +14,9 @@ enum Colors {
     static let green = #colorLiteral(red: 0.02862703306, green: 0.5, blue: 0.1270846961, alpha: 1)
     static let lowBlue = #colorLiteral(red: 0.7328770319, green: 0.8190480038, blue: 0.99563527, alpha: 1)
     static let lowRed = #colorLiteral(red: 1, green: 0.9091312564, blue: 0.8978485248, alpha: 1)
+    static let lowGray = #colorLiteral(red: 0.9441675701, green: 0.9441675701, blue: 0.9441675701, alpha: 1)
 }
+
 
 class ColorsGradient {
     var gl:CAGradientLayer

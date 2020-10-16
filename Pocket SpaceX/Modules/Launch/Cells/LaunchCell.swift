@@ -15,16 +15,23 @@ final class LaunchCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var statusTimerLabel: UILabel!
-    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var backView: UIView!
     var time = 0
     weak var timer: Timer?
     private let queue = DispatchQueue.init(label: "com.spacex.timer", qos: .background)
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .default
         let backgroundView = UIView()
         backgroundView.backgroundColor = Colors.lowBlue
         selectedBackgroundView = backgroundView
+        backView.setRounding()
+        backView.setShadow(color: .black)
+        backView.backgroundColor = Colors.lowGray
+        patchImage.setShadow(color: .black)
+        
     }
     
     override func prepareForReuse() {

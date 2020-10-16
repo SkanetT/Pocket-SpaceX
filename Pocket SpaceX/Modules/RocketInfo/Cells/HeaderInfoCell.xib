@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,25 +22,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="497"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xmK-gl-0sQ">
-                    <rect key="frame" x="0.0" y="51.5" width="414" height="345.5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="V3j-Zs-Hh3">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHx-ns-H9h">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
+                    <color key="backgroundColor" red="0.85970331934538347" green="0.85970331934538347" blue="0.85970331934538347" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voa-cx-pBR">
                     <rect key="frame" x="12" y="8" width="390" height="35.5"/>
                     <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="32"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-fb-B7u">
                     <rect key="frame" x="8" y="427" width="398" height="62"/>
-                    <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -51,17 +46,31 @@
                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" systemColor="viewFlipsideBackgroundColor"/>
                 </pageControl>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xmK-gl-0sQ">
+                    <rect key="frame" x="0.0" y="51.5" width="414" height="345.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="V3j-Zs-Hh3">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <constraints>
                 <constraint firstItem="xmK-gl-0sQ" firstAttribute="top" secondItem="voa-cx-pBR" secondAttribute="bottom" constant="8" id="6O8-ho-RQ9"/>
                 <constraint firstItem="voa-cx-pBR" firstAttribute="leading" secondItem="U3e-Vv-0YP" secondAttribute="leading" constant="12" id="6w9-Xl-uQN"/>
                 <constraint firstAttribute="trailing" secondItem="xmK-gl-0sQ" secondAttribute="trailing" id="70Z-Oj-C8O"/>
                 <constraint firstItem="gmx-fb-B7u" firstAttribute="leading" secondItem="U3e-Vv-0YP" secondAttribute="leading" constant="8" id="7Cl-c1-duW"/>
+                <constraint firstItem="xmK-gl-0sQ" firstAttribute="top" secondItem="mHx-ns-H9h" secondAttribute="bottom" id="7n8-PJ-MnH"/>
                 <constraint firstAttribute="trailing" secondItem="gmx-fb-B7u" secondAttribute="trailing" constant="8" id="Dgc-9Q-1lT"/>
                 <constraint firstItem="de9-9E-9Ge" firstAttribute="centerX" secondItem="xmK-gl-0sQ" secondAttribute="centerX" id="G5t-CM-dnB"/>
                 <constraint firstAttribute="trailing" secondItem="voa-cx-pBR" secondAttribute="trailing" constant="12" id="Jls-cJ-74O"/>
+                <constraint firstItem="mHx-ns-H9h" firstAttribute="leading" secondItem="U3e-Vv-0YP" secondAttribute="leading" id="LSK-T2-s63"/>
                 <constraint firstItem="xmK-gl-0sQ" firstAttribute="leading" secondItem="U3e-Vv-0YP" secondAttribute="leading" id="QeZ-aJ-hm6"/>
+                <constraint firstItem="mHx-ns-H9h" firstAttribute="top" secondItem="U3e-Vv-0YP" secondAttribute="top" id="fLS-Ya-409"/>
                 <constraint firstItem="de9-9E-9Ge" firstAttribute="top" secondItem="xmK-gl-0sQ" secondAttribute="bottom" id="gT4-gG-unA"/>
+                <constraint firstAttribute="trailing" secondItem="mHx-ns-H9h" secondAttribute="trailing" id="gwm-Cd-32e"/>
                 <constraint firstItem="gmx-fb-B7u" firstAttribute="top" secondItem="de9-9E-9Ge" secondAttribute="bottom" id="h2X-Ff-PWy"/>
                 <constraint firstAttribute="bottom" secondItem="xmK-gl-0sQ" secondAttribute="bottom" constant="100" id="iiq-os-uA6"/>
                 <constraint firstItem="voa-cx-pBR" firstAttribute="top" secondItem="U3e-Vv-0YP" secondAttribute="top" constant="8" id="tht-dt-kTx"/>
@@ -72,6 +81,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

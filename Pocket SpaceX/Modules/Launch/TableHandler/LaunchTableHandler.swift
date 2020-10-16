@@ -27,7 +27,7 @@ final class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         tableView.register(UINib(nibName: "LaunchCell", bundle: nil), forCellReuseIdentifier: "launchCell")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .singleLine
+        tableView.separatorStyle = .none
         tableView.rowHeight = 130
         tableView.keyboardDismissMode = .onDrag
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
