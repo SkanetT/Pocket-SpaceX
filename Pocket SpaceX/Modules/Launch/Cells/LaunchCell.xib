@@ -59,6 +59,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="yp6-BB-eOa" firstAttribute="centerY" secondItem="lCT-w2-Y7U" secondAttribute="centerY" id="2oc-Y6-slc"/>
                     <constraint firstItem="lCT-w2-Y7U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="7IT-bh-uM6"/>
@@ -69,6 +70,7 @@
                     <constraint firstItem="yp6-BB-eOa" firstAttribute="height" secondItem="lCT-w2-Y7U" secondAttribute="height" multiplier="1.04065" id="zU5-If-aUJ"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="backView" destination="yp6-BB-eOa" id="JDc-Ho-EtZ"/>
                 <outlet property="dateLabel" destination="tRX-OI-wMc" id="zpt-CJ-v3I"/>

@@ -143,6 +143,8 @@ extension SettingsController: SettingsPresenterOutput {
         menuView.addSubview(infoView)
         
         infoView.clipsToBounds = true
+        infoView.backgroundColor = Colors.lowGray
+        infoView.setShadow(color: .black)
         infoView.layer.borderColor = UIColor.black.cgColor
         infoView.layer.borderWidth = 2
         infoView.layer.cornerRadius = 8

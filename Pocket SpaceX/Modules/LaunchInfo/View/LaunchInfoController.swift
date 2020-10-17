@@ -81,6 +81,7 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         viewForFlickr.isHidden = true
         viewForFailures.isHidden = true
         rocketStack.setRounding()
+        youtubeView.setShadow(color: .black)
         rocketStack.setShadow(color: .black)
         launchpadStack.setRounding()
         launchpadStack.setShadow(color: .black)

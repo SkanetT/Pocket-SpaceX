@@ -58,6 +58,8 @@ extension StarlinkController: StarlinkPresenterOutput {
         let segmentItems = ["All", "In space"]
         segmentedContoll = UISegmentedControl(items: segmentItems)
         segmentedContoll.selectedSegmentIndex = 0
+        segmentedContoll.backgroundColor = UIColor.white
+        segmentedContoll.selectedSegmentTintColor = UIColor.white
         view.addSubview(segmentedContoll)
         segmentedContoll.snp.makeConstraints() { make in
             make.bottom.equalTo(view.snp.bottom).offset(-30)

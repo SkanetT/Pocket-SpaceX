@@ -24,7 +24,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.58187929162209029" green="0.66909350573523718" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.83410405184599401" green="0.85970331934538347" blue="0.84144100774520436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Swx-mZ-Q3u" secondAttribute="trailing" constant="8" id="8RF-sa-8Gr"/>
                             <constraint firstItem="Swx-mZ-Q3u" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="a6Z-qO-8Ja"/>

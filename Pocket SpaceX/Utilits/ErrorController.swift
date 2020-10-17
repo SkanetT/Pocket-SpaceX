@@ -15,7 +15,7 @@ class ErrorController: UIViewController {
     var errorLabel = UILabel()
     var errorImage = UIImageView()
     var descriptionLabel = UILabel()
-    var button = LoadingButton()
+    var retryButton = LoadingButton()
     
     lazy var backdropView: UIView = {
         let bdView = UIView(frame: view.bounds)
@@ -70,9 +70,9 @@ class ErrorController: UIViewController {
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
         }
         
-        menuView.addSubview(button)
-        button.configureButton(title: "Retry")
-        button.snp.makeConstraints() { make in
+        menuView.addSubview(retryButton)
+        retryButton.configureButton(title: "Retry")
+        retryButton.snp.makeConstraints() { make in
             make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
             make.bottom.equalTo(menuView.snp.bottomMargin).offset(-(menuHeight / 40))
@@ -85,7 +85,7 @@ class ErrorController: UIViewController {
         descriptionLabel.font = UIFont(name: "TimesNewRomanPSMT", size: menuHeight / 14)
         descriptionLabel.snp.makeConstraints() { make in
             make.height.equalTo(menuHeight / 14)
-            make.bottom.equalTo(button.snp.top).offset(-(menuHeight / 40))
+            make.bottom.equalTo(retryButton.snp.top).offset(-(menuHeight / 40))
             make.left.equalTo(menuView.snp.left).offset(menuHeight / 40)
             make.right.equalTo(menuView.snp.right).offset(-(menuHeight / 40))
         }
@@ -101,13 +101,13 @@ class ErrorController: UIViewController {
             make.width.equalTo(errorImage.snp.height).multipliedBy(1 / 1)
         }
         
-        button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
+        retryButton.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
     }
     
     @objc
     private func buttonTap() {
-        button.isLoading = true
-        button.isUserInteractionEnabled = false
+        retryButton.isLoading = true
+        retryButton.isUserInteractionEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.retryHandle?()
         }
@@ -118,8 +118,8 @@ class ErrorController: UIViewController {
     }
     
     func repeatError() {
-        button.isLoading = false
-        button.isUserInteractionEnabled = true
+        retryButton.isLoading = false
+        retryButton.isUserInteractionEnabled = true
         menuView.shake()
     }
     

@@ -41,6 +41,7 @@ extension LaunchpadInfoController: LaunchpadInfoPresenterOutput {
     func configureUI() {
         navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .close, target: self, action: #selector(exitTap))
         mapView.setRounding()
+        mapView.setShadow(color: .black)
         statusLabel.setRounding()
         statusLabel.backgroundColor = Colors.lowBlue
         attemptedView.setRounding()

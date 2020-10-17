@@ -17,14 +17,3 @@ enum Colors {
     static let lowGray = #colorLiteral(red: 0.9441675701, green: 0.9441675701, blue: 0.9441675701, alpha: 1)
 }
 
-
-class ColorsGradient {
-    var gl:CAGradientLayer
-
-    init(colorTop: UIColor, colorBottom: UIColor) {
-
-        self.gl = CAGradientLayer()
-        self.gl.colors = [colorTop, colorBottom]
-        self.gl.locations = [0.0, 1.0]
-    }
-}

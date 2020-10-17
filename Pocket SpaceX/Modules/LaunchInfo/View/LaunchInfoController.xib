@@ -73,7 +73,7 @@
                                                     <color key="shadowColor" systemColor="systemGray6Color"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="dxH-PG-out" firstAttribute="top" secondItem="RDg-2J-nod" secondAttribute="top" id="4xn-6C-lt8"/>
                                                 <constraint firstAttribute="height" constant="28" id="Amu-Ja-Nby"/>
@@ -113,7 +113,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="JET-On-Ec9" firstAttribute="top" secondItem="Uky-9w-e0d" secondAttribute="top" id="S0S-AZ-nwN"/>
                                                 <constraint firstAttribute="bottom" secondItem="JET-On-Ec9" secondAttribute="bottom" id="UWO-C1-Uls"/>
@@ -169,7 +169,7 @@
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="fEN-OZ-pWe" firstAttribute="top" secondItem="6Sf-an-zE2" secondAttribute="top" id="97t-hS-9cu"/>
                                                 <constraint firstAttribute="bottom" secondItem="fEN-OZ-pWe" secondAttribute="bottom" id="Z6s-dY-QZE"/>
@@ -207,7 +207,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="yeN-EG-b8p" secondAttribute="bottom" id="CcP-do-Rfd"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="aLf-mf-noH"/>
@@ -246,7 +246,7 @@
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIf-LU-PTN">
                                             <rect key="frame" x="0.0" y="813.5" width="414" height="414"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="TIf-LU-PTN" secondAttribute="height" multiplier="1:1" id="cgy-8T-QSz"/>
                                             </constraints>
