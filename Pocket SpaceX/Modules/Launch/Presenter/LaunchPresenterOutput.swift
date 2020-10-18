@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LaunchPresenterOutput: PresenterOutput {
-    func configureSegmentedContoll()
+    func configureSegmentedContol()
     func configureNextButton()
     func didReceiveLaunchData(_ data: LaunchData)
     func nextLaunchSearchStart()

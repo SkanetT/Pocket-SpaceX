@@ -20,7 +20,7 @@ final class SettingsController: UIViewController {
     
     let menuView = UIView()
     let menuHeight = (UIScreen.main.bounds.height / 2.1)
-    let okButton = UIButton()
+    let closeButton = UIButton()
     let cacheButton = LoadingButton()
     let infoLabel = UILabel()
     let infoView = UIView()
@@ -89,10 +89,10 @@ extension SettingsController: SettingsPresenterOutput {
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
         }
-        menuView.addSubview(okButton)
-        okButton.configureButton(title: "Ok")
+        menuView.addSubview(closeButton)
+        closeButton.configureButton(title: "Close")
         
-        okButton.snp.makeConstraints() { make in
+        closeButton.snp.makeConstraints() { make in
             make.bottom.equalTo(menuView.snp.bottom).offset(-16)
             make.height.equalTo(menuHeight / 8)
             make.leading.equalTo(menuView.snp.leading).offset(8)
@@ -105,7 +105,7 @@ extension SettingsController: SettingsPresenterOutput {
         cacheButton.layer.cornerRadius = 8
         
         cacheButton.snp.makeConstraints() { make in
-            make.bottom.equalTo(okButton.snp.top).offset(-(menuHeight / 40))
+            make.bottom.equalTo(closeButton.snp.top).offset(-(menuHeight / 40))
             make.height.equalTo(menuHeight / 8)
             make.leading.equalTo(menuView.snp.leading).offset(8)
             make.trailing.equalTo(menuView.snp.trailing).offset(-8)
@@ -201,7 +201,7 @@ extension SettingsController: SettingsPresenterOutput {
         let swipeGetsure = UISwipeGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         swipeGetsure.direction = .down
         backdropView.addGestureRecognizer(tapGesture1)
-        okButton.addGestureRecognizer(tapGesture2)
+        closeButton.addGestureRecognizer(tapGesture2)
         view.addGestureRecognizer(swipeGetsure)
         
         videoSwitch.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)

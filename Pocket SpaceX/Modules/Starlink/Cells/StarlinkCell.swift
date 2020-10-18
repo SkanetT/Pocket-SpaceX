@@ -22,7 +22,7 @@ final class StarlinkCell: UITableViewCell {
         selectionStyle = .none
         backView.backgroundColor = Colors.lowGray
         backView.setRounding()
-        backView.setShadow(color: .black)
+        backView.setShadow(color: .lightGray)
     }
 
     func setData(_ data: StarlinkDatum) {

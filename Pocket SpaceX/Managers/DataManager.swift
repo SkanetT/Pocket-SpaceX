@@ -35,10 +35,17 @@ class DataManager {
         return strDate
     }
     
-    static func makeDateForTimer(_ time: Int) -> String {
+    static func isFuture(_ time: Int) -> Bool {
         let currentTime = Int(Date().timeIntervalSince1970)
-        let newTime = time - currentTime
-        guard newTime > 0 else { return " 00 : 00 : 00 : 00 "}
+        if (time - currentTime) > 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    static func makeDateForTimer(_ time: Int) -> String {
+        guard DataManager.isFuture(time) else { return " 00 : 00 : 00 : 00 "}
         
         let dateLaunch = Date(timeIntervalSince1970: Double(time))
         let cc = Calendar.current.dateComponents( [.day, .hour, .minute, .second], from: Date(), to: dateLaunch)

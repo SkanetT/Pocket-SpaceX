@@ -122,6 +122,9 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         if data.upcoming {
             
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "calendar.badge.plus"), style: .plain, target: self, action: #selector(handleEvent))
+            if !DataManager.isFuture(data.dateUnix) {
+                navigationItem.rightBarButtonItem?.isEnabled = false
+            }
             statusTimerLabel.textColor = .black
             statusTimerLabel.text = DataManager.makeDateForTimer(data.dateUnix)
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.upTimer), userInfo: nil, repeats: true)

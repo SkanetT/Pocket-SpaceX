@@ -16,7 +16,7 @@ final class LaunchController: SpinnerController {
     var tableHandler: LaunchTableHandlerProtocol?
     var searchHandler: LaunchSearchHandlerProtocol?
     var isReverse = false
-    var segmentedContoll: UISegmentedControl!
+    var segmentedContol: UISegmentedControl!
     var nextButton: LoadingButton!
     var swipeView: UIView!
     
@@ -118,28 +118,23 @@ extension LaunchController: LaunchPresenterOutput {
         showSpinner()
     }
     
-    func configureSegmentedContoll() {
+    func configureSegmentedContol() {
         
         let segmentItems = ["All", "Upcomming", "Past"]
-        segmentedContoll = UISegmentedControl(items: segmentItems)
-        segmentedContoll.selectedSegmentIndex = 0
-        segmentedContoll.backgroundColor = UIColor.white
-        segmentedContoll.selectedSegmentTintColor = UIColor.white
+        segmentedContol = UISegmentedControl(items: segmentItems)
+        segmentedContol.selectedSegmentIndex = 0
+        segmentedContol.backgroundColor = UIColor.white
+        segmentedContol.selectedSegmentTintColor = UIColor.white
         
-        view.addSubview(segmentedContoll)
-        segmentedContoll.snp.makeConstraints() { make in
+        view.addSubview(segmentedContol)
+        segmentedContol.snp.makeConstraints() { make in
             make.bottom.equalTo(view.snp.bottomMargin).offset(-8)
             make.height.equalTo(UIScreen.main.bounds.height / 22)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
-        segmentedContoll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
-        segmentedContoll.layer.masksToBounds = false
-        segmentedContoll.layer.shadowColor = UIColor.black.cgColor
-        segmentedContoll.layer.shadowOpacity = 0.35
-        segmentedContoll.layer.shadowOffset = .init(width: 5, height: 7)
-        segmentedContoll.layer.shadowRadius = 10
-        
+        segmentedContol.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
+        segmentedContol.setShadow(color: .black)
     }
     
     func configureNextButton() {
@@ -148,21 +143,21 @@ extension LaunchController: LaunchPresenterOutput {
         nextButton.configureButton(title: "Next launch")
         view.addSubview(nextButton)
         nextButton.snp.makeConstraints() { make in
-            make.bottom.equalTo(segmentedContoll.snp.top).offset(-4)
+            make.bottom.equalTo(segmentedContol.snp.top).offset(-4)
             make.height.equalTo(UIScreen.main.bounds.height / 22)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
         
         nextButton.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
-        
+        nextButton.setShadow(color: .black)
     }
     
     func didReceiveLaunchData(_ data: LaunchData) {
         isReverse = false
         DispatchQueue.main.async {
             self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "arrow.up")
-            self.segmentedContoll.selectedSegmentIndex = 0
+            self.segmentedContol.selectedSegmentIndex = 0
         }
         removeSpinner()
         tableHandler?.setData(data)
@@ -176,7 +171,7 @@ extension LaunchController: LaunchPresenterOutput {
     
     func didReceiveNextLaunchId(_ id: String) {
         DispatchQueue.main.async {
-            self.segmentedContoll.selectedSegmentIndex = 0
+            self.segmentedContol.selectedSegmentIndex = 0
             self.nextButton.isLoading = false
             self.nextButton.isUserInteractionEnabled = true
             self.tableHandler?.scrollToNextLaucnh(id: id)

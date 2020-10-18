@@ -26,7 +26,7 @@ final class LaunchPresenter: LaunchPresenterInput {
     
     func viewDidLoad() {
         viewController?.configureUI()
-        viewController?.configureSegmentedContoll()
+        viewController?.configureSegmentedContol()
         viewController?.configureNextButton()
         interactor.fetchData(isFirstError: true)
         interactor.isFirstStart()

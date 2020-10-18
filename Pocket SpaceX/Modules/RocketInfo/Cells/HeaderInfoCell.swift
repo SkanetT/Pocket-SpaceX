@@ -27,6 +27,7 @@ final class HeaderInfoCell: XibBasedView {
         collectionView.dataSource = self
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "image")
         pageControl.tintColor = Colors.lowBlue
+        collectionView.setShadow(color: .black)
     }
     
     required public init?(coder aDecoder: NSCoder) {

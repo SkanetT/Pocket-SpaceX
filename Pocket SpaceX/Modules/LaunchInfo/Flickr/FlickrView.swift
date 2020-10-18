@@ -19,6 +19,7 @@ final class FlickrView: XibBasedView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "image")
+        collectionView.setShadow(color: .black)
     }
     
     required public init?(coder aDecoder: NSCoder) {

@@ -13,7 +13,7 @@ final class StarlinkController: SpinnerController {
     var presenter: StarlinkPresenterInput?
     var tableView: UITableView!
     var tableHandler: StarlinkTableHandlerProtocol?
-    var segmentedContoll: UISegmentedControl!
+    var segmentedContol: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,24 +56,20 @@ extension StarlinkController: StarlinkPresenterOutput {
         }
         
         let segmentItems = ["All", "In space"]
-        segmentedContoll = UISegmentedControl(items: segmentItems)
-        segmentedContoll.selectedSegmentIndex = 0
-        segmentedContoll.backgroundColor = UIColor.white
-        segmentedContoll.selectedSegmentTintColor = UIColor.white
-        view.addSubview(segmentedContoll)
-        segmentedContoll.snp.makeConstraints() { make in
+        segmentedContol = UISegmentedControl(items: segmentItems)
+        segmentedContol.selectedSegmentIndex = 0
+        segmentedContol.backgroundColor = UIColor.white
+        segmentedContol.selectedSegmentTintColor = UIColor.white
+        view.addSubview(segmentedContol)
+        segmentedContol.snp.makeConstraints() { make in
             make.bottom.equalTo(view.snp.bottom).offset(-30)
             make.height.equalTo(UIScreen.main.bounds.height / 22)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
         
-        segmentedContoll.layer.masksToBounds = false
-        segmentedContoll.layer.shadowColor = UIColor.black.cgColor
-        segmentedContoll.layer.shadowOpacity = 0.35
-        segmentedContoll.layer.shadowOffset = .init(width: 5, height: 7)
-        segmentedContoll.layer.shadowRadius = 10
-        segmentedContoll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
+        segmentedContol.setShadow(color: .black)
+        segmentedContol.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
         
         showSpinner()
     }
