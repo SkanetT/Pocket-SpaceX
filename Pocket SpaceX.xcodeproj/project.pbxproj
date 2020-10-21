@@ -322,6 +322,7 @@
 		3AE57B7725331F68003EAE92 /* LaunchpadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadRequest.swift; sourceTree = "<group>"; };
 		3AE57B7A25332144003EAE92 /* LaunchpadInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoRequest.swift; sourceTree = "<group>"; };
 		3AE57BA1253E260B003EAE92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3AE57BF9253F77D6003EAE92 /* Pocket SpaceX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pocket SpaceX.entitlements"; sourceTree = "<group>"; };
 		8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.release.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.release.xcconfig"; sourceTree = "<group>"; };
 		C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -875,6 +876,7 @@
 		3A9C219B2505695400F8B0D6 /* Pocket SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				3AE57BF9253F77D6003EAE92 /* Pocket SpaceX.entitlements */,
 				3A8506EE250BA56400923C18 /* Extensions */,
 				3A9C21B025056EF700F8B0D6 /* SideMenu */,
 				3A9C21BC250578F700F8B0D6 /* Modules */,
@@ -1446,6 +1448,7 @@
 			baseConfigurationReference = C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_ENTITLEMENTS = "Pocket SpaceX/Pocket SpaceX.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 118;
 				DEVELOPMENT_TEAM = SL47R2R53M;
@@ -1468,6 +1471,7 @@
 			baseConfigurationReference = 8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				CODE_SIGN_ENTITLEMENTS = "Pocket SpaceX/Pocket SpaceX.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 118;
 				DEVELOPMENT_TEAM = SL47R2R53M;

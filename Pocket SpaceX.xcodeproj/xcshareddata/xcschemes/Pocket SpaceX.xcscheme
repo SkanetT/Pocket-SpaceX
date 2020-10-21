@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "072CEA044D2EF26F03496D5996BBF59F"
-               BuildableName = "Firebase"
-               BlueprintName = "Firebase"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "3A9C21982505695400F8B0D6"
+               BuildableName = "Pocket SpaceX.app"
+               BlueprintName = "Pocket SpaceX"
+               ReferencedContainer = "container:Pocket SpaceX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A9C21982505695400F8B0D6"
+            BuildableName = "Pocket SpaceX.app"
+            BlueprintName = "Pocket SpaceX"
+            ReferencedContainer = "container:Pocket SpaceX.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A9C21982505695400F8B0D6"
+            BuildableName = "Pocket SpaceX.app"
+            BlueprintName = "Pocket SpaceX"
+            ReferencedContainer = "container:Pocket SpaceX.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
