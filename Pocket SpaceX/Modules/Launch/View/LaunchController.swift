@@ -139,6 +139,7 @@ extension LaunchController: LaunchPresenterOutput {
     
     func configureNextButton() {
         
+        
         nextButton = LoadingButton()
         nextButton.configureButton(title: "Next launch")
         view.addSubview(nextButton)

@@ -162,6 +162,7 @@
 		3AE57B7825331F68003EAE92 /* LaunchpadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B7725331F68003EAE92 /* LaunchpadRequest.swift */; };
 		3AE57B7B25332144003EAE92 /* LaunchpadInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B7A25332144003EAE92 /* LaunchpadInfoRequest.swift */; };
 		3AE57BA2253E260B003EAE92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE57BA1253E260B003EAE92 /* GoogleService-Info.plist */; };
+		3AFBB3042542153D001E4DE5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFBB3032542153D001E4DE5 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,6 +324,7 @@
 		3AE57B7A25332144003EAE92 /* LaunchpadInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadInfoRequest.swift; sourceTree = "<group>"; };
 		3AE57BA1253E260B003EAE92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3AE57BF9253F77D6003EAE92 /* Pocket SpaceX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pocket SpaceX.entitlements"; sourceTree = "<group>"; };
+		3AFBB3032542153D001E4DE5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		8E476436C7E6549975E54789 /* Pods-Pocket SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.release.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.release.xcconfig"; sourceTree = "<group>"; };
 		C4EB7DBBFA6E2D409B987FCA /* Pods-Pocket SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-Pocket SpaceX/Pods-Pocket SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -570,6 +572,7 @@
 				3AE57B5F253258BA003EAE92 /* Network */,
 				3A850718250E237E00923C18 /* DataManager.swift */,
 				3A72BC8B25276A7E00A3DE08 /* UserDefaultsManager.swift */,
+				3AFBB3032542153D001E4DE5 /* NotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1304,6 +1307,7 @@
 				3A85073D251157A100923C18 /* LaunchInfoAssembler.swift in Sources */,
 				3A850713250CE5A100923C18 /* HeaderInfoCell.swift in Sources */,
 				3A8506D72509760200923C18 /* RocketCollectionHandler.swift in Sources */,
+				3AFBB3042542153D001E4DE5 /* NotificationManager.swift in Sources */,
 				3A85070A250CD9E500923C18 /* UIImageView.swift in Sources */,
 				3A8506D425081FF500923C18 /* RocketRouting.swift in Sources */,
 				3A8506D225081FCB00923C18 /* RocketRouter.swift in Sources */,
