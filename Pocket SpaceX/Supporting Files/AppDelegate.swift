@@ -17,22 +17,19 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let gcmMessageIDKey = "gcm.message_id"
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         FirebaseApp.configure()
-        
         NotificationManager.shared.makeRequestAuthorization()
-        
         application.registerForRemoteNotifications()
+        
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.rootViewController = ContainerController()
+        
         return true
     }
-    
-    
 }
 
 
