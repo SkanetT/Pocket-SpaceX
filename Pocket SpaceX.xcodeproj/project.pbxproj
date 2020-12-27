@@ -168,6 +168,24 @@
 		3AFBB3492545EBF1001E4DE5 /* SpaceXWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFBB3482545EBF1001E4DE5 /* SpaceXWidget.swift */; };
 		3AFBB34B2545EBF4001E4DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFBB34A2545EBF4001E4DE5 /* Assets.xcassets */; };
 		3AFBB34F2545EBF4001E4DE5 /* SpaceXWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AFBB3442545EBF1001E4DE5 /* SpaceXWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3AFBB35F2548AB3F001E4DE5 /* SpaceXService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B602532598E003EAE92 /* SpaceXService.swift */; };
+		3AFBB3622548AB65001E4DE5 /* SpaceXServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B63253259C6003EAE92 /* SpaceXServiceProtocol.swift */; };
+		3AFBB3652548AB7A001E4DE5 /* RocketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D52506CE3A00F8B0D6 /* RocketData.swift */; };
+		3AFBB3682548AB7C001E4DE5 /* LaunchpadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AE587251FBD94000E43C6 /* LaunchpadData.swift */; };
+		3AFBB3692548AB7F001E4DE5 /* LaunchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85071C250E6CBC00923C18 /* LaunchData.swift */; };
+		3AFBB36C2548AB83001E4DE5 /* StarlinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8507442512AB4100923C18 /* StarlinkData.swift */; };
+		3AFBB36F2548AB86001E4DE5 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F40DA25166A1A002460EA /* Enums.swift */; };
+		3AFBB3722548AB97001E4DE5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506BE2506D08700923C18 /* Errors.swift */; };
+		3AFBB3752548ABAF001E4DE5 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D22506CC0900F8B0D6 /* BaseRequest.swift */; };
+		3AFBB3782548ABB3001E4DE5 /* LaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B6825325DE4003EAE92 /* LaunchRequest.swift */; };
+		3AFBB37B2548ABB6001E4DE5 /* NextLaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B6B25325E6B003EAE92 /* NextLaunchRequest.swift */; };
+		3AFBB37E2548ABB9001E4DE5 /* StarlinkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B6E25326124003EAE92 /* StarlinkRequest.swift */; };
+		3AFBB3812548ABBC001E4DE5 /* RocketRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B7125331CAE003EAE92 /* RocketRequest.swift */; };
+		3AFBB3842548ABBF001E4DE5 /* RocketInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B7425331DED003EAE92 /* RocketInfoRequest.swift */; };
+		3AFBB3872548ABC2001E4DE5 /* LaunchpadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B7725331F68003EAE92 /* LaunchpadRequest.swift */; };
+		3AFBB38A2548ABC5001E4DE5 /* LaunchpadInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE57B7A25332144003EAE92 /* LaunchpadInfoRequest.swift */; };
+		3AFBB38D2548ABD0001E4DE5 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8506C12506D13900923C18 /* NetworkApi.swift */; };
+		3AFBB3902548ABD9001E4DE5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C21D02506CA5400F8B0D6 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1410,7 +1428,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFBB3752548ABAF001E4DE5 /* BaseRequest.swift in Sources */,
+				3AFBB37B2548ABB6001E4DE5 /* NextLaunchRequest.swift in Sources */,
+				3AFBB3902548ABD9001E4DE5 /* Reachability.swift in Sources */,
 				3AFBB3492545EBF1001E4DE5 /* SpaceXWidget.swift in Sources */,
+				3AFBB38D2548ABD0001E4DE5 /* NetworkApi.swift in Sources */,
+				3AFBB37E2548ABB9001E4DE5 /* StarlinkRequest.swift in Sources */,
+				3AFBB36C2548AB83001E4DE5 /* StarlinkData.swift in Sources */,
+				3AFBB3812548ABBC001E4DE5 /* RocketRequest.swift in Sources */,
+				3AFBB3682548AB7C001E4DE5 /* LaunchpadData.swift in Sources */,
+				3AFBB3842548ABBF001E4DE5 /* RocketInfoRequest.swift in Sources */,
+				3AFBB3692548AB7F001E4DE5 /* LaunchData.swift in Sources */,
+				3AFBB3652548AB7A001E4DE5 /* RocketData.swift in Sources */,
+				3AFBB3872548ABC2001E4DE5 /* LaunchpadRequest.swift in Sources */,
+				3AFBB3782548ABB3001E4DE5 /* LaunchRequest.swift in Sources */,
+				3AFBB35F2548AB3F001E4DE5 /* SpaceXService.swift in Sources */,
+				3AFBB36F2548AB86001E4DE5 /* Enums.swift in Sources */,
+				3AFBB3722548AB97001E4DE5 /* Errors.swift in Sources */,
+				3AFBB38A2548ABC5001E4DE5 /* LaunchpadInfoRequest.swift in Sources */,
+				3AFBB3622548AB65001E4DE5 /* SpaceXServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
