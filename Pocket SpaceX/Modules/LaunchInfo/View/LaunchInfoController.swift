@@ -8,6 +8,7 @@
 
 import UIKit
 import youtube_ios_player_helper
+import SkeletonView
 
 final class LaunchInfoController: UIViewController {
     
@@ -89,6 +90,8 @@ extension LaunchInfoController: LaunchInfoPresenterOutput {
         failuresLabel.backgroundColor = Colors.lowRed
         viewForFailures.setShadow(color: Colors.lowRed)
         statusTimerLabel.setRounding()
+        statusTimerLabel.isSkeletonable = true
+        statusTimerLabel.showAnimatedGradientSkeleton()
         dateLabel.setRounding()
         detailsLabel.setRounding()
         detailsLabel.backgroundColor = Colors.lowBlue

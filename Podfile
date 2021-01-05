@@ -10,6 +10,7 @@ target 'Pocket SpaceX' do
   pod "youtube-ios-player-helper"
   pod 'Firebase/Core'
   pod 'Firebase/Messaging' 
+  pod 'SkeletonView'
 
   # Pods for Pocket SpaceX
 

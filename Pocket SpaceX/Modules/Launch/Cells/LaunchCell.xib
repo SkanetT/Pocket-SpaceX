@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,6 +22,9 @@
                         <constraints>
                             <constraint firstAttribute="width" secondItem="lCT-w2-Y7U" secondAttribute="height" multiplier="1:1" id="Xz0-6Z-FV4"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yp6-BB-eOa">
                         <rect key="frame" x="155" y="22.5" width="235" height="128"/>
@@ -57,6 +60,9 @@
                             <constraint firstItem="FYl-3m-bPS" firstAttribute="top" secondItem="yp6-BB-eOa" secondAttribute="top" constant="8" id="Kbb-Wq-Fcd"/>
                             <constraint firstAttribute="bottom" secondItem="FYl-3m-bPS" secondAttribute="bottom" constant="8" id="Wfn-QG-Qii"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,8 +75,14 @@
                     <constraint firstAttribute="bottom" secondItem="lCT-w2-Y7U" secondAttribute="bottom" constant="25" id="sxt-Oi-QYW"/>
                     <constraint firstItem="yp6-BB-eOa" firstAttribute="height" secondItem="lCT-w2-Y7U" secondAttribute="height" multiplier="1.04065" id="zU5-If-aUJ"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="backView" destination="yp6-BB-eOa" id="JDc-Ho-EtZ"/>
                 <outlet property="dateLabel" destination="tRX-OI-wMc" id="zpt-CJ-v3I"/>

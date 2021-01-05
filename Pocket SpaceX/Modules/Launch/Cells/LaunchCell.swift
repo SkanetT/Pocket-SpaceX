@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SkeletonView
 
 final class LaunchCell: UITableViewCell {
     
@@ -35,6 +35,7 @@ final class LaunchCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        //isSkeletonable = false
         timer?.invalidate()
         patchImage.cancelDownload()
     }
@@ -65,6 +66,7 @@ final class LaunchCell: UITableViewCell {
             statusTimerLabel.text = DataManager.makeDateForTimer(time)
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.upTimer), userInfo: nil, repeats: true)
         }
+      hideSkeleton()
     }
     
     @objc

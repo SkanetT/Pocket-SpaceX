@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 final class LaunchController: SpinnerController {
     
@@ -80,9 +81,11 @@ extension LaunchController: LaunchPresenterOutput {
         
         title = "Launches"
         view.backgroundColor = .white
+        view.isSkeletonable = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.justify"), style: .plain, target: self, action: #selector(handleMenu))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up"), style: .plain, target: self, action: #selector(handleReverse))
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.leftBarButtonItem?.tintColor = .black
         navigationItem.rightBarButtonItem?.tintColor = .black
         tableView = UITableView(frame: view.frame, style: .grouped)
@@ -115,7 +118,7 @@ extension LaunchController: LaunchPresenterOutput {
         swipeGestureLeft.direction = .left
         swipeView.addGestureRecognizer(swipeGestureLeft)
         
-        showSpinner()
+      //  showSpinner()
     }
     
     func configureSegmentedContol() {

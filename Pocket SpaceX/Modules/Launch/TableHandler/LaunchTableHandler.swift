@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 final class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
     
@@ -30,6 +31,8 @@ final class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         tableView.separatorStyle = .none
         tableView.rowHeight = 130
         tableView.keyboardDismissMode = .onDrag
+        tableView.isSkeletonable = true
+        tableView.showAnimatedGradientSkeleton()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
@@ -42,6 +45,7 @@ final class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
         pastLaunchData = data.filter( {$0.upcoming == false } )
         self.launchData = allLaunchData
         DispatchQueue.main.async {
+            self.tableView?.hideSkeleton()
             self.tableView?.reloadData()
         }
     }
@@ -102,7 +106,15 @@ final class LaunchTableHandler: NSObject, LaunchTableHandlerProtocol {
     
 }
 
-extension LaunchTableHandler: UITableViewDelegate, UITableViewDataSource {
+extension LaunchTableHandler: UITableViewDelegate, SkeletonTableViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "launchCell"
+    }
+    
+    func numSections(in collectionSkeletonView: UITableView) -> Int {
+        return 3
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if !isFilter {
