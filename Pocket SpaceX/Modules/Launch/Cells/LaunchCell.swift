@@ -31,13 +31,14 @@ final class LaunchCell: UITableViewCell {
         backView.setShadow(color: .black)
         backView.backgroundColor = Colors.lowGray
         patchImage.setShadow(color: .black)
-        
+        showSkeleton()
+
     }
     
     override func prepareForReuse() {
-        //isSkeletonable = false
         timer?.invalidate()
         patchImage.cancelDownload()
+        hideSkeleton()
     }
     
     func setData(_ data: LaunchDatum) {
